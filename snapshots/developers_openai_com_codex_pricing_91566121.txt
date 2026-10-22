@@ -1,0 +1,660 @@
+ChatGPT Work and Codex share usage.
+ChatGPT Work usage inside
+ChatGPT uses the same pricing, credits, and usage limits as Codex.
+GPT-5.5 retires from Codex with ChatGPT sign-in on October 14, 2026, at noon
+PDT (19:00 UTC). The OpenAI API and Codex sessions authenticated with an API
+key aren’t affected. See
+GPT-5.5 retirement
+for migration guidance.
+See
+token rates
+for credit-based plans and
+GPT-6.1 Sol model guidance
+for model details.
+API token prices are separate from subscription usage; don’t use them to
+estimate included tasks.
+Pricing options
+Free
+Explore Codex capabilities on quick coding tasks.
+$0
+/month
+Get Free
+GPT-6 Luna at Standard speed in the desktop app, subject to rollout
+Go
+Use Codex for lightweight coding tasks.
+$8
+/month
+Get Go
+GPT-6 Luna at Standard speed in the desktop app, subject to rollout
+Plus
+Power a few focused coding sessions each week.
+$20
+/month
+Get Plus
+Codex on the web, in the CLI, in the IDE extension, and on iOS
+Cloud-based integrations like automatic code review and Slack
+integration
+GPT-6.1 Sol and GPT-6 Luna
+Flexibly extend usage with
+ChatGPT credits
+Other
+ChatGPT features
+as part of the
+Plus plan
+Pro
+Choose the Pro plan that fits your usage.
+From
+$100
+/month
+Get Pro
+Everything in Plus and:
+Plans at $100, $200, or $500 USD per month
+Ultrafast mode
+access on Pro $500
+Other
+ChatGPT features
+as part of the
+Pro plan
+Compare Pro plans and usage limits.
+API Key
+Great for automation in shared environments like CI.
+Learn more
+Codex in the CLI, SDK, or IDE extension
+No cloud-based features (GitHub code review, Slack, etc.)
+Model availability follows the API models available to your key
+Pay for Codex usage based on
+API pricing
+Business
+Bring Codex into your startup or growing business.
+$20
+/ user / month*
+Get Business
+Access ChatGPT and Codex across desktop and mobile apps
+Larger virtual machines to run cloud chats faster
+Flexibly extend usage with
+ChatGPT credits
+A secure, dedicated workspace with essential admin controls, SAML SSO,
+and MFA
+No training on your business data by default.
+Learn
+more
+Other
+ChatGPT features
+as part of the
+Business plan
+*2+ users, billed annually. $25 per user per month when billed monthly.
+Enterprise & Edu
+Unlock Codex for your entire organization with enterprise-grade functionality.
+Contact sales
+Everything in Business and:
+Priority request processing
+Enterprise-level security and controls, including SCIM, EKM, user
+analytics, domain verification, and role-based access control
+(
+RBAC
+)
+Audit logs and usage monitoring via the
+Compliance
+API
+Data retention and data residency controls
+Other
+ChatGPT features
+as part of the
+Enterprise plan
+API Key
+Great for automation in shared environments like CI.
+Learn more
+Codex in the CLI, SDK, or IDE extension
+No cloud-based features (GitHub code review, Slack, etc.)
+Model availability follows the API models available to your key
+Pay for Codex usage based on
+API pricing
+Invite friends and coworkers
+Eligible users can send Codex invitations from the profile menu in the
+lower-left corner of the app. Choose
+Invite a friend
+on an eligible personal
+plan or
+Invite a coworker
+in an eligible Business workspace, enter the
+recipient’s email address, and send the invitation.
+The invitation dialog shows the current reward, recipient requirements, invite
+limits, and when rewards expire for your plan or promotion. Personal and
+Business referral programs have separate rewards and eligibility rules.
+Referrals aren’t currently available for ChatGPT Enterprise.
+Business referrals use separate shared-workspace credit rewards; review the
+current terms
+before you send an
+invitation.
+Frequently asked questions
+What are the usage limits for my plan?
+The number of messages you can send depends on the model used, size and
+complexity of your tasks, and whether you run them locally or in the cloud.
+Small scripts or routine functions may consume only a fraction of your
+allowance, while larger projects, long-running tasks, or extended sessions that
+require the agent to hold more context will use significantly more per message.
+Tasks that look similar can consume different amounts of your allowance. Model
+choice, context, reasoning, tool use, retrieval, and caching all affect usage,
+so prompt length alone isn’t a reliable estimate.
+For model recommendations, see
+Models
+.
+The estimates below show local messages per five-hour period for Plus and
+Standard Business. Pro plans currently have no five-hour limit. Cloud tasks
+may use more of your allowance than local messages. Usage depends on the model
+and task. These estimates are not fixed message limits; check your
+usage dashboard
+for current limits
+and reset times.
+Model
+Plus
+Standard Business
+GPT-6 Astra
+5-45
+5-45
+GPT-6.1 Sol
+15-160
+15-160
+GPT-6 Sol
+15-150
+15-150
+GPT-6 Luna
+350-3,000
+350-3,000
+Local messages and cloud chats share your plan’s usage allowance. Weekly
+limits may also apply.
+Enterprise/Edu users with flexible pricing have no fixed rate limits.
+Usage scales with
+credits
+.
+Enterprise and Edu plans without flexible pricing have the same per-seat
+usage limits as Plus for most features.
+Usage limits are shared with other agentic features once pricing for those
+features is effective. This currently includes
+ChatGPT for
+Excel
+on Plus and Pro.
+Fast and Ultrafast modes use included subscription limits and paid credits
+at different rates, relative to Standard mode for the same model:
+Speed mode
+Included subscription usage
+Purchased credits and Enterprise pay-as-you-go usage
+Fast
+2.5x
+2x
+GPT-6 Astra Ultrafast
+8x
+6x
+GPT-6.1 Sol Ultrafast
+8x
+6x
+Check your
+usage dashboard
+for
+current limits and reset times. See
+Speed
+for supported models and how speed modes affect usage.
+Image generations use included limits ~3-5x faster on average, depending on
+image quality and size.
+For Ultrafast mode eligibility and administrator controls,
+see
+Ultrafast mode
+.
+How much does Sites cost?
+Sites
+is included with eligible ChatGPT plans during public
+beta. Availability depends on your plan, region, and workspace settings.
+How much does Voice cost?
+Voice in Desktop uses your existing Codex usage budget at $0.05 per
+minute.
+GPT-Live manages the live conversation. The model handling your task is billed
+separately at its applicable token rates. Voice and tasks share your plan’s usage
+limits.
+For Business, Edu, and Enterprise workspaces with credit-based billing, desktop
+voice costs 1.25 credits per minute. This rate also applies when Plus and Pro
+users spend additional credits. ChatGPT Voice in Desktop isn’t available via API
+key.
+What happens when you hit usage limits?
+We want you to be able to complete work already in progress. If you reach your
+usage limits during an active turn, the agent will be able to continue working
+on that turn, subject to fair use limits.
+ChatGPT Plus and Pro users who reach their usage limit can purchase additional
+credits to continue working without needing to upgrade their existing plan.
+Business, Edu, and Enterprise plans with
+flexible
+pricing
+can purchase additional workspace credits to continue working.
+All users may also run extra local chats using an API key, with usage charged at
+standard API rates
+.
+How does image generation count toward usage limits?
+Image generation counts toward the same general usage limits as local
+messages and cloud chats. Image generations use included limits 3-5x faster on
+average than similar turns without image generation, depending on
+image quality and size. After you reach your included limits, image generation
+also draws from
+credits
+.
+Image generation isn’t available on the Free plan. When you use Codex with an
+API key, API pricing applies to image generation instead of included ChatGPT
+usage limits.
+Where can I see my current usage limits?
+You can find your current limits in the
+usage
+dashboard
+. If you want to see your
+remaining limits during an active Codex CLI session, you can use
+/status
+.
+Check the dashboard every week or two to understand your pace and remaining
+capacity. If usage is higher than expected, consider whether a smaller model or
+tighter task scope would still produce a useful result.
+What are tokens and credits?
+Tokens are small units of information that ChatGPT reads and writes. Your
+prompt, files, chat history, tool results, and ChatGPT’s response all
+use tokens.
+Credits are the unit used to pay for eligible usage on credit-based plans.
+After you reach your included limits, available credits let you continue
+working. Credit purchase prices and applicable discounts depend on your plan
+or agreement.
+Token rates
+The rates below are for Standard speed, quoted in credits per million input
+tokens, cached input tokens, and output tokens.
+Learn more about
+tokens
+.
+Codex credit billing has no separate cache-write charge. API-key usage follows
+API pricing
+.
+GPT-5.6 Sol, Terra, and Luna rates remain unchanged. Credit prices alone don’t determine
+included subscription usage; check your
+usage dashboard
+for current limits.
+A small subset of Enterprise customers should continue using the legacy rate
+card until we migrate you to the new token-based pricing. For more information,
+contact OpenAI
+sales
+.
+Credits per 1M tokens
+Input Tokens
+Cached input tokens
+Output Tokens
+GPT-6 Astra
+250 credits
+25 credits
+1,250 credits
+GPT-6.1 Sol
+50 credits
+2.5 credits
+250 credits
+GPT-6 Sol
+50 credits
+5 credits
+250 credits
+GPT-6 Luna
+2.5 credits
+0.25 credits
+12.5 credits
+GPT-5.6 Sol
+100 credits
+10 credits
+500 credits
+Daybreak Blue
+100 credits
+10 credits
+500 credits
+Daybreak Red
+312.5 credits
+31.25 credits
+1875 credits
+GPT-5.6 Terra
+50 credits
+5 credits
+300 credits
+GPT-5.6 Luna
+5 credits
+0.5 credits
+30 credits
+GPT-Rosalind-Research
+125 credits
+12.5 credits
+625 credits
+GPT-Image-2 (image)
+200 credits
+50 credits
+750 credits
+GPT-Image-2 (text)
+125 credits
+31.25 credits
+250 credits
+A typical GPT-5.6 Sol task may use 2-15 credits.
+These are Standard credit rates. For purchased credits and Enterprise
+pay-as-you-go usage, Fast mode uses 2x the Standard rate where
+available, and Ultrafast mode uses 6x. Included subscription usage has
+different multipliers. See
+Speed
+for availability
+and billing details.
+Daybreak access requires
+Trusted Access for
+Cyber
+approval.
+Daybreak Blue uses GPT-5.6 Sol credit rates. Daybreak Red requires
+separate approval and provisioning.
+GPT-5.6 Sol’s promotional pricing is available at least through November 21, 2026.
+Learn more about credits in ChatGPT Plus and
+Pro.
+Learn more about credits in ChatGPT Business, Enterprise, and
+Edu.
+For Business and Enterprise/Edu credit billing, use the
+credit-based rate card
+. If your Enterprise agreement specifies usage-based billing in USD, use the
+Enterprise USD rate card
+and your agreement instead. Workspace administrators can also review
+ChatGPT Work usage and cost
+.
+What counts as Code Review usage?
+Code Review usage applies only when Codex runs reviews through GitHub, for
+example, when you tag
+@Codex
+for review in a pull request or enable automatic
+reviews on your repository. Reviews run locally or outside of GitHub count
+toward your general usage limits.
+What can I do to make my usage limits last longer?
+The local-message counts above are estimates; the token table lists credit
+rates per million tokens. To make your usage allowance last longer, try these
+tips:
+Control the size of your prompts.
+Be precise with the instructions you
+give the agent, but remove unnecessary context.
+Limit source material.
+Provide only relevant files and, when possible,
+narrow the sources or date range.
+Match the output to the need.
+Define the audience, format, and length, and
+separate required work from optional improvements.
+Reduce the size of your AGENTS.md.
+If you work on a larger project, you
+can control how much context you inject through AGENTS.md files by
+nesting
+them within your repository
+.
+Limit the number of MCP servers you use.
+Every
+MCP
+server adds more context to your messages and uses
+more of your limit. Disable MCP servers when you don’t need them.
+For guidance on choosing and scoping tasks, see
+Use Work
+efficiently
+.
+Feature availability
+In ChatGPT, GPT-6.1 Sol is available in Work and Codex, not Chat. For Enterprise
+and Edu, the model is off by default until an administrator enables it. Using
+it in ChatGPT Work or Codex also requires access to the respective surface.
+API-key access follows API model availability.
+Feature
+ChatGPT Plus
+ChatGPT Pro
+ChatGPT Business
+Enterprise / Education
+API Key
+Access and surfaces
+Codex cloud
+—
+ChatGPT Work on the web
+—
+ChatGPT desktop app for local chats
+Codex CLI
+IDE extension
+Codex SDK,
+codex exec
+, and scriptable workflows
+Codex access tokens for trusted automation
+—
+—
+—
+ChatGPT for Excel
+—
+Models and multimodal
+GPT-6.1 Sol
+GPT-6 Sol and Luna
+Fast mode
+Ultrafast (Pro $500 and eligible Enterprise/Edu plans)
+—
+—
+Image generation and editing
+Voice dictation
+—
+ChatGPT Voice
+—
+Web search
+Local features
+Composer predictions (beta)
+—
+Limited*
+—
+—
+—
+Local code review with
+/review
+Auto-review for approval requests
+Sandboxing and permission controls
+Project and standalone scheduled tasks
+Scheduled tasks
+Worktrees and built-in Git tools
+Local environments and repeatable actions
+Appshots
+—
+Browser and remote control
+Built-in browser previews and comments
+Computer Use in the browser
+Limited*
+Limited*
+Limited*
+Limited*
+Limited*
+Use ChatGPT with Chrome
+Limited*
+Limited*
+Limited*
+Limited*
+Limited*
+Computer Use
+Limited*
+Limited*
+Limited*
+Limited*
+Limited*
+Record & Replay (macOS)
+Limited*
+Limited*
+Limited*
+Limited*
+Limited*
+SSH remote connections
+Mobile remote control
+—
+Browser in ChatGPT Web
+—
+Customization and extensions
+Custom instructions with
+AGENTS.md
+Skills
+Plugins
+Limited†
+Plugin sharing
+—
+Connectors
+—
+MCP
+Subagents and custom agents
+Memories
+Limited*
+Limited*
+Limited*
+Limited*
+Limited*
+Computer History
+—
+—
+Cloud and integrations
+Codex cloud chats
+—
+Cloud environments and setup scripts
+—
+Cloud agent internet access controls
+—
+Sites
+—
+GitHub issue and PR delegation with
+@codex
+—
+GitHub code review and automatic PR reviews
+—
+Slack cloud integration
+—
+Linear cloud integration
+—
+Admin, security, and analytics
+SAML SSO, MFA, and workspace user management
+—
+—
+—
+requirements.toml
+managed config
+Cloud-managed config policies
+—
+—
+—
+ChatGPT workspace RBAC and custom roles
+—
+—
+—
+—
+SCIM, EKM, and domain verification
+—
+—
+—
+—
+Enterprise retention and residency controls
+—
+—
+—
+—
+No training on API or business data by default
+—
+—
+Analytics dashboard
+—
+—
+—
+—
+Analytics API
+—
+—
+—
+—
+Compliance API and audit logs
+—
+—
+—
+—
+Codex Security for connected GitHub repositories
+—
+—
+—
+—
+Access and surfaces
+Codex cloud
+ChatGPT Work on the web
+ChatGPT desktop app for local chats
+Codex CLI
+IDE extension
+Codex SDK and scripting
+Automation access tokens
+—
+ChatGPT for Excel
+Models and multimodal
+GPT-6.1 Sol
+GPT-6 Sol and Luna
+Fast mode
+Ultrafast (Pro $500 and eligible Enterprise/Edu plans)
+—
+Image generation and editing
+Voice dictation
+ChatGPT Voice
+Web search
+Local features
+Composer predictions (beta)
+—
+Local code review
+Auto-review for approval requests
+Sandboxing and permission controls
+Scheduled tasks
+Scheduled tasks
+Built-in Git tools
+Repeatable actions
+Appshots
+Browser and remote control
+Built-in browser
+Computer Use in the browser
+Limited*
+Chrome browser control
+Limited*
+Computer Use
+Limited*
+Record & Replay
+Limited*
+SSH remote
+Mobile remote control
+Browser in ChatGPT Web
+Customization and extensions
+Custom instructions
+Skills
+Plugins
+Plugin sharing
+Connectors
+MCP
+Subagents
+Memories
+Limited*
+Computer History
+—
+Cloud and integrations
+Cloud chats
+Cloud environments
+Internet controls
+Sites
+GitHub delegation
+GitHub PR reviews
+Slack integration
+Linear integration
+Admin, security, and analytics
+Workspace management
+—
+requirements.toml
+config
+Cloud-managed policies
+—
+RBAC and roles
+—
+SCIM, EKM, and domains
+—
+Retention and residency
+—
+No default training
+—
+Analytics dashboard
+—
+Analytics API
+—
+Compliance and audit logs
+—
+Codex Security
+—
+*
+Feature is currently limited to only specific regions. Check the
+individual feature documentation to learn more about geographic restrictions.
+†
+Some first party plugins are not available.

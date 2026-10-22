@@ -1,0 +1,85 @@
+Trust & Security
+Security at
+SpaceXSI
+Data privacy and security are fundamental to our mission. We prioritize the responsible management of data and the trust our users place in our technology.
+Trust Portal
+Report a Vulnerability
+Robust security
+Industry-leading safeguards to protect your data from unauthorized access, use, or disclosure.
+Industry standards
+Compliance with relevant data privacy regulations and adherence to industry best practices.
+Transparency
+Clear, accessible information about our data handling practices and policies.
+In depth
+Security practices
+Explore our security measures across product, data, infrastructure, and corporate domains.
+Audit Logging
+SpaceXSI offers an in-app 90 day Audit Trail for Business Tier accounts. Audit logs can be exported on demand via the admin console.
+Integrity Monitoring
+We provide a status page outlining the health of our services and current uptime.
+Data Security
+SpaceXSI includes a suite of Privacy tools to help your organization comply with regulations like HIPAA, the GDPR, and the CCPA.
+Role-Based Access Control
+Access Management roles are available in the SpaceXSI Enterprise Platform. Predefined security groups are used to assign role-based access privileges and segregate access to systems and data.
+Single Sign-On Support
+SpaceXSI supports Single Sign On for Business Tier accounts. You can use any SAML-based Identity Provider (IdP), for example Okta, OneLogin, or GSuite.
+Access Monitoring
+SpaceXSI retains security logs, including application, tooling, and access logs, for 180 days. Data access logs are maintained for 365 days.
+Data Backups
+Backups of in-scope systems are performed on a regularly scheduled basis. Snapshot backups of critical databases are performed daily.
+Encryption-at-rest
+Customer archive data stored in S3 is encrypted at rest using server-side encryption with Amazon S3 managed keys (SSE-S3).
+Encryption-in-transit
+The SpaceXSI web application and enterprise API are configured to use the TLS encryption protocol to encrypt communication sessions.
+Physical Security
+SpaceXSI data centers are equipped with full time security personnel, defense-in-depth access controls, and 24/7 monitoring solutions.
+Cookies
+Our cookie policy is available within the broader Privacy Notice on our legal page.
+Employee Privacy Training
+At least once per year, our employees must complete security and privacy training covering our security policies, best practices, and privacy principles.
+Security Incident Notification
+Our Security Incident Notification process is outlined in the Data Protection Addendum.
+Data Access
+We follow the principles of least privilege and need-to-know basis. Firewalls, network access controls, and IAM controls are used to prevent unauthorized access.
+Logging
+We retain security logs, including application, tooling, and access logs, for 180 days.
+Password Security
+We adhere strictly to the guidelines set forth in NIST Special Publication 800-63B for digital identity and authentication.
+Responsible Disclosure
+SpaceXSI has a public bug bounty program that encourages responsible disclosure of security issues and enables continuous assessment of product security.
+Bot Detection
+SpaceXSI utilizes Cloudflare WAF and Wiz to bolster application resilience and security, including DDoS protection and continuous threat detection.
+Software Development Lifecycle
+SpaceXSI has documented SDLC and change management standards which are communicated to all personnel and reviewed annually.
+Vulnerability & Patch Management
+System vulnerability scans are performed on at least a weekly basis. All in-scope systems are patched per documented processes.
+BCP / DR
+An appropriate business continuity and disaster recovery plan is maintained, with processes to ensure failover redundancy in systems, networks, and data storage.
+Infrastructure Availability
+Core production infrastructure is deployed across multiple active availability zones, with core systems duplicated in a separate region for quick deployment.
+Datacenter Services
+SpaceXSI utilizes dedicated datacenters with dedicated capacity and support, built on trusted hardware and Cloud Native Computing Foundation best practices.
+Disk Encryption
+Full disk encryption is enabled on company laptops via our MDM solution.
+Endpoint Detection & Response
+A cloud-based anti-malware solution is deployed on SpaceXSI-owned laptops, configured to analyze endpoint activities and behavior in real-time.
+Mobile Device Management
+A device management tool enforces full disk encryption, automatic security software installation, OS updates, screen lock, and remote wipe capability.
+Firewall
+Our security architecture integrates advanced cloud-native protections, delivering equivalent or enhanced security functionalities expected from conventional firewall systems.
+SIEM
+Logging and monitoring software are configured to collect data from system components to monitor security events, performance, and resource utilization.
+Virtual Private Cloud
+Inbound external network traffic terminates in the public VPC, with security groups filtering unauthorized traffic into the private VPC.
+HR Security
+At least once per year, employees must complete security and privacy training covering policies, best practices, and privacy principles.
+Incident Response
+A formal incident management framework defines roles, responsibilities, escalation paths, and communication requirements for security incidents.
+Penetration Testing
+SpaceXSI engages with third-party specialists to conduct external penetration testing of the production application at least annually.
+Report a Vulnerability
+Contact the
+SpaceXSI
+security team through our HackerOne program or email vulnerabilities@x.ai with the subject line “Responsible Disclosure.”
+HackerOne
+vulnerabilities@x.ai

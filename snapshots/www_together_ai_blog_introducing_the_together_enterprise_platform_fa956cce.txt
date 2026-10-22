@@ -1,0 +1,129 @@
+All blog posts
+Company
+Published
+9/23/2024
+Introducing The Together Enterprise Platform: Run GenAI securely in any environment, with 2x faster inference and continuous model optimization
+Authors
+Together AI
+Table of contents
+40+ Models Chosen for Production...40+ Models Chosen for Production...40+ Models Chosen for Production...
+Links in this article
+Get in touch
+Try the product
+Deployment options doc
+We're hiring!
+‍
+Get Notified
+Today we’re announcing the Together Enterprise Platform
+— a comprehensive platform for managing the entire Generative AI lifecycle, enabling businesses to train, fine-tune, and run inference on
+any model, in any environment
+, whilst optimizing model performance and GPU utilization. Achieve
+2-3x faster inference and up to 50% lower operational costs
+on your existing cloud (AWS, Azure, GCP, OCI) or on-premise infrastructure. This secure, scalable platform enables enterprises to retain
+complete control over their models and proprietary data
+, while maximizing GPU investments.
+The Together Enterprise Platform includes:
+Deploy in any environment, with full control:
+Deploy on Together Cloud, your Virtual Private Cloud (VPC), or on-premise. Your data remains within your firewall.
+‍
+Continuous model optimization
+: Implement advanced optimization techniques like auto fine-tuning and adaptive speculators to continuously improve model performance over time.
+‍
+Access 200+ models or bring your own:
+Choose from leading model families like Llama and Mixtral, or use your own custom models for inference and fine-tuning. We offer a wide range of model types, including chat, multimodal, embeddings, rerank, and code.
+‍
+Enhanced GPU orchestration
+: Efficiently manage, scale, and orchestrate GPU resources with job scheduling, auto-scaling, and traffic control.
+‍
+New Enterprise plans:
+We've added new 'Scale' and 'Enterprise' plans to grow with the needs of any organization. Our Enterprise plan includes unlimited rate limits and dedicated support.
+Leading organizations like Salesforce, The Washington Post, Zoom and Zomato have already deployed their GenAI apps in production using the Together Enterprise Platform, and Salesforce has exclusively
+partnered with us
+to host their own rerank model using the platform.
+‍
+"Together AI offers optimized performance at scale, and at a lower cost than closed-source providers – all while maintaining strict privacy standards. As an AI-forward publication, we look forward to expanding our collaboration with Together AI for larger-scale in-house efforts.”
+— Vineet Khosla, CTO for The Washington Post
+{{custom-cta-1}}
+Enterprises are prioritizing data privacy and model ownership
+Organizations are transitioning to AI solutions that offer greater control over their models and data, driven by cost efficiency, privacy, and customization needs. This shift is supported by the
+significant growth in adoption
+of models like Llama. The Together Enterprise Platform supports this transition by enabling organizations to use various AI models, or train their own custom models, while maintaining the security, performance, and reliability required for production systems. This flexibility allows companies to tailor AI models and workflows to their specific use cases, while retaining full control over their proprietary data.
+We’ve worked with leading organizations to implement this shift, powering different use cases like:
+Enhanced customer support
+: Building sophisticated AI-powered chatbots and virtual assistants for 24/7 support and reduced response times.
+Personalized product recommendations
+: Creating hyper-personalized recommendations in e-commerce and retail to increase conversion rates and customer satisfaction.
+Enterprise RAG (Retrieval-Augmented Generation)
+: Implementing advanced question-answering systems that combine proprietary knowledge bases with large language models.
+"Our endeavor is to deliver exceptional customer experience at all times. Together AI has been our long standing partner and with Together Inference Engine 2.0 and Together Turbo models, we have been able to provide high quality, fast, and accurate support that our customers demand at tremendous scale."
+— Rinshul Chandra, COO, Food Delivery, Zomato
+Faster inference, in any environment
+Our proprietary Together Inference Engine, the result of extensive research and development, is the fastest inference engine that can be deployed on any environment. This means enterprises can deploy our engine in their own VPC or on-prem and immediately benefit from 2-3x faster inference, enabling faster product experiences for their customers.
+The Together Inference Engine is consistently 2-3x faster than hyperscaler solutions across the Llama 3.1 model family.
+Independent Benchmark from Artificial Analysis measuring output speed for Llama 3.1-405-B. (09/20/2024)
+Significantly lower GPU costs, on your existing infrastructure
+Speed is just one part of the equation. The Together Enterprise Platform also drives significant cost savings, with customers achieving
+30-50% reduced operational expenses
+.
+These savings stem from:
+Faster inference speeds, requiring fewer GPUs to handle the same workload
+Improved orchestration, leading to higher utilization and increased workloads on existing GPU pools
+By optimizing GPU hours and maximizing utilization, we help enterprises manage the escalating costs of their GenAI investments,
+without compromising on quality
+. The Together Inference Engine delivers
+4x higher throughput
+than open-source engines like vLLM, resulting in better utilization of available GPU resources.
+The performance comparison was conducted using 8x H100 SXM 80GB GPUs, averaging results across 1K, 2K, 3K, and 4K input tokens with 100 output tokens. Throughput was measured based on normalized decoding speeds.
+Continuous model optimization
+Our
+continuous model optimization
+capabilities bring cutting-edge AI research to your production deployments. Just as closed-source models like GPT-4 have evolved to become faster and more efficient, while maintaining quality, we’re bringing the same customized improvements to
+your models, in your environment
+.
+We take your base model and apply a range of proprietary optimization techniques, tailored specifically to your use case. This process integrates user traffic data, fine-tuning data, and user feedback to systematically apply multiple layers of optimizations, including custom-trained adaptive speculators (for
+speculative decoding
+), fine-tuning, quantization, and model distillation techniques.
+Through this optimization process, we identify the best version of your model—one that achieves the optimal balance between speed, quality, and cost-efficiency. This ensures that your GenAI applications not only perform faster and more accurately, but also scale more efficiently.
+Better orchestration and scaling
+Enterprises aiming to optimize their GPU investments need efficient orchestration and scaling of resources, both for production deployments and experimentation. The Together Enterprise Platform tackles this challenge by providing centralized management of GenAI processes across the organization. It enhances GPU orchestration through traffic control, smart scheduling (such as running fine-tuning during low production periods), auto-scaling, and detailed usage analytics. By integrating into CI/CD pipelines with programmatic APIs for common operations, the platform streamlines AI development and deployment. This approach maximizes GPU returns and enables efficient management of
+GenOps
+at scale.
+Together AI analytics dashboard
+Data privacy, control and model ownership
+With the Together Enterprise Platform, your organization retains
+full control
+over both your data and models across all deployment options. Whether you choose to run your workloads on our serverless cloud, dedicated GPU instances, or within your own infrastructure, we ensure
+maximum security and privacy
+every step of the way.
+Enterprise-grade security
+: The Together Enterprise Platform adheres to robust data privacy measures and industry-leading security practices including:
+End-to-end encryption for all data, both in transit and at rest
+Compliance with major industry standards such as SOC 2, GDPR, and HIPAA
+To learn more about our privacy practices, visit our
+privacy policy
+.
+Flexible deployment options
+The Together Enterprise Platform offers unmatched flexibility with
+private deployments
+, allowing you to run your AI workloads in the environment that best suits your security, compliance, and performance needs.
+You can choose to deploy on:
+Together serverless
+: High-performance and reliable serverless model endpoints. Effortlessly scale your traffic while we handle all the infrastructure. Unlimited rate limits on our Enterprise Plan.
+Together dedicated GPU endpoints
+: Access to dedicated GPU endpoints on high-performance hardware provisioned on Together’s Cloud. Pay per GPU minute, with discounted monthly reserved pricing available. Guaranteed consistent performance with no rate limits.
+Your VPC or on-premise:
+For organizations with stricter data security requirements or those looking to maximize existing GPU investments, the Together Enterprise Platform can be deployed within your VPC or on-prem infrastructure. We support all major cloud providers, including AWS, Azure, GCP, OCI, and others.
+Read more about our deployment options
+in our documentation
+.
+Get started today
+Try our product
+instantly through our serverless offering on Together Cloud.
+Contact us
+to discuss your enterprise deployment needs. Together APIs are fully compatible with OpenAI, making testing and migration easier.
+Discuss your enterprise deployment
+Together APIs are fully compatible with OpenAI, making testing and migration easier.
+Get in touch
+Related articles
+View All
+View All

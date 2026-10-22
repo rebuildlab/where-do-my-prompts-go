@@ -1,0 +1,59 @@
+Security
+HIPAA
+HIPAA Compliance & Langfuse Business Associate Agreement (BAA)
+Langfuse offers a dedicated HIPAA-ready cloud region for eligible customers with healthcare or life-sciences workloads. This region is separate from the EU, US, and Japan Langfuse Cloud regions.
+Eligible customers can enter into a signed Business Associate Agreement (BAA) with Langfuse for HIPAA-regulated use. Customers with HIPAA requirements should
+complete the BAA via Ironclad
+before processing Protected Health Information (PHI) in Langfuse.
+Availability
+Data region:
+https://hipaa.cloud.langfuse.com
+Location:
+Oregon, AWS
+us-west-2
+Eligible plans:
+Pro plan or higher
+Signed BAA
+Customers on Pro plan or higher in the HIPAA data region can
+complete and sign the BAA via Ironclad
+. Do not process PHI in Langfuse until the signed BAA is in place.
+How to get started
+Create a fresh Langfuse Cloud account in the
+HIPAA data region
+.
+Subscribe to
+Pro plan or higher
+.
+Complete and sign the BAA via Ironclad
+before processing PHI.
+Configure your application to send HIPAA-regulated data only to
+https://hipaa.cloud.langfuse.com
+.
+The HIPAA region is completely separate from the
+other data regions
+. Data migration is possible via the
+data migration cookbook
+.
+Self-hosted deployments
+The HIPAA data region and the BAA cover Langfuse Cloud, where Langfuse operates the infrastructure. In a
+self-hosted
+deployment Langfuse does not receive or process your data, so no BAA with Langfuse is involved and the HIPAA safeguards are yours to implement in your environment. Relevant building blocks:
+encryption
+,
+data masking
+before or at ingestion,
+data retention
+,
+audit logs
+,
+SSO
+, and
+network isolation
+.
+Was this page helpful?
+Support
+Last updated on
+Previous
+ISO 27001
+Next
+Compliance FAQ

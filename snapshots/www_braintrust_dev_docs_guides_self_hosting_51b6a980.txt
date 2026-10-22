@@ -1,0 +1,336 @@
+Self-hosting
+is
+only available on the
+Enterprise plan
+.
+Braintrust offers a self-hosted deployment option that separates data storage from platform management. You deploy and control the infrastructure that stores your sensitive AI data, while Braintrust provides the managed UI, authentication, and platform updates. This gives you full control over your data without the operational overhead of running the entire platform.
+If you want data residency in your own cloud without operating the data plane yourself, consider
+BYOC
+, where Braintrust operates the deployment. For a comparison of all deployment options, see
+Deployment options
+.
+​
+Use cases
+Self-hosting is designed for organizations with specific requirements:
+Data residency and compliance
+: Meet regulatory or contractual obligations by keeping all customer data (experiment logs, traces, datasets, and prompts) within your own cloud account and region.
+Security posture and isolation
+: Deploy the data plane behind your firewall or VPN, using your own IAM policies, KMS encryption keys, and audit trails. This ensures sensitive data never traverses external networks.
+Access to private resources
+: Connect to internal LLM models, proprietary tools, or private APIs that are not accessible from the public internet. The data plane runs within your network and can access resources in your VPC or private network.
+​
+How it works
+Braintrust’s architecture has two main components:
+The
+data plane
+stores all sensitive data, including experiment records, logs, traces, spans, datasets, and prompt completions. It consists of the Braintrust API, a PostgreSQL database, Redis cache, object storage, and Brainstore (a high-performance query engine for real-time trace ingestion).
+The
+control plane
+provides the web UI, authentication, user management, and metadata storage (project names, experiment names, organization settings). The control plane does not store or process your sensitive data.
+Breakdown of where data is stored
+Data
+Location
+Experiment records (input, output, expected, scores, metadata, traces, spans)
+Data plane
+Log records (input, output, expected, scores, metadata, traces, spans)
+Data plane
+Dataset records (input, output, metadata)
+Data plane
+Prompt playground prompts
+Data plane
+Prompt playground completions
+Data plane
+Human review scores
+Data plane
+Project-level LLM provider secrets (encrypted)
+Data plane
+Org-level LLM provider secrets (encrypted)
+Control plane
+API keys (hashed)
+Control plane
+Experiment and dataset names
+Control plane
+Project names
+Control plane
+Project settings
+Control plane
+Git metadata about experiments
+Control plane
+Organization info (name, settings)
+Control plane
+Login info (name, email, avatar URL)
+Control plane
+Auth credentials
+Clerk
+When you self-host Braintrust, you deploy the data plane in your own infrastructure using Terraform. On AWS, this uses ECS (or Lambda in versions prior to v6.0) and EC2 instances. On GCP and Azure, this uses Kubernetes containers. Braintrust continues to host the control plane.
+When you use Braintrust’s SDKs, they send data directly to your data plane. When you use the web UI, your browser communicates directly with your data plane via CORS. The control plane and data plane communicate only for authentication and metadata synchronization. Braintrust’s servers and employees do not require access to your data plane for it to operate.
+When you configure your self-hosted data plane URL in
+organization settings
+, Braintrust automatically provisions a service token with the necessary permissions. This streamlines setup and enables features like
+data retention
+without manual configuration steps.
+​
+Cloud providers
+Braintrust provides official Terraform modules for self-hosting on AWS, Google Cloud Platform (GCP), and Azure:
+AWS
+: Terraform with ECS and EC2
+GCP
+: Terraform with Kubernetes and Helm
+Azure
+: Terraform with Kubernetes and Helm
+Braintrust strongly recommends using these Terraform modules because they are kept up-to-date with best practices, mirror the fully hosted offering (proven at scale), minimize configuration issues, and ensure Braintrust can efficiently troubleshoot performance and operational issues.
+If the module conflicts with your organization’s infrastructure standards, you can deploy Braintrust in a dedicated cloud account or project to address these concerns. If you still can’t use the standard artifacts as published, see
+Non-standard self-hosted
+.
+Legacy customers
+: If you previously deployed using AWS CloudFormation, the
+CloudFormation guide
+remains available. This deployment method is not supported for new customers.
+​
+Non-standard self-hosted
+Non-standard self-hosted deployments are customer-operated deployments that cannot use Braintrust’s standard Terraform module and Helm chart pattern as intended, or that require material deviations from the reference architecture. Review it with Braintrust before adopting it.
+Examples include:
+Forking or patching Braintrust Terraform modules or Helm chart templates.
+Replacing standard deployment components with customer-specific infrastructure equivalents.
+Using internal platform tooling that prevents the standard upgrade path from being followed.
+Running with configuration choices that prevent straightforward adoption of future Braintrust releases.
+Choosing this path means more manual upgrade planning, more validation work, and higher support complexity. Braintrust support may need additional environment context before diagnosing issues, because the deployment differs from the standard reference architecture. If you anticipate any of these deviations,
+contact Braintrust
+first to confirm the approach is viable.
+​
+Shared responsibility
+When you self-host, uptime becomes a shared responsibility between your team and Braintrust:
+Braintrust
+is responsible for responding quickly when you have issues, collaboratively resolving them with you, and fixing bugs to improve quality.
+Your team
+is responsible for following the documentation, assigning infrastructure resources on your team, and ensuring that in the event of an incident, you have staff who are familiar with Braintrust and can work with the Braintrust team to share context and resolve issues.
+​
+Monitoring
+Braintrust monitors your self-hosted deployment through automatic telemetry and an in-app infra dashboard.
+​
+Telemetry
+By default, your self-hosted data plane automatically sends the following telemetry back to the Braintrust-managed control plane:
+Health check information
+System metrics (CPU/memory) and Braintrust-specific metrics like indexing lag
+Billing usage telemetry for aggregate usage metrics
+This allows Braintrust to monitor key health indicators and quickly identify issues before they cause downtime.
+In some cases, Braintrust may ask you to enable additional telemetry to help with troubleshooting, including logs and traces. For more details, see
+Enable or disable telemetry
+.
+If you disable telemetry, Braintrust’s ability to proactively monitor your deployment and diagnose issues will be significantly limited. Before disabling, consider the impact on support response times.
+​
+Infra dashboard
+Only
+organization owners
+and members with the
+Manage settings
+permission can access this dashboard.
+Go to
+Settings
+>
+Infra dashboard
+to view:
+Processing throughput (bytes processed, compaction)
+CPU and memory usage by reader and writer nodes
+Object storage latency and operations
+Realtime lag
+Status checks
+Query patterns for UI and API queries, grouped by object type, filter fields, source, and predicate types like
+ILIKE
+,
+match()
+, and inequalities
+The
+Infra dashboard
+option is available once Braintrust has enabled infrastructure monitoring for your organization. Contact
+Braintrust support
+to get started.
+​
+Upgrades
+Braintrust ships new data plane versions 1-2 times per month. You can find the details of each release on the
+Self-hosting releases
+.
+Braintrust recommends upgrading each time a new version is published.
+New features often depend on data plane changes, and when they do, Braintrust will automatically gate those features until you upgrade.
+Data plane age
+Status
+Up to date
+Fully supported
+1-3 months out of date
+Supported with caveats — you may encounter functionality issues or bugs. Given the pace of the AI space, Braintrust prioritizes shipping new features while doing their best to maintain compatibility. If you hit a bug,
+contact support
+and Braintrust will prioritize a fix or workaround.
+More than 3 months out of date
+Unsupported — upgrade immediately. If you contact support, the first thing Braintrust will ask you to do is upgrade.
+To check which data plane version you’re currently running, go to
+Settings
+>
+Data plane
+.
+For upgrade instructions, see
+Upgrade your deployment
+.
+​
+Remote access
+There are occasionally issues that require ad-hoc debugging or running manual commands against containers, the Postgres database, or storage buckets to repair the state of the system. Customers who provide Braintrust with remote access (as needed) have experienced much faster resolutions when such issues occur, because the Braintrust team can connect directly and resolve issues. If this is not possible, factor this into your uptime calculations. If uptime of Braintrust is a key metric for you, strongly consider making remote access available to the Braintrust team as needed.
+If you cannot set up remote access, ensure that you can swiftly access:
+Containers directly (to update them, view logs, restart them, and view host metrics like CPU, network, memory, and disk utilization)
+Postgres to run SQL queries
+Redis to run commands
+Storage buckets to run read, write, and list commands
+Your on-call staff should have basic familiarity with Braintrust and the ability to perform all of these operations.
+​
+Hardware requirements
+When deploying Braintrust in production, consider these hardware requirements for reliable performance and uptime. These requirements assume typical production usage patterns. For high-utilization deployments, you may need to scale these resources up significantly. Monitor your resource utilization and adjust accordingly.
+​
+API service
+The API service handles all SDK and browser requests to the data plane.
+This section primarily applies to GCP and Azure with Kubernetes. AWS deployments on ECS are pre-sized appropriately and scale automatically through Application Auto Scaling, but expose optional Terraform variables to tune per-task size and task counts. The defaults are suitable for most deployments. See
+Configure AWS API ECS services
+.
+Resource
+Testing/Staging
+Production
+CPU
+1 vCPU
+2+ vCPUs per instance
+Memory
+2GB RAM
+8GB+ RAM
+Instance count
+1
+4+
+Environment variables
+:
+NODE_MEMORY_PERCENT
+: Set to
+80
+-
+90
+if the API is running on a dedicated instance or container orchestrator with cgroup memory limits (e.g. Kubernetes, ECS).
+TS_API_KEEP_ALIVE_TIMEOUT_SECONDS
+: Configure the HTTP keep-alive timeout when running behind a load balancer. See
+Set the HTTP keep-alive timeout
+for details.
+​
+PostgreSQL
+PostgreSQL stores metadata required to operate the platform, including pointers to raw data in object storage and aggregate statistics about the data. It is not the primary store for your AI data — traces, spans, and logs live in Brainstore and object storage.
+Resource
+Testing/Staging
+Production
+CPU
+2 vCPUs
+8+ vCPUs
+Memory
+8GB RAM
+64GB+ RAM
+Storage size
+100GB
+1000GB+ (monitor for growth)
+Storage IOPS
+3,000
+15,000+
+Version
+15+
+17+
+​
+Redis cache
+Redis provides caching and coordination for session management, rate limiting, and Brainstore write ordering.
+Resource
+Testing/Staging
+Production
+CPU
+1 vCPU
+2 vCPUs
+Memory
+1GB RAM
+4GB+ RAM
+Version
+7+
+7+
+Important for AWS
+: Avoid using burstable Redis instances (t-family instances like
+cache.t4g.micro
+) in production. These instances use CPU credits that can be exhausted during high-load periods, leading to performance throttling.
+Instead, use non-burstable instances like
+cache.r7g.large
+,
+cache.r6g.medium
+, or
+cache.r5.large
+for predictable performance. Even if these instances seem oversized initially, they provide consistent performance without the risk of CPU credit exhaustion.
+​
+Brainstore
+Brainstore is Braintrust’s high-performance database for ingesting and querying AI data. It uses object storage and a streaming Rust engine to load spans in real time, cutting down on latency and enabling fast full-text search over large volumes of trace data. Brainstore runs as separate reader and writer node types, each with distinct resource requirements.
+Important
+Brainstore requires high-performance storage with at least 150,000 IOPS for both reads and writes. Use NVMe-based ephemeral storage (the storage does not need to be persistent). Do not use EBS volumes or other slower storage options like Azure’s standard local disks, as these will significantly degrade performance.
+For Kubernetes deployments (GCP and Azure), each Brainstore pod must run on its own dedicated node to ensure optimal performance and resource isolation.
+​
+Readers
+Readers serve ad-hoc queries, including those from the API and user-defined BTQL queries. Plan for a minimum of 2 reader nodes in production to ensure high availability.
+A specialized reader variant —
+fast readers
+— serves predictable UI queries (paginated viewers, span and trace lookups) in isolation from standard reader nodes, keeping the UI responsive while resource-intensive queries run on readers. On
+GCP and Azure
+, fast readers are enabled by default with 2 replicas starting in Helm chart v5.0.0. On
+AWS
+, fast readers are enabled by default with 2 nodes starting in Terraform module v5.5.0; on earlier module versions they are disabled by default. Set
+brainstore_fast_reader_instance_count
+to
+0
+to opt out. When planning cluster capacity, account for these additional nodes. See
+Configure Brainstore fast readers
+for configuration details.
+Resource
+Testing/Staging
+Prod: readers
+Prod: fast readers
+CPU
+4 vCPUs
+16 vCPUs
+16 vCPUs
+Memory
+8GB RAM
+32GB RAM
+32GB RAM
+Storage size
+128GB
+1024GB+
+1024GB+
+Storage type
+SSD
+NVMe (ephemeral)
+NVMe (ephemeral)
+Storage IOPS
+—
+150,000+ read/write
+150,000+ read/write
+Instance count
+1
+2+
+2+
+​
+Writers
+Writers ingest incoming spans and traces and write them to object storage. Writers don’t serve interactive requests, so a single writer node is sufficient for production.
+Resource
+Testing/Staging
+Production
+CPU
+4 vCPUs
+32 vCPUs
+Memory
+8GB RAM
+64GB RAM
+Storage size
+128GB
+1024GB+
+Storage type
+SSD
+NVMe (ephemeral)
+Storage IOPS
+—
+150,000+ read/write
+Instance count
+1
+1+
+Was this page helpful?

@@ -1,0 +1,224 @@
+Sales Support
+Third-Party Services
+Version 3.15, effective as of September 30, 2026
+JetBrains s.r.o. (“
+JetBrains
+”) is a products and services provider based in the Czech Republic (EU), so its activities are directly regulated by the EU General Data Protection Regulation (GDPR). JetBrains relies on certain third parties and affiliates, which may host some products offered by JetBrains, facilitate communication between JetBrains and customers, or otherwise help JetBrains with certain processes. Due to the nature of their engagement, these entities may have access to certain data shared by customers (including but not limited to some personal data). Here is a more detailed overview of the third parties and JetBrains affiliates to which customer data can be made available.
+A. Third Parties and JetBrains Affiliates Engaged in the Provision of Products and Services (Sub-Processors)
+JetBrains offers products that are installed on customers’ infrastructure as well as products hosted by JetBrains. If you install on-premises products such as IDEs or .NET & Visual Studio Tools, these products are located on your hardware. JetBrains does not provide hosting for these products and does not have access to any of your data processed with these tools unless you actively decide to share this data with JetBrains. Please note that some on-premises products have certain plugins or extensions you might install and communicate with JetBrains servers. Please read the documentation for more information before installing and using such extensions and plugins.
+If you use a service hosted by JetBrains or share certain personal data through a support request, JetBrains may process the data with the help of the following third-party providers and affiliates. JetBrains considers these entities to be possible sub-processors of customers’ personal data in terms of the GDPR, and JetBrains maintains data processing agreements with them. This ensures adequate levels of data protection consistent with JetBrains’ obligations to its customers. JetBrains will inform customers about the changes of these sub-processors in accordance with the applicable data processing agreement.
+1. Third-Party Hosting Providers
+When JetBrains offers services that it hosts, the following third parties are used as hosting sub-providers:
+Product Name
+Third-Party Provider
+Data Center Location
+Code With Me*/Remote Development/Fleet
+Google Cloud
+EMEA Limited (Ireland)
+Ireland (EU)
+Datalore (Community, Professional)*
+Amazon Web Services
+EMEA SARL (Luxembourg)
+Ireland (EU)
+License Vault
+Amazon Web Services
+EMEA SARL (Luxembourg)
+Ireland (EU)
+Space
+Amazon Web Services
+EMEA SARL (Luxembourg)
+Ireland (EU)
+TeamCity Cloud*
+Amazon Web Services
+EMEA SARL (Luxembourg)
+Ireland (EU)
+YouTrack Cloud*
+Amazon Web Services
+EMEA SARL (Luxembourg)
+When you confirm the creation of a new instance, you choose the location where JetBrains stores your data from a list of available data centers. YouTrack Cloud instances can be stored in the following data center locations: US West (N. California), EU (Ireland or Frankfurt), Asia Pacific (Singapore).
+Qodana
+Amazon Web Services
+EMEA SARL (Luxembourg)
+Ireland (EU)
+IDE Services Cloud*
+Amazon Web Services
+EMEA SARL (Luxembourg)
+Ireland (EU)
+On-premises versions of products (personal data related to licenses)
+Amazon Web Services
+EMEA SARL (Luxembourg)
+Ireland (EU)
+\
+Code With Me, Datalore, TeamCity, License Vault, Space, IDE Services, and YouTrack are also available in on-premises versions installed on the customer’s infrastructure. This is an option for customers who prefer not to have their data hosted by third parties. Please contact the JetBrains Sales team for more information.*
+For communication with customers, JetBrains uses the following providers, which may also process certain customer data made available by customers as part of their communication:
+Service
+Third-Party Provider
+Data Center Location
+Support ticket system
+Zendesk, Inc. (U.S.)
+Germany (EU)
+Internal support systems
+Amazon Web Services
+EMEA SARL (Luxembourg)
+Ireland (EU)
+Internal support systems
+Google Cloud
+EMEA Limited (Ireland)
+Finland (EU)
+Technical support services
+JUST AFTER MIDNIGHT LIMITED
+UK
+Customer relationship management
+SalesForce, Inc.
+(U.S.)
+Germany (EU)
+2. Affiliates Engaged in JetBrains’ Services
+When customers request services that include personal data processing, JetBrains may engage its affiliates to provide such a service and make the personal data available to them as necessary to provide the services as described
+here
+.
+3. Product-Specific Providers
+For certain product features, JetBrains uses the following providers:
+Product Name
+Service
+Third-Party Provider
+Data Center Location
+Air
+Unified API for third-party SDLC tool integrations
+Merge API Inc.
+(U.S.)
+EU
+Air
+Product analytics, telemetry, session replay, and service improvement analytics
+Amplitude Inc. (U.S)
+EU
+Databao
+Product analytics and usage telemetry services
+PostHog Cloud EU
+EU
+Junie CLI
+Error reporting, crash diagnostics, and service reliability monitoring
+Sentry / Functional Software, Inc.
+US
+B. Third Parties Supporting JetBrains Internal Processes (Other Recipients)
+When JetBrains processes data for internal purposes as a data controller, other JetBrains affiliates listed
+here
+may have access to the data as needed. Additionally, JetBrains uses additional providers that do not have access to customer content processed as part of JetBrains’ services, but that can receive certain personal data relating to, for example, individual customers, contact details of corporate customers’ employees, or other representatives, users of products or services, visitors to JetBrains’ websites or premises, or other individuals.
+1. Essential Processors
+These providers are engaged by JetBrains for the processing of data necessary for our products or services to work, for our communication with customers or users, or further internal operations, and include, but are not limited to:
+• Providers of hosting for JetBrains’ internal applications, productivity tools, automation and integration platforms, partner management platforms, and email and file storage providers, such as
+Amazon AWS
+,
+Microsoft Azure
+,
+Slack
+,
+Glean
+,
+Hubspot
+,
+Workato
+,
+WorkSpan
+or
+Google Cloud Platform
+;
+• Providers of data integration and streaming services for internal business systems, such as
+Confluent Cloud
+;
+• Providers of messaging services, such as
+Marketo
+;
+• Providers of authentication services, such as
+Google
+,
+GitHub
+,
+GitLab
+, or
+BitBucket
+;
+• Payment services providers, such as
+Adyen
+or
+Braintree
+;
+• Providers of billing, accounting, and taxation platforms, such as
+NetSuite
+,
+Avalara
+, or
+Taxamo
+;
+• Analytics providers, such as
+Google
+(Google Analytics, Google Tag Manager, and Google DoubleClick) for analytics on our websites and products,
+HotJar
+for analytics on our websites, or
+Bugsnag
+for analytics in our mobile apps.
+2. Optional Processors
+Optional processors are used for certain types of processing with which you expressly agree or otherwise consent to, for instance, when you interact with JetBrains’ social media profiles or complete an optional survey. Optional processors include, but are not limited to:
+• Customer quizzes or surveys, such as
+Alchemer
+,
+QuickTapSurvey
+, or
+HotJar
+;
+• Hosting webinars, such as
+Goldcast
+;
+• Third-party functionalities that process personal data on our websites (analytics, search bars, etc.), such as
+Google
+(Google Analytics, Google Tag Manager),
+HotJar
+,
+Algolia
+,
+New Relic
+, or
+Amplitude
+for website and cross-domain journey analytics.
+• Providing demos or other types of communication through our
+consulting partners,
+The providers and entities in Section B process the data on behalf of JetBrains as a controller and are engaged by JetBrains as described in the
+Privacy Notice
+. JetBrains does not sell your data to any third party.
+C. AI and LLM services
+JetBrains AI features are hosted services based on large, connected language models operated either by JetBrains or by third parties.
+A list of large language models connected to JetBrains AI and third parties operating these models is available at JetBrains AI Service Providers and can be updated at any time by publishing a new list.
+JetBrains may also engage AI inference intermediaries and optimization providers, which process customer prompts and outputs strictly on JetBrains’ instructions and route requests to JetBrains-selected language model providers solely for the purpose of generating outputs or making suggestions.
+If you input any personal data into AI services, JetBrains is the data processor, and the service providers are data sub-processors. JetBrains only uses providers that offer adequate processing and protection of your personal data. For more details, please see the
+JetBrains AI Terms of Service
+.
+AI service providers used by JetBrains AI services
+JetBrains AI services use the following third-party AI service providers and subcontractors. Depending on the JetBrains AI version you use, your inputs and personal data may be shared with the listed AI subprocessors.
+Third-PartyProvider
+Data Center Location
+OpenAI
+US
+Google
+EU, US, and Asia
+Anthropic
+US
+xAI
+US
+Baseten
+US, UK
+Tavily
+US
+Nebius
+France, Spain, US
+Contact us
+If you have any questions or concerns, please email
+privacy@jetbrains.com
+.
+Download:
+Microsoft Word
+(.docx)
+PDF Document
+(.pdf)
+Help
+Licensing FAQs
+Purchase Terms
+Contact Sales

@@ -1,0 +1,75 @@
+Bring Your Own Cluster (BYOC) lets Enterprise customers run Fireworks inference inside their own Kubernetes cluster. Your inference compute runs in your cloud account or data center boundary, while Fireworks installs and operates the serving stack for you.
+Bring Your Own Cluster is in Private Preview for Enterprise customers.
+Contact us
+to discuss whether BYOC is a fit and to participate in the preview.
+​
+What BYOC provides
+With BYOC, Fireworks deploys the managed serving software stack into Kubernetes infrastructure that you own. Fireworks operates model deployment, performance optimization, autoscaling, GPU node health and reliability, load balancing and routing, and observability for the cluster.
+You continue using the Fireworks product surface: the same APIs, SDKs, model deployment workflows, and performance work available across the Fireworks platform. The main difference is where inference runs: the model serving workload runs in your environment instead of Fireworks-managed cloud infrastructure.
+Architecture diagram coming soon. During Private Preview, Fireworks reviews the exact deployment architecture, networking boundaries, and request flow with each customer during onboarding.
+​
+Why choose BYOC
+BYOC is designed for organizations that need more control over where inference runs without taking on the operational burden of self-hosting raw open-source serving infrastructure.
+Common reasons to consider BYOC include:
+Data residency and compliance:
+Inference request and response handling runs within your Kubernetes environment, aligned to your cloud account, data center, and network requirements.
+Existing GPU capacity:
+Use GPU capacity you already own or procure in your preferred cloud or data center environment.
+Network boundary control:
+Keep inference workloads inside your cloud account or data center network architecture.
+Managed Fireworks experience:
+Fireworks runs the serving stack, applies performance optimizations, manages model deployment, and operates the cluster day to day.
+Consistent developer interface:
+Use Fireworks APIs and SDKs across serverless, dedicated Fireworks-hosted deployments, and BYOC deployments.
+​
+When BYOC fits
+BYOC is usually a fit when you need Fireworks-managed inference but have requirements that place compute or data in your own environment:
+You have data residency, compliance, or internal policy requirements for inference traffic.
+You want Fireworks to operate model serving on GPU capacity in your cloud account or data center.
+You need the same Fireworks API and managed operations model across multiple deployment environments.
+You are an Enterprise customer planning a production deployment with Fireworks support.
+For workloads where Fireworks-managed infrastructure already satisfies your compliance and operational needs, serverless or dedicated deployments on Fireworks cloud may be simpler to start with.
+​
+Benefits of Fireworks-managed operations
+BYOC is not a raw self-hosting kit. Fireworks brings the managed serving experience to infrastructure you own, so your team can focus on applications instead of rebuilding model serving operations.
+Inference performance focus
+Fireworks continuously optimizes serving performance across model configuration, deployment shape, scheduling, quantization, speculative decoding, and workload-specific tuning such as FireOptimizer where enabled.
+Managed operations and upgrades
+Fireworks handles serving-stack installation, rollout, maintenance, upgrades, and day-to-day operations so your team does not have to rebuild a self-hosted inference platform.
+GPU reliability operations
+Fireworks monitors GPU and node health, detects unhealthy capacity, and safely remediates issues to reduce the operational burden of running inference on large GPU fleets.
+Current models and GPU generations
+Fireworks tracks new model releases and new GPU generations, including day-0 enablement for supported models and kernel-level optimizations for supported hardware, so your BYOC environment can adopt supported updates without your team rebuilding the serving stack.
+​
+Hybrid BYOC and Fireworks-managed capacity
+Some Enterprise customers want BYOC for their primary environment, but still want the option to use Fireworks-managed capacity for specific workloads or traffic spikes. During Private Preview, Fireworks can review hybrid BYOC patterns with your team, including overflow scheduling onto Fireworks-managed capacity when elected during onboarding and supported for the workload.
+Hybrid operation can help when:
+Traffic occasionally exceeds the GPU capacity available in your cluster
+You want a fallback path while customer-owned GPU capacity is being expanded or remediated
+Some workloads can run outside the BYOC environment while others must remain within your network boundary
+Your team wants a consistent Fireworks API surface across BYOC and Fireworks-managed deployments
+Hybrid BYOC is optional and must be reviewed during onboarding. Fireworks works with your team to confirm routing behavior, workload eligibility, data handling expectations, and any compliance constraints before enabling overflow onto Fireworks-managed capacity.
+​
+Known gaps during Private Preview
+Training is not supported in BYOC during Private Preview. If you need training and BYOC together,
+contact us
+so the team can review your requirements and roadmap fit.
+​
+Supported environments
+Fireworks supports BYOC on major cloud providers and their managed Kubernetes offerings, select GPU cloud providers, and on-premises environments that provide a reachable Kubernetes endpoint, supported NVIDIA GPU nodes, and the required network setup. During preview onboarding, Fireworks confirms whether your target environment, GPU capacity, and networking model are supported.
+At a high level, BYOC requires:
+A Kubernetes cluster with NVIDIA GPU nodes
+Outbound network access that allows Fireworks to manage the cluster
+A deployment and support plan agreed with Fireworks during Enterprise onboarding
+​
+Next steps
+If BYOC may be a fit,
+contact us
+to review your requirements and preview eligibility.
+How setup works
+Understand prerequisites, setup access, installation, and validation.
+Operational model
+Learn how Fireworks operates BYOC clusters after onboarding.
+Was this page helpful?
+⌘
+I

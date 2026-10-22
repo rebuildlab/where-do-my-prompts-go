@@ -1,0 +1,73 @@
+Hybrid & Multicloud
+Run Gemini anywhere, including on-premises, with Google Distributed Cloud
+August 28, 2025
+Vithal Shirodkar
+VP/GM, Google Distributed Cloud
+Try Gemini today
+The front door to AI in the workplace
+Try now
+Earlier this year, we announced our commitment to bring
+Gemini to on-premises environments
+with
+Google Distributed Cloud (GDC
+). Today, we are excited to announce that Gemini on GDC is now available to customers.
+For years, enterprises and governments with the strictest data security and sovereignty requirements have faced a difficult choice: adopt modern AI or protect their data. Today, that compromise ends. We are announcing the general availability of Gemini on GDC air-gapped and preview of Gemini on GDC connected, bringing Google's most advanced models directly into your data center.
+We are inspired by initial feedback from customers, including Singapore’s Centre for Strategic Infocomm Technologies (CSIT), Government Technology Agency of Singapore (GovTech Singapore), Home Team Science and Technology Agency (HTX), KDDI, and Liquid C2, who are excited to gain the advantages of generative AI with Gemini on GDC.
+Transformative AI capabilities, on-premises
+Gemini models offer groundbreaking capabilities, from processing extensive context to native multimodal understanding of text, images, audio, and video. This unlocks a wide array of high-impact use cases on secure infrastructure:
+Unlock new markets and global collaboration:
+Instantly break down language barriers across your international operations, creating a more connected and efficient global workforce.
+Accelerate decision-making:
+Make faster, data-driven decisions by using AI to automatically summarize documents, analyze sentiment, and extract insights from your proprietary datasets.
+Improve employee efficiency and customer satisfaction:
+Deliver instant, 24/7 support and enhance user satisfaction by developing intelligent chatbots and virtual assistants for customers and employees.
+Increase development velocity:
+Ship higher-quality software faster by using Gemini for automated code generation, intelligent code completion, and proactive bug detection.
+Strengthen safety & compliance
+: Protect your users with AI-powered safety tools that automatically filter harmful content and ensure adherence to industry policies.
+Try Google Cloud for free
+Start building with $300 in free credits for new customers. All customers get free usage of 20+ products, up to monthly limits.
+Get started for free
+Secure AI infrastructure where you need it
+It takes more than just a model to drive business value with generative AI; you need a complete platform that includes scalable AI infrastructure, a library with the latest foundational models, high-performance inferencing services, and pre-built AI agents like Agentspace search. GDC provides all that and more with an end-to-end AI stack combining our latest-generation AI infrastructure with the power of Gemini models to accelerate and enhance all your AI workloads.
+Delivering these transformative capabilities securely requires a complete, end-to-end platform that only Google is providing today :
+Performance at scale
+: GDC utilizes the latest NVIDIA GPU accelerators, including the NVIDIA Hopper and Blackwell GPUs. A fully managed Gemini endpoint is available within a customer or partner data center, featuring a seamless, zero-touch update experience. High performance and availability are maintained through automatic load balancing and auto-scaling of the Gemini endpoint, which is handled by our L7 load balancer and advanced fleet management capabilities.
+Foundation of security and control:
+Security is a core component of our solution, with audit logging and access control capabilities that provide full transparency for customers. This allows them to monitor all data traffic in and out of their on-premises AI environment and meet strict compliance requirements. The platform also features Confidential Computing support for both CPUs (with Intel TDX) and GPUs (with NVIDIA's confidential computing) to secure sensitive data and prevent tampering or exfiltration.
+Flexibility and speed for your AI strategy:
+the platform supports a variety of industry-leading models including Gemini 2.5 Flash and Pro, Vertex AI task-specific models (translation, optical character recognition, speech-to-text, and embeddings generation), and Google’s open-source Gemma models. GDC also provides managed VM shapes (A3 & A4 VMs) and Kubernetes clusters giving customers the ability to deploy any open-source or custom AI model, and custom AI workloads of their choice. This is complemented by Vertex AI services that provide an end-to-end AI platform including a managed serving engine, data connectors, and pre-built agents like Agentspace search (in preview) for a unified search experience across on-premises data.
+What our customers are saying
+“As a key GDC collaboration partner in shaping the GDC air-gapped product roadmap and validating the deployment solutions, we’re delighted that this pioneering role has helped us grow our cutting-edge capabilities and establish a proven deployment blueprint that will benefit other agencies with similar requirements. This is only possible with the deep, strategic collaboration between CSIT and Google Cloud. We’re also excited about the availability of Gemini on GDC, and we look forward to building on our partnership to develop and deploy agentic AI applications for our national security mission.”
+- Loh Chee Kin, Deputy Chief Executive, Centre for Strategic Infocomm Technologies (CSIT)
+“One of our priorities is to harness the potential of AI while ensuring that our systems and the services citizens and businesses rely on remain secure. Google Cloud has demonstrated a strong commitment to supporting the public sector with initiatives that enable the agile and responsible adoption of AI. We look forward to working more closely with Google Cloud to deliver technology for the public good.” -
+Goh Wei Boon, Chief Executive, Government Technology Agency of Singapore
+“The ability to deploy Gemini on Google Distributed Cloud will allow us to bridge the gap between our on-premises data and the latest advancements in AI. Google Distributed Cloud gives us a secure, managed platform to innovate with AI, without compromising our strict data residency and compliance requirements.
+”
+- Ang Chee Wee, Chief AI Officer, Home Team Science & Technology Agency (HTX)
+“The partnership with Google Cloud and the integration of Google's leading Gemini models will bring cutting-edge AI capabilities, meet specific performance requirements, address data locality and regulatory needs of Japanese businesses and consumers.”
+-
+Toru Maruta, Executive Officer, Head of Advancing Business Platform Division, KDDI
+"Data security and sovereignty are paramount for our customers. With Gemini on Google Distributed Cloud, our Liquid Cloud and Cyber Security solution would deliver strategic value to ensure our customers in highly regulated industries can harness the power of AI while keeping their most valuable data under their control."
+- Oswald Jumira, CEO Liquid C2
+Gemini everywhere is here
+The era of on-premises AI without compromise is here. To bring the power of Gemini to your on-premises environment,
+request a strategy session with our experts
+.
+Posted in
+Hybrid & Multicloud
+AI & Machine Learning
+Infrastructure Modernization
+Related articles
+Hybrid & Multicloud
+Enabling the next era of sovereign AI: The latest Google Distributed Cloud innovations
+By Muninder Sambi • 4-minute read
+Hybrid & Multicloud
+Managed RAG search inside the sovereign perimeter: Gemini on GDC enterprise search
+By Rohan Grover • 4-minute read
+Databases
+Spanner Omni, now GA: A distributed, multi-model database that you can deploy anywhere
+By Jagan R. Athreya • 5-minute read
+Networking
+How Uber improves network reliability while unblocking cloud migration
+By Jean He • 6-minute read

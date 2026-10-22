@@ -1,0 +1,63 @@
+Back to changelog
+We are pleased to announce that our most recent SOC reports (1, 2, and 3) are available now and include
+GitHub Enterprise Cloud
+for github.com with all new regions like the
+EU
+, as well as
+Copilot Business and Enterprise
+. These reports are applicable for the 6-month period April 1, 2024 to September 30, 2024 and are available on the
+GitHub Enterprise Trust Center
+for our customers.
+This represents a significant milestone for GitHub and our customers for multiple reasons:
+– Copilot Business and Enterprise are now gaining coverage of control operating effectiveness over the period represented by a Type II report (as opposed to the point-in-time reports represented by the previous Type I reports issued Spring 2024)
+– Coverage for Enterprises hosted in either dotcom or the newly launched EU region.
+– Future regions launched for GitHub Enterprise Cloud will also be compliant.
+These efforts and the culminating SOC 2 Type II reports represent GitHub’s ongoing commitment to provide secure products to our customers, which continues to provide developers the assurance to build software better, together.
+Looking forward, bridge letters will be coming mid-January 2025 for the gap period representing October through December 2024. Additionally, the next round of SOC reports covering October 1, 2024 to March 31, 2025 will be available to customers in June 2025.
+Related Posts
+Oct.13
+Improvement
+GitHub App improvements for least privilege and management
+enterprise management tools
+platform governance
+Oct.13
+Improvement
+Audit GitHub Code Quality finding dismissals and reopenings
+application security
+platform governance
+Oct.12
+Release
+Push attribution for commits in limited public preview
+application security
+platform governance
+Oct.07
+Release
+Local sandboxing for GitHub Copilot now generally available
+application security
+copilot
+platform governance
+Sep.29
+Release
+Bring business context with external custom properties
+platform governance
+Sep.15
+Release
+GitHub Copilot suggests custom properties definitions
+copilot
+platform governance
+Sep.09
+Improvement
+Block pull requests with exposed secrets from merging
+application security
+platform governance
+Aug.25
+Improvement
+Rule insights dashboard generally available
+platform governance
+Aug.25
+Improvement
+Push rules in rulesets now support path exceptions
+platform governance
+Subscribe to our developer newsletter
+Discover tips, technical guides, and best practices in our biweekly newsletter just for devs.
+Back to top

@@ -1,0 +1,429 @@
+Skip to content
+Introducing North 2: AI without compromises
+Learn more about the updates
+Products
+Products
+Solutions
+Solutions
+Resources
+Resources
+Blog
+Blog
+Research
+Research
+Company
+Company
+Sign in
+Request a demo
+Platform
+North
+Enterprise-ready AI for business
+Compass
+Intelligent search and discovery
+Models
+Command
+Generative language models
+Transcribe
+New
+Speech recognition model
+North Small Translate
+NEW
+Machine translation model
+Parse
+New
+Document parsing model
+Embed
+Semantic representation model
+Rerank
+Retrieval optimization model
+Models Overview
+Product
+Products Overview
+Total Cost of AI Ownership
+Pricing
+Featured
+North 2: Cohere's latest platform update — with 15+ new
+features
+Deploy
+Model Vault
+Dedicated model inference platform
+Private Deployments
+On-prem or isolated VPCs
+Security
+Protect your data at every stage
+See deployment options
+By Industry
+Financial Services
+Public Sector
+Technology
+Telecommunications
+Energy and Utilities
+Healthcare
+Manufacturing
+Featured
+Model Vault provides fully-isolated, performant inference with Saas
+simplicity
+Insights
+Customer Stories
+For Developers
+Developers
+Models Overview
+Docs
+Discord
+LLM University
+Connect
+Partners
+Events
+Webinars
+Merch Store
+Featured
+How CoreWeave used Cohere North to transform its customer support in 90
+days
+Blog
+The latest news, launches, and insights
+Read more
+Cohere to acquire AISLE to advance cyber-resilient sovereign
+AI
+North 2: Enterprise AI without
+compromises
+Introducing Embed 5—A new family of frontier embedding
+models
+Research
+Cohere Labs
+Cohere’s ML research lab
+Explorations
+Future(s) of Work
+How will AI change the way we work?
+Aya Models
+Multilingual AI at scale
+All Papers
+Initiatives
+Research Scholars
+Finding the new generation of ML talent
+Open Science Community
+Championing global, open science
+Catalyst Grants
+Supporting impactful ML endeavors
+Resources
+Blog
+Hugging Face
+Events
+Featured
+The future of work debate has an evidence
+problem
+About
+Careers
+Newsroom
+Products
+Solutions
+Resources
+Blog
+Research
+Company
+Sign in
+Request a demo
+Platform
+North
+Enterprise-ready AI for business
+Compass
+Intelligent search and discovery
+Models
+Command
+Generative language models
+Transcribe
+New
+Speech recognition model
+North Small Translate
+NEW
+Machine translation model
+Parse
+New
+Document parsing model
+Embed
+Semantic representation model
+Rerank
+Retrieval optimization model
+Models Overview
+Product
+Products Overview
+Total Cost of AI Ownership
+Pricing
+Featured
+North 2: Cohere's latest platform update — with 15+ new
+features
+Deploy
+Model Vault
+Dedicated model inference platform
+Private Deployments
+On-prem or isolated VPCs
+Security
+Protect your data at every stage
+See deployment options
+By Industry
+Financial Services
+Public Sector
+Technology
+Telecommunications
+Energy and Utilities
+Healthcare
+Manufacturing
+Featured
+Model Vault provides fully-isolated, performant inference with Saas
+simplicity
+Insights
+Customer Stories
+For Developers
+Developers
+Models Overview
+Docs
+Discord
+LLM University
+Connect
+Partners
+Events
+Webinars
+Merch Store
+Featured
+How CoreWeave used Cohere North to transform its customer support in 90
+days
+Blog
+The latest news, launches, and insights
+Read more
+Cohere to acquire AISLE to advance cyber-resilient sovereign
+AI
+North 2: Enterprise AI without
+compromises
+Introducing Embed 5—A new family of frontier embedding
+models
+Research
+Cohere Labs
+Cohere’s ML research lab
+Explorations
+Future(s) of Work
+How will AI change the way we work?
+Aya Models
+Multilingual AI at scale
+All Papers
+Initiatives
+Research Scholars
+Finding the new generation of ML talent
+Open Science Community
+Championing global, open science
+Catalyst Grants
+Supporting impactful ML endeavors
+Resources
+Blog
+Hugging Face
+Events
+Featured
+The future of work debate has an evidence
+problem
+About
+Careers
+Newsroom
+Ready to put AI to work?
+Request a demo
+Platforms
+North
+Compass
+Product Overview
+Models
+Command
+Transcribe
+Embed
+Rerank
+Aya
+Parse
+North Small Translate
+Models Overview
+Customization
+Pricing
+Industries
+Financial Services
+Public Sector
+Telecommunications
+Technology
+Energy and Utilities
+Healthcare
+Manufacturing
+Solutions Overview
+Deployment
+Model Vault
+Private Deployments
+Security
+Deployment Options
+Resources
+Blog
+Customer Stories
+Developers
+Documentation
+LLM University
+Help Center
+Connect
+Research
+Partners
+Events
+Webinars
+Company
+About
+Careers
+Newsroom
+Legal
+Legal Center
+Trust Center
+Privacy Policy
+Terms of Use
+Platforms
+North
+Compass
+Product Overview
+Models
+Command
+Transcribe
+Embed
+Rerank
+Aya
+Parse
+North Small Translate
+Models Overview
+Customization
+Pricing
+Industries
+Financial Services
+Public Sector
+Telecommunications
+Technology
+Energy and Utilities
+Healthcare
+Manufacturing
+Solutions Overview
+Deployment
+Model Vault
+Private Deployments
+Security
+Deployment Options
+Resources
+Blog
+Customer Stories
+Developers
+Documentation
+LLM University
+Help Center
+Connect
+Research
+Partners
+Events
+Webinars
+Company
+About
+Careers
+Newsroom
+Legal
+Legal Center
+Trust Center
+Privacy Policy
+Terms of Use
+Platforms
+North
+Compass
+Product Overview
+Models
+Command
+Transcribe
+Embed
+Rerank
+Aya
+Parse
+North Small Translate
+Models Overview
+Customization
+Pricing
+Industries
+Financial Services
+Public Sector
+Telecommunications
+Technology
+Energy and Utilities
+Healthcare
+Manufacturing
+Solutions Overview
+Deployment
+Model Vault
+Private Deployments
+Security
+Deployment Options
+Resources
+Blog
+Customer Stories
+Developers
+Documentation
+LLM University
+Help Center
+Connect
+Research
+Partners
+Events
+Webinars
+Company
+About
+Careers
+Newsroom
+Legal
+Legal Center
+Trust Center
+Privacy Policy
+Terms of Use
+Cohere ©
+2026
+Manage Cookies
+English
+English
+日本語
+한국어
+Français
+Deutsch
+Industry-leading AI security and data protection
+Keep company data protected with enterprise-grade security protocols, robust access controls, and private deployment options.
+Request a demo
+Visit the Trust Center
+Robust protection. Seamless control.
+Multi-layered protection
+Securely deploy AI with the Cohere platform. We use defense in depth and layer security controls to protect your data at every stage.
+Built-in data autonomy
+Maintain full control over your data with customizable handling and retention settings. Opt out of model training at any time — your data stays yours.
+Private deployment options
+Bring our models to your infrastructure for complete data privacy and control. Deploy through your virtual private cloud (VPC), on-premises setup, or dedicated, Cohere-managed Model Vault.
+A secure AI platform, ready to deploy
+North combines built-in security, compliance, and governance with an out-of-the-box experience, so you can move fast without compromise.
+Explore North
+Start instant demo
+Designed for safety and scalability
+Private deployments
+We can bring our products and models to your infrastructure through virtual private cloud (VPC), on-premises deployments or Model Vault
+You can customize your security configurations and controls
+We won’t have access to your computing infrastructure or data
+Third-party cloud deployments
+Our models run on any cloud AI/ML platform, including OCI, Azure, AWS, and Google CP
+You’ll benefit from third-party cloud security standards and certifications
+Secure model development
+We simulate adversarial attacks on our systems to test for vulnerabilities and improve defenses
+We carefully track the lineage of our training data to guard against data poisoning and malicious content
+We evaluate our models against internal and external benchmarks
+The Cohere API
+Our API platform is hosted on industry-leading cloud infrastructure and is SOC 2 Type II compliant
+Our advanced threat detection systems continuously monitor for suspicious activity
+We conduct annual third-party audits and penetration tests to identify and address vulnerabilities
+Reporting security issues
+Have you detected a potential vulnerability in our systems? Let us know and you could get a reward.
+The Cohere Bug Bounty program is designed to recognize the community’s support in protecting our users’ privacy and security.
+To learn more about the program,
+download our Responsible Disclosure Policy
+.
+Helpful resources
+Trust Center
+Enterprise Data Commitments
+Privacy Policy
+Usage Guidelines
+AI Security (eBook)
+Secure AI Frontier Model Framework
+Spotlight on security

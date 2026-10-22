@@ -1,0 +1,31 @@
+​
+What options are available for high compliance concerns?
+Helicone offers several solutions for organizations with strict compliance needs:
+Comprehensive Security Measures:
+Explore our
+Data and Security
+section for details on SOC 2 compliance and other security protocols.
+Data Residency Choices:
+Ensure GDPR compliance by selecting between US and EU data regions.
+Request and Response Privacy:
+Use our
+Omit Logs feature
+to prevent storing request and response bodies in long-term storage.
+Asynchronous Logging:
+Implement our
+async logging solution
+to capture metadata (tokens, latency, time to first token) without storing actual content.
+Self-Hosting Solutions:
+Consider our
+self-hosting options
+to maintain complete control over your data environment.
+Need more help?
+Additional questions or feedback? Reach out to
+help@helicone.ai
+or
+schedule a
+call
+with us.
+Was this page helpful?
+Suggest edits
+Raise issue

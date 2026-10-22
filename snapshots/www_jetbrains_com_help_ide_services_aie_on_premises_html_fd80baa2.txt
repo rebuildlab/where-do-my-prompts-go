@@ -1,0 +1,27 @@
+AI Enterprise in isolated infrastructure
+IDE Services supports the following on-premises solutions for air-gapped operations of AI Enterprise.
+OpenAI Compatible
+AI Enterprise lets you integrate with on-premises OpenAI Compatible LLM servers, such as:
+llama.cpp
+vLLM
+LMStudio
+Follow the corresponding instructions to deploy a server on-premises, then
+connect to it from the IDE Services UI
+.
+These servers give you access to well-known, high-performing models like
+Claude
+and
+GPT
+, as well as some custom models.
+JetBrains Mellum
+Use
+JetBrains Mellum
+for lightweight features and code completion.
+Follow the
+JetBrains Mellum
+instructions to install and configure JetBrains Mellum on-premises.
+In the IDE Services Web UI, set Mellum as the code completion provider
+.
+11 March 2026
+Offline mode
+JetBrains Mellum

@@ -1,0 +1,965 @@
+{
+  "https://ai.google.dev/gemini-api/docs/zdr": {
+    "file": "ai_google_dev_gemini_api_docs_zdr_7982a489.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "fb52142f18cce500236b87100b69cd81c301b44099c68eda6a5481def7170b9c",
+    "vendors": [
+      "gemini-api"
+    ]
+  },
+  "https://ai.google.dev/gemini-api/terms": {
+    "file": "ai_google_dev_gemini_api_terms_11700bdb.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "db5bc0d9476c43a71576401ee5a53e9507afcf111e43cd6b5dee3532a07236c6",
+    "vendors": [
+      "gemini-api"
+    ]
+  },
+  "https://api-docs.deepseek.com/guides/kv_cache": {
+    "file": "api_docs_deepseek_com_guides_kv_cache_b8361014.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "22ad56d2ff0fa2dae8fe87d9958ba1c9648ff256cfeac0aa40ee1b2e01898768",
+    "vendors": [
+      "deepseek"
+    ]
+  },
+  "https://arize.com/docs/phoenix/self-hosting": {
+    "file": "arize_com_docs_phoenix_self_hosting_656fd4c6.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "34b72c80279d62be0d925530a7b10c1d9cc2babe6fcc54a63dd81927eaedc638",
+    "vendors": [
+      "arize"
+    ]
+  },
+  "https://arize.com/pricing/": {
+    "file": "arize_com_pricing_66dab6e2.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "d76b34a2218142df3b1f9120ceaab5f1b046e24ac3e01d5d1f0b2a2ec1d7fe4f",
+    "vendors": [
+      "arize"
+    ]
+  },
+  "https://arize.com/privacy-policy/": {
+    "file": "arize_com_privacy_policy_305199dc.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "8163c5929dd1e344def9e3669a9d74b4d88959e3496631e0586ba72bb353b723",
+    "vendors": [
+      "arize"
+    ]
+  },
+  "https://arize.com/trust-center/": {
+    "file": "arize_com_trust_center_9768e540.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "7099657c9d850c2f1b568772405434eb87255b443132631e6d0ada8e2cde0df4",
+    "vendors": [
+      "arize"
+    ]
+  },
+  "https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html": {
+    "file": "cdn_deepseek_com_policies_en_us_deepseek_open_platform_terms_of_service_html_537bbfde.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "f48bd9185b43027d5f5842710767dcd1c1423d0eafaf624cccc58d5cf5f90885",
+    "vendors": [
+      "deepseek"
+    ]
+  },
+  "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html": {
+    "file": "cdn_deepseek_com_policies_en_us_deepseek_privacy_policy_html_6591ef74.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "cf2faa3a9f3d4612cd2b241872382438f1032b2cf42dfa3731251e0dcbf3c435",
+    "vendors": [
+      "deepseek"
+    ]
+  },
+  "https://cdn.deepseek.com/policies/en-US/model-algorithm-disclosure.html": {
+    "file": "cdn_deepseek_com_policies_en_us_model_algorithm_disclosure_html_165698a5.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "638425c7db26e92a7231b081de3a9f8a1c279e7eaf18bfef4036bb0118bc9e03",
+    "vendors": [
+      "deepseek"
+    ]
+  },
+  "https://cloud.google.com/blog/topics/hybrid-cloud/gemini-is-now-available-anywhere": {
+    "file": "cloud_google_com_blog_topics_hybrid_cloud_gemini_is_now_available_anywhere_443e856c.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "56d1ba50bfa29a9397d7d9cc870b35c60259a5d5884ec5cec8cd3ba68ebe85d5",
+    "vendors": [
+      "gemini-api"
+    ]
+  },
+  "https://code.claude.com/docs/en/data-usage": {
+    "file": "code_claude_com_docs_en_data_usage_2ed824c5.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "4c7885fa9279330bacbcbd61e43c33d104a69ee57f8db9a785d4f20fc6ac00c5",
+    "vendors": [
+      "claude-code"
+    ]
+  },
+  "https://code.claude.com/docs/en/self-hosted-environments": {
+    "file": "code_claude_com_docs_en_self_hosted_environments_cf76048a.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "b802fa0cf497198ba0876b83a282ee333acd604b3ba3c4823199e1ea573ed780",
+    "vendors": [
+      "claude-code"
+    ]
+  },
+  "https://cohere.com/blog/hipaa-business-associate-agreements-for-custom-model-development": {
+    "file": "cohere_com_blog_hipaa_business_associate_agreements_for_custom_model_development_3c4c6938.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "d7480e53d95d804db70ddab6610433fe9b1b64ef18e1d8a1743190414455a0d4",
+    "vendors": [
+      "cohere"
+    ]
+  },
+  "https://cohere.com/data-usage-policy": {
+    "file": "cohere_com_data_usage_policy_1a44d6db.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "de39e38a592680dc36acbe21a26877f43100c66d7edbe44698be66070ab7390a",
+    "vendors": [
+      "cohere"
+    ]
+  },
+  "https://cohere.com/security": {
+    "file": "cohere_com_security_f89a53ab.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "af775419f063a354321d0d2a8723c00a372a5bca11718a87d1a2b99b7d2711c5",
+    "vendors": [
+      "cohere"
+    ]
+  },
+  "https://console.groq.com/docs/legal/customer-business-associate-addendum": {
+    "file": "console_groq_com_docs_legal_customer_business_associate_addendum_34bb7754.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "7638b489376077e7854e8197b8669e19896f2d63fddbe8f71716598ef46b0829",
+    "vendors": [
+      "groq"
+    ]
+  },
+  "https://console.groq.com/docs/legal/customer-data-processing-addendum": {
+    "file": "console_groq_com_docs_legal_customer_data_processing_addendum_8e18dc52.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "fef1afb2ac1cc4b50c66220bb53ef9c6e325b4fc3d2fcf7c03adc65d26b5f4fa",
+    "vendors": [
+      "groq"
+    ]
+  },
+  "https://console.groq.com/docs/legal/services-agreement": {
+    "file": "console_groq_com_docs_legal_services_agreement_27d36aaf.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "1596f5e52ab593e23e647345027b9d59d77efc3014c57b66a3148cd103e6a41e",
+    "vendors": [
+      "groq"
+    ]
+  },
+  "https://console.groq.com/docs/your-data": {
+    "file": "console_groq_com_docs_your_data_371f4297.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "8168f88ca83aa29a8f08ee3ab42defac07a552ea2d845d19116ebedb063595a4",
+    "vendors": [
+      "groq"
+    ]
+  },
+  "https://cursor.com/data-use": {
+    "file": "cursor_com_data_use_01bf409f.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "e95ae21fe52168d589bceac3deb95ddeb7d7dca23447c12a4b275fb510a19a02",
+    "vendors": [
+      "cursor"
+    ]
+  },
+  "https://cursor.com/docs/cloud-agent/self-hosted": {
+    "file": "cursor_com_docs_cloud_agent_self_hosted_bb27e8b8.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "f0348dc5d583a5345ce2d4fdd925d9dbf03cad0670c424e9f2097dc0ef6a740f",
+    "vendors": [
+      "cursor"
+    ]
+  },
+  "https://cursor.com/docs/enterprise/baa": {
+    "file": "cursor_com_docs_enterprise_baa_aff0be55.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "1312bc470a445603a2f979dec54b957b6cf8e9f58f0514b856d0fbff8438c28f",
+    "vendors": [
+      "cursor"
+    ]
+  },
+  "https://cursor.com/docs/enterprise/privacy-and-data-governance": {
+    "file": "cursor_com_docs_enterprise_privacy_and_data_governance_6cb2a4a1.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "4214b6481e1986fba7c266b3c50baa32e9c3a2de687558cf7e34ab5b91de7a54",
+    "vendors": [
+      "cursor"
+    ]
+  },
+  "https://cursor.com/security": {
+    "file": "cursor_com_security_ab8a998f.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "1c7dbd4c8806732bd57a645065a4f96b75ea533b357e7ff34f7fc3eefb1c2f8e",
+    "vendors": [
+      "cursor"
+    ]
+  },
+  "https://developers.google.com/terms": {
+    "file": "developers_google_com_terms_e0804db7.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "d87438cb0227cbb24d56ca3f646f9d16428ef15c4e5e937215f92e6dc40cdcb3",
+    "vendors": [
+      "gemini-api"
+    ]
+  },
+  "https://developers.openai.com/codex/cli/reference": {
+    "file": "developers_openai_com_codex_cli_reference_ebe826bc.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "a2f50978831cf5a475fed7993545a9950e2e76a6708fb2bde704dab59d14d8e7",
+    "vendors": [
+      "openai-codex"
+    ]
+  },
+  "https://developers.openai.com/codex/enterprise": {
+    "file": "developers_openai_com_codex_enterprise_dc57d8da.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "692f9c9ff7ddcb74225e3481ab92c54e8dee4cceb8ce9abfd82a3e10b523e9f2",
+    "vendors": [
+      "openai-codex"
+    ]
+  },
+  "https://developers.openai.com/codex/pricing": {
+    "file": "developers_openai_com_codex_pricing_91566121.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "ec3b07b42c764fe4a5563cc8a54597512a72d7e0ec81f7200489e6e157f79492",
+    "vendors": [
+      "openai-codex"
+    ]
+  },
+  "https://devin.ai/windsurf/msa": {
+    "file": "devin_ai_windsurf_msa_1898d338.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "3a68b0d9500449a3b01c05a320573ab708337b9144ffbd92d38639dd74dc94ac",
+    "vendors": [
+      "windsurf"
+    ]
+  },
+  "https://docs.anthropic.com/en/docs/build-with-claude/data-residency": {
+    "file": "docs_anthropic_com_en_docs_build_with_claude_data_residency_24ca6933.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "7097e4ca5e1d3ef6f1fd06d74b40340b0ff3f40bfe38700d0cd9656f25e16865",
+    "vendors": [
+      "anthropic-api",
+      "claude-code"
+    ]
+  },
+  "https://docs.anthropic.com/en/docs/build-with-claude/zero-data-retention": {
+    "file": "docs_anthropic_com_en_docs_build_with_claude_zero_data_retention_fbfaa208.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "1e86ed89579f9e882bb05c8d6c47135675fa6601e3750d03773a48a76df5681c",
+    "vendors": [
+      "anthropic-api"
+    ]
+  },
+  "https://docs.devin.ai/desktop/controls": {
+    "file": "docs_devin_ai_desktop_controls_534dff9b.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "f6573d59b57a80b8070de8e17e6f082af50f6501b2c446b52c42590c34557a69",
+    "vendors": [
+      "windsurf"
+    ]
+  },
+  "https://docs.fireworks.ai/accounts/data-residency": {
+    "file": "docs_fireworks_ai_accounts_data_residency_1134fe79.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "43e2e38d502afc34c3293ef528d6aaf53cf04148356a65ba425529c8b06500c3",
+    "vendors": [
+      "fireworks-ai"
+    ]
+  },
+  "https://docs.fireworks.ai/ecosystem/integrations/byoc/overview": {
+    "file": "docs_fireworks_ai_ecosystem_integrations_byoc_overview_fcd1f8e4.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "31bce1b9501cb03133894e943f10639df4b26a66dede4c4173314b31bb6ebeb2",
+    "vendors": [
+      "fireworks-ai"
+    ]
+  },
+  "https://docs.fireworks.ai/faq/enterprise/compliance/certifications": {
+    "file": "docs_fireworks_ai_faq_enterprise_compliance_certifications_1c02fd98.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "724d1282b12c703bff12761de97d49923e0126cbd96a71938970e7f6bbf5102c",
+    "vendors": [
+      "fireworks-ai"
+    ]
+  },
+  "https://docs.fireworks.ai/guides/security_compliance/data_handling": {
+    "file": "docs_fireworks_ai_guides_security_compliance_data_handling_c95939fb.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "1a448db9e8f1cce072cb5eaada17ea05509e4be0da2dcc1ac30b314ec753e7fe",
+    "vendors": [
+      "fireworks-ai"
+    ]
+  },
+  "https://docs.github.com/en/copilot/reference/ai-models/model-hosting": {
+    "file": "docs_github_com_en_copilot_reference_ai_models_model_hosting_f2c245aa.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "6b84a2523f9d309f080571f0808470c7a3938b5b4d1d3ad95ad021baee6cf54b",
+    "vendors": [
+      "github-copilot"
+    ]
+  },
+  "https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/about-github-enterprise-cloud-with-data-residency": {
+    "file": "docs_github_com_en_enterprise_cloud_latest_admin_data_residency_about_github_ent_68c25729.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "9f033c27f265ce05d5d8ea6da9e9844d66b6285b43c44f945854af9819556063",
+    "vendors": [
+      "github-copilot"
+    ]
+  },
+  "https://docs.github.com/en/enterprise-server@3.22/copilot/copilot-on-ghes/about-copilot-on-ghes": {
+    "file": "docs_github_com_en_enterprise_server_3_22_copilot_copilot_on_ghes_about_copilot__4e2a1dd0.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "ad044049477cb0f5216874bf1c4c319ea83226aea976d20b05d99f12d4c8f223",
+    "vendors": [
+      "github-copilot"
+    ]
+  },
+  "https://docs.helicone.ai/faq/compliance": {
+    "file": "docs_helicone_ai_faq_compliance_53a8b153.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "ae6ad628f06cbb290a7b2e053e1f4f1023baa6897c68acf8aa5d4b4ab9a5d3fe",
+    "vendors": [
+      "helicone"
+    ]
+  },
+  "https://docs.helicone.ai/getting-started/self-host/overview": {
+    "file": "docs_helicone_ai_getting_started_self_host_overview_c5223511.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "d3b2f6929ff8b45c09ba6feb445e5e599fe6113854481925584dcc234aa11d32",
+    "vendors": [
+      "helicone"
+    ]
+  },
+  "https://docs.helicone.ai/references/data-autonomy": {
+    "file": "docs_helicone_ai_references_data_autonomy_05a74b36.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "d944c0ef2eb1fc29fe05b94a7cab62b3bde0db4821f6156b296a605ff6530634",
+    "vendors": [
+      "helicone"
+    ]
+  },
+  "https://docs.langchain.com/langsmith/cloud": {
+    "file": "docs_langchain_com_langsmith_cloud_cec61318.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "eb4ab75c54105ccbc32f83d32bafe16c2b6cb3cb2a404f2e4a59800c0e718d27",
+    "vendors": [
+      "langsmith"
+    ]
+  },
+  "https://docs.langchain.com/langsmith/regions-faq": {
+    "file": "docs_langchain_com_langsmith_regions_faq_b91f9c70.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "97e88b1bf06e7dd1b6daf5bbc8b581b7a4661af14d21aa94c6f8947e0da08932",
+    "vendors": [
+      "langsmith"
+    ]
+  },
+  "https://docs.langchain.com/langsmith/self-hosted": {
+    "file": "docs_langchain_com_langsmith_self_hosted_59b90cde.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "4bd5599452474d2e1be978520a434e8f4b92cbca83c963be31203dc6bf1407e9",
+    "vendors": [
+      "langsmith"
+    ]
+  },
+  "https://docs.mistral.ai/deployment/self-deployment": {
+    "file": "docs_mistral_ai_deployment_self_deployment_82078148.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "d9baf9ad32279fd393a6e999c58d7bcc2603c81cda14ac7cd498d44a8fb07d25",
+    "vendors": [
+      "mistral"
+    ]
+  },
+  "https://docs.ollama.com/cloud": {
+    "file": "docs_ollama_com_cloud_8ca47722.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "0a2664d32d6033e782f197a106d3301b3190f47435a55d3cd4563753f5b09488",
+    "vendors": [
+      "ollama-cloud"
+    ]
+  },
+  "https://docs.smith.langchain.com/administration/concepts": {
+    "file": "docs_smith_langchain_com_administration_concepts_3b41c82f.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "3027d4f6ba06e0a45ce01ebd84489a90b9e35a96a5ed3c88986bb08d03da44ad",
+    "vendors": [
+      "langsmith"
+    ]
+  },
+  "https://docs.together.ai/docs/zero-data-retention": {
+    "file": "docs_together_ai_docs_zero_data_retention_27e724e1.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "7e4e1ec1ee01dd6dca6ad5fb5a49de3396355a6ef7caae7f9d6e2b46688bd99e",
+    "vendors": [
+      "together-ai"
+    ]
+  },
+  "https://docs.windsurf.com/windsurf/security": {
+    "file": "docs_windsurf_com_windsurf_security_a6231a2f.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "7f547a7db7acd6624fdb88932726777c1cd1d3c12332c518709d98dc7fb1464a",
+    "vendors": [
+      "windsurf"
+    ]
+  },
+  "https://docs.x.ai/console/faq/security": {
+    "file": "docs_x_ai_console_faq_security_9e7f01be.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "a09cfb778b179b3b25d35593fd9016bd52192bdd7e0a6fa38b1f52797c866253",
+    "vendors": [
+      "xai"
+    ]
+  },
+  "https://docs.x.ai/docs/key-information/regions": {
+    "file": "docs_x_ai_docs_key_information_regions_eb5faf67.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "5dd2c80284694d1b203f879091dfbd77337b8db1089e06696c20e5d6d69593a2",
+    "vendors": [
+      "xai"
+    ]
+  },
+  "https://fireworks.ai/privacy-policy": {
+    "file": "fireworks_ai_privacy_policy_24cba4dd.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "99517d9a958f2dabba06e69b05e21ff4c1ba9ff15b124c397ce3eea7e1a420ac",
+    "vendors": [
+      "fireworks-ai"
+    ]
+  },
+  "https://github.blog/changelog/2024-12-06-the-latest-github-and-github-copilot-soc-reports-are-now-available/": {
+    "file": "github_blog_changelog_2024_12_06_the_latest_github_and_github_copilot_soc_report_b0fff6b4.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "1b1c737521f0d16a137f8d310a8fe11e8b05e8793af7c51fb1dc3642cd19b30b",
+    "vendors": [
+      "github-copilot"
+    ]
+  },
+  "https://github.com/features/copilot": {
+    "file": "github_com_features_copilot_ec57d26d.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "6465123037ca814c40579ab7e3c47d1b61fc0223d1e0347ea06f56e7282e5299",
+    "vendors": [
+      "github-copilot"
+    ]
+  },
+  "https://groq.com/security": {
+    "file": "groq_com_security_e7aafd4a.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "f156e22b288068405945bca4a413460d4f0aa6b3d4fb9d6cf23a6131ac1a6550",
+    "vendors": [
+      "groq"
+    ]
+  },
+  "https://help.mistral.ai/en/articles/347612-can-i-activate-zero-data-retention-zdr": {
+    "file": "help_mistral_ai_en_articles_347612_can_i_activate_zero_data_retention_zdr_1a3e324e.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "d24c8a7b99ba44f4ac34cef64a174c50c6c9847a93d5d22945a50d5936b20e53",
+    "vendors": [
+      "mistral"
+    ]
+  },
+  "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models": {
+    "file": "help_mistral_ai_en_articles_347617_do_you_use_my_user_data_to_train_your_artific_13048cf7.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "c880523cac6450ec13c81e85d43a1efd3cdaadc2d04b6c03356ab1533a771a78",
+    "vendors": [
+      "mistral"
+    ]
+  },
+  "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data": {
+    "file": "help_mistral_ai_en_articles_347629_where_do_you_store_my_data_or_my_organization_2f805101.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "28dc2691a0491bed54edd81e8c0211e1721f116ab6e6307a63096191053715d6",
+    "vendors": [
+      "mistral"
+    ]
+  },
+  "https://help.mistral.ai/en/articles/347638-do-you-have-soc-2-or-iso-27001-certification": {
+    "file": "help_mistral_ai_en_articles_347638_do_you_have_soc_2_or_iso_27001_certification_ffa1613e.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "ba58fa487bbfeebb020c9643b1d349a58e6dabb1d51d9f44746f4dca9d5c82a3",
+    "vendors": [
+      "mistral"
+    ]
+  },
+  "https://huggingface.co/deepseek-ai": {
+    "file": "huggingface_co_deepseek_ai_a544e39d.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "7cfdb654f546cc1e01a903f4cd3fa93f0aab631fe6cc18da673b33cedb9419a5",
+    "vendors": [
+      "deepseek"
+    ]
+  },
+  "https://huggingface.co/xai-org/grok-2": {
+    "file": "huggingface_co_xai_org_grok_2_4ebd8248.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "2d631a0cb5f23657171ef2819bcd521bc9c5625ac57e4aaeda129113354d0189",
+    "vendors": [
+      "xai"
+    ]
+  },
+  "https://langfuse.com/docs/data-retention": {
+    "file": "langfuse_com_docs_data_retention_be5e9d24.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "6768e69b1fc21de906851f63110608bb664d7f7d484dadcc7b3ab5e4b8d66dfe",
+    "vendors": [
+      "langfuse"
+    ]
+  },
+  "https://langfuse.com/security": {
+    "file": "langfuse_com_security_89b00596.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "589e3a89f0c328667d6695d9468d85efcdd49096660fbb1eadfa88139f477a37",
+    "vendors": [
+      "langfuse"
+    ]
+  },
+  "https://langfuse.com/security/data-regions": {
+    "file": "langfuse_com_security_data_regions_eb737ac9.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "176530d3049f25962c048b7b4c73b99969204f590cb1b59c203cde64ec156d29",
+    "vendors": [
+      "langfuse"
+    ]
+  },
+  "https://langfuse.com/security/hipaa": {
+    "file": "langfuse_com_security_hipaa_6189f807.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "d1ee0232a0a31f6dffffbe2d072e2ee7ac0755e67647f958426c9811b05224a3",
+    "vendors": [
+      "langfuse"
+    ]
+  },
+  "https://langfuse.com/security/privacy-faq": {
+    "file": "langfuse_com_security_privacy_faq_c139a89f.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "c94309b0527fd732a2383f5c8f2912f5d75b19e3b59072edee9979ad054429d7",
+    "vendors": [
+      "langfuse"
+    ]
+  },
+  "https://langfuse.com/self-hosting": {
+    "file": "langfuse_com_self_hosting_487a2dc4.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "46f19f4b88e55c6bc8d8416b5b8fec7221565036ac26aeb4c777286c4ae79d04",
+    "vendors": [
+      "langfuse"
+    ]
+  },
+  "https://learn.chatgpt.com/docs/hipaa-configuration": {
+    "file": "learn_chatgpt_com_docs_hipaa_configuration_1fe7d55e.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "b350c69b2a1fe3de6dea3a47ca5339a6e7fbb4364e74e3fcc36eb0f742cd2ed8",
+    "vendors": [
+      "openai-codex"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/openai/data-privacy": {
+    "file": "learn_microsoft_com_en_us_azure_ai_foundry_responsible_ai_openai_data_privacy_08f95072.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "c65f29512f9d7c44e9f39d6a98e33b5738ab98118d61357f4516d4c455f42465",
+    "vendors": [
+      "azure-openai"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-hipaa-us": {
+    "file": "learn_microsoft_com_en_us_azure_compliance_offerings_offering_hipaa_us_1b36b146.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "fe05e37fdec5caee57019cd4a6e0967163a4a62f028b10f2ac88ac2c08b34577",
+    "vendors": [
+      "azure-openai"
+    ]
+  },
+  "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?pivots=azure-openai": {
+    "file": "learn_microsoft_com_en_us_azure_foundry_foundry_models_concepts_models_sold_dire_ae02181d.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "f144ecae99e52f774ad1b58b9972d3bcfc5cf655876ee52353622b090aa90fbb",
+    "vendors": [
+      "azure-openai"
+    ]
+  },
+  "https://legal.mistral.ai/terms/data-processing-addendum/": {
+    "file": "legal_mistral_ai_terms_data_processing_addendum_f4796a7f.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "9d1677ba69dce0c01fa8897bf8e22cfd5779b7d352fbb5a308c8d2162fc086e3",
+    "vendors": [
+      "mistral"
+    ]
+  },
+  "https://legal.mistral.ai/terms/privacy-policy/?lang=en": {
+    "file": "legal_mistral_ai_terms_privacy_policy_lang_en_2aa1418f.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "df0a19c5e11735af47d26a436d2e91aaa04b8ba753256e2cea71317255e06d9d",
+    "vendors": [
+      "mistral"
+    ]
+  },
+  "https://lp.jetbrains.com/ai-ides-faq/": {
+    "file": "lp_jetbrains_com_ai_ides_faq_3f79e33f.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "9b76064603d26237fddfd486d6ec85cc31d52031e590daa60433caa85f5120a9",
+    "vendors": [
+      "jetbrains-ai"
+    ]
+  },
+  "https://ollama.com/cloud": {
+    "file": "ollama_com_cloud_57b7bd75.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "728a4551afee3599be025621926cf049845a39f4d76228d7028571b805efa37f",
+    "vendors": [
+      "ollama-cloud"
+    ]
+  },
+  "https://ollama.com/privacy": {
+    "file": "ollama_com_privacy_a17cead2.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "ad0477532e8401a561ef5d64da4921abd708ae5d4ccffcdbaeabadad31242382",
+    "vendors": [
+      "ollama-cloud"
+    ]
+  },
+  "https://openai.com/enterprise-privacy/": {
+    "file": "openai_com_enterprise_privacy_8dd13697.txt",
+    "last_attempt": "2026-10-21",
+    "last_error": "HTTP 403"
+  },
+  "https://openai.com/open-models/": {
+    "file": "openai_com_open_models_1e4f1d84.txt",
+    "last_attempt": "2026-10-21",
+    "last_error": "HTTP 403"
+  },
+  "https://openrouter.ai/docs/features/privacy-and-logging": {
+    "file": "openrouter_ai_docs_features_privacy_and_logging_a7e3e9a3.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "e61dcd2f74177fe747f6c207199bdcdbac139fedd03dc26796f56f0b4a271069",
+    "vendors": [
+      "openrouter"
+    ]
+  },
+  "https://openrouter.ai/docs/features/zdr": {
+    "file": "openrouter_ai_docs_features_zdr_71ab3739.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "c2a17ee92c731334bf3933f0f55ed637faa1a1123a2b907b41cf869c06222379",
+    "vendors": [
+      "openrouter"
+    ]
+  },
+  "https://openrouter.ai/enterprise": {
+    "file": "openrouter_ai_enterprise_1425707a.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "d46fd9059c4bf875129aa6f0f47f285aece10a28013a63c381704ce03cb1ba6e",
+    "vendors": [
+      "openrouter"
+    ]
+  },
+  "https://openrouter.ai/privacy": {
+    "file": "openrouter_ai_privacy_2e6609e5.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "f1b9b5cc4571d3f74857148a7f4063c07cddbe6b6a65c51cbbd452425741de6b",
+    "vendors": [
+      "openrouter"
+    ]
+  },
+  "https://platform.claude.com/docs/en/about-claude/models/overview": {
+    "file": "platform_claude_com_docs_en_about_claude_models_overview_1779fb13.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "ba0025aa5142e49185dfb570f9e882715eff56e3c4a80d154bf1e7e1044c162f",
+    "vendors": [
+      "anthropic-api"
+    ]
+  },
+  "https://platform.openai.com/docs/guides/your-data": {
+    "file": "platform_openai_com_docs_guides_your_data_31bebb73.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "5364df5320b9119e4f31d45ac19bf68bd30da72394e8ed468bf8479be7c96eb3",
+    "vendors": [
+      "openai-api"
+    ]
+  },
+  "https://privacy.anthropic.com/en/articles/10015870-what-certifications-has-anthropic-obtained": {
+    "file": "privacy_anthropic_com_en_articles_10015870_what_certifications_has_anthropic_obt_d5b36be1.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "d462e9b2f2bb6f6b9fc220e45dfce2e2cdc4fdcb3dde25b0213e855b548e99ad",
+    "vendors": [
+      "anthropic-api",
+      "claude-code"
+    ]
+  },
+  "https://privacy.anthropic.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data": {
+    "file": "privacy_anthropic_com_en_articles_7996866_how_long_do_you_store_my_organization__d41bf307.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "a78fa87cb4c9d5d127cd377bb86dfc0856d99be1b5041437cfe7f7a63fac090c",
+    "vendors": [
+      "anthropic-api",
+      "claude-code"
+    ]
+  },
+  "https://privacy.anthropic.com/en/articles/7996868-is-my-data-used-for-model-training": {
+    "file": "privacy_anthropic_com_en_articles_7996868_is_my_data_used_for_model_training_39be2864.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "9b9ce8e2b4c50937b6752abb10afe3f48b4824f94ee38912340f32f1cf7430b9",
+    "vendors": [
+      "anthropic-api"
+    ]
+  },
+  "https://trust.mistral.ai/": {
+    "file": "trust_mistral_ai_460b0243.txt",
+    "last_attempt": "2026-10-21",
+    "last_error": "only 0 chars of text (likely JavaScript-rendered)"
+  },
+  "https://windsurf.com/security": {
+    "file": "windsurf_com_security_49862162.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "0ba353bfde47bb0ee2719402fa776ae7f999f6be81df4eff9d7318c885fda9d5",
+    "vendors": [
+      "windsurf"
+    ]
+  },
+  "https://www.braintrust.dev/docs/guides/self-hosting": {
+    "file": "www_braintrust_dev_docs_guides_self_hosting_51b6a980.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "e0f5a3f16e70b6d55b22192b6a17fd719540e92b94efecf750d4ed53c618df25",
+    "vendors": [
+      "braintrust"
+    ]
+  },
+  "https://www.braintrust.dev/docs/security": {
+    "file": "www_braintrust_dev_docs_security_bd8ac548.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "18dd3b16ebff297259e166de275ee2f75246477a6bb1986f88625efe8e02fab7",
+    "vendors": [
+      "braintrust"
+    ]
+  },
+  "https://www.braintrust.dev/legal/dpa": {
+    "file": "www_braintrust_dev_legal_dpa_a555c991.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "b265914b9963da94e7777c98e89de923028490bff27ac92b9f0231268ced44a4",
+    "vendors": [
+      "braintrust"
+    ]
+  },
+  "https://www.helicone.ai/pricing": {
+    "file": "www_helicone_ai_pricing_cce4a7fe.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "9c5ed7ed53f34fc87233a028a6ccf621089464043c66a92ebf3ca1b102a5f5d6",
+    "vendors": [
+      "helicone"
+    ]
+  },
+  "https://www.jetbrains.com/help/ai/data-collection-and-use-policy.html": {
+    "file": "www_jetbrains_com_help_ai_data_collection_and_use_policy_html_ccbf3ebc.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "fe20063aa7008296c1766fbc50ac2cd205fda8f4d0a0ccde147f0abac3ba1940",
+    "vendors": [
+      "jetbrains-ai"
+    ]
+  },
+  "https://www.jetbrains.com/help/ide-services/aie-on-premises.html": {
+    "file": "www_jetbrains_com_help_ide_services_aie_on_premises_html_fd80baa2.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "cf8a5d7a974103779ba1e47914a43878a57e4b36c6fbb1ec3ac94a83023f0bf9",
+    "vendors": [
+      "jetbrains-ai"
+    ]
+  },
+  "https://www.jetbrains.com/legal/docs/privacy/third-parties/": {
+    "file": "www_jetbrains_com_legal_docs_privacy_third_parties_0e5bfcd0.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "03d88c84db3bf5c64ce415ea39e92610d52f16ae0bd42885fc162b84e01671d8",
+    "vendors": [
+      "jetbrains-ai"
+    ]
+  },
+  "https://www.jetbrains.com/legal/docs/privacy/trust-center/": {
+    "file": "www_jetbrains_com_legal_docs_privacy_trust_center_9b92a0b7.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "90ab539ec3f53b13c6f3b525132f5a7cefb01d04ddc9b99b3ecbbae1a678ac38",
+    "vendors": [
+      "jetbrains-ai"
+    ]
+  },
+  "https://www.jetbrains.com/legal/docs/terms/jetbrains-ai-platform/": {
+    "file": "www_jetbrains_com_legal_docs_terms_jetbrains_ai_platform_509fa218.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "0b2b132921442067c3a248594c995ee4ab95621299f9f2b85a7c7dc53d3061f3",
+    "vendors": [
+      "jetbrains-ai"
+    ]
+  },
+  "https://www.langchain.com/langsmith/observability": {
+    "file": "www_langchain_com_langsmith_observability_5dafe46a.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "aa9c740196189cdf9192845abfe3f11ef7cda93ddf49ee3f8c43675964540827",
+    "vendors": [
+      "langsmith"
+    ]
+  },
+  "https://www.together.ai/blog/introducing-the-together-enterprise-platform": {
+    "file": "www_together_ai_blog_introducing_the_together_enterprise_platform_fa956cce.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "2c78fb7bae5f506e2b1d692d3831e5143539e9d04f69f7ec8b3f5dc292774851",
+    "vendors": [
+      "together-ai"
+    ]
+  },
+  "https://www.together.ai/blog/soc-2-compliance": {
+    "file": "www_together_ai_blog_soc_2_compliance_516c62e6.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "08734c6c6bf074a5d1c247f60735ffabf812f55ef92988678416f8e5da635945",
+    "vendors": [
+      "together-ai"
+    ]
+  },
+  "https://www.together.ai/gpu-clusters": {
+    "file": "www_together_ai_gpu_clusters_26ca165b.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "fa24a4cf8c33c010fb181bca23ab8ebca8ad9961002ecf00ac3470ff57cac11f",
+    "vendors": [
+      "together-ai"
+    ]
+  },
+  "https://www.together.ai/privacy": {
+    "file": "www_together_ai_privacy_c848f318.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "5612e94f1fe109ec313671e5796f0c973de361a68afe306c7e183145142ad4ed",
+    "vendors": [
+      "together-ai"
+    ]
+  },
+  "https://www.together.ai/terms-of-service": {
+    "file": "www_together_ai_terms_of_service_8b4ef833.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "0e0a04cb22fc35e3b0a6e52554e7b3d22b72b7fd0c4e51f0e8eb41dabf82c9ac",
+    "vendors": [
+      "together-ai"
+    ]
+  },
+  "https://x.ai/legal/terms-of-service-enterprise": {
+    "file": "x_ai_legal_terms_of_service_enterprise_ff1a49a2.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "0e939fb8fc9f39ddbd23a0cce646f432a8762b9a6121fc3b469d8b57abd30cda",
+    "vendors": [
+      "xai"
+    ]
+  },
+  "https://x.ai/security": {
+    "file": "x_ai_security_81fbd7f5.txt",
+    "last_checked": "2026-10-21",
+    "last_error": null,
+    "sha256": "53ddf5ca14d6fdcf49e2b55a2354627f5a4ec020cfb252a8c48e57c35e7360f9",
+    "vendors": [
+      "xai"
+    ]
+  }
+}

@@ -1,0 +1,454 @@
+This page is the complete list of Devin Desktop settings that administrators can set for their members. Each control is listed once, under the surface that enforces it, with a pointer to the detailed guide where one exists.
+Devin Desktop has three enforcement surfaces. Use them together: team settings for anything that should follow the user’s account, device policies for anything that must hold before sign-in or on every machine.
+Surface
+Managed from
+Applies
+Users can override?
+Team settings
+Devin app:
+Settings → Enterprise → Devin Desktop
+(
+app.devin.ai/org/{orgName}/settings/desktop
+), or the legacy Windsurf dashboard at
+windsurf.com/team/settings
+To every signed-in member of the team, on any device, within a few minutes of saving
+No
+Device policies (MDM)
+Windows Group Policy, macOS configuration profiles, or
+/etc/vscode/policy.json
+on Linux
+To the machine, before and regardless of sign-in
+No
+System-level files
+Files deployed to a system directory by MDM or configuration management
+To every workspace on the machine
+No
+“Windsurf” and “Devin Desktop” refer to the same product. Legacy Windsurf Enterprise customers manage team settings at
+windsurf.com/team/settings
+; Devin Enterprise customers manage the same settings in the Devin app. Both write the same team configuration, so a setting changed in one place appears in the other.
+​
+Team settings
+Team settings are stored on the server and delivered to Devin Desktop with the user’s account status, so they follow members to every device they sign in on. Changing a team setting requires the Devin Desktop admin permission (
+account.windsurf.admin
+in Devin,
+TEAM_SETTINGS_UPDATE
+in the Windsurf dashboard). See
+RBAC role management
+for granting it.
+Unless noted, a team setting takes effect the next time Devin Desktop refreshes the user’s account status (at sign-in and periodically while running). Settings marked
+restart
+need Devin Desktop to be relaunched before they fully apply.
+​
+Organization overrides
+Enterprises with several organizations set defaults once at the enterprise level. Where organization-level overrides are enabled, an admin viewing a child organization’s
+Devin Desktop
+settings page can override individual settings for that organization only; anything not overridden is inherited from the enterprise defaults. The enterprise page shows an
+Overridden in N orgs
+badge on each setting that has at least one override, and overrides can be reset back to the enterprise value from the organization’s page.
+​
+Features
+Setting
+What it controls
+Plans
+Learn more
+Devin for Cloud
+Allow members to delegate tasks from Devin Desktop to Devin’s cloud agent via ACP.
+Devin Enterprise
+Devin in Devin Desktop
+Devin Local Agent
+Allow members to use the Devin Local agent in Devin Desktop and delegate tasks to Devin’s terminal agent via ACP. Gated off by default on Enterprise plans.
+Enterprise
+Devin Local
+Install Devin CLI in Devin Desktop
+Show the
+Install Devin CLI
+command in the Command Palette so members can add the bundled
+devin
+binary to their
+PATH
+. Off by default.
+Enterprise
+Devin CLI team settings
+Devin CLI plugins
+Allow members to install and use Devin CLI plugins.
+Teams & Enterprise
+Plugins
+Quick review
+Allow members to use quick review models. Enabled by default; can be disabled and re-enabled.
+Teams & Enterprise
+Quick Review
+​
+Permissions & security
+Setting
+What it controls
+Plans
+Learn more
+Maximum autonomy level
+The highest level of terminal command auto-execution members can enable in Cascade (No auto-approvals, Allowlist only, Smart, Bypass). Members can pick any level up to the maximum. Applies to Cascade only; Devin Local and Devin CLI are governed by
+Devin CLI permissions
+below.
+Teams & Enterprise
+Terminal
+Devin Sandbox
+Force sandbox mode on for Devin CLI and Devin Local sessions, restricting file system and network access to granted scopes. Re-read at the start of every prompt.
+Enterprise
+Sandbox
+Sandbox domains
+Organization-wide allowlist and denylist of domains the sandbox may reach.
+Enterprise
+Sandbox
+Sandbox command exclusions
+Commands that may run outside the sandbox (
+allow
+), must prompt first (
+ask
+), or must never run unsandboxed (
+deny
+).
+Enterprise
+Sandbox
+Web search
+Allow agents to search the open web. Disabled by default for enterprise teams. Does not block reading specific URLs: in Cascade every page read then requires manual approval, and Devin CLI URL reads are unaffected.
+Enterprise
+Web Search
+Devin CLI permissions
+Team-enforced
+allow
+/
+ask
+/
+deny
+permission rules for Devin CLI and Devin Local. These have the highest precedence and cannot be overridden by user or project configuration.
+Teams & Enterprise
+Devin CLI team settings
+Devin CLI version constraint
+A semver constraint (for example
+>=1.2.0 <2.0.0
+) restricting which Devin CLI versions members can use. Empty allows all versions.
+Enterprise
+Devin CLI team settings
+Extension policy
+A JSON allowlist of VS Code extensions members can install, keyed by extension ID, publisher, or
+*
+, with values
+true
+,
+false
+, or
+"stable"
+. Uses the same format as the
+extensions.allowed
+setting. When set, it overrides a locally configured or MDM-delivered
+AllowedExtensions
+policy on the member’s machine.
+Enterprise
+Device policies
+Extension marketplace URL
+Force Devin Desktop to search for and install extensions from this gallery service URL (for example an internal Open VSX or marketplace mirror). Members cannot override it; both of their own marketplace settings (gallery service URL and gallery item URL) are ignored and hidden while a team URL is set, and the Extensions view labels the marketplace as set by your organization. Leave empty to let members choose their own marketplace.
+Restart
+recommended after changing.
+Enterprise
+Extension marketplace settings
+Agent hooks
+Team-wide Cascade hooks configuration (JSON, in the Cascade hooks format) that runs custom commands at key points in Cascade’s workflow. Loaded first, then combined with system-level, user, and workspace hooks. Devin Local and Devin CLI use their own
+lifecycle hooks
+format.
+Enterprise
+Hooks
+​
+MCP & ACP
+Setting
+What it controls
+Plans
+Learn more
+Allow MCP
+Allow members to add and configure MCP servers in Devin Desktop.
+Teams & Enterprise
+MCP admin controls
+MCP allowlist
+Explicit list of MCP servers members may use. Once a single server is allowlisted, all other servers are blocked. Server entries can include a config template with regex patterns.
+Teams & Enterprise
+MCP allowlist
+MCP registry
+Enforce the configured registries: when on, members can only connect to servers that appear in a registry (in addition to the allowlist); when off, the registries only populate the marketplace.
+Teams & Enterprise
+MCP registry
+MCP registry URLs
+One or more registry URLs that provide the list of approved MCP servers. Multiple registries are unioned.
+Teams & Enterprise
+MCP registry
+ACP registry configuration
+A static registry of approved ACP agents, pushed to every member so they don’t configure agents individually.
+Teams & Enterprise
+ACP team registry
+​
+Codebase intelligence
+Setting
+What it controls
+Plans
+Learn more
+Fast context
+Allow members to use Fast Context for improved code understanding.
+Teams & Enterprise
+Fast Context
+Codemaps
+Allow members to generate and view interactive Codemaps.
+Teams & Enterprise
+Codemaps
+DeepWiki
+Allow members to use DeepWiki to generate documentation.
+Teams & Enterprise
+DeepWiki
+​
+Models
+These settings live on the
+Models
+tab of the Devin Desktop settings page.
+Setting
+What it controls
+Plans
+Learn more
+Allowlisted models
+Which models are available to members in Cascade, Devin Local, Command, and Devin CLI. Filter by specific models or by provider (one filter type at a time).
+Teams & Enterprise
+Models
+Default model
+The default model for new users in Devin Desktop and Devin CLI. Applies until a member picks a model themselves; their choice then persists. Must be in the allowlist to take effect.
+Enterprise
+Devin CLI team settings
+Default subagent model
+The model used for sub-agent sessions started by the agent: the subagent router, a specific model, or none to disable subagents.
+Enterprise
+—
+Fusion
+Allow the Fusion routing mode, which pairs frontier intelligence with cost-efficient execution.
+Teams & Enterprise
+Fusion
+Adaptive
+Allow the adaptive model router, which picks a model per task and adjusts pricing dynamically.
+Enterprise
+Adaptive
+​
+Data retention
+Setting
+What it controls
+Plans
+Learn more
+Enable access to Anthropic models with data retention
+Unlocks additional Anthropic models that require data retention for trust and safety verification. Anthropic stores this data for up to 30 days and does not train on it. Shown where available.
+Teams & Enterprise
+—
+Enable access to OpenAI models with data retention
+Unlocks additional OpenAI models that require data retention for trust and safety verification. OpenAI stores this data for up to 30 days and does not train on it. Shown where available.
+Teams & Enterprise
+—
+​
+Sharing
+These settings live on the
+Sharing
+tab, alongside the lists of conversations and Codemaps members have shared.
+Setting
+What it controls
+Plans
+Learn more
+Share conversations
+Whether members can share Cascade conversations via link. Shared conversations are uploaded to Devin Desktop servers; links are only accessible to logged-in team members.
+Teams & Enterprise
+Sharing conversations
+Share codemaps
+Who can view Codemaps that members share: team or public, team only, or no sharing. Sharing requires opt-in because shared Codemaps are stored on Devin Desktop servers.
+Teams & Enterprise
+Codemaps
+​
+Analytics & compliance
+Setting
+What it controls
+Plans
+Learn more
+Individual analytics
+Allow individual-level (per member) analytics in the team dashboards.
+Teams & Enterprise
+Guide for admins
+Attribution
+Attribution tracking for code suggestions: generated code is checked against public code and matches are reverted or flagged. No self-serve toggle; contact your account team to enable.
+Enterprise
+Attribution filtering
+​
+Legacy Cascade
+These controls only affect the legacy Cascade agent.
+Setting
+What it controls
+Plans
+Learn more
+Command lists
+Legacy team-wide allowlist and denylist for terminal commands, merged with each member’s own lists. Used as a fallback where Devin CLI permissions are not configured. The denylist always wins.
+Teams & Enterprise
+Terminal
+Enable Cascade
+Where members can use the legacy Cascade agent.
+Enterprise
+Cascade
+Restrict Cascade to workspace
+Only read and write files within the open workspace.
+Teams & Enterprise
+Cascade
+Arena mode
+Allow members to compare side-by-side responses from multiple models.
+Teams & Enterprise
+Arena
+App deploys
+Allow members to connect Netlify and deploy from Cascade. Windsurf dashboard only.
+Teams & Enterprise
+App Deploys
+​
+Account administration
+The Windsurf dashboard also hosts account-level controls that are not Devin Desktop settings but affect who can sign in and what they can do:
+SSO & SCIM
+,
+domain verification
+,
+roles and permissions
+, and service keys for the
+analytics API
+. In the Devin app these live under
+Settings → Administration
+.
+​
+Device policies (MDM)
+Device policies are enforced by the operating system before Devin Desktop starts, so they apply whether or not the user signs in and cannot be changed from inside the editor. Deploy them with Windows Group Policy (registry path
+Software\Policies\Windsurf\Devin
+), a macOS configuration profile, or
+/etc/vscode/policy.json
+on Linux; see
+Enterprise Policies
+for the step-by-step setup on each platform.
+Policies take effect the next time Devin Desktop starts. The policies most relevant to Devin Desktop administration are:
+Policy
+Setting it locks
+Type
+What it controls
+AllowedExtensions
+extensions.allowed
+JSON string
+Which extensions can be installed, keyed by extension ID, publisher, or
+*
+. Same format as the
+Extension policy
+team setting.
+ExtensionGalleryServiceUrl
+extensions.gallery.serviceUrl
+string
+The marketplace gallery service URL Devin Desktop queries for extensions.
+ExtensionsAutoUpdate
+extensions.autoUpdate
+string
+Whether extensions update automatically.
+ExtensionsAutoUpdateDelay
+extensions.autoUpdateDelay
+number
+Hours to wait after an extension update is published before installing it automatically.
+UpdateMode
+update.mode
+none
+/
+manual
+/
+start
+/
+default
+Whether Devin Desktop checks for and installs its own updates.
+TelemetryLevel
+telemetry.telemetryLevel
+all
+/
+error
+/
+crash
+/
+off
+How much telemetry Devin Desktop sends.
+EnableFeedback
+telemetry.feedback.enabled
+boolean
+Whether the issue reporter, surveys, and other feedback entry points are shown.
+The sample
+policy.json
+,
+.mobileconfig
+, and ADMX files shipped in each release’s
+policies
+folder list every policy the installed version supports, including upstream VS Code policies not covered above.
+​
+How device policies and team settings combine
+Where the same control exists on both surfaces:
+Extension allowlist
+— the
+Extension policy
+team setting replaces the
+AllowedExtensions
+policy on the member’s machine when both are set. Use the team setting when the allowlist should follow the account; use the MDM policy for machines that may never sign in.
+Extension marketplace URL
+— the
+ExtensionGalleryServiceUrl
+policy wins over the
+Extension marketplace URL
+team setting when both are set, and the team setting wins over the member’s own
+devin.marketplaceExtensionGalleryServiceURL
+setting. The Extensions view always names the marketplace actually in use.
+Everything else is only configurable on one surface.
+​
+System-level files
+Administrators can also deploy content files to a system directory that members cannot write to. For rules, workflows, skills, and
+hooks.json
+, Devin Desktop reads the
+Devin
+location first and falls back to the legacy
+Windsurf
+location (
+/Library/Application Support/Windsurf/
+,
+C:\ProgramData\Windsurf\
+,
+/etc/windsurf/
+) only if the
+Devin
+one is missing. The fallback is evaluated per subdirectory or file, and the two locations are never merged, so move each content type you migrate in full.
+system.json
+is read from the
+Devin
+location only.
+OS
+Directory
+macOS
+/Library/Application Support/Devin/
+Windows
+C:\ProgramData\Devin\
+Linux / WSL
+/etc/devin/
+Subdirectory or file
+What it provides
+Learn more
+rules/*.md
+Organization-wide rules applied to every workspace.
+System-level rules
+workflows/*.md
+Workflows available in every workspace.
+System-level workflows
+skills/<name>/SKILL.md
+Skills available in every workspace.
+System-level skills
+hooks.json
+Hooks that run alongside team and workspace hooks.
+Hooks enterprise distribution
+system.json
+Pins Devin CLI sign-in to your enterprise host or account and forces an outbound proxy.
+Devin CLI system configuration
+If your endpoint security or DLP tooling restricts file access, make sure these paths are permitted; see the
+directory reference in the FAQ
+.
+​
+What members see
+When a control is enforced, Devin Desktop tells the member rather than failing silently:
+Settings locked by a device policy show as managed by your organization in the Settings editor and cannot be edited.
+Team settings that remove an option (for example a disabled feature or a model outside the allowlist) hide that option from the relevant picker or settings page.
+The Extensions view shows a banner naming the marketplace in use and whether it was set by your organization; when an extension allowlist is enforced it also indicates that the setting is managed by your organization.

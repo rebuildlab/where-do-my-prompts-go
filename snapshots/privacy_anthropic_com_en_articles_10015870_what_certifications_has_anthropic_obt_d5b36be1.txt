@@ -1,0 +1,20 @@
+What Certifications has Anthropic obtained?
+March 16, 2026
+This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see
+here
+.
+Anthropic is committed to the safety and security of our users' information and maintains the following compliance credentials:
+HIPAA-ready configuration (BAA available)
+ISO 27001:2022 (Information Security Management)
+ISO/IEC 42001:2023 (AI Management Systems)
+SOC 2 Type I & Type II
+For more information and to request copies of our compliance documentation, please visit our
+Trust Portal
+.
+Related Articles
+Business Associate Agreements (BAA) for Commercial Customers
+I have a zero data retention agreement with Anthropic. What products does it apply to?
+What Cookies Does Anthropic Use?
+How does Anthropic protect the personal data of Claude users?
+Anthropic Interviewer sessions completed in December 2025
+Did this answer your question?

@@ -1,0 +1,24 @@
+{
+  "_comment": "ignore_patterns are regexes stripped from each line before comparing, to cut noise from counters and timestamps. extra_urls are checked even if no vendor field cites them.",
+  "ignore_patterns": [
+    "\\b\\d{1,3}(,\\d{3})+\\b(?=\\s*(GitHub stars|companies|SDK installs|Docker pulls))",
+    "\\b\\d+(\\.\\d+)?[MK]\\+?\\s*(SDK installs per month|Docker pulls)",
+    "^(Disappointed|Neutral|Smiley) Reaction$",
+    "^[😞😐😃]$",
+    "^Fireworks - Privacy Policy$",
+    "^\\d+(\\.\\d+)?[kKM]$"
+  ],
+  "extra_urls": [
+    "https://trustcenter.cohere.com/subprocessors",
+    "https://cohere.com/privacy",
+    "https://assets.ctfassets.net/8aevphvgewt8/9rRh60u9m8AJGCKPHSnkI/f665de2992d6aa66bab425d19a559dd1/TPL-202510-GitHubDataProtectionAgreement.pdf",
+    "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/govern-at-scale/resources-for-approval",
+    "https://www.braintrust.dev/legal/msa",
+    "https://www.braintrust.dev/blog/security-data-control",
+    "https://devin.ai/blog/windsurf-wave-10-ux-enterprise",
+    "https://devin.ai/blog/self-hosted-deployment-maintenance-mode",
+    "https://www.together.ai/terms-of-service",
+    "https://ollama.com/cloud",
+    "https://fireworks.ai/security/bulletins/october-2026-security-incident"
+  ]
+}

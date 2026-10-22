@@ -1,0 +1,245 @@
+Privacy Policy
+ARIZE AI, INC Privacy Policy
+EFFECTIVE DATE: 02/01/2020
+Last Updated: August 11, 2026
+In this Privacy Policy (“Policy”), we describe how Arize AI, Inc (“Arize”, “we”, “us”, “our”) collects, uses, and discloses information that we obtain about visitors to our website https://arize.com (the “Site”) and user of our web applications, services, and other digital products that link to or reference this Policy (collectively, the “Services”).
+By visiting the Site or accessing the Services, you agree that your personal information will be handled as described in this Policy. We encourage you to read the details below.
+Scope and Applicability
+The Policy applies to your information when you visit our Site or otherwise use the Services. Please note that this Policy does not apply to the extent that we process personal information in the role of a processor (or a comparable role such as a “service provider” in certain jurisdictions) on behalf of our business customers (“Customers”), including where we collect Customer Data on behalf of our Customers, or where our Customers otherwise collect, use, share or process personal information via our Services. Each of our Customers, not Arize, controls what information about you is collected by the Services on behalf of such Customer. For detailed privacy information applicable to situations where a Customer who uses the Services is the controller, please reach out to the respective customer directly. We are not responsible for the privacy or data security practices of our Customers, which may differ from those set forth in this Policy. If not stated otherwise either in this Policy or in a separate disclosure, we process such personal information in the role of a processor or service provider on behalf of a Customer (and/or its affiliates), who is the responsible controller of the applicable personal information. For clarity, Arize’s obligations as a processor or service provider (including its role in receiving and transferring Customer Data internationally under the Data Privacy Framework) are governed by its agreements with the applicable Customer and the DPF section below. For personal data we receive from the European Economic Area, the United Kingdom (and Gibraltar), or Switzerland in reliance on the Data Privacy Framework, please also see the section titled “EU-U.S. Data Privacy Framework, UK Extension, and Swiss-U.S. Data Privacy Framework” below.
+Our Site may contain links to third-party websites. Any access to and use of such linked websites is not governed by this Policy, but instead is governed by the privacy policies of those third party websites. We are not responsible for the information practices of such third party websites.
+The Information We Collect About You
+Information We Collect Directly From You
+Account Information:
+To create an account for the Services or to enable certain features, we may require that you provide us with information for your account such as name, and email address. If you sign up for a paid purchase, we (or our payment processors) may need your billing details such as credit card information, banking information, and billing address. Your payment information, such as your payment method (valid credit card number, type, expiration date or other financial information), is collected and stored by our third party payment processing company (the “Payment Processor”), and use and storage of that information is governed by the Payment Processors applicable privacy policy. As of the date of this Privacy Policy, Stripe is the Payment Processor used within the Services and its privacy policy is available at https://stripe.com/us/privacy or such other URL designated by Stripe. In order to facilitate your order transactions, we collect and store your credit card type, the last four digits of your credit card number, and expiration date, but no other financial information.
+Other Information You Provide:
+We receive other information from you when you choose to interact with us in other ways, such as if you sign up for one of our webinars or newsletters, participate in a research study or event, or otherwise communicate with us.
+Business Contact Information:
+If you are a business representative, we collect your information in connection with the performance of the agreement or potential agreement with us. This information may include your first name, last name, company contact information (e.g., email, phone, address), job title, and any other information related to the performance of the agreement with us.
+Information We Collect Automatically
+We automatically collect information about your use of our Site and/or Services through cookies, web beacons, and other technologies. To the extent permitted by applicable law, we combine this information with other information we collect about you, including your personal information. Please see the section “Cookies and Other Tracking Mechanisms” below for more information. Information we collect automatically includes:
+Log Data:
+Information that your browser automatically sends whenever you use our website (“log data”). Log data includes your internet protocol address, browser type and settings, the date and time of your request, and how you interacted with our website.
+Usage Data:
+We may automatically collect information about your use of the Site and/or Services, such as the types of content that you view or engage with, the features you use and the actions you take, as well as your time zone, country, the dates and times of access, user agent and version, type of computer or mobile device, computer connection, IP address, and the like.
+Device Information:
+Includes name of the device, operating system, and browser you are using. Information collected may depend on the type of device you use and its settings.
+Analytics:
+We may use a variety of online analytics products that use cookies to help us analyze how users use our Site and/or Services and enhance your experience when you use the Site and/or Services.
+Information We Receive from Third Parties
+We may receive information from third parties such as:
+Marketing Information:
+We may receive marketing or demographic information about you from third parties or partners, for example, data about your organization or industry or other public information from sources like social media or online professional profiles.
+Services Providers:
+We may receive information from our services providers who help operate our business.
+Business Partners and Resellers:
+We may receive information from our business and reseller partners.
+Your Employer or Company:
+If you interact with our Site or Services through your employer or company, we may receive information from your employer or company, including another representative of your employer or company.
+Information from Other Sources:
+We may obtain information from other sources, including, but not limited to, publicly available sources, third-party data providers, and third-party integrations you consent to, or through transactions such as mergers and acquisitions. We may combine this information with other information we collect from or about you.
+How We Use Your Information
+We use your information, including your personal information, for the following purposes:
+We use your information, including your personal information, for the following purposes:
+To deliver and improve our Site and/or Services and your overall experience;
+To link or combine user information with other personal information;
+To develop, improve or expand our business, products and services;
+To compare and verify information for accuracy and update our records;
+To communicate with you about your use of our Site and/or Services, to respond toyour inquiries, and for other customer service purposes;
+To tailor the content and information that we may send or display to you, offer location customization, provide personalized help and instructions, and otherwise
+personalize your experiences while using the Site and/or Services;
+To send you email marketing about our Site and/or Services;
+To send you news and newsletters;
+To assist us in advertising on third party websites, mobile apps, and other online services, and to evaluate the success of our advertising campaigns through third party channels (including our online targeted advertising and offline promotional campaigns);
+To better understand how users access and use our Site and/or Services, both on an aggregated and individualized basis. For example, we will evaluate which features of the Site and/or Services are more (or least) used by users;
+For research and analytics purposes;
+To administer surveys and questionnaires, such as for market research or member satisfaction purposes;
+To comply with legal obligations, as part of our general business operations, and for other business administration purposes;
+In connection with a merger, acquisition, reorganization or similar transaction;
+Where we believe necessary to investigate, prevent, or take action regarding illegal activities, suspected fraud, or situations involving potential threats to the safety of any person or violations of our Terms of Service or this Privacy Policy;
+To maintain the security of the Site and/or Services;
+At your direction or instruction, or for any other purpose with your consent;
+To create aggregate and de-identified data; or
+For other purposes we may inform you about from time to time.
+Artificial Intelligence
+Certain features of our Services, such as our AI engineering assistant Alyx, are powered by artificial intelligence and machine learning technologies. When you interact with these AI- powered features, we process information you provide (such as prompts, queries, or other inputs) to generate responses and provide the requested functionality. We will clearly disclose when you are interacting with an AI-powered feature within the product interface. We do not use your inputs to AI-powered features to train our models unless you separately consent to such use.
+How We Share Your Information
+We may share your information, including personal information, contractors or agents who perform functions on our behalf. We also disclose information in the following
+circumstances:
+Affiliates.
+We may share information with our corporate affiliates and subsidiaries.
+Customers.
+If you are an authorized user of a Customer, we may share your information with the applicable Customer to provide Services on their behalf. Our customers are independent entities and their processing of information is subject to their own policies and terms.
+Service Providers.
+We may share your information with third parties that perform services to support our core business functions and internal operations, which may include database administrators, cloud computing services, payment processors, advertising services, analytics services, and application services providers.
+Partners.
+We may share your information with third parties that we have partnered with, such as reseller and referral partners
+Compliance.
+We may share your information to support our audit, compliance and corporate governance functions.
+Business Transfers.
+If (i) we or our affiliates are or may be acquired by, merged with, or invested in by another company, or (ii) if any of our assets are or may be transferred to another company, whether as part of a bankruptcy or insolvency proceeding or otherwise, we may transfer the information we have collected from you to the other company. As part of the business transfer process, we may share certain of your personal information with lenders, auditors, and third party advisors, including attorneys and consultants.
+In Response to Legal Process.
+We disclose your information to comply with the law, a judicial proceeding, court order, or other legal process, such as in response to a court order or a subpoena.
+To Protect Us and Others.
+We disclose your information when we believe it is appropriate to do so to investigate, prevent, or take action regarding illegal activities, suspected fraud, security incidents, or situations involving potential threats to the safety of any person, violations of our Terms of Service or this Policy, or as evidence in litigation in which we are involved.
+Consent.
+We may share information with your consent or at your direction.
+Aggregate and De-Identified Information.
+We share aggregate, anonymized, or de- identified information about users with third parties for marketing, advertising, research or similar purposes.
+Our Use of Cookies and Other Tracking Mechanisms
+We and our third party service providers use cookies and other tracking mechanisms to track information about your use of our Site and/or Services. We may combine this information with other personal information we collect from you (and our third party service providers may do so on our behalf).
+For visitors located in the European Economic Area or the United Kingdom, we obtain consent before placing non-essential cookies on your device, in accordance with applicable law. You can manage your cookie preferences at any time through our cookie management tool. For visitors in the United States, see “Your Rights (US State Residents)” below for information on opting out of the sale or sharing of personal information through cookies and similar technologies.
+Cookies.
+Cookies are alphanumeric identifiers that we transfer to your device’s hard drive through your web browser for record-keeping purposes. Some cookies allow us to make it easier for you to navigate our Site and/or Services, while others are used to enable a faster log-in process or to allow us to track your activities at our Site and/or Services. There are two types of cookies: session and persistent cookies.
+Session Cookies.
+Session cookies exist only during an online session. They disappear from your device when you close your browser or turn off your device. We use session cookies to allow our systems to uniquely identify you during a session or while you are logged into the Site and/or Services. This allows us to process your online transactions and requests and verify your identity, after you have logged in, as you move through our Site and/or Services.
+Persistent Cookies.
+Persistent cookies remain on your device after you have closed your browser or turned off your device. We use persistent cookies to track aggregate and statistical information about user activity.
+Disabling Cookies.
+Most web browsers automatically accept cookies, but if you prefer, you can edit your browser options to block them in the future. The Help portion of the toolbar on most browsers will tell you how to prevent your computer from accepting new cookies, how to have the browser notify you when you receive a new cookie, or how to disable cookies altogether. Visitors to our Site and/or Services who disable cookies will be able to browse certain areas of the Site and/or Services, but some features may not function.
+Clear GIFs, pixel tags and other technologies.
+Clear GIFs are tiny graphics with a unique identifier, similar in function to cookies. In contrast to cookies, which are stored on your computer’s hard drive, clear GIFs are embedded invisibly on web and app pages. We may use clear GIFs (a.k.a. web beaconsor pixel tags), in connection with our Site to, among other things, track the activities of users, help us manage content, and compile statistics about Site or Services usage. We and our third party service providers also use clear GIFs in HTML e-mails to our customers, to help us track e-mail response rates, identify when our e- mails are viewed, and track whether our e-mails are forwarded.
+Third Party Analytics.
+We use automated devices and applications to evaluate usage of our Site and Services. For example, we may use Google Analytics to evaluate usage of our Site, and other tools to analyze product usage of our Services. We use these tools to help us improve our Site’s and Service’s performance and user experiences. These entities may use cookies and other tracking technologies, such as web beacons or local storage objects (LSOs), to perform their services.
+To learn more about Google’s privacy practices, please review the Google Privacy Policy at
+https://www.google.com/policies/privacy/
+. You can also download the Google Analytics Opt-out Browser Add-on to prevent their data from being used by Google Analytics at
+https://tools.google.com/dlpage/gaoptout
+.
+Cross-Device Use.
+We and our third party service providers, including Google, may use the information that we collect about you to help us and our third party service providers identify other devices that you use (e.g., a mobile phone, tablet, other computer, etc.). We and our third party service providers also may use the cross-device use and other information we learn about you to serve targeted advertising on your devices and to send you emails. To opt out of cross-device advertising, you may enable a Global Privacy Control signal in your browser, use the “Your Privacy Choices” link in the footer of our Site, or follow the instructions in the “Your Rights (US State Residents)” section below. If you opt out of targeted advertising cookies, your opt-out will be specific to the web browser, app, or device from which you accessed the opt-out, unless you are logged in to your account, in which case the opt-out applies at the account level. If you use multiple devices or web browsers without logging in, you will need to opt out on each browser or device that you use.
+Opt-Out Preference Signals.
+Our systems recognize and respond to Global Privacy Control (“GPC”) signals and other legally recognized universal opt-out mechanisms (“UOOMs”). When we detect a GPC or UOOM signal, we treat it as a valid request to opt out of the sale or sharing of your personal information and of targeted advertising, as applicable under state law. If you are logged in, we apply the opt-out at the account level. You do not need to take any additional action beyond enabling the signal in your browser or browser extension. You may also exercise your opt-out rights through the methods described in “Your Rights (US State Residents)” below.
+Security of My Personal Information
+We have implemented reasonable precautions to protect the information we collect from loss, misuse, unauthorized access, disclosure, alteration, and destruction. We collect and retain personal information only as reasonably necessary and proportionate to the purposes disclosed in this Policy. Please be aware that despite our best efforts, no data security measures can guarantee security. By using the Site and/or Services, you acknowledge that you understand and agree to assume these risks.
+You should take steps to protect against unauthorized access to your password and computer by, among other things, signing off after using a shared computer, choosing a robust password that nobody else knows or can easily guess, and keeping your log-in and password private. We are not responsible for any lost, stolen, or compromised passwords or for any activity on your account via unauthorized password activity.
+Data Retention
+We retain your personal information for as long as reasonably necessary to fulfill the purposes for which it was collected, as described in this Policy, unless a longer retention period is required or permitted by law. In determining retention periods, we consider the amount, nature, and sensitivity of the personal information, the potential risk of harm from unauthorized use or disclosure, the purposes for which we process your personal information, whether we can achieve those purposes through other means, and applicable legal, regulatory, tax, accounting, or other requirements.
+The following describes our general retention criteria by category of personal information:
+Account Information:
+Retained for the duration of your account and for a commercially reasonable period thereafter (generally up to 3 years) to support re-activation, comply with legal obligations, resolve disputes, and enforce our agreements.
+Payment Information:
+The limited payment information we retain (card type, last four digits, expiration date) is retained for the duration of your account and as required for tax and accounting purposes.
+Usage, Device, and Log Data:
+Generally retained for up to 24 months from collection, or longer where required for security investigations or legal proceedings.
+Marketing and Communications Data:
+Retained until you opt out or withdraw consent, and for a reasonable period thereafter to process your request.
+Business Contact Information:
+Retained for the duration of the business relationship and for a reasonable period thereafter.
+When your personal information is no longer needed, we securely delete or de-identify it in accordance with our data retention and disposal procedures.
+Managing Your Privacy
+You may modify personal information that you have submitted by logging into your account and updating your profile information. Please note that copies of information that you have updated, modified, or deleted may remain viewable in cached and archived pages of the Site and/or Services for a period of time.
+If you wish to cancel your account, you may do so through your account page, and any personally identifiable information associated with your account will be deleted as soon as is reasonably practical or as required by applicable law. Please note that we may retain information that is otherwise deleted in de-identified and aggregated form, in archived or backup copies as required pursuant to records retention obligations, or otherwise as required by law. We may retain an archived copy of your records as required by law or for legitimate business purposes.
+We may send periodic promotional emails to you. You may opt-out of promotional emails by following the opt-out instructions contained in the email. Please note that it may take up to 10 business days for us to process opt-out requests. If you opt-out of receiving promotional emails, we may still send you emails about your account or any services you have requested or received from us.
+Children Under 16
+Our Site and Services are not designed for children under 16 and we do not solicit or knowingly collect personal information from children under the age of 16 (or under the age of 13 where COPPA applies). If we discover that a child under the applicable minimum age has provided us with personal information, we will promptly delete such information from our systems.
+Contact Us
+If you have questions about the privacy aspects of our Site or Services or would like to make a complaint, please contact us at
+privacy@arize.com
+.
+Changes to this Policy
+This Policy is current as of the date set forth above. We may change this Policy from time to time, so please be sure to check back periodically. We will notify you of any changes to this Policy by posting a new Policy to this page and updating the date above. You are responsible for reviewing this Policy periodically to check for any changes. Changes to this Policy are effective when they are posted on this page. Where required by applicable law, we will obtain your consent before implementing material changes to how we process your personal information. Your continued access or use of our Site and/or Services after we publish non-material changes to this Policy means that the collection, use and sharing of your personal information is subject to the updated Policy.
+A Note to Users Outside the United States
+Our Company is based in the United States. The Site and Services are controlled and operated by us from the United States and are not intended to subject us to the laws or jurisdiction of any state, country or territory other than that of the laws of the country(ies) where the Services are controlled. Your personal information may be stored and processed in any country where we have facilities or in which we engage service providers, and by using the Services you consent to the transfer of information to countries outside of your country of residence, including the United States, which may have data protection rules that are different from those of your country. Where required by applicable law, we implement appropriate safeguards for international transfers of personal data, including the EU-U.S. Data Privacy Framework (see below), Standard Contractual Clauses approved by the European Commission, or other legally recognized transfer mechanisms. In certain circumstances, courts, law enforcement agencies, regulatory agencies or security authorities in those other countries may be entitled to access your personal information.
+EU-U.S. Data Privacy Framework, UK Extension, and Swiss-U.S. Data Privacy Framework
+Arize AI, Inc. (“Arize”) complies with the EU-U.S. Data Privacy Framework (EU-U.S. DPF), the UK Extension to the EU-U.S. DPF, and the Swiss-U.S. Data Privacy Framework (Swiss- U.S. DPF) as set forth by the U.S. Department of Commerce. Arize has certified to the U.S. Department of Commerce that it adheres to the EU-U.S. Data Privacy Framework Principles (EU-U.S. DPF Principles) with regard to the processing of personal data received from the European Union in reliance on the EU-U.S. DPF and from the United Kingdom (and Gibraltar) in reliance on the UK Extension to the EU-U.S. DPF. Arize has certified to the U.S. Department of Commerce that it adheres to the Swiss-U.S. Data Privacy Framework Principles (Swiss-U.S. DPF Principles) with regard to the processing of personal data received from Switzerland in reliance on the Swiss-U.S. DPF. If there is any conflict between the terms in this privacy policy and the EU-U.S. DPF Principles and/or the Swiss-U.S. DPF Principles, the Principles shall govern. To learn more about the Data Privacy Framework (DPF) program, and to view our certification, please visit
+https://www.dataprivacyframework.gov/
+.
+Scope of DPF Coverage.
+This section applies to personal data that Arize receives in the United States from the European Economic Area, the United Kingdom (and Gibraltar), and Switzerland in reliance on the DPF. The categories of personal data covered include account data (such as name, email address, and login and account details); website, device, usage, and analytics data (such as IP address, browser and device information, pages viewed, and actions taken); support and communications data; human resources (HR) data relating to Arize’s employees, contractors, and job applicants located in the European Economic Area, the United Kingdom (and Gibraltar), and Switzerland, processed in the context of the employment relationship; and Customer Data processed through the Services, including logs, traces, prompts, outputs, telemetry, and evaluation data, to the extent linkable to an individual. For clarity, this DPF coverage addresses the lawfulness of the international transfer of Customer Data to the United States; it does not alter Arize’s role as a processor or service provider with respect to such Customer Data as described in the “Scope and Applicability” section above. Arize processes this personal data for the purposes described in this Policy, including providing, operating, securing, and improving the Site and Services, communicating with you, and complying with legal obligations.
+Notice.
+Through this Policy, Arize informs individuals about the types of personal data it collects and processes under the DPF, the purposes of processing, the third parties to which it discloses personal data and the purposes of those disclosures, the right to access, correct, and delete personal data, the choices Arize offers for limiting the use and disclosure of personal data, the requirement to disclose personal data in response to lawful requests by public authorities, Arize’s liability in cases of onward transfer, the independent recourse mechanism available to individuals, and Arize’s subjection to the investigatory and enforcement authority of the U.S. Federal Trade Commission (FTC).
+Choice.
+Where Arize processes DPF-covered personal data as a controller, we offer you the opportunity to opt out where your personal data is (i) to be disclosed to a third party acting as a controller, or (ii) to be used for a purpose materially different from the purpose for which it was originally collected or subsequently authorized. You may exercise these choices by emailing privacy@arize.com, using our cookie banner and cookie preferences tool, or adjusting your in-product account settings. Arize does not disclose DPF-covered personal data to non-agent third-party controllers except as described in this Policy. Where sensitive personal data is involved, Arize will obtain your affirmative express (opt-in) consent before using it for a materially different purpose or disclosing it to a third party acting as a controller, unless an exception applies.
+Accountability for Onward Transfer.
+Arize may transfer DPF-covered personal data to third parties acting as controllers or as agents (service providers and subprocessors). When Arize transfers personal data to a third party acting as a controller, it does so consistent with any notice provided and choice exercised, and only where the recipient has contractually agreed to process the data for limited and specified purposes, to provide at least the same level of protection as the DPF Principles, to notify Arize if it makes a determination that it can no longer do so, and to cease processing or take other reasonable and appropriate steps to remediate. When Arize transfers personal data to a third party acting as an agent, it transfers only the personal data needed for the agent to perform its services, requires the agent by contract to provide at least the same level of privacy protection as required by the DPF Principles, takes reasonable and appropriate steps to ensure that the agent processes the data in a manner consistent with Arize’s obligations under the Principles, and, upon notice, takes reasonable and appropriate steps to stop and remediate unauthorized processing. Arize remains liable under the DPF Principles if an agent processes DPF-covered personal data in a manner inconsistent with the Principles, unless Arize proves that it is not responsible for the event giving rise to the damage. Arize may be required to disclose personal data in response to lawful requests by public authorities, including to meet national security or law enforcement requirements.
+Security.
+Arize takes reasonable and appropriate measures to protect DPF-covered personal data from loss, misuse, and unauthorized access, disclosure, alteration, and
+destruction, taking into due account the risks involved in the processing and the nature of the personal data.
+Data Integrity and Purpose Limitation.
+Arize limits its processing of DPF-covered personal data to the purposes for which it was collected or subsequently authorized, and takes reasonable steps to ensure that personal data is reliable for its intended use, accurate, complete, and current. Arize retains personal data in a form identifying or making identifiable an individual only for as long as it serves the purpose(s) for which it was collected, and adheres to the DPF Principles for as long as it retains such data.
+Access.
+EU, UK, and Swiss individuals whose DPF-covered personal data Arize holds may request access to that personal data and may correct, amend, or delete it where it is inaccurate or has been processed in violation of the Principles. You may access and update your profile data and delete or cancel your account through your in-product account settings, or by contacting us at privacy@arize.com. These rights may be limited in certain circumstances as provided by the Principles and applicable law.
+Recourse, Enforcement, and Liability.
+In compliance with the EU-U.S. DPF, the UK Extension to the EU-U.S. DPF, and the Swiss-U.S. DPF, Arize commits to resolve complaints about our collection or use of your personal information transferred to the United States pursuant to those frameworks. EU, UK, and Swiss individuals with inquiries or complaints should first contact Arize at privacy@arize.com, and Arize will respond within 45 days. Arize has further committed to refer unresolved DPF Principles-related complaints to a U.S.-based independent dispute resolution mechanism, ICDR-AAA® DPF IRM Service. If you do not receive timely acknowledgment of your complaint from us, or if we have not addressed your complaint to your satisfaction, please visit
+https://feature.adr.org/dpf_irm
+for more information and to file a complaint. This service is provided free of charge to you. If your DPF complaint cannot be resolved through the above channels, under certain conditions you may invoke binding arbitration for some residual claims not resolved by other redress mechanisms. See
+https://www.dataprivacyframework.gov/framework- article/ANNEX-I-introduction
+. Arize is subject to the investigatory and enforcement powers of the U.S. Federal Trade Commission (FTC).
+Application to UK and Gibraltar Data.
+The DPF commitments in this section apply to personal data received from the United Kingdom and Gibraltar in reliance on the UK Extension to the EU-U.S. DPF. For such data, references in the EU-U.S. DPF Principles and Annex I to the European Union, the European Commission, EU data protection authorities, and EU individuals should be understood as referring, respectively, to the United Kingdom (and, as applicable, Gibraltar), the UK Government, the UK Information Commissioner’s Office (ICO) and, as applicable, the Gibraltar Regulatory Authority, and UK individuals. Arize’s participation in the UK Extension to the EU-U.S. DPF is conditioned on its participation in the EU-U.S. DPF.
+Resource for Human Resources (HR) Data.
+In compliance with the EU-U.S. DPF and the UK Extension to the EU-U.S. DPF and the Swiss-U.S. DPF, Arize AI, Inc commits to cooperate and comply respectively with the advice of the panel established by the EU data protection authorities (DPAs) and the UK Information Commissioner’s Office (ICO) and the Swiss Federal Data Protection and Information Commissioner (FDPIC) with regard to unresolved complaints concerning our handling of human resources data received in reliance on the EU-U.S. DPF and the UK Extension to the EU-U.S. DPF and the Swiss-U.S. DPF in the context of the employment relationship. If you have an unresolved complaint concerning our handling of human resources data, you may raise it with the relevant EU DPA, the UK ICO, or the Swiss FDPIC, as applicable, and this recourse is provided at no cost to you.
+Application to UK and Gibraltar Data.
+The DPF commitments in this section apply to personal data received from the United Kingdom and Gibraltar in reliance on the UK Extension to the EU-U.S. DPF. For such data, references in the EU-U.S. DPF Principles and Annex I to the European Union, the European Commission, EU data protection authorities, and EU individuals should be understood as referring, respectively, to the United Kingdom (and, as applicable, Gibraltar), the UK Government, the UK Information Commissioner’s Office (ICO) and, as applicable, the Gibraltar Regulatory Authority, and UK individuals. Arize’s participation in the UK Extension to the EU-U.S. DPF is conditioned on its participation in the EU-U.S. DPF.
+Relationship to Other Laws.
+Arize’s DPF certification provides a lawful mechanism for the transfer of personal data to the United States. It does not limit or replace Arize’s other obligations under applicable data protection laws, including the EU and UK General Data Protection Regulation. Data subject rights and complaint procedures available under those laws are described elsewhere in this Policy and operate independently of the DPF.
+Your Rights (European Residents)
+We typically will process your information pursuant to the following legal bases:
+with your consent;
+as necessary to perform our agreement to provide Services to you; or
+as necessary for our legitimate interests.
+We also may process your information where it is necessary to comply with a legal obligation to which we are subject.
+The laws of certain jurisdictions may provide data subjects with various rights in connection with the processing of personal information, including:
+The right to withdraw any previously provided consent;
+The right to access certain information about you that we process;
+The right to have us correct or update any personal information;
+The right to have certain personal information erased;
+The right to have us temporarily block our processing of certain personal information;
+The right to have personal information exported into common machine-readable format;
+The right to object to our processing of personal information in cases of direct marketing, or when we rely on legitimate interests as our lawful basis to process your
+information; and
+The right to lodge a complaint with the appropriate data protection authority.
+Where we are deemed a data controller under the laws of certain jurisdictions, we will take steps to help ensure that you are able to exercise your rights regarding personal information about you in accordance with applicable law. To do so, you may contact us at privacy@arize.com. Please note these rights may be limited in certain circumstances as provided by applicable law. We will promptly review all such requests in accordance with applicable laws.
+Depending on where you live, you may also have a right to lodge a complaint with a supervisory authority or other regulatory agency if you believe that we have violated any of the rights concerning personal information about you. We encourage you to first reach out to us at privacy@arize.com, so we have an opportunity to address your concerns directly before you do so.
+Under the laws of certain jurisdictions, when processing personal information of users in connection with the provision of Services to our Customers, we may be deemed a ‘data processor’ while our Customers are deemed ‘data controllers’. Where we are deemed a data processor, users should contact our Customer, the data controller, to pursue any such legal data subject rights. We will reasonably cooperate with our Customers to support and comply with any such data subject rights requests.
+Your Rights (US State Residents)
+If you are a resident of a US state with an applicable consumer privacy law, including California, Virginia, Colorado, Connecticut, Utah, Texas, Oregon, Montana, Iowa, Delaware, Nebraska, New Hampshire, New Jersey, Tennessee, Minnesota, Maryland, Indiana, Kentucky, Rhode Island, and Florida, you may have certain rights regarding your personal information, as described below. Some of these rights may be subject to limitations or exceptions under applicable law.
+Categories of Personal Information We Collect. In the preceding 12 months, we have collected the following categories of personal information:
+Identifiers
+(name, email address, IP address, account name): Collected directly from you and automatically. Used for providing Services, communicating with you, marketing, and analytics. Not sold. Shared for cross-context behavioral advertising via cookies and similar technologies.
+Financial Information
+(credit card type, last four digits, expiration date): Collected directly from you. Used for processing payments. Not sold. Not shared for cross-context behavioral advertising.
+Commercial Information
+(purchase history, products or services considered): Collected directly from you and automatically. Used for providing and improving Services. Not sold. Not shared for cross-context behavioral advertising.
+Internet or Electronic Network Activity
+(browsing history, search history, interaction with Site/Services): Collected automatically. Used for analytics, improving Services, and advertising. Not sold. Shared for cross-context behavioral advertising via cookies and similar technologies.
+Geolocation Data
+(approximate location derived from IP address): Collected automatically. Used for analytics and content customization. Not sold. Not shared for cross-context behavioral advertising.
+Professional or Employment-Related Information
+(job title, company name): Collected directly from you and from third parties. Used for providing Services and marketing. Not sold. Not shared for cross-context behavioral advertising.
+Inferences
+(preferences, characteristics, behavior): Derived from other categories. Used for analytics, personalization, and advertising. Not sold. Shared for cross-context behavioral advertising via cookies and similar technologies.
+Sensitive Personal Information
+(account log-in credentials in combination with required security access code or password; payment card information): Collected directly from you. Used for account authentication and payment processing. Not sold. Not shared for cross- context behavioral advertising.
+We do not sell your personal information for monetary consideration. We share certain personal information (identified as “shared” above) with third-party advertising and analytics partners for cross-context behavioral advertising purposes. Under certain state laws, this may be considered a “sale” or “sharing” of personal information, or “targeted advertising.”
+Your Rights.
+Depending on your state of residence, you may have the following rights:
+Right to Know / Access:
+You have the right to request that we disclose the categories and specific pieces of personal information we have collected about you, the categories of sources from which we collected your personal information, the business or commercial purposes for which we collected, sold, or shared your personal information, and the categories of third parties to whom we disclosed, sold, or shared your personal information.
+Right to Delete:
+You have the right to request that we delete personal information we have collected from you, subject to certain exceptions provided by law.
+Right to Correct:
+You have the right to request that we correct inaccurate personal information that we maintain about you.
+Right to Opt Out of Sale, Sharing, and Targeted Advertising:
+You have the right to opt out of the sale of your personal information, the sharing of your personal information for cross-context behavioral advertising, and the use of your personal information for targeted advertising. You may exercise this right by clicking the “Your Privacy Choices” link in the footer of our Site, by enabling Global Privacy Control or another recognized universal opt-out mechanism in your browser, or by contacting us as described below.
+Right to Limit Use of Sensitive Personal Information:
+Where we collect sensitive personal information (such as account log-in credentials or payment information), we use it only for the purposes of providing the Services you have requested, securing your account, processing your payments, and as otherwise permitted under applicable law. Because we limit our use of sensitive personal information to these permitted purposes, we are not required to offer a separate “Limit the Use of My Sensitive Personal Information” link. If our practices change, we will update this Policy and provide the required opt-out mechanism.
+Right to Data Portability:
+You have the right to receive a copy of your personal information in a portable and, to the extent technically feasible, readily usable format.
+Right to Non-Discrimination:
+We will not discriminate against you for exercising any of your privacy rights. We will not deny you goods or services, charge you different prices, or provide a different level of quality for exercising your rights.
+How to Submit a Request.
+You may submit a request to exercise any of the rights described above by completing the privacy request form available at [link to rights form] or by emailing us at privacy@arize.com.
+Verification.
+When you submit a request, we will take reasonable steps to verify your identity before responding. For requests submitted via your account, we may verify your identity by confirming your login credentials. For requests submitted by email or through our privacy request form, we may ask you to provide information that matches information we have on file (such as your email address or account details). We will not fulfill a request if we cannot verify your identity to a reasonable degree of certainty.
+Authorized Agents.
+You may designate an authorized agent to submit a request on your behalf. If you use an authorized agent, we may require: (a) proof of your signed, written permission (or, for California residents, a power of attorney under California Probate Code Sections 4121 through 4130) authorizing the agent to act on your behalf; and (b) verification of your own identity as described above. We may deny a request from an agent who cannot provide sufficient evidence of authorization.
+Response Timing. We will acknowledge receipt of your request within 10 business days and provide a substantive response within 45 days of receiving your verifiable request. If we need additional time, we will notify you of the extension and the reason for it. We may take up to an additional 45 days (90 days total) to respond, as permitted by applicable law.
+Appeals.
+If we decline your privacy request in whole or in part, you may appeal our decision by contacting us at privacy@arize.com with the subject line “Privacy Request
+Appeal.” We will respond to your appeal within the timeframe required by applicable law (generally 45 to 60 days). If your appeal is denied, we will provide you with information on how to contact your state attorney general or other applicable regulatory authority to
+submit a complaint.
+California-Specific Disclosures.
+The categories of personal information we have collected, disclosed for a business purpose, and shared for cross-context behavioral advertising in the preceding 12 months are described in the table above. We do not sell personal information for monetary consideration. We do not have actual knowledge that we sell or share the personal information of consumers under 16 years of age. We do not offer financial incentive programs related to the collection, sale, or deletion of personal information.
+Shine the Light.
+California Civil Code Section 1798.83 permits California residents to request certain information regarding our disclosure of personal information to third parties for their direct marketing purposes. We do not share personal information with third parties for their own direct marketing purposes.
