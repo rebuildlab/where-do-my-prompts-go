@@ -1,0 +1,38 @@
+Security
+Updated May 2026
+Groq is committed to protecting our customers, systems, and data. We proactively work to identify and mitigate security risks using industry-standard practices and strive to address reported security issues in a timely and responsible manner.
+Groq Trust Center
+Visit the Groq
+Trust Center
+to learn more about our information security program, compliance posture, and supporting documentation.
+Reporting Vulnerabilities
+Groq operates a private vulnerability disclosure program through HackerOne to manage and review security submissions.
+We value collaboration with the security research community and encourage the responsible disclosure of security vulnerabilities affecting Groq products, services, or systems. Eligible submissions may be recognized or rewarded at Groq's discretion. If you have identified a verifiable and previously unreported vulnerability, please email your HackerOne username to security@groq.com to request an invitation to our private program.
+We encourage researchers to report vulnerabilities privately so our teams can investigate and remediate issues responsibly prior to public disclosure. Researchers participating in the program are expected to adhere to the scope and guidelines defined within Groq's private HackerOne program.
+Guidelines for Researchers
+Researchers participating in the program are expected to:
+Be at least 18 years of age, or have permission from a parent or legal guardian prior to reporting.
+Not be a resident of a United States Government embargoed country or included on a list of sanctioned individuals.
+Make a good faith effort to avoid privacy violations, destruction of data, and interruption or degradation of services.
+Avoid accessing, modifying, or deleting data that does not belong to you.
+Submit only original and previously unreported vulnerabilities.
+Provide sufficient information to reproduce and validate reported issues, including proof-of-concept materials where appropriate.
+Cooperate with Groq's investigation and remediation efforts prior to public disclosure.
+Adhere to the scope and guidelines defined within Groq's private HackerOne program.
+Third-Party Products
+If a reported issue affects a third-party library, external project, or another vendor, Groq may share relevant details with the affected vendor or maintainer as part of coordinated remediation efforts. We will make reasonable efforts to coordinate and communicate with researchers throughout that process.
+All submissions are governed by Groq's
+Terms of Use
+.
+Out of Scope Vulnerabilities
+Researchers must adhere to the out-of-scope categories and exclusions defined within Groq's private HackerOne program, including the Core Ineligible Findings documented by HackerOne.
+Issues related solely to model prompts, model-generated responses, jailbreaks, prompt-based safety bypass techniques, or attempts to induce harmful, malicious, or policy-violating outputs are out of scope.
+Examples include:
+Attempts to cause models to generate harmful, offensive, or inappropriate content.
+Attempts to induce models to provide instructions for harmful activity.
+Attempts to cause models to generate malicious code.
+Model hallucinations or simulated behavior are also out of scope, including instances where a model falsely claims to access systems, retrieve secrets, execute code, or perform actions it cannot actually perform.
+Examples include:
+Attempts to cause models to simulate harmful or unauthorized activity.
+Attempts to cause models to falsely claim access to secrets or confidential information.
+Attempts to cause models to simulate system access or code execution.

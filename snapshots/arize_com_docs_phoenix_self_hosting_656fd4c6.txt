@@ -1,0 +1,94 @@
+Phoenix is
+free to self-host
+with no feature limitations. Your data stays entirely within your infrastructure—nothing is sent to Arize and can be fully air-gapped.
+100% Free
+No license fees, no usage limits, no feature gates
+Complete Privacy
+Your traces, prompts, and data never leave your infrastructure
+Full Featured
+Tracing, evals, datasets, experiments, prompt management
+​
+Choose Your Deployment
+Terminal
+Run via CLI
+Docker
+Docker or Compose
+Kubernetes
+Deploy on K8s
+Helm
+Helm charts
+AWS
+CloudFormation
+Railway
+One-click template
+Render
+One-click blueprint
+Google Cloud Run
+One-click deploy
+Azure
+One-click ARM template
+For an on-premise or self-hosted enterprise option with Arize support, see
+Arize AX
+.
+​
+Configure Your Instance
+Environment Variables
+Ports, storage, database connections
+Authentication
+OAuth2, LDAP, local accounts
+Access Controls
+Role-based permissions
+Data Retention
+Trace retention policies
+Sandbox Backends
+Code-execution backends shipped in the container
+Network Security
+Outbound access, SSRF protection, CSRF
+Privacy
+Telemetry, air-gapped deployments
+​
+Images
+​
+Docker
+Available on
+Docker Hub
+:
+Tag
+Description
+arizephoenix/phoenix:latest
+Latest released version using root permissions.
+arizephoenix/phoenix:latest-nonroot
+Latest released version using nonroot permissions.
+Ensure the image has the required filesystem permissions before using.
+arizephoenix/phoenix:latest-debug
+Latest released version using a debug base image.
+arizephoenix/phoenix:version-X.X.X
+Pinned release version using root permissions.
+arizephoenix/phoenix:version-X.X.X-nonroot
+Pinned release version using nonroot permissions.
+arizephoenix/phoenix:version-X.X.X-debug
+Pinned release version using a debug base image.
+Pin to a specific version (e.g.,
+arizephoenix/phoenix:version-8.0.0
+) for production deployments.
+​
+Helm
+Available on
+Docker Hub
+:
+Chart
+Description
+arizephoenix/phoenix-helm:X.X.X
+Helm chart for Kubernetes deployments. New patch versions defaulting to the latest Phoenix release are regularly published.
+See the
+Helm deployment guide
+for installation instructions.
+​
+Learn More
+Architecture
+Storage options, scaling patterns, tenancy
+Start Tracing
+Send your first traces to Phoenix
+Was this page helpful?
+Suggest edits
+Raise issue

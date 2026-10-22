@@ -1,0 +1,60 @@
+Our mission is to
+make AI accessible to all
+.
+To do that, we are continuously working to
+build the best frontier models
+and improve them, including by
+using information from users’ prompts, feedback or experience
+.
+🔑 However, not everyone wants their input and output data
+used for training purposes
+. That’s why
+we offer various controls
+listed below for managing your user data.
+Controls on Vibe
+Controls may vary
+depending on your Vibe plan
+:
+Vibe
+Input and output data are
+used by default
+to train our artificial intelligence models,
+unless you
+opt out of training
+at any time.
+Vibe (Enterprise)
+Enterprise
+customers are
+opted out of training by default
+. The opt-in toggle is managed at the admin level.
+Special case: user feedback
+User feedback
+is handled differently.
+In any case, and
+whichever subscription plan you adhere to
+, providing feedback by using the "thumbs up" or "thumbs down" button and adding a comment
+authorize us to use your rating
+,
+your input and output
+in order to improve the behavior of our artificial intelligence models.
+📌 Please refrain from providing feedback if you
+do not want us to use your feedback data
+.
+Controls on Mistral Studio
+Free mode
+As stated during subscription,
+we may use your data (input and output)
+to train our artificial intelligence models.
+🔎 You have
+the right to opt out of this program at any time
+. For more information on this process, please refer to the following article:
+Can I opt out of my input or output data being used for training?
+Pay-as-you-go
+Customers retain full control over this processing and have the right to opt out at any time.
+Did this answer your question?
+Related Articles
+Can I activate Zero Data Retention (ZDR)?
+How do you use submitted feedback?
+Can other people view my conversations?
+How do you handle my data when using the Memories feature?
+Can I opt out of my input or output data being used for training?

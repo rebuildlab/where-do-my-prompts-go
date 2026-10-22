@@ -1,0 +1,161 @@
+Braintrust implements industry-leading security practices and maintains compliance with key standards to protect your data and ensure the highest levels of security for the platform.
+The
+Trust center
+is the central resource for information about Braintrust’s security practices, certifications, and policies. It provides up-to-date details for customers and partners.
+​
+Deployment options
+In addition to SaaS, where Braintrust operates both the control plane and the data plane, Braintrust offers deployment options that keep your sensitive AI data within your own cloud account while you continue to use Braintrust’s managed UI and platform features. With
+BYOC
+, Braintrust operates the data plane in your cloud. With
+self-hosting
+, your team operates it. See
+Deployment options
+for a comparison.
+​
+Authentication
+The Braintrust UI supports end-user authentication through enterprise identity providers (Google, Okta, Microsoft), SSO/SAML integration with major providers (Okta Workforce, Microsoft Entra ID, Google Workspace), and OpenID Connect (OIDC) for custom providers. Users receive credentials directly in their browser that securely communicate with your data plane.
+For programmatic access, API keys are displayed only once upon creation and stored as one-way cryptographic hashes, never in plaintext. Each key inherits the user’s permissions and can be scoped to specific projects. Best practices: rotate keys periodically, revoke compromised keys immediately, store keys in environment variables or secret management systems (never in code), apply principle of least privilege, and monitor API key usage through activity logs. See
+API keys
+to create and manage keys.
+For clients connecting to the
+Braintrust MCP server
+, OAuth 2.0 uses PKCE (Proof Key for Code Exchange). MCP clients authenticate via standard OAuth flow and receive access tokens with refresh capabilities for secure, long-lived sessions. Tokens inherit your user account permissions, providing access only to resources you can normally access.
+​
+External MCP connections in Loop
+External MCP connections
+are available in public preview on Braintrust-hosted deployments.
+Project MCP credentials are encrypted and stored on your data plane using the same mechanism as function environment variables. Loop’s runtime decrypts credentials to authenticate requests to the project’s configured MCP servers. These calls run outside the sandbox and use the shared account’s or API key’s permissions, rather than each project member’s individual account on the external service.
+Project members can use these connections with the shared credentials’ access. Scheduled Loop runs, including Patterns automations, can invoke all tools those credentials allow without interactive approval. Use an account or key limited to the access you intend to share with the project.
+Configure and manage shared OAuth connections or API keys in
+Loop’s project MCP settings
+.
+​
+Authorization
+Braintrust uses role-based access control (RBAC) with built-in permission groups (Owners, Engineers, Viewers, and All AI Provider Access) and support for custom groups with fine-grained permissions. Permissions can be set at organization, project, organization AI provider, or individual object (experiment, dataset, prompt) levels, enabling project-level isolation and object-level access control for sensitive resources. See
+Access control
+for configuration details.
+​
+Control sensitive trace data
+Use
+SDK masking functions or span customizers
+to remove sensitive values before your application sends trace data to Braintrust. You provide the logic for the fields your application records.
+For organization or project policies that detect sensitive text after upload, use
+ingestion redaction
+.
+Use
+access control
+to limit who can read stored data. Use
+retention policies
+to control how long records are kept.
+​
+Data encryption
+All data is encrypted at rest and in transit. LLM provider API keys and secrets are encrypted using AES-256 with unique 256-bit keys and nonces. For
+self-hosted deployments
+, you control encryption keys through your cloud provider’s key management system (AWS KMS, Google Cloud KMS, Azure Key Vault).
+For supported providers, you can avoid storing a long-lived provider credential altogether with
+workload identity federation
+, where Braintrust exchanges a short-lived OIDC token for a provider access token at request time.
+​
+Network security
+The data plane runs in an isolated VPC with no access to internal infrastructure (hosted) or in your own VPC (self-hosted).
+Custom code functions
+can execute in quarantined VPCs on AWS deployments. Self-hosted deployments support firewall and VPN deployment for additional security. SDKs and browser UI communicate directly with your data plane via CORS — no customer data flows through Braintrust’s control plane. Self-hosted deployments can access private network resources like internal LLM models, proprietary tools, and private databases. See
+Architecture
+for details.
+​
+Image rendering controls
+Braintrust provides configurable image rendering modes to prevent sensitive data leaks from malicious image URLs in logs. When your browser automatically loads images in logs, any data embedded in the URL is sent to the image server, which could be controlled by an attacker.
+Organizations can configure image rendering with three modes:
+Auto-load images
+(default): Images render automatically
+Click to load
+: Images require user approval before loading
+Block all images
+: External images never load
+Some image URLs are never loaded automatically, whichever mode you select. This covers URLs that name a host on your local or private network, such as
+localhost
+, a
+.local
+name, or a private or link-local IP address, and URLs using a scheme that a browser should never load an image from, such as
+javascript:
+or
+file:
+.
+In
+Auto-load images
+and
+Click to load
+, these images show a
+Load image
+button, so loading one is always a deliberate choice. In
+Block all images
+, they are blocked along with every other external image. Inline
+data:
+and
+blob:
+images are unaffected, because they never leave the browser.
+Configure image rendering in
+organization settings
+. This protection applies organization-wide to all logs, experiments, and playgrounds.
+​
+Code execution
+Braintrust provides several
+function types
+to enable features like Python and TypeScript scorers, hosted tools, and replay-able eval functions. These functions are implemented using different execution mechanisms:
+Prompts
+-
+Mustache or Nunjucks
+-templated text messages filled dynamically
+Inline code
+- TypeScript or Python code snippets
+Bundled code
+- Packaged TypeScript or Python applications
+HTTP endpoints
+- External functions called over HTTP
+Global functions
+- Pre-installed functions from the open source
+autoevals
+library
+Prompts, HTTP endpoints, and global functions have straightforward security models: prompts are template expansions evaluated in a sandboxed runtime with memory and timeout limits to prevent template injection, HTTP endpoints communicate with your external services, and global functions run pre-vetted code from the autoevals library.
+For inline and bundled code, the security model varies by deployment type:
+For Braintrust-hosted deployments and self-hosted deployments on AWS, inline and bundled code functions run in an isolated VPC specifically for function execution. This environment has no access to your internal infrastructure (databases, application servers), can make outbound internet requests (for API calls, package downloads), provides organization-level separation when multiple orgs share the same stack, and runs functions in ephemeral AWS Lambda environments.
+For self-hosted deployments on GCP and Azure, custom code runs in the same process as the data plane without isolation.
+​
+Data residency and retention
+BYOC
+and
+self-hosted
+deployments keep all sensitive data (experiment logs, traces, datasets, prompts) within your cloud account and region for regulatory compliance. Configure
+automated retention policies
+to delete logs, experiments, or datasets after specified periods (e.g., 7-day retention for development, 90-day retention for production, 180-day retention for experiments). For self-hosted deployments v1.1.21+, data is soft-deleted with a 24-hour grace period before permanent removal.
+Export to cloud storage
+periodically with JSON Lines or Parquet formats, or export on-demand via API in JSON/Parquet for entire projects or organizations.
+When
+Topics
+runs with built-in models enabled, the trace text it summarizes is sent to Braintrust-served
+Baseten
+endpoints for inference. These endpoints run with Zero Data Retention (ZDR) for every organization, whether Braintrust-hosted (SaaS), BYOC, or self-hosted. ZDR is on by default and requires no configuration, so inference inputs and outputs are not stored by the model host. See
+Manage built-in models
+.
+​
+Compliance
+​
+SOC 2 Type II
+Braintrust is SOC 2 Type II compliant. This independent audit confirms that our controls related to security are operating effectively over time. Associated documentation and reports are available on the
+Trust Center
+after signing a mutual NDA.
+​
+HIPAA
+Braintrust supports HIPAA compliance requirements and maintains the necessary administrative, physical, and technical safeguards for handling protected health information (PHI). For organizations subject to HIPAA regulations, Braintrust can execute Business Associate Agreements (BAAs).
+To discuss your specific HIPAA compliance needs,
+contact Braintrust
+.
+​
+GDPR
+For GDPR compliance requirements, Braintrust can execute Data Processing Agreements (DPAs) to satisfy certain data processing obligations. However, for full GDPR compliance, organizations should use a
+BYOC or self-hosted deployment
+with data residency in the EU.
+To discuss your specific GDPR requirements,
+contact Braintrust
+.
+Was this page helpful?

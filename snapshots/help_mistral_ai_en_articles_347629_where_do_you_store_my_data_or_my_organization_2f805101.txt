@@ -1,0 +1,35 @@
+By default,
+your data is hosted in the European Union
+.
+You may, however,
+explicitely use our US API endpoint
+and in such a case
+your data is hosted in the United States
+.
+📌 Depending on the feature you use,
+your data can be temporarily transferred outside of the European Union
+, to the locations listed in the “Subprocessors” tab of our
+Trust Center
+.
+In such a case, we take the necessary steps to ensure that:
+All contracts with service providers
+who process personal data outside the European Union have
+adequate safeguards in compliance with Article 46 of the GDPR
+. For instance, when the data is transferred to a country that does not benefit from an adequacy decision from the EU Commission, we attach the most recent version of the European Commission’s Standard Contractual Clauses to all such contracts.
+Our subprocessors located outside the EU
+undergo a thorough security review
+. In some cases, this includes ensuring that they take
+additional security measures
+such as
+zero data retention
+or
+data encryption
+.
+🔑 If you use our Enterprise solutions, you can deactivate some of the features that involve data transfers outside of the EU at organization level. Please contact us for more info.
+Did this answer your question?
+Related Articles
+How do you ensure the security of user data?
+How long do you store my data?
+How can I exercise my GDPR rights?
+Where can I find your DPA (Data Processing Agreement)?
+How does Mistral comply with the EU’s Digital Services Act (DSA)?

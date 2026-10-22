@@ -1,0 +1,189 @@
+Login
+Log In
+Documentation
+Docs
+API Reference
+Docs
+Getting Started
+Overview
+Quickstart
+Models
+OpenAI Compatibility
+Responses API
+Rate Limits
+Templates
+API Reference
+Core Features
+Text Generation
+Speech to Text
+Text to Speech
+Orpheus
+OCR and Image Recognition
+Reasoning
+Content Moderation
+Structured Outputs
+Prompt Caching
+Tools & Integrations
+Tool Use
+Overview
+Groq Built-In Tools
+Code Execution
+Browser Search (GPT OSS Models)
+Remote Tools and MCP
+Connectors
+Local Tool Calling
+Integrations Catalog
+Coding with Groq
+Factory Droid
+OpenCode
+Kilo Code
+Roo Code
+Cline
+Guides
+Prompting Guide
+Basics
+Patterns
+Model Migration
+Assistant Message Prefilling
+Service Tiers
+Service Tiers
+Performance Tier
+Flex Processing
+Batch Processing
+Advanced
+LoRA Inference
+Production Readiness
+Production Checklist
+Optimizing Latency
+Security Onboarding
+Prometheus Metrics
+Account and Console
+Spend Limits
+Projects
+Model Permissions
+Billing FAQs
+Your Data
+Developer Resources
+SDK Libraries
+Groq Badge
+Developer Community
+OpenBench
+Error Codes
+Changelog
+Legal
+Policies & Notices
+Uncategorized
+Docs
+API Reference
+BUSINESS ASSOCIATE ADDENDUM FOR GROQCLOUD SERVICES
+Effective: October 15, 2025
+This Business Associate Addendum
+(“BAA”)
+is entered into between the Groq Contracting Party (“
+Business Associate
+” or “
+Groq
+”) and the customer agreeing to the terms below (“
+Customer
+”) for use of the applicable GroqCloud Services and supplements, amends, and is incorporated into the Groq Services Agreement (the “
+Agreement
+”) between the parties. This BAA will be effective on the date it is signed or accepted by the Customer (“
+BAA Effective Date
+”). Customer must have an existing Agreement in place for this BAA to be valid and effective. Together with the Agreement, this BAA will govern each party’s respective obligations regarding Protected Health Information.
+You represent and warrant that (i) you have the full legal authority to bind Customer to this BAA, (ii) you have read and understand this BAA, and (iii) you agree, on behalf of Customer, to the terms of this BAA. If you do not have legal authority to bind Customer, or do not agree to these terms, please do not sign or click to accept this BAA.
+BACKGROUND
+(A) Customer is a “covered entity” or “business associate” as such terms are defined under HIPAA and as such is required to comply with the requirements regarding the confidentiality and privacy of Protected Health Information.
+(B) In connection with the provision of the Covered Cloud Services (as defined below) to Customer, the parties anticipate that Groq may receive Protected Health Information for or on behalf of Customer.
+(C) By providing the Covered Cloud Services under the Agreement and creating or receiving Protected Health Information for or on behalf of Customer, Business Associate will become a business associate or subcontractor of Customer, as such terms are defined under HIPAA, and will therefore have obligations regarding the confidentiality and privacy of Protected Health Information that Business Associate creates for, or receives from or on behalf of, Customer.
+(D) This BAA applies only to the extent Customer is a “covered entity” or “business associate” as those terms are defined by HIPAA.
+1. Definitions
+For the purposes of this BAA, capitalized terms have the meanings ascribed to them below. All capitalized terms used but not otherwise defined have the meaning ascribed to them by HIPAA or the Agreement.
+1.1
+“Covered Cloud Services”
+means the “Services” or “Cloud Services” as defined in the Agreement or as otherwise specified by Groq from time to time as part of its documentation published on
+https://console.groq.com/docs/legal
+excluding Beta Services and any features, products, or services that are not generally available, in alpha, beta, pre-production, preview, demo, trial stage or access, or provided for free or at no additional charge.
+1.2
+“HIPAA”
+means, collectively, the administrative simplification provision of the Health Insurance Portability and Accountability Act enacted by the United States Congress in 1996, and its implementing regulations (referred to as the “
+HIPAA Rules
+” in this BAA), including the Privacy Rule, the Breach Notification Rule, the Security Rule and the Enforcement Rule, as amended from time to time, including by the Health Information Technology for Economic and Clinical Health (HITECH) Act and by the Modifications to the HIPAA Privacy, Security, Enforcement, and Breach Notification Rules under the Health Information Technology for Economic and Clinical Health Act and the Genetic Information Nondiscrimination Act: Other modifications to the HIPAA Rules; Final Rule (commonly referred to as the Omnibus Final Rule).
+1.3 “
+Protected Health Information
+” or “
+PHI
+” has the same meaning as the term “protected health information” or “electronic protected health information,” respectively, in 45 CFR § 160.103; provided that, for purposes of this BAA, such term is limited to protected health information that is received and maintained by Groq from or on behalf of Customer through the Covered Cloud Services.
+1.4 “
+Required by Law
+” has the same meaning given to it under HIPAA at 45 CFR § 160.103.
+1.5 “
+Secretary
+” refers to the Secretary of the U.S. Department of Health and Human Services.
+1.6
+“Unsecured PHI”
+means PHI that is not rendered unusable, unreadable, or indecipherable to unauthorized individuals through the use of a technology or methodology specified by the Secretary (e.g., encryption). This definition applies to both hard copy PHI and electronic PHI.
+1.7 “
+Unsuccessful Security Incidents
+” means, without limitation, pings and other broadcast attacks on Groq’s firewall, presence of vulnerable software, port scans, unsuccessful log-on attempts, denial of service attacks, as long as no such incident results in unauthorized access, acquisition, use, or disclosure of PHI.
+2. Business Associate's Obligations
+2.1
+Use and Disclosure of PHI.
+2.1.a Performance of the Agreement. Except as otherwise limited by this BAA, Business Associate may only use and disclose PHI for, or on behalf of Customer, as permitted or required by the Agreement, this BAA, or as Required by Law.
+2.1.b Management, Administration, and Legal Responsibilities. Business Associate may use and disclose PHI for the proper management and administration of Business Associate's business or to carry out Business Associate's legal responsibilities, provided that any disclosure of PHI by the Business Associate for such purposes may only occur if: (1) Required by Law; or (2) Business Associate obtains reasonable assurances from the person or entity to whom PHI is disclosed that they will (x) keep it confidential, (y) use or further disclose only as Required by Law or for the purpose for which it was disclosed to the person or entity, and (z) notify the Business Associate if they become aware of any instances in which the confidentiality of the PHI has been breached.
+2.2
+Safeguards.
+Business Associate will employ reasonably appropriate administrative, technical, and physical safeguards to protect the confidentiality of PHI and to prevent the use or disclosure of PHI in any manner inconsistent with the terms of this BAA or the Agreement. Business Associate will comply, where applicable, in all material respects with Subpart C of 45 C.F.R. Part 164 with respect to electronic PHI to prevent, to the extent that is reasonably practicable, the use or disclosure of such electronic PHI other than as provided for by this BAA or the Agreement.
+2.3
+Audits and Records.
+Business Associate will, in accordance with HIPAA, make available to the Secretary, Business Associate's internal practices, books, and records relating to the use and disclosure of PHI received from, or created or received by Business Associate on behalf of, Customer for purposes of determining Customer's compliance with its obligations under HIPAA.
+2.4
+Individuals' Rights to their PHI.
+2.4.a Access. The parties agree that Business Associate does not maintain PHI in a Designated Record Set for Customer. In the event that there is a change in the Covered Cloud Services such that Business Associate maintains Customer's PHI in a Designated Record Set, then at the written request of Customer, Business Associate will within 10 business days of such request, make available to Customer access to such PHI in accordance with 45 CFR Section 164.524. If any individual requests access to PHI directly from Business Associate, Business Associate will forward such request to Customer within 5 business days. Customer will be solely responsible for making all determinations regarding the grant or denial of an Individual's request for access to PHI and Business Associate will make no such determinations. Except as Required by Law, only Customer will be solely responsible for releasing PHI to an Individual pursuant to such a request.
+2.4.b Amendment. Subject to Section 2d(i) above, if Business Associate maintains PHI in a Designated Record Set for Customer, then Business Associate will make available to Customer such PHI for amendments (and incorporate any amendments, if required) in accordance with 45 CFR § 164.526 of the Privacy Rule. If any individual submits a request for amendment of his or her PHI directly to Business Associate, Business Associate will forward such request to Customer within 5 business days. Business Associate will provide Customer with access to Customer's PHI via the applicable Covered Cloud Services so that Customer may fulfill its obligations under HIPAA with respect to Individuals' rights of amendment. Customer is solely responsible for managing its use of the Covered Cloud Services to appropriately respond to such individual requests.
+2.4.c Accounting of Disclosures. Business Associate will document its disclosures of Customer's PHI and, when requested in writing by Customer, provide to Customer, within 10 business days of such request, an accounting of such disclosures in accordance with 45 CFR §164.528. of the Privacy Rule. If any individual submits a request for an accounting of disclosures of his or her PHI directly to Business Associate, Business Associate will forward such request to Customer within 5 business days. Customer is solely responsible for responding to any such individual's request for an accounting of disclosures of his or her PHI in accordance with HIPAA.
+2.5
+Disclosure to Third Parties.
+Business Associate will obtain and maintain a written agreement with each subcontractor or agent that has or will have access to PHI, which is received from, or created or received by, Business Associate for or on behalf of Customer, pursuant to which agreement such subcontractor and agent agrees to be bound by the same or substantially similar types of restrictions, terms, and conditions that apply to Business Associate under this Agreement with respect to such PHI.
+2.6
+Reporting Obligations.
+2.6.a Business Associate will report any Breach to Customer no later than 10 business days after discovery by Business Associate; provided, however, that such discovery will be subject to Business Associate's reasonable investigation of the potential breach and Business Associate's discovery date will be the date on which Business Associate reasonably determines, based on investigation performed, that a Breach likely occurred. Notice of a Breach will include, to the extent such information is available: (1) the identification of each individual whose PHI has been, or is reasonably believed to have been, accessed, acquired, or disclosed during the Breach; (2) the date of the Breach, if known, and the date of discovery of the Breach; (3) the scope of the Breach; and (4) the Business Associate's response to the Breach.
+2.6.b In the event of a use or disclosure of PHI that is improper under this BAA but does not constitute a Breach, Business Associate will report such use or disclosure to Customer within 15 business days after the date on which Business Associate becomes aware of such use or disclosure and, following reasonable investigation, determines that the use or disclosure likely did not rise to the level of a reportable Breach.
+2.6.c The parties acknowledge that Unsuccessful Security Incidents occur within the normal course of business and the parties stipulate and agree that this paragraph constitutes notice by Business Associate to Customer for the ongoing occurrence of such Unsuccessful Security Incidents for which no additional reporting by Business Associate to Customer will be required.
+3. Customer Obligations
+3.1
+Permissible Requests.
+3.1.a Customer will not request Business Associate to use or disclose PHI in any manner that would violate applicable federal and state laws if such use or disclosure were made by Customer.
+3.1.b Customer will be compliant with all applicable laws and regulations pertaining to PHI Customer sends, or directs to be sent, to Business Associate.
+3.2
+Notifications.
+3.2.a Customer will notify Business Associate of any limitation in any applicable notice of privacy practices in accordance with 45 CFR Section 164.520, to the extent that such limitation may affect Business Associate's use or disclosure of PHI.
+3.2.b Customer will notify Business Associate of any changes in, or revocation of, permission by individual to use or disclose PHI, to the extent that such changes may affect Business Associate's use or disclosure of PHI.
+3.2.c Customer will notify Business Associate of any restriction to the use or disclosure of PHI that Customer has agreed to in accordance with 45 CFR Section 164.522, to the extent that such restriction may affect Business Associate's use or disclosure of PHI.
+3.3
+Authorizations.
+Customer warrants and represents that it has obtained all authorizations required under HIPAA for the use or disclosure of PHI as is necessary for Business Associate to perform services under the Agreement and that Business Associate will be under no obligation to separately request or obtain any such authorization.
+4. Term and Termination
+4.1
+Term.
+The term ("
+Term
+") of this BAA will begin on the BAA Effective Date and end on the earlier of (i) termination in accordance with this Section 4, or (ii) the expiration or termination of the Agreement under which Customer has access to a Covered Cloud Service.
+4.2
+Material Breach.
+Where either party has knowledge of a material breach of this BAA by the other party, the non-breaching party will provide the breaching party with an opportunity to cure. Where said breach is not cured to the reasonable satisfaction of the non-breaching party within 30 business days of the breaching party's receipt of notice from the non-breaching party of said breach, the non-breaching party will, if feasible, terminate this BAA and the portion(s) of the Agreement affected by the breach. Where either party has knowledge of a material breach by the other party and cure is not possible, the non-breaching party will, if feasible, terminate this BAA and the portion(s) of the Agreement affected by the breach.
+4.3
+Return or Destruction of PHI.
+Upon termination of this BAA for any reason, Business Associate will:
+4.3.a If feasible as determined by Business Associate, return or destroy all PHI received from, or created or received by Business Associate for or on behalf of Customer that Business Associate or any of its subcontractors and agents still maintain in any form, and Business Associate will retain no copies of such information; or
+4.3.b If Business Associate determines that such return or destruction is not feasible, extend the protections of this BAA to such information and limit further uses and disclosures to those purposes that make the return or destruction of the PHI infeasible, in which case Business Associate's obligations under this Section 4(b) will survive the termination of this BAA.
+5. General
+5.1
+Amendment.
+If any of the regulations promulgated under HIPAA are amended or interpreted in a manner that renders this BAA inconsistent, the parties will cooperate in good faith to amend this BAA to the extent necessary to comply with such amendments or interpretations.
+5.2
+Interpretation.
+Any ambiguity in this BAA will be resolved to permit the parties to comply with HIPAA.
+5.3
+Conflict; Order of Precedence.
+In the event that any terms of this BAA conflict with any term of the Agreement, the terms of this BAA will govern and control over the conflicting term in the Agreement. All other nonconflicting terms of the Agreement will remain valid and enforceable.
+Was this page helpful?

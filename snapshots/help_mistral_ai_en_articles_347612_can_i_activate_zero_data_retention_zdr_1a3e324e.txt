@@ -1,0 +1,88 @@
+Zero Data Retention (ZDR) is available
+only with pay-as-you-go
+and
+only for stateless API calls
+.
+🔑 ZDR is not available for Vibe Work, Chat, libraries, agents, conversations, batch files, or other stateful products that must store data to work. If you use Vibe, you can instead manage your data-training preferences in your privacy settings.
+ZDR on Vibe
+ZDR is
+not available
+for Vibe Work or Chat, regardless of your subscription plan.
+This is because
+we must store your data for user experience purposes
+(such as accessing your conversation history, showing your previous work, or maintaining application state).
+🔑 Conversations are removed from our systems
+upon manual deletion on your side
+, or
+when you delete your account
+, typically after a
+short grace period
+to prevent accidental data loss, and for monitoring and legal retention purposes.
+ZDR on Vibe CLI
+Vibe CLI runs on your machine and calls stateless APIs. If ZDR is enabled for your organization with pay-as-you-go, Vibe CLI API calls follow the same ZDR rules as the underlying API endpoint.
+ZDR on Mistral Studio
+When ZDR is enabled, your API inputs and outputs are
+not retained
+on our systems beyond what is required to return the response.
+🔑 ZDR is available
+only with pay-as-you-go
+. If you’re in Free mode,
+enable pay-as-you-go
+first.
+ZDR applies to the following stateless API endpoints:
+/v1/chat/completions
+/v1/fim/completions
+/v1/embeddings
+/v1/moderations
+,
+/v1/chat/moderations
+,
+/v1/classifications
+, and
+/v1/chat/classifications
+/v1/ocr
+/v1/audio/speech
+/v1/audio/transcriptions
+🚨 ZDR does
+not
+apply to stateful APIs or products, including agents, batch processing files, conversations, libraries,
+/v1/files
+, Vibe Work, and Chat. For example, the Files API stores uploaded files and is outside the scope of ZDR.
+How to request ZDR
+Submit your request directly within our Help Center or by
+contacting our support team
+.
+🔑 As part of this request,
+you must provide sufficient detail of your legitimate reasons
+for requesting Zero Data Retention.
+We will review your request and,
+at our discretion
+, approve or deny it.
+How to check whether ZDR is active
+After your ZDR request is approved, it appears in the
+Privacy settings
+of the Admin panel.
+If it does
+not
+appear yet, your request has not been processed.
+If your request is rejected, you receive an email.
+ZDR, training opt-out, and DPA
+ZDR and training opt-out are separate controls:
+ZDR
+controls whether supported API inputs and outputs are retained after processing.
+Training opt-out
+controls whether eligible data may be used to improve Mistral’s models.
+🔎 Need contractual or compliance information? Our
+Data Processing Agreement (DPA)
+is available in our
+Data Processing Addendum
+and is regularly updated to reflect our processing, services, security measures, and applicable regulations. We cannot sign the DPA offline. You can also review our
+Trust Center
+.
+Did this answer your question?
+Related Articles
+How do I contact support?
+How do you handle my data when using the Memories feature?
+Can I opt out of my input or output data being used for training?
+How can I control or delete data connected to third-party tools?
+Why am I hitting API rate limits, and how do I increase them?

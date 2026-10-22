@@ -1,0 +1,181 @@
+One platform for everyone who builds, funds, secures, and buys AI
+Give every team the models they want and the controls they need.
+Developers and engineering
+500+ models, one API
+OpenAI-compatible API
+Provider and model fallbacks
+Task-based model routing
+New models on day 0
+Finance and FinOps
+Make every token count
+See spend across the org
+Set budgets & alerts
+Live price competition
+Price-aware routing
+Security and risk
+Govern every request
+One data policy enforced
+SSO, SCIM, keyless auth
+ZDR and in-region routing
+SOC 2 Type II and DPA
+Procurement and legal
+One contract, one invoice
+One vendor for every model
+Invoicing and credit lines
+Our DPA, or yours
+SLA and named engineer
+Built for enterprise scale
+Monthly tokens
+600
+T+
+Global users
+10
+M+
+Providers
+80
++
+Models
+500
++
+The right model for every task, within your rules
+Integrate once. Build with the latest models on day 0
+Two lines of code connect you to every model. OpenRouter routes each request to the best provider and can pick the model or move you to new releases, with no code changes.
+OpenAI-compatible API and SDKs
+One API key for every model and provider you approve
+Auto Router picks the best model for each prompt
+baseURL:
+"https://openrouter.ai/api/v1"
+model:
+"~anthropic/claude-opus-
+latest
+"
+Swap the string for any model
+Claude Opus 5.5
+GPT-6 Sol
+Gemini 3.8 Flash
+DeepSeek V4.1 Flash
+Grok 4.7
+Kimi K3
+Qwen3.8 Max
+MiniMax M3
+GLM 5.3
+Mercury 2.5
+Know where every dollar goes, and stop surprise bills
+Set budgets per workspace, key, and member with workspace and key alerts, see spend by team, model, and user, and get the exact cost back on every response. Providers compete on price for the same model, and routing can favor the cheaper ones.
+Budgets per workspace, API key, and member, with workspace and key alerts
+Bring your own provider keys and keep your negotiated discounts
+Price-aware routing across providers
+Total spend
+$42K
+12.3%
+vs prev period
+Blended $/1M
+$1.74
+18.2%
+vs prev period
+Research
+Monthly
+$
+1,140
+/ $3,000
+x
+Support
+Weekly
+$
+4,120
+/ $5,000
+Alert at 80%
+x
+Production
+Daily
+$
+2,000
+/ $2,000
+Limit reached
+x
+Stay up through outages and rate limits
+When a provider goes down or returns rate limits, OpenRouter retries on another provider or model. Bring your own keys to add your own capacity, backed by an enterprise SLA.
+Fallbacks across providers and models, including on 429s
+Routing on live latency and error rates
+No charge for failed or empty completions
+anthropic/claude-opus-5.5
+Anthropic
+Rate limited
+Amazon Bedrock
+BYOK
+Served by fallback
+12:00
+12:10
+12:20
+12:30
+Charged for failed requests
+$0.00
+Keep every request inside your privacy and security policies
+Enforce data retention, logging, region, and guardrail policies on every request, and route only to providers that meet them.
+Zero data retention
+Zero-logging default
+EU in-region routing
+US in-region routing
+Model and provider allowlists
+Workspace guardrail
+Default
+Zero data retention
+Only route to provider endpoints that don't store your data.
+Allowed models
+Claude Opus 5.5
+GPT-6 Sol
+Gemini 3.8 Flash
+Allowed providers
+Amazon Bedrock
+Azure
+Google Vertex
+Data regions
+Europe
+Requests through other regions
+403 Forbidden
+Enterprise-grade AI infrastructure
+Advanced features for observability, cost control, and data governance.
+SSO and SCIM support
+Let your team sign in through your identity provider, and provision workspace access from its groups.
+Workload Identity Federation
+Authenticate services with tokens from your own identity provider instead of long-lived API keys.
+Unified reporting
+View and export all API requests across all users.
+Compliance
+SOC 2 Type II. DPA with SCCs for GDPR programs.
+How Enterprise works
+Pricing
+A quote based on your workloads and volume.
+Same per-token rates as going direct
+Discounted fees at higher volume
+Bring your own provider keys and capacity
+Billing and contract
+One agreement, one invoice, every provider.
+Invoiced billing or card payments
+Credit lines so you keep running
+VAT compliance and usage reporting
+Security review and support
+What your security and legal teams need to sign off.
+Our DPA, or we review yours
+SLAs and priority support channels
+A dedicated engineering contact
+Frequently asked questions
+Inference is billed at provider prices, with discounted fees at higher volume. Sales will quote based on your workloads.
+Yes. Bring your own keys (BYOK) to keep your negotiated rates and capacity, while OpenRouter handles routing, failover, budgets, and logging.
+Prompts are not logged by default. You can enforce zero data retention so requests only go to providers that do not retain data.
+Yes. Requests to eu.openrouter.ai that run on shared capacity go to shared provider endpoints in Europe (the EU/EEA, the UK, and Switzerland), and those to us.openrouter.ai go to shared provider endpoints in the US. Requests served by your own BYOK key go to your deployment's region, which you control. A private endpoint is eligible when its provider region, or the region you declared for it, is in that region. A declared region is your attestation, so make sure it matches where the endpoint runs. If no endpoint eligible for the region (shared, BYOK, or private) can serve the request, it errors instead of leaving the region. Account and billing records may be stored or processed in the US.
+Yes. Enterprise agreements include SLAs, priority support, invoiced billing, and credit lines.
+Already on OpenRouter?
+Keep everything you've built, and add what your company needs.
+Keep your keys, models, and integration
+Add SSO, SCIM, and org-wide data policies
+Move from prepaid credits to invoiced billing
+Get an SLA and a dedicated engineering contact
+Upgrade to Enterprise
+New to OpenRouter?
+Get a quote, our security documents, and a migration plan for your workloads.
+Same per-token rates as going direct
+Invoiced billing or card payments
+Our DPA, or we review yours
+SLAs and priority support channels
+Talk to us

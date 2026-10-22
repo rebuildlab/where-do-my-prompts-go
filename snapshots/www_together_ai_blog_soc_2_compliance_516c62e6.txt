@@ -1,0 +1,22 @@
+All blog posts
+Company
+Published
+7/8/2025
+Powering Secure AI: Together AI Achieves SOC 2 Type 2 Compliance
+Authors
+Derek Chamorro, Head of Security, Together AI
+Table of contents
+40+ Models Chosen for Production...40+ Models Chosen for Production...40+ Models Chosen for Production...
+We are excited to announce that Together AI has successfully completed a SOC 2 Type 2 examination. These achievements reflect our organization’s rigorous commitment to security, privacy, and regulatory adherence, enabling our partners and customers to deploy advanced AI workloads with confidence.
+Technical Rigor Behind Our Compliance Journey
+SOC 2 Type 2 compliance is a demanding process that requires ongoing demonstration of strong security controls across all layers of our infrastructure. Our platform’s security posture was tested via an independent, comprehensive audit spanning several months. This assessment validated the effectiveness of our access management, data encryption, incident response, and change management protocols among other critical security measures.
+We have implemented a layered security architecture, including network segmentation, continuous monitoring, and automated threat detection, to protect both our internal systems and customer data. Multi-factor authentication (MFA), role-based access controls (RBAC), and regular security training ensure that only authorized personnel can access sensitive environments.
+Healthcare Innovation
+HIPAA compliance is essential for organizations processing protected health information (PHI). Together AI adheres to the stringent requirements of HIPAA, including data encryption in transit and at rest, audit logging, and strict business associate agreements (BAAs) with our partners. This enables healthcare providers, researchers, and life sciences organizations to leverage our high-performance inference platform for applications such as clinical decision support, medical chatbots, and large-scale biomedical data analysis.
+Continuous Security and Improvement
+Security is not a one-time achievement but an ongoing commitment. Our dedicated security team conducts regular vulnerability assessments, penetration testing, and code reviews to identify and remediate risks proactively. We also maintain an extensive incident response plan, ensuring rapid detection and mitigation of any security events.
+Looking Ahead
+Achieving SOC 2 Type 2 and strengthening security controls to satisfy legal and statutory requirements demonstrates Together AI’s dedication to technical excellence and regulatory responsibility. These milestones enable us to support a broader range of use cases—especially in highly regulated industries—while maintaining the highest standards of data protection and operational integrity.
+Related articles
+View All
+View All

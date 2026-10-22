@@ -1,0 +1,23 @@
+Self-Deployment
+Mistral AI models can be
+self-deployed on your own infrastructure
+through various
+inference engines. We recommend using
+vLLM
+, a
+highly-optimized Python-only serving framework which can expose an OpenAI-compatible
+API.
+Other inference engine alternatives include
+TensorRT-LLM
+and
+TGI
+.
+You can also leverage specific tools to facilitate infrastructure management, such as
+SkyPilot
+or
+Cerebrium
+.
+Tip
+For full-stack enterprise deployment, from efficient model inference to team management, we recommend
+reaching out to us
+.

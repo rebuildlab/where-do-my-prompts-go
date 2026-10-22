@@ -1,0 +1,194 @@
+Helicone is no longer part of Mintlify. Details to come soon.
+Simple, predictable pricing
+Built to scale with you. Only pay for what you use.
+Hobby
+Free
+Kickstart your AI project.
+10,000 free requests
+1 GB storage
+1 seat, 1 organization
+Pro
+POPULAR
+$79
+per month
+For growing teams.
+Everything in Hobby
+Unlimited seats
+Alerts & reports
+HQL (Query Language)
+* Usage-based pricing applies
+Team
+BEST VALUE
+$799
+per month
+For scaling companies.
+Everything in Pro
+5 organizations
+SOC-2 & HIPAA compliance
+Dedicated Slack channel
+* Usage-based pricing applies
+Enterprise
+Contact us
+Custom-built packages.
+Everything in Team
+Custom MSA
+SAML SSO
+On-prem deployment
+Bulk cloud discounts
+Pricing calculator
+Estimate your monthly costs based on your usage
+Usage
+Requests per month
+Tokens per request
+Storage
+0.30
+GB
+$
+0.97
+Requests
+requests
+$
+0.00
+Estimated monthly total
+$
+0.97
+Saved 386 hours
+by using cached responses
+Free
+Get started
+Saved 2 days
+on combing through requests
+Pro
+7-day free trial
+Critical bug detected,
+saving agent runtime by 30%
+Enterprise
+Contact sales
+Compare plans
+Hobby
+Pro
+Team
+Enterprise
+Workspace & collaboration
+Seats
+1
+Unlimited
+Unlimited
+Unlimited
+Organizations
+1
+1
+5
+Unlimited
+Monitoring
+Requests
+10,000/mo
+10K free
++ usage-based ↑
+10K free
++ usage-based ↑
+10K free
++ usage-based ↑
+Sessions
+User analytics
+Custom properties
+HQL (Query Language)
+Alerts
+Reports
+Prompts & Testing
+Playground
+Prompts
+Scores
+Datasets
+Webhooks
+Gateway
+Caching
+Rate limits
+Automatic fallbacks
+Data
+Retention
+7 days
+1 month
+3 months
+Forever
+Storage
+1 GB
+1 GB free
++ usage-based ↑
+1 GB free
++ usage-based ↑
+1 GB free
++ usage-based ↑
+Configurable retention
+Ingestion
+10 logs/min
+1,000 logs/min
+15,000 logs/min
+30,000 logs/min
+API access
+10 calls/min
+60 calls/min
+1,000 calls/min
+Data export
+Support
+Community (GitHub, Discord)
+Chat & email
+Private Slack channel
+Dedicated support engineer
+SLAs
+Compliance
+HIPAA
+SOC-2 Type II
+SAML SSO
+InfoSec reviews
+Customized MSAs
+Available discounts
+Apply here
+Startups
+50%
+off first year
+For startups under 2 years old and $5M in funding.
+Non-profits
+Discounts
+Depending on your org size.
+Open-source companies
+$100
+credit
+For the first year.
+Students
+Free
+For most students and educators.
+Compare to similar products
+langsmith
+braintrust
+arize ai
+langfuse
+helicone
+Built for scale
+1 line integration
+Flexible pricing
+Open-source
+Prompts
+Experiments
+Evaluation
+Limited
+Tracing
+Limited
+User tracking
+Limited
+Gateway Features
+Limited
+UI
+Confusing
+Confusing
+Average
+Average
+Intuitive
+Frequently asked
+questions
+Understand your
+AI performance bottleneck
+with Helicone.
+Helicone or LangSmith?
+Short answer: Helicone gives you more provider flexibility, is open-source, and scales more cost-effectively.
+Read more

@@ -1,0 +1,285 @@
+AI & ML interests
+None defined yet.
+Recent Activity
+msr2000
+published
+a model
+3 days ago
+deepseek-ai/DeepSeek-V4.1-Flash-1017
+msr2000
+updated
+a collection
+3 days ago
+DeepSeek-V4
+msr2000
+updated
+a model
+4 days ago
+deepseek-ai/DeepSeek-V4.1-Flash-1017
+View all activity
+Papers
+DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression
+A Programming Paradigm for Spatiotemporal Composability
+View all Papers
+Organization Card
+Community
+About org cards
+DeepSeek (深度求索), founded in 2023, is a Chinese company dedicated to making AGI a reality.
+Unravel the mystery of AGI with curiosity. Answer the essential question with long-termism.
+Collections
+19
+DeepSpec
+1B
+•
+Updated
+Jun 28
+•
+•
+60
+2B
+•
+Updated
+Jun 28
+•
+•
+16
+3B
+•
+Updated
+Jun 28
+•
+•
+14
+3B
+•
+Updated
+Jun 28
+•
+•
+46
+DeepSeek-V4
+292B
+•
+Updated
+Apr 27
+•
+•
+342
+Text Generation
+•
+291B
+•
+Updated
+Jun 22
+•
+•
+•
+1.6T
+•
+Updated
+Apr 27
+•
+•
+349
+Text Generation
+•
+1.6T
+•
+Updated
+Jun 22
+•
+•
+•
+DeepSpec
+1B
+•
+Updated
+Jun 28
+•
+•
+60
+2B
+•
+Updated
+Jun 28
+•
+•
+16
+3B
+•
+Updated
+Jun 28
+•
+•
+14
+3B
+•
+Updated
+Jun 28
+•
+•
+46
+DeepSeek-V4
+292B
+•
+Updated
+Apr 27
+•
+•
+342
+Text Generation
+•
+291B
+•
+Updated
+Jun 22
+•
+•
+•
+1.6T
+•
+Updated
+Apr 27
+•
+•
+349
+Text Generation
+•
+1.6T
+•
+Updated
+Jun 22
+•
+•
+•
+View 19 collections
+spaces
+6
+Chat With Janus-Pro-7B
+🌍
+A unified multimodal understanding and generation model.
+Chat With Janus 1.3B
+🌍
+A unified multimodal understanding and generation model.
+Chat with DeepSeek-VL2-small
+🌍
+Chat with images using AI for answers and visual tasks
+JanusFlow 1.3B
+🏃
+Huggingface space for JanusFlow-1.3B
+Chat with DeepSeek Coder 33B
+🐬
+Generate code snippets and programming help via chat
+models
+106
+Image-Text-to-Text
+•
+763B
+•
+Updated
+3 days ago
+•
+•
+•
+Image-Text-to-Text
+•
+763B
+•
+Updated
+4 days ago
+•
+•
+•
+Image-Text-to-Text
+•
+305B
+•
+Updated
+Sep 1
+•
+•
+•
+955
+Text Generation
+•
+1.7T
+•
+Updated
+Aug 13
+•
+•
+•
+898
+Text Generation
+•
+304B
+•
+Updated
+Aug 1
+•
+•
+•
+Text Generation
+•
+165B
+•
+Updated
+Jul 4
+•
+•
+304
+Text Generation
+•
+1.7T
+•
+Updated
+Jul 4
+•
+•
+556
+2B
+•
+Updated
+Jun 28
+•
+659
+•
+14
+2B
+•
+Updated
+Jun 28
+•
+431
+•
+4
+2B
+•
+Updated
+Jun 28
+•
+608
+•
+3
+View 106
+models
+datasets
+2
+Viewer
+•
+Updated
+Apr 30, 2025
+•
+325
+•
+•
+47
+Viewer
+•
+Updated
+Sep 12, 2024
+•
+•
+865
+•
+74
