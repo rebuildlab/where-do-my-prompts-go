@@ -1,6 +1,6 @@
 Skip to content
-Introducing North 2: AI without compromises
-Learn more about the updates
+Rerank 5 is here: sharper search, fewer tokens. Now with Context Focus.
+Learn more
 Products
 Products
 Solutions
@@ -24,17 +24,17 @@ Models
 Command
 Generative language models
 Transcribe
-New
 Speech recognition model
 North Small Translate
-NEW
 Machine translation model
 Parse
 New
 Document parsing model
 Embed
+New
 Semantic representation model
 Rerank
+New
 Retrieval optimization model
 Models Overview
 Product
@@ -59,6 +59,7 @@ Technology
 Telecommunications
 Energy and Utilities
 Healthcare
+Life Sciences
 Manufacturing
 Featured
 Model Vault provides fully-isolated, performant inference with Saas
@@ -131,17 +132,17 @@ Models
 Command
 Generative language models
 Transcribe
-New
 Speech recognition model
 North Small Translate
-NEW
 Machine translation model
 Parse
 New
 Document parsing model
 Embed
+New
 Semantic representation model
 Rerank
+New
 Retrieval optimization model
 Models Overview
 Product
@@ -166,6 +167,7 @@ Technology
 Telecommunications
 Energy and Utilities
 Healthcare
+Life Sciences
 Manufacturing
 Featured
 Model Vault provides fully-isolated, performant inference with Saas
@@ -245,6 +247,7 @@ Telecommunications
 Technology
 Energy and Utilities
 Healthcare
+Life Sciences
 Manufacturing
 Solutions Overview
 Deployment
@@ -295,6 +298,7 @@ Telecommunications
 Technology
 Energy and Utilities
 Healthcare
+Life Sciences
 Manufacturing
 Solutions Overview
 Deployment
@@ -345,6 +349,7 @@ Telecommunications
 Technology
 Energy and Utilities
 Healthcare
+Life Sciences
 Manufacturing
 Solutions Overview
 Deployment

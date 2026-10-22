@@ -1,0 +1,108 @@
+OpenAI
+Open models by OpenAI
+Advanced open-weight reasoning models to customize for any use case and run anywhere.
+Download on Hugging Face
+(opens in a new window)
+View on GitHub
+(opens in a new window)
+Try our models
+(opens in a new window)
+-0.50
+0.00
+0.00
+0.00
+-0.50
+gpt-oss
+Open reasoning models designed to run locally on desktops, laptops, and in data centers—available in 120B and 20B parameters.
+(opens in a new window)
+-0.50
+0.00
+0.00
+0.00
+-0.50
+gpt-oss-safeguard
+Open safety reasoning models that support custom safety policies—available in 120B and 20B parameters.
+(opens in a new window)
+Permissive license
+These models are supported by the Apache 2.0 license. Build freely without worrying about copyleft restrictions or patent risk—whether you’re experimenting, customizing, or deploying commercially.
+Designed for agentic tasks
+Leverage powerful instruction following and tool use within the chain-of-thought, including web search and Python code execution.
+Deeply customizable
+Adjust the reasoning effort to low, medium, or high. Plus, customize the models to adapt to your use case with full-parameter fine-tuning.
+Full chain-of-thought
+Access the full chain-of-thought for easier debugging and higher trust in model outputs.
+Interactive demo
+We built a simple playground where developers can try both models in the browser.
+Try it now
+(opens in a new window)
+Model performance
+Read the research blog
+gpt-oss-120b
+gpt-oss-20b
+OpenAI o3
+OpenAI o4-mini
+Reasoning & knowledge
+MMLU
+90.0
+85.3
+93.4
+93.0
+GPQA Diamond
+80.1
+71.5
+83.3
+81.4
+Humanity’s Last Exam
+19.0
+17.3
+24.9
+17.7
+Competition math
+AIME 2024
+96.6
+96.0
+95.2
+98.7
+AIME 2025
+97.9
+98.7
+98.4
+99.5
+Advancing safety standards for open models
+Read our model system card
+Safety is foundational to our open models
+Comprehensive safety testing
+Our partners
+We’re working with leading deployment and hardware companies to offer these models to the open-source community.
+Resources
+How to use gpt-oss with Transformers
+Learn more
+(opens in a new window)
+How to run gpt-oss locally with Ollama
+Learn more
+(opens in a new window)
+How to use gpt-oss with vLLM
+Learn more
+(opens in a new window)
+Learn about the OpenAI harmony response format
+Learn more
+(opens in a new window)
+How to run gpt-oss locally with LM Studio
+Learn more
+(opens in a new window)
+How to run gpt-oss-20b on Google Colab
+Learn more
+(opens in a new window)
+Verifying gpt-oss implementations
+Learn more
+(opens in a new window)
+Find more guides about gpt-oss
+Learn more
+(opens in a new window)
+We want to hear from you
+Share feedback and feature requests that may guide future open models. Please note: you won’t receive a direct response. For support and discussion, visit our Hugging Face Community.
+Start building
+Download on Hugging Face
+(opens in a new window)
+View on GitHub
+(opens in a new window)

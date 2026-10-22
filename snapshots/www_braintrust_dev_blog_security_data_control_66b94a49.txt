@@ -1,0 +1,90 @@
+Observe
+Evaluate
+Discover
+Docs
+Blog
+Workshops
+Eval research
+Academy
+Encyclopedia
+Customers
+Pricing
+Contact us
+Sign in
+Sign up
+Blog
+Security is a choice: how Braintrust lets you decide where your AI data lives
+Jan 21, 2026
+Ross Stapleton-Gray
+3 min
+Product
+Building AI products means handling your most sensitive data: customer conversations, proprietary prompts, and production traces. For security teams evaluating AI infrastructure, one question matters most: where does my data actually live?
+Flexible deployment models
+Braintrust supports multiple deployment options to meet you where you are:
+Fully managed SaaS
+: Fast onboarding with enterprise-grade security. SOC 2 Type II certified, HIPAA compliant, with all data encrypted in transit and at rest. Comprehensive access controls and regular security audits. Customer data is hosted in AWS, with regional choice including the EU.
+Hybrid deployment
+: The best of both worlds for teams with strict data residency or compliance requirements. Hybrid deployment addresses the specific needs of security-conscious organizations.
+Hybrid architecture: security by design
+Braintrust's
+hybrid deployment model
+separates the
+control plane
+(UI,
+metadata
+, authentication) from the
+data plane
+(your actual AI data). Here's what that means for security:
+Your data plane lives entirely in your environment.
+All
+experiment
+logs
+, traces, datasets, prompts, completions, and customer inputs stay within your VPC or on-premises infrastructure. Braintrust's servers never store or proxy this sensitive data.
+The control plane handles only metadata.
+Braintrust manages the web UI, authentication (via Clerk), and lightweight metadata like project names and API key hashes. Zero AI data transits through our infrastructure.
+You get SaaS convenience with on-prem control.
+Instant UI updates and new features without manually upgrading anything, while your sensitive data remains behind your firewall or VPN.
+Use cases that matter
+1. Built-in data masking
+Configure global masking functions to automatically redact PII (emails, phone numbers, SSNs) before logging data. Masking applies to inputs, outputs, metadata, and context fields, ensuring sensitive information never leaves your environment unprotected.
+2. Your sensitive data stays with you
+Deploy behind your firewall with your own identity access management policies, encryption key management, and audit trails. Use VPC peering, private networking, or complete air-gapping. The control plane never requires network access to your data plane; all browser and SDK requests go directly to your infrastructure via CORS.
+3. Braintrust does not train on your data
+Braintrust's AI assistant,
+Loop
+, helps teams analyze logs and optimize prompts, but no models are trained on your data. Your prompts, traces, and customer conversations remain private and are never used to improve models.
+Security commitments
+SOC 2 Type II certified
+with comprehensive security controls
+HIPAA compliant
+with Business Associate Agreements available
+Encryption everywhere
+: TLS 1.2 in transit, AES-256 encryption at rest for all data
+Role-based access control
+with SSO, granular permissions, and project isolation
+Resources for security teams
+Trust Center
+: Access SOC 2 reports, security controls, and compliance documentation
+Security documentation
+: Detailed technical security architecture and policies
+Hybrid deployment guide
+: Deep dive into our architecture and data flow
+Terraform modules
+: Deploy with official infrastructure-as-code templates for
+AWS
+,
+GCP
+, and
+Azure
+Hybrid deployment gives you enterprise-grade security and complete data control, with the speed and innovation of a modern SaaS platform. Companies like Notion, Stripe, Zapier, Ramp, and Coursera trust Braintrust to handle their most sensitive AI workloads.
+Ready to evaluate Braintrust? Start with our
+Trust Center
+or reach out at
+info@braintrust.dev
+to discuss your security requirements.
+Share
+Previous
+Building observable AI agents with Temporal
+Next
+The 5 pillars of AI model performance
+Trace everything

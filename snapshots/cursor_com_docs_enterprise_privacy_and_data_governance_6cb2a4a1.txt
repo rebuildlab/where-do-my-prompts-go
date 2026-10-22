@@ -90,16 +90,6 @@ US-only data residency
 EU + UK inference-only coverage is available on request. Broader EU support and additional regions are in active development.
 Contact your account executive if you are interested in either option.
 US data residency
-Model availability
-Under US-only data residency, only the following model families run in-region:
-GPT (
-gpt-*
-)
-Claude 4.6 and above
-Gemini 2.5 Flash
-Composer
-Grok 4.5, Grok 4.6, Grok 4.7
-Selecting a model that isn't eligible returns an error, and the model is unavailable while data residency is enabled. Auto will select from only models on this list.
 What stays in-region
 When US-only data residency is enabled for a team, the following stay on US-based infrastructure:
 Inference on inputs and suggestions for supported models
@@ -117,7 +107,9 @@ FAQ
 It's enabled per team, so you can scope it to the teams that need it.
 Yes. Inference, processing, and storage for Cloud Agents can be US-only today.
 Their requests still route to US-only infrastructure. Expect some added latency, but the US-only guarantee is preserved.
-No. Only the eligible model families listed under Model availability are supported. Choosing an unsupported model returns an error while US-only data residency is active.
+No. Only models marked as eligible in the US Data Residency column on
+Models & Pricing
+are supported. Choosing an unsupported model returns an error while US-only data residency is active, and Auto only selects from eligible models.
 Some functionality depends on external services or on infrastructure Cursor doesn't control, so US data residency can't be provided for it:
 SSO / authentication
 — Routes through Cursor's identity provider (WorkOS) regardless of region.

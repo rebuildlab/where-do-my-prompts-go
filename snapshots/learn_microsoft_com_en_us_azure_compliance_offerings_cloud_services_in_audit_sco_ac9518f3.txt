@@ -1,0 +1,44 @@
+Read in English
+Edit
+Note
+Access to this page requires authorization. You can try
+signing in
+or
+changing directories
+.
+Access to this page requires authorization. You can try
+changing directories
+.
+Azure, Dynamics 365, Microsoft 365, and Power Platform services in audit scope
+Azure compliance certificates and audit reports state clearly which cloud services are in scope for independent third-party audits. Different audits may have different cloud services in audit scope. Use the following links to find out which Azure, Dynamics 365, Microsoft 365, and Power Platform cloud services are covered in various Azure compliance certificates and audit reports.
+Global, industry, and regional compliance offerings
+See Appendices A and B in
+Microsoft Azure Compliance Offerings
+for detailed insight into which cloud services are in scope for the following compliance offerings:
+CSA STAR
+ISO/IEC
+SOC
+GSMA
+HIPAA BAA
+HITRUST
+PCI DSS
+Australia IRAP
+Germany C5
+Singapore MTCS
+And others
+US Government compliance offerings
+See
+Azure and other Microsoft cloud services compliance scope
+for detailed insight into which cloud services are in scope for the following compliance offerings:
+FedRAMP High
+DoD IL2
+DoD IL4
+DoD IL5
+DoD IL6
+Resources
+Azure compliance documentation
+Microsoft 365 compliance offerings
+Compliance on the Microsoft Trust Center
+Additional resources
+Last updated on
+2023-04-05

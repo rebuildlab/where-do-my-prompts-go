@@ -1,0 +1,97 @@
+Cohere Trust Center
+Cohere prioritizes your data's confidentiality, integrity, and availability. Our Trust Center offers insights into our data management, security measures, and compliance.
+See Certifications
+Compliance
+SOC 2 Type 2
+Service Organization Controls (SOC 2) (Type II) Trust Services Principles
+ISO 27001
+Information Security Management System (ISMS)
+ISO 42001
+Artificial Intelligence Management System (AIMS)
+U.K. Cyber Essentials
+U.K. Gov't-backed Cybersecurity Standard
+GDPR
+Protect the personal data and privacy of EU citizens for transactions that occur within EU member states
+CCPA
+California Consumer Privacy Act
+HIPAA
+Health Insurance Portability and Accountability Act (please see FAQ).
+Resources
+Get our latest security and compliance resources and reports
+SOC 2 Type II
+Cohere undergoes an annual SOC 2 Type II audit. Request here to see our report.
+ISO 27001 Certification
+Official Certificate
+ISO 42001 Certification
+Official Certificate
+U.K. Cyber Essentials
+Certificate for Cohere Inc.
+U.K. Cyber Essentials
+Certificate for Cohere UK, LTD
+Latest Penetration Test Report
+API Penetration Test Results
+Latest Penetration Test Report
+Web Application test results
+Responsible Disclosure Policy
+Rules of engagement for conducting and performing security research (i.e. vulnerability discovery) activities for participating in our Bug Bounty Program.
+Cohere Enterprise Data Commitments
+EU AI Act FAQs
+FAQs regarding the GPAI Code of Practice
+View all
+Subprocessors
+Google Cloud
+Infrastructure Service Provider
+Location: USA
+Fullstory
+Software Delivery Platform
+Location: USA
+LaunchDarkly
+Feature Flagging
+Location: USA
+New Relic
+Platform Monitoring
+Location: USA
+Retool
+Software Delivery Platform
+Location: USA
+Sentry IO
+Software Delivery Platform
+Location: USA
+Segment
+Event and Error Handling
+Location: USA
+Sendgrid
+Email Communications
+Location: USA
+Vercel
+Web Application Hosting
+Location: USA
+View all
+FAQs
+Can I request a copy of your SOC 2?
+Yes, you can request a copy above. Prior to receiving a copy of our SOC 2 Type 2 report, we will need a signed mNDA.
+How do we manage risk and compliance?
+Cohere maintains robust security practices to ensure that our customers' data are maintained to the highest degree.
+Is the company GDPR compliant? What steps have you taken to ensure this?
+As a service provider that operates in multiple jurisdictions, including Canada, the EU and the US, Cohere has designed its services with Privacy-by-Design in mind, and we have processes in place to assist our customers to comply with their obligations under applicable privacy laws, including the GDPR. In particular, we have a robust Information Security program designed to safeguard the information that our customers share with us, which, in certain circumstances, may contain personal information.
+In addition, we have implemented GDPR-specific compliance training through Secureframe and have prepared a multi-jurisdictional Data Processing Addendum designed to give our customers contractual assurances regarding Cohere’s handling of customer data on their behalf in compliance with applicable privacy laws, including the GPDR. Further, we rely on appropriate mechanisms for international data transfers as required by the GDPR. We also monitor guidance around GDPR compliance from privacy-related regulatory bodies and will update our product features and contractual commitments accordingly.
+Do you have a Data Processing Agreement?
+Yes, Cohere has a DPA. If you would like to receive a copy, we will need a signed NDA. Please contact
+[email protected]
+for more information.
+Where are your hosting centers located and do you have options to use centers outside of the US? Are there options to not send data to the US at all?
+Our hosting centers are on Google Cloud Platform servers located in US-Central. We do not use servers outside of the US; however, we can, in certain circumstances, configure our offering to ensure that no customer data is stored on Cohere’s systems. When the Cohere offering is configured in this way, the customer data is considered “ephemeral”, as it transits through Cohere’s systems only briefly for the purposes of providing the services and is purged immediately after processing. There are drawbacks to this approach as it limits some features and Cohere’s ability to improve the user experience and/or address certain issues efficiently by reviewing customer data.
+What has been your response to the Schrems II ruling and have you conducted a transfer impact assessment?
+Following the Schrems II ruling, companies transferring EU personal data to non-EU countries that have not been deemed adequate by the relevant governmental body, such as the US, must conduct assessments to identify any necessary supplemental measures to protect the personal data being transferred. Cohere has conducted, with the assistance of EU counsel, a Transfer Impact Assessment (TIA) that assesses the impact and security considerations in connection with transfers of customer data originating in the EU (and that is subject to the GDPR) to the US for processing. The TIA details the “relevant contractual, technical or organisational safeguards” Cohere has in place to supplement protections under the Standard Contractual Clauses where necessary. These safeguards include encryption at rest and in transit, administrative access control, system monitoring, logging and alerting and more. Based on the Transfer Impact Assessment, Cohere considers that the transfer of customer data to the US is, taking account of all the circumstances of the transfer, compatible with the GDPR read in light of the Charter of Fundamental Rights of the EU.
+In addition, our multi-jurisdictional Data Processing Addendum (DPA) contains the following commitments, among others:
+1. Standard Contractual Clauses: The DPA incorporates the Standard Contractual Clauses, approved by the European Commission on 4 June 2021, allowing customers to apply the protections in the Standard Contractual Clauses to personal data originating in the EU (and that is subject to the GDPR) to the US for processing.
+2. Security: Cohere commits to implementing appropriate technical and organisational measures to protect customer data. A description of Cohere’s security measures are included in Annex B to the DPA.
+3. Government Requests and Orders: Unless legally prohibited, Cohere commits to promptly notify customers of any communications received from a governmental agency requesting or purporting to compel the production of customer data that contains personal information so that the customer can work with the governmental agency directly to respond.
+Will Cohere sign a Business Associate Agreement under HIPAA (i.e. HIPAA Compliance)?
+After a review of the customers use case and internal HIPAA-related compliance checks, Cohere may execute a Business Associate Agreement (BAA) for custom model development engagements.
+Cohere's BAA only covers engagements where Cohere develops a custom model on behalf of a customer. It does not cover Cohere hosted products and applications such as Cohere's SaaS services. Enterprise customers should not submit Personal Health Information through the Cohere SaaS services. For more information, please contact your Account Executive or
+[email protected]
+.
+Monitoring
+Continuously monitored by Secureframe
+View all
