@@ -210,12 +210,12 @@ def source_map(vendors, snapshots):
     return {u: sorted(s) for u, s in m.items()}
 
 
-def check_history(snapshots):
-    """Every (run date, url) -> ok/error result we can actually prove.
+def index_versions(snapshots):
+    """Working copy of snapshots/index.json, then each earlier commit of that file.
 
-    snapshots/index.json only keeps the latest result per URL, so older runs are read back from
-    earlier git commits of that file when the repo has them (CI: checkout with fetch-depth: 0).
-    Nothing is interpolated: a date with no stored result has no cell."""
+    Commit order is not check order. A later commit can restore an older index, so "latest"
+    is decided by the dates stored in the entries, not by which commit is newest.
+    CI checks this file out with fetch-depth: 0 so every real run is reachable."""
     import subprocess
     versions = [snapshots or {}]
     try:
@@ -224,17 +224,72 @@ def check_history(snapshots):
         for h in revs[:400]:
             raw = subprocess.run(["git", "-C", str(ROOT), "show", f"{h}:snapshots/index.json"],
                                  capture_output=True, text=True, timeout=20)
-            if raw.returncode == 0:
+            if raw.returncode == 0 and raw.stdout.strip():
                 versions.append(json.loads(raw.stdout))
     except Exception:
         pass
+    return versions
+
+
+def history_from(versions):
+    """Every (run date, url) -> (ok, error) present in any stored index. Nothing is interpolated."""
     res = {}
     for ver in versions:
-        for u, x in ver.items():
+        for u, x in (ver or {}).items():
             d, ok = _snap_status(x)
             if d:
                 res.setdefault((d, u), (ok, x.get("last_error")))
     return res  # {(date, url): (ok, error)}
+
+
+def check_history(snapshots):
+    """Every (run date, url) -> ok/error result we can actually prove.
+
+    snapshots/index.json only keeps the latest result per URL, so older runs are read back from
+    earlier git commits of that file when the repo has them (CI: checkout with fetch-depth: 0).
+    Nothing is interpolated: a date with no stored result has no cell."""
+    return history_from(index_versions(snapshots))
+
+
+def newest_entries(versions):
+    """Per URL, the index entry whose status date is the latest.
+
+    Ties keep the earlier version in `versions` (working tree, then newer commits). A newer
+    commit that restored an older index does not hide a later check date."""
+    best, best_d = {}, {}
+    for ver in versions:
+        for u, x in (ver or {}).items():
+            d, _ok = _snap_status(x)
+            if d and (u not in best_d or d > best_d[u]):
+                best[u] = x
+                best_d[u] = d
+    return best
+
+
+def latest_run(history):
+    """The newest checker run by date. Only URLs stamped with that date are counted."""
+    if not history:
+        return None
+    date = max(d for d, _u in history)
+    res = [r for (d, _u), r in history.items() if d == date]
+    errors = sum(1 for ok, _err in res if not ok)
+    return {"date": date, "sources": len(res), "errors": errors, "ok": len(res) - errors}
+
+
+def apply_latest_run(st, history):
+    """Point the monitor totals at the newest checker run. Field dates on `st` stay as they are.
+
+    `full_check` is the one date the status bar, data version, llms.txt and changelog share.
+    It is a date read from a checker result, or the newest field-checked date when no run exists."""
+    run = latest_run(history)
+    if run:
+        st["monitored_pages"] = run["sources"]
+        st["monitor_errors"] = run["errors"]
+        st["monitor_last"] = run["date"]
+        st["full_check"] = run["date"]
+    else:
+        st["full_check"] = st.get("monitor_last") or st.get("checked") or ""
+    return st
 
 
 def uptime(vendors, snapshots, history):

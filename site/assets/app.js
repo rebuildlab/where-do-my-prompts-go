@@ -44,8 +44,12 @@
   var ALIAS={category:'cat',vendor:'vendor',tool:'vendor',cat:'cat',trains:'trains',zdr:'zdr',region:'region',baa:'baa'};
   function opts(sel){return [].slice.call(sel.options).map(function(o){return o.value;}).filter(Boolean);}
   function norm(key,val){
-    val=val.toLowerCase().replace(/-/g,' ');
-    if(key==='zdr'&&(val==='na'||val==='n a'))val='n/a';
+    val=val.toLowerCase().replace(/-/g,' ').replace(/\s+/g,' ').trim();
+    if(key==='zdr'){
+      if(val==='yes'||val==='true'||val==='offered')val='available';
+      else if(val==='no'||val==='not offered')val='not offered';
+      else if(val==='na'||val==='n a')val='n/a';
+    }
     var o=opts(sels[key]);
     for(var i=0;i<o.length;i++){if(o[i].toLowerCase()===val)return o[i];}
     if(key==='cat'){for(var j=0;j<o.length;j++){if(o[j].toLowerCase().indexOf(val)===0)return o[j];}}
