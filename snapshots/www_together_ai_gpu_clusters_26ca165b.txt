@@ -200,6 +200,9 @@ Production-grade security.
 We take security and compliance seriously, with strict data privacy controls to keep your information protected. Your data and models remain fully under your ownership, safeguarded by robust security measures.
 Learn More
 As an NVIDIA Cloud Partner, Together builds and operates clusters on NVIDIA NCP reference architectures for predictable performance and faster time to production. Your data and models remain under your control with strict privacy safeguards and SOC 2–compliant security practices.
+preferred partner
+SOC 2 Type II
+ISO 27001:2022
 Customers running inference in production
 View All Stories
 "Together GPU Clusters provided a combination of amazing training performance, expert support, and the ability to scale to meet our rapid growth to help us serve our growing community of AI creators."

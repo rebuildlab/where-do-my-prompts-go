@@ -29,11 +29,14 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Install requirements.txt
         run: |
+          pip install pillow
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
           fi
@@ -41,7 +44,7 @@ jobs:
         with:
           enablement: true
       - name: Build
-        run: SITE_URL=https://rebuildlab.github.io/where-do-my-prompts-go python3 scripts/build.py
+        run: REQUIRE_GRAPHICS=1 SITE_URL=https://rebuildlab.github.io/where-do-my-prompts-go python3 scripts/build.py
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public

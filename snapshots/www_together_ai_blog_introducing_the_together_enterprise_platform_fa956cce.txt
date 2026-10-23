@@ -15,9 +15,7 @@ We're hiring!
 ‍
 Get Notified
 Today we’re announcing the Together Enterprise Platform
-— a comprehensive platform for managing the entire Generative AI lifecycle, enabling businesses to train, fine-tune, and run
-inference
-on
+— a comprehensive platform for managing the entire Generative AI lifecycle, enabling businesses to train, fine-tune, and run inference on
 any model, in any environment
 , whilst optimizing model performance and GPU utilization. Achieve
 2-3x faster inference and up to 50% lower operational costs

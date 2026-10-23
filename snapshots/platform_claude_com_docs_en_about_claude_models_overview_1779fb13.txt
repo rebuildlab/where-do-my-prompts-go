@@ -66,8 +66,8 @@ Once you've picked a model,
 learn how to make your first API call
 . To understand how model IDs, aliases, and snapshots work, see
 Model IDs and versioning
-; for the reliable-knowledge and training-data cutoffs behind each model, see Anthropic's
-Transparency Hub
+; for the reliable-knowledge and training-data cutoffs behind each model, see
+Anthropic's Transparency Hub
 .
 Using the Models API
 You can query model capabilities and token limits programmatically with the
@@ -193,15 +193,15 @@ Top-tier results in reasoning, coding, multilingual tasks, long-context handling
 Prompting best practices
 for general and model-specific prompting guidance.
 Engaging responses:
-Claude models are ideal for applications that require rich, human-like interactions. If you prefer more concise responses, adjust your prompts to guide the model toward the output length you want. Refer to the
+Claude models are ideal for applications that require rich, human-like interactions. If you prefer more concise responses, adjust your prompts to guide the model toward the desired output length. Refer to the
 prompt engineering guides
 for details.
 Output quality:
-When migrating from a previous model generation, you might notice larger improvements in overall performance. If you're on Claude Opus 5 or earlier, see the
+When migrating from a previous model generation, you may notice larger improvements in overall performance. If you're on Claude Opus 5 or earlier, see the
 Claude Opus 5.5 migration guide
 .
 Get started with Claude
-Whether you're a developer looking to integrate Claude into your applications or a user wanting to experience the power of AI firsthand, the following resources can help.
+If you're ready to start exploring what Claude can do for you, dive in! Whether you're a developer looking to integrate Claude into your applications or a user wanting to experience the power of AI firsthand, the following resources can help.
 
 Intro to Claude
 Explore Claude's capabilities and development flow.
@@ -220,7 +220,7 @@ Claude Console
 Craft and test prompts directly in your browser.
 Looking to chat with Claude? Visit
 claude.ai
-. If you have questions, contact the
+. If you have questions, reach out to the
 support team
 or the
 Discord community
