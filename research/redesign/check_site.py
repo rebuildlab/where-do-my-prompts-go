@@ -16,7 +16,12 @@ class H(http.server.SimpleHTTPRequestHandler):
     def log_message(self, *a): pass
 
 
-srv = socketserver.TCPServer(("127.0.0.1", 0), functools.partial(H, directory=str(ROOT)))
+class Server(socketserver.ThreadingTCPServer):
+    allow_reuse_address = True
+    daemon_threads = True  # a meta refresh fires a second request while the first is still being read
+
+
+srv = Server(("127.0.0.1", 0), functools.partial(H, directory=str(ROOT)))
 base = f"http://127.0.0.1:{srv.server_address[1]}"
 threading.Thread(target=srv.serve_forever, daemon=True).start()
 
@@ -54,13 +59,14 @@ with sync_playwright() as p:
         for path in pages:
             errs.clear()
             r = pg.goto(base + path, wait_until="networkidle")
+            pg.wait_for_load_state("networkidle")  # /method/ meta-refreshes to /about/ after the first load
             if not r or r.status != 200 and not path.endswith("404.html"):
                 problems.append(f"{path}: HTTP {r.status if r else '??'}")
             if scheme == "light":
                 links = pg.eval_on_selector_all("a[href], link[href], script[src], img[src]",
                                                 "els => els.map(e => e.getAttribute('href') || e.getAttribute('src'))")
                 for href in links:
-                    u = urljoin(base + path, href)
+                    u = urljoin(pg.url, href)  # the document the links were read from (after any meta refresh)
                     if not u.startswith(base):
                         if u.startswith("http"): ext.add(u)
                         continue
