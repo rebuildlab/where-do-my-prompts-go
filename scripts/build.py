@@ -15,7 +15,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from derive import (FIELD_ORDER, SHORT, REGION_LABEL, TONES, TONE_LABEL, TONE_GLYPH, TONE_RANK,
                     TONE_RULES, trains_key, zdr_key, retention, fmt_days, domain, enrich, stats, load,
-                    is_unverified, check_history, uptime, events)
+                    is_unverified, index_versions, history_from, newest_entries, apply_latest_run,
+                    uptime, events)
 import hashlib
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -326,6 +327,13 @@ def event_lines(evs, vendors, limit=None):
     return "".join(out)
 
 
+def full_check_sentence(st):
+    """One sentence for the status bar's source of truth: the newest checker run."""
+    n, err = st["monitored_pages"], st["monitor_errors"]
+    return (f"Last full check {st['full_check']}: {n} source{'s' if n != 1 else ''} fetched, "
+            f"{err} failed.")
+
+
 def event_panel(evs, vendors, pid="events", limit=None, extra_meta=""):
     counts = {s: sum(1 for x in evs if x["sev"] == s) for s in SEV_ORDER}
     btns = (f'<button type="button" data-sev="" aria-pressed="true">all {len(evs)}</button>'
@@ -444,14 +452,14 @@ def build_index(vendors, st, files, evs, up):
 {panel("Field split", svg_field_bars(vendors), meta=f"{s['n']} tools per field", pid="split")}</div>
 </div>
 <div class="grid">
-<div class="c7" style="display:flex">{event_panel(evs, vendors, limit=40)}</div>
+<div class="c7" style="display:flex">{event_panel(evs, vendors, limit=40, extra_meta=" " + full_check_sentence(st))}</div>
 <div class="c5" style="display:flex">{uptime_panel(*up)}</div>
 </div>
 <section id="compare" class="pn" aria-labelledby="compare-h" style="margin-bottom:var(--s3)">
 <header class="pn-h"><h2 id="compare-h">Services</h2><span id="count" class="pn-meta" aria-live="polite"></span></header>
 <div class="pn-b" role="search" aria-label="Filter services">
 <div class="qbar"><label for="q">query&gt;</label><input id="q" type="text" spellcheck="false" autocomplete="off" placeholder="vendor:openai trains:no region:sg" aria-describedby="qhelp"><kbd aria-hidden="true">/</kbd><button type="button" id="reset">clear</button></div>
-<p class="qhelp" id="qhelp">keys: <code>vendor:</code> <code>cat:</code> <code>trains:</code>no|depends|yes|unverified <code>zdr:</code>available|partial|not-offered|n/a|unverified <code>region:</code>sg|apac|none|unverified <code>baa:yes</code> · other words search names</p>
+<p class="qhelp" id="qhelp">keys: <code>vendor:</code> <code>cat:</code> <code>trains:</code>no|depends|yes|unverified <code>zdr:</code>yes|available|partial|not-offered|n/a|unverified <code>region:</code>sg|apac|none|unverified <code>baa:yes</code> · other words search names</p>
 <p class="qparsed" id="qparsed" aria-live="polite"></p>
 <div class="facets">
 <select id="f-cat" aria-label="Category"><option value="">cat: any</option>{opt((c, c) for c in cats)}</select>
@@ -605,10 +613,10 @@ def build_changelog(entries, vendors, st, n_reports, evs, up):
                  '<p class="empty-note">0 entries in data/changelog.json. When a nightly diff turns into a confirmed change, '
                  'it lands here with the date, the tool and a link to the source. A raw page diff on its own is not enough.</p>')
     body = f"""<div class="head"><div><p class="eyebrow">changelog · events</p><h1>Policy changes and checker events</h1>
-<p class="lede">Confirmed policy changes, nightly checker results, fetch errors and unverified fields, newest first. Baseline {st['baseline']}; {n_reports} diff report{'s' if n_reports != 1 else ''} on file.</p></div></div>
+<p class="lede">Confirmed policy changes, nightly checker results, fetch errors and unverified fields, newest first. {full_check_sentence(st)} Baseline {st['baseline']}; {n_reports} diff report{'s' if n_reports != 1 else ''} on file.</p></div></div>
 <div class="grid"><div class="c12">{panel("Confirmed policy changes", confirmed, meta=f"{len(entries)} entr{'y' if len(entries) == 1 else 'ies'}", pid="confirmed", bcls="pn-b flush")}</div></div>
 <div class="grid">
-<div class="c7" style="display:flex">{event_panel(evs, vendors)}</div>
+<div class="c7" style="display:flex">{event_panel(evs, vendors, extra_meta=" " + full_check_sentence(st))}</div>
 <div class="c5" style="display:flex">{uptime_panel(*up)}</div>
 </div>"""
     return page(f"Changelog · {SITE_NAME}", body, "Confirmed changes to AI vendor data retention and training policies, plus nightly source-check results.", "/changelog/", active="changelog/")
@@ -713,13 +721,15 @@ def main():
     vendors = data["vendors"]
     raw_json = (ROOT / "data" / "vendors.json").read_bytes()
     enrich(vendors)
-    st = stats(vendors, snapshots)
-    checked = st["checked"]
-    history = check_history(snapshots)
-    up = uptime(vendors, snapshots, history)
-    evs = events(vendors, changelog, snapshots, history, LABELS)
-    STATUS.update({"checked_n": st["monitored_pages"], "errors": st["monitor_errors"], "last": st["monitor_last"] or "n/a",
-                   "version": data.get("generated", checked), "sha": hashlib.sha256(raw_json).hexdigest()[:8]})
+    versions = index_versions(snapshots)
+    history = history_from(versions)
+    latest_snaps = newest_entries(versions) or snapshots
+    st = apply_latest_run(stats(vendors, snapshots), history)
+    full_check = st["full_check"]
+    up = uptime(vendors, latest_snaps, history)
+    evs = events(vendors, changelog, latest_snaps, history, LABELS)
+    STATUS.update({"checked_n": st["monitored_pages"], "errors": st["monitor_errors"], "last": full_check or "n/a",
+                   "version": full_check or "n/a", "sha": hashlib.sha256(raw_json).hexdigest()[:8]})
 
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -728,7 +738,7 @@ def main():
     # data files first, so the home page can show their real sizes
     (OUT / "data.json").write_bytes(raw_json)
     write_csv(vendors, OUT / "data.csv")
-    (OUT / "llms.txt").write_text(build_llms(vendors, checked))
+    (OUT / "llms.txt").write_text(build_llms(vendors, full_check))
     files = {n: (OUT / n).stat().st_size for n in ("data.json", "data.csv", "llms.txt")}
     (OUT / "favicon.svg").write_text(FAVICON_SVG)
 
@@ -746,12 +756,22 @@ def main():
     for i, v in enumerate(vendors):
         d = OUT / "vendors" / v["slug"]
         d.mkdir(parents=True)
-        (d / "index.html").write_text(build_vendor(v, vendors, i, snapshots, up[1][i]))
+        (d / "index.html").write_text(build_vendor(v, vendors, i, latest_snaps, up[1][i]))
     n_reports = len(list((ROOT / "changes").glob("*.md"))) if (ROOT / "changes").exists() else 0
     (OUT / "changelog").mkdir()
     (OUT / "changelog" / "index.html").write_text(build_changelog(changelog, vendors, st, n_reports, evs, up))
     (OUT / "about").mkdir()
     (OUT / "about" / "index.html").write_text(build_about(vendors, st))
+    # /method/ is the old path. Same depth as /about/, so the canonical path drives asset links.
+    (OUT / "method").mkdir()
+    (OUT / "method" / "index.html").write_text(page(
+        f"Method · {SITE_NAME}",
+        '<div class="head"><div><p class="eyebrow">redirect</p><h1>Method</h1>'
+        '<p class="lede"><a href="{rel}about/">Continue to the method page</a>.</p></div></div>',
+        "How the tracker is sourced.",
+        "/about/",
+        extra_head='<meta http-equiv="refresh" content="0; url=../about/">',
+        active="about/"))
     home = (SITE_URL + "/") if SITE_URL else "/"
     nf_rel = (SITE_URL + "/") if SITE_URL else "/"
     (OUT / "404.html").write_text(page(f"Not found · {SITE_NAME}",
@@ -759,8 +779,8 @@ def main():
         "Page not found", "/404.html", rel=nf_rel))
     (OUT / "robots.txt").write_text("User-agent: *\nAllow: /\n" + (f"Sitemap: {SITE_URL}/sitemap.xml\n" if SITE_URL else ""))
     if SITE_URL:
-        paths = ["/", "/changelog/", "/about/"] + [f"/vendors/{v['slug']}/" for v in vendors]
-        urls = "".join(f"<url><loc>{e(SITE_URL + p)}</loc><lastmod>{checked}</lastmod></url>" for p in paths)
+        paths = ["/", "/changelog/", "/about/", "/method/"] + [f"/vendors/{v['slug']}/" for v in vendors]
+        urls = "".join(f"<url><loc>{e(SITE_URL + p)}</loc><lastmod>{full_check}</lastmod></url>" for p in paths)
         (OUT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>')
     print(f"Built {len(vendors)} vendor pages into {OUT.relative_to(ROOT)}/" + ("" if SITE_URL else " (set SITE_URL to emit canonical links and sitemap.xml)"))
 

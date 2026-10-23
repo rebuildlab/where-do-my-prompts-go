@@ -16,12 +16,36 @@ class H(http.server.SimpleHTTPRequestHandler):
     def log_message(self, *a): pass
 
 
-srv = socketserver.TCPServer(("127.0.0.1", 0), functools.partial(H, directory=str(ROOT)))
+class Server(socketserver.ThreadingTCPServer):
+    allow_reuse_address = True
+    daemon_threads = True  # a meta refresh fires a second request while the first is still being read
+
+
+srv = Server(("127.0.0.1", 0), functools.partial(H, directory=str(ROOT)))
 base = f"http://127.0.0.1:{srv.server_address[1]}"
 threading.Thread(target=srv.serve_forever, daemon=True).start()
 
 pages = sorted("/" + str(p.relative_to(ROOT)).removesuffix("index.html") for p in ROOT.rglob("*.html"))
 problems, ext, checked_targets = [], set(), {}
+method_html = ROOT / "method" / "index.html"
+if not method_html.exists():
+    problems.append("/method/: page was not built")
+else:
+    method_text = method_html.read_text()
+    if 'http-equiv="refresh"' not in method_text or "url=../about/" not in method_text:
+        problems.append("/method/: missing meta refresh to ../about/")
+    canon = method_text.split('rel="canonical"', 1)[-1][:220] if 'rel="canonical"' in method_text else ""
+    if "/about/" not in canon:
+        problems.append("/method/: canonical does not point at /about/")
+for html_path in ROOT.rglob("index.html"):
+    nav = re.search(r'<nav class="nav" aria-label="Main">(.*?)</nav>', html_path.read_text())
+    if not nav:
+        problems.append(f"{html_path.relative_to(ROOT)}: missing main nav")
+        continue
+    if not re.search(r'href="(?:\./|\.\./)*about/"', nav.group(1)):
+        problems.append(f"{html_path.relative_to(ROOT)}: Method nav does not point at about/")
+    if re.search(r'href="[^"]*method/"', nav.group(1)):
+        problems.append(f"{html_path.relative_to(ROOT)}: nav links to /method/")
 with sync_playwright() as p:
     b = p.chromium.launch(executable_path="/usr/bin/google-chrome", args=["--no-sandbox"])
     for scheme in ("light", "dark"):
@@ -35,13 +59,14 @@ with sync_playwright() as p:
         for path in pages:
             errs.clear()
             r = pg.goto(base + path, wait_until="networkidle")
+            pg.wait_for_load_state("networkidle")  # /method/ meta-refreshes to /about/ after the first load
             if not r or r.status != 200 and not path.endswith("404.html"):
                 problems.append(f"{path}: HTTP {r.status if r else '??'}")
             if scheme == "light":
                 links = pg.eval_on_selector_all("a[href], link[href], script[src], img[src]",
                                                 "els => els.map(e => e.getAttribute('href') || e.getAttribute('src'))")
                 for href in links:
-                    u = urljoin(base + path, href)
+                    u = urljoin(pg.url, href)  # the document the links were read from (after any meta refresh)
                     if not u.startswith(base):
                         if u.startswith("http"): ext.add(u)
                         continue
@@ -85,7 +110,13 @@ with sync_playwright() as p:
         return pg.evaluate(f"[...document.querySelectorAll('#t tbody tr')].filter(r=>{js_filter}).length")
     for query, filt, sel in [
             ("vendor:openai trains:no", "r.dataset.search.includes('openai')&&r.dataset.trains==='no'", ("#f-trains", "no")),
+            ("zdr:yes", "r.dataset.zdr==='available'", ("#f-zdr", "available")),
+            ("zdr:available", "r.dataset.zdr==='available'", ("#f-zdr", "available")),
+            ("zdr:partial", "r.dataset.zdr==='partial'", ("#f-zdr", "partial")),
             ("zdr:not-offered", "r.dataset.zdr==='not offered'", ("#f-zdr", "not offered")),
+            ("zdr:no", "r.dataset.zdr==='not offered'", ("#f-zdr", "not offered")),
+            ("zdr:n/a", "r.dataset.zdr==='n/a'", ("#f-zdr", "n/a")),
+            ("zdr:unverified", "r.dataset.zdr==='unverified'", ("#f-zdr", "unverified")),
             ("cat:coding region:none", "r.dataset.cat==='Coding tools'&&r.dataset.region==='none'", ("#f-region", "none")),
             ("baa:yes", "r.dataset.baa==='ok'", None)]:
         pg.fill("#q", query)
