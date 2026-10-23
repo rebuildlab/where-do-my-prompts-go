@@ -570,7 +570,7 @@ Support by region
 to compare regional capabilities and expand the services available in each region. Use
 API Endpoint, tool and model support
 for complete model lists and a detailed service view. Support for regional storage does not imply support for regional processing.
-Fast mode supports EU data residency for GPT-6.1 Sol, GPT-6 Sol, and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra. GPT-6.1 Sol, GPT-6 Sol, and GPT-6 Luna support EU data residency with Standard, Flex, and Batch processing.
+EU data residency is not available for every model in Fast mode. Fast mode supports EU data residency for GPT-6.1 Sol and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra or GPT-6 Sol. GPT-6.1 Sol, GPT-6 Sol, and GPT-6 Luna support EU data residency with Standard, Flex, and Batch processing.
 Ultrafast mode
 for GPT-6.1 Sol supports US and EU data residency and global processing. GPT-6 Astra Ultrafast supports US data residency and global processing only.
 Support by region
@@ -1041,7 +1041,7 @@ gpt-4-turbo-2024-04-09
 gpt-4-0613
 gpt-3.5-turbo-0125
 Notes
-Fast mode supports EU data residency for GPT-6.1 Sol, GPT-6 Sol, and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra. GPT-6.1 Sol supports only US and EU data residency.
+Fast mode supports EU data residency for GPT-6.1 Sol and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra or GPT-6 Sol. GPT-6.1 Sol supports only US and EU data residency.
 /v1/decisions
 Decisions
 Supported models
@@ -1169,7 +1169,7 @@ gpt-4-turbo-2024-04-09
 gpt-4-0613
 gpt-3.5-turbo-0125
 Notes
-Fast mode supports EU data residency for GPT-6.1 Sol, GPT-6 Sol, and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra. GPT-6.1 Sol supports only US and EU data residency.
+Fast mode supports EU data residency for GPT-6.1 Sol and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra or GPT-6 Sol. GPT-6.1 Sol supports only US and EU data residency.
 /v1/responses File Search
 Responses
 Supported models
@@ -1310,7 +1310,7 @@ gpt-4o-mini-2024-07-18
 gpt-4-turbo-2024-04-09
 gpt-4-0613
 gpt-3.5-turbo-0125
-Fast mode supports EU data residency for GPT-6.1 Sol, GPT-6 Sol, and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra. GPT-6.1 Sol supports only US and EU data residency.
+Fast mode supports EU data residency for GPT-6.1 Sol and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra or GPT-6 Sol. GPT-6.1 Sol supports only US and EU data residency.
 /v1/decisions
 Decisions
 gpt-6-luna
@@ -1434,7 +1434,7 @@ gpt-4o-mini-2024-07-18
 gpt-4-turbo-2024-04-09
 gpt-4-0613
 gpt-3.5-turbo-0125
-Fast mode supports EU data residency for GPT-6.1 Sol, GPT-6 Sol, and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra. GPT-6.1 Sol supports only US and EU data residency.
+Fast mode supports EU data residency for GPT-6.1 Sol and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra or GPT-6 Sol. GPT-6.1 Sol supports only US and EU data residency.
 /v1/responses File Search
 Responses
 Supported
@@ -2013,7 +2013,7 @@ gpt-5.6-luna
 gpt-5.5-2026-04-23
 ,
 gpt-5.2-2025-12-11
-Fast mode supports EU data residency for GPT-6.1 Sol, GPT-6 Sol, and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra. GPT-6.1 Sol supports only US and EU data residency.
+Fast mode supports EU data residency for GPT-6.1 Sol and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra or GPT-6 Sol. GPT-6.1 Sol supports only US and EU data residency.
 /v1/decisions
 Decisions
 All listed regions
@@ -2232,7 +2232,7 @@ gpt-5.6-luna
 gpt-5.5-2026-04-23
 ,
 gpt-5.2-2025-12-11
-Fast mode supports EU data residency for GPT-6.1 Sol, GPT-6 Sol, and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra. GPT-6.1 Sol supports only US and EU data residency.
+Fast mode supports EU data residency for GPT-6.1 Sol and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra or GPT-6 Sol. GPT-6.1 Sol supports only US and EU data residency.
 /v1/responses File Search
 Responses
 All listed regions

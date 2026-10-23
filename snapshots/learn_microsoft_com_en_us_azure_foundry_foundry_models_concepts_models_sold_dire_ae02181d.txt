@@ -341,6 +341,9 @@ Reasoning
 Responses API
 .
 -
+Decisions API
+.
+-
 Multi-agent orchestration
 (preview).
 - Chat Completions API.

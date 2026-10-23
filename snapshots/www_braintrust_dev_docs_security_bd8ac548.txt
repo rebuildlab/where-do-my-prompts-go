@@ -30,6 +30,21 @@ Configure and manage shared OAuth connections or API keys in
 Loop’s project MCP settings
 .
 ​
+GitHub repositories in Loop
+The
+GitHub integration
+is available in public preview on Braintrust-hosted deployments.
+Loop uses your connected GitHub account for reads and writes in your conversations, subject to your GitHub permissions and the repositories allowed by the GitHub App installation and project connection. Pushes and pull requests also require
+write access
+to be enabled and
+Update
+permission on the Braintrust project.
+Background repository checkouts can use the GitHub App installation’s credentials. Your personal GitHub permissions do not restrict Loop’s access to files already cloned into a sandbox.
+An egress proxy supplies short-lived GitHub tokens without exposing them to the model or sandbox. The sandbox receives only ephemeral proxy credentials and retains cloned source files for Loop to inspect.
+You need the organization’s
+Manage settings
+permission to connect installations or set the organization’s default connection.
+​
 Authorization
 Braintrust uses role-based access control (RBAC) with built-in permission groups (Owners, Engineers, Viewers, and All AI Provider Access) and support for custom groups with fine-grained permissions. Permissions can be set at organization, project, organization AI provider, or individual object (experiment, dataset, prompt) levels, enabling project-level isolation and object-level access control for sensitive resources. See
 Access control

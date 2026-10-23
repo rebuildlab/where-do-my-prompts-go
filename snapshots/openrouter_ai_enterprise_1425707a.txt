@@ -26,7 +26,7 @@ Our DPA, or yours
 SLA and named engineer
 Built for enterprise scale
 Monthly tokens
-600
+700
 T+
 Global users
 10

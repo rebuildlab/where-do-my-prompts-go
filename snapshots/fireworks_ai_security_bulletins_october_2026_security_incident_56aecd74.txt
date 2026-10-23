@@ -1,4 +1,3 @@
-←
 All security bulletins
 On October 6, Fireworks identified a security incident involving unauthorized use of internal Fireworks credentials. An unauthorized third party accessed environment variables used in evaluation jobs in a limited number of customer accounts. Based on our investigation at this time, we have not detected evidence of unauthorized access to customer models, datasets, training data, personal information, or inference traffic within the Fireworks security perimeter or control.
 We began containment the same day and have directly notified every identified affected customer. We are actively monitoring for further activity. We recognize the concern and work this creates for affected customers, and we are providing account-specific information to help them respond.

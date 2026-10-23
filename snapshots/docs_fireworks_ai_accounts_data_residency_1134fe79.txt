@@ -132,11 +132,11 @@ Limitations
 The following are not supported while a region is set: calls are rejected, and stay rejected until you clear the setting.
 Training.
 Fine-tuning and training jobs are blocked. Support is coming soon.
-Model routers.
-A
-firerouter/...
-id can pass a request through to a third-party provider, which Fireworks cannot constrain to a region. See
-APIs and SDKs
+Nexus Auto.
+The
+auto
+model ID can pass a request through to a third-party provider, which Fireworks cannot constrain to a region. See
+Nexus Auto
 .
 BYOC.
 BYOC

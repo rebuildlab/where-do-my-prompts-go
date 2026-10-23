@@ -1,8 +1,10 @@
 This page covers the Claude API (
 api.anthropic.com
-), Claude Platform on AWS, and
+), Claude Platform on AWS,
 Claude in Microsoft Foundry
-, where Anthropic is the data processor. On Amazon Bedrock and Google Cloud's Agent Platform, the cloud provider is the data processor; refer to those platforms' data retention and compliance documentation for their equivalent controls.
+, and
+Claude Models on Google Cloud (Anthropic managed)
+, where Anthropic is the data processor. On Amazon Bedrock and Claude Models on Google Cloud (Google managed), the cloud provider is the data processor; refer to those platforms' data retention and compliance documentation for their equivalent controls.
 Anthropic offers two data handling arrangements for the Claude API:
 zero data retention (ZDR)
 and
@@ -15,7 +17,7 @@ and the
 consumer data retention policy
 .
 How Anthropic approaches data retention
-Different APIs and features have different storage needs. Where a feature does not require storage of customer prompts or responses, it may be eligible for ZDR. Where a feature necessarily requires storage, Anthropic designs for the smallest possible retention footprint under the following commitments:
+Different APIs and features have different storage needs. Where a feature does not require storage of customer prompts or responses, it might be eligible for ZDR. Where a feature necessarily requires storage, Anthropic designs for the smallest possible retention footprint under the following commitments:
 Retained data is never used for model training without your express permission.
 Only what is technically necessary for the feature to work is retained. Conversation content (your prompts and Claude's outputs) is not retained by default; the exception is
 Covered Models
@@ -40,7 +42,7 @@ What ZDR covers
 Claude Messages and Token Counting APIs:
 ZDR applies to these endpoints for eligible features listed in the
 feature eligibility table
-. Features that ride on
+. Features that use
 /v1/messages
 but are marked "No" in the table (such as code execution) are not covered.
 Claude Code with API keys:
@@ -49,6 +51,9 @@ What ZDR does not cover
 .
 Claude Platform on AWS:
 Claude Platform on AWS
+follows the same data retention policy as the first-party Claude API. ZDR is available on request; contact your Anthropic account representative to enable it.
+Claude Models on Google Cloud (Anthropic managed):
+Claude Models on Google Cloud (Anthropic managed)
 follows the same data retention policy as the first-party Claude API. ZDR is available on request; contact your Anthropic account representative to enable it.
 What ZDR does not cover
 Claude Console:
@@ -269,15 +274,15 @@ tool
 Yes
 No
 Advisor model output is returned in the API response; nothing is stored server-side after the response.
-Agent skills
+Agent Skills
 /v1/skills
 /v1/messages
 with
 skills
 No
 No
-Skill data retained per standard policy. See
-Agent skills
+Skill data retained according to standard policy. See
+Agent Skills data retention
 .
 Bash tool
 /v1/messages
@@ -286,13 +291,13 @@ bash
 tool
 Yes
 Yes
-Client-side tool executed in your environment.
+Client-side tool run in your environment.
 Batch processing
 /v1/messages/batches
 No
 No
 29-day retention; async storage required. See
-Batch processing
+Batch processing data retention
 .
 Browser use
 /v1/messages
@@ -302,7 +307,7 @@ toolset
 Yes
 No
 Client-side tool. Anthropic does not run browser actions or retain page content beyond standard API handling. Not covered under HIPAA readiness; requests that include the browser use tool are not blocked. See
-Browser use
+Browser use data retention
 .
 Cache diagnostics
 /v1/messages
@@ -310,8 +315,8 @@ with
 diagnostics
 Yes (qualified)
 No
-Your prompts and Claude's outputs are not stored. A fingerprint of cryptographic hashes and token-count estimates is retained briefly to enable comparison against the next request. See
-Cache diagnostics
+Your prompts and Claude's outputs are not stored. A fingerprint of cryptographic hashes and token-count estimates is retained briefly to allow comparison against the next request. See
+Cache diagnostics data retention
 .
 Citations
 /v1/messages
@@ -334,7 +339,7 @@ tool
 No
 No
 Container data retained up to 30 days. See
-Code execution
+Code execution data retention
 .
 Computer use
 /v1/messages
@@ -344,7 +349,7 @@ toolset or tool
 Yes
 Yes
 Client-side tool where screenshots and files are captured and stored in your environment, not by Anthropic. See
-Computer use
+Computer use data retention
 .
 Context editing
 /v1/messages
@@ -384,7 +389,7 @@ Files API
 No
 No
 Files retained until explicitly deleted or they reach their configured expiration. See
-Files API
+Files API file lifecycle
 .
 Fine-grained tool streaming
 /v1/messages
@@ -396,8 +401,8 @@ with
 mcp_servers
 No
 No
-Data retained per standard policy. See
-MCP connector
+Data retained according to standard policy. See
+MCP connector data retention
 .
 MCP tunnels
 /v1/tunnels
@@ -445,7 +450,7 @@ tool
 No
 No
 Built on code execution containers; data retained up to 30 days. See
-Programmatic tool calling
+Programmatic tool calling data retention
 .
 Prompt caching
 /v1/messages
@@ -472,7 +477,7 @@ strict: true
 on tools), which uses the same grammar pipeline. PHI must not be included in JSON schema definitions; see
 PHI handling guidelines
 . See
-Structured outputs
+Structured outputs data retention
 .
 Text editor tool
 /v1/messages
@@ -481,7 +486,7 @@ text_editor
 tool
 Yes
 Yes
-Client-side tool executed in your environment.
+Client-side tool run in your environment.
 Thinking
 /v1/messages
 with
@@ -500,7 +505,14 @@ tool_search
 tool
 Yes
 No
-Server-side tool executed by Anthropic; the tool definitions in the request are searched in memory per call and nothing is stored after the response.
+Server-side tool run by Anthropic; the tool definitions in the request are searched in memory per call and nothing is stored after the response.
+User profiles
+/v1/user_profiles
+No
+No
+Profiles are metadata about your end customers and don't contain prompts or outputs. The profile data you send is retained according to standard policy until you delete the profile. HIPAA-enabled organizations can use user profiles, but the user profiles API is not a HIPAA-eligible service and PHI must not be included in the profile data you send. See
+What a profile contains and how Anthropic uses it
+.
 Web fetch
 /v1/messages
 with
@@ -509,8 +521,8 @@ tool
 Yes
 No
 Fetched web content returned in the API response.
-Dynamic filtering
-is not eligible for ZDR or HIPAA. Website publishers may retain request data (such as fetched URLs and request metadata) according to their own policies.
+Dynamic filtering for web fetch
+is not eligible for ZDR or HIPAA. Website publishers might retain request data (such as fetched URLs and request metadata) according to their own policies.
 Web search
 /v1/messages
 with
@@ -519,7 +531,7 @@ tool
 Yes
 Yes
 Real-time web search results returned in the API response.
-Dynamic filtering
+Dynamic filtering for web search
 is not eligible for ZDR or HIPAA.
 Retention regardless of arrangement
 Even with ZDR or HIPAA arrangements in place, Anthropic may retain data where required by law or where it has been flagged by Anthropic's automated trust and safety systems. As a result, if a chat or session is flagged, Anthropic may retain inputs and outputs for up to 2 years.
@@ -555,7 +567,8 @@ Getting started with HIPAA readiness
 . If your organization requires a negotiated BAA, or self-serve enablement isn't available for your organization, contact the
 Anthropic sales team
 .
-No. The ZDR and HIPAA arrangements described on this page apply to the Claude API, where Anthropic is the data processor. On Bedrock and Google Cloud, the cloud provider is the data processor; refer to those platforms' data retention and compliance policies for their equivalent controls.
+Claude Models on Google Cloud (Anthropic managed)
+follows the same data retention policy as the first-party Claude API, and Anthropic is the data processor. ZDR is available there on request. On Amazon Bedrock and Claude Models on Google Cloud (Google managed), the cloud provider is the data processor; refer to those platforms' data retention and compliance policies for their equivalent controls.
 Claude Platform on AWS follows the same data retention policy as the first-party Claude API. ZDR is available on request; contact your Anthropic account representative to enable it. HIPAA readiness is not available on Claude Platform on AWS. See
 Claude Platform on AWS
 for details.
