@@ -49,6 +49,10 @@ for html_path in ROOT.rglob("index.html"):
 home_html = (ROOT / "index.html").read_text() if (ROOT / "index.html").exists() else ""
 if 'href="#compare"' not in home_html or "Browse" not in home_html:
     problems.append("home: missing browse CTA")
+if "<summary" not in home_html or ">Export<" not in home_html:
+    problems.append("home: missing Export menu")
+if 'class="acts"' in home_html or '>get</span>' in home_html:
+    problems.append("home: old equal-weight button row still present")
 if 'type="email"' in home_html or "you@company.com" in home_html:
     problems.append("home: email signup still looks live")
 for needle in ("https://x.com/JeffreyD3V", "suggest-a-tool.md", "report-a-policy-change.md",
@@ -109,6 +113,20 @@ with sync_playwright() as p:
         sw = pg.evaluate("document.documentElement.scrollWidth")
         if sw > 390:
             problems.append(f"{path}: horizontal overflow at 390px ({sw}px)")
+    pg.goto(base + "/", wait_until="networkidle")
+    pg.click("details.menu summary")
+    if pg.locator("details.menu[open]").count() != 1:
+        problems.append("export menu did not open")
+    if pg.locator("details.menu .menu-pop a").count() != 3:
+        problems.append("export menu should list json, csv and llms.txt")
+    sw = pg.evaluate("document.documentElement.scrollWidth")
+    if sw > 390:
+        problems.append(f"export menu overflows at 390px ({sw}px)")
+    pg.keyboard.press("Escape")
+    if pg.locator("details.menu[open]").count():
+        problems.append("export menu did not close on Escape")
+    pg.click("a.btn.pri")
+    pg.wait_for_function("() => location.hash === '#compare'")
     # keyboard: tab order reaches search and sort buttons on home
     pg.goto(base + "/")
     pg.keyboard.press("/")

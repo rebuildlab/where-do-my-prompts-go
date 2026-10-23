@@ -63,12 +63,16 @@ def abs_url(path):
     return (SITE_URL + path) if SITE_URL else path
 
 
-def panel(title, body, meta="", cls="", pid="", bcls="pn-b", foot="", tag="section"):
+def panel(title, body, meta="", cls="", pid="", bcls="pn-b", foot="", tag="section", tools=""):
     hid = f"{pid}-h" if pid else ""
+    side = ""
+    if tools or meta:
+        meta_html = f'<span class="pn-meta">{meta}</span>' if meta else ""
+        side = f'<div class="pn-tools">{tools}{meta_html}</div>'
     return (f'<{tag} class="pn {cls}"{f" id={chr(34)}{pid}{chr(34)}" if pid else ""}'
             f'{f" aria-labelledby={chr(34)}{hid}{chr(34)}" if hid else ""}>'
             f'<header class="pn-h"><h2{f" id={chr(34)}{hid}{chr(34)}" if hid else ""}>{title}</h2>'
-            f'{f"<span class={chr(34)}pn-meta{chr(34)}>{meta}</span>" if meta else ""}</header>'
+            f'{side}</header>'
             f'<div class="{bcls}">{body}</div>{f"<div class={chr(34)}pn-f{chr(34)}>{foot}</div>" if foot else ""}</{tag}>')
 
 
@@ -294,39 +298,50 @@ def ext_a(url, text, cls=""):
     return f'<a{c} href="{e(url)}" rel="noopener noreferrer">{e(text)}</a>'
 
 
-def cta_hero(n):
-    """Primary actions under the headline. {rel} is filled in by page()."""
+def dash_header(n, fields):
+    """One dashboard header: title and description on the left, a few actions on the right."""
     word = "tool" if n == 1 else "tools"
-    return f'''<nav class="acts" aria-label="Start here">
-<a class="btn pri" href="#compare"><span class="prm" aria-hidden="true">&gt;</span> Browse {n} {word}</a>
-<span class="acts-g"><span class="k">get</span>
-<a class="btn" href="{{rel}}data.json" download>data.json</a>
-<a class="btn" href="{{rel}}data.csv" download>data.csv</a>
-<a class="btn" href="{{rel}}llms.txt">llms.txt</a></span>
-{ext_a(X_URL, "Follow @JeffreyD3V", "btn")}
-</nav>
-<p class="acts-line">{ext_a(ISSUE_TOOL, "Suggest a tool")} · {ext_a(ISSUE_CHANGE, "Report a policy change")} · {ext_a(REPO_URL, "Star on GitHub")}</p>'''
+    return f'''<header class="dash">
+<div class="dash-copy">
+<p class="eyebrow">AI data-policy monitor · {n} services · {fields} sourced fields</p>
+<h1>What happens to your prompts after you hit enter</h1>
+<p class="lede">Training, retention, zero data retention and data residency. Every value quotes the vendor's own page and the date it was checked.</p>
+</div>
+<div class="dash-actions">
+<span class="dash-quiet">{ext_a(X_URL, "Follow on X")}{ext_a(REPO_URL, "GitHub")}</span>
+<details class="menu">
+<summary class="btn">Export</summary>
+<div class="menu-pop" role="group" aria-label="Download the data">
+<a href="{{rel}}data.json" download>data.json<small>full dataset</small></a>
+<a href="{{rel}}data.csv" download>data.csv<small>one row per tool</small></a>
+<a href="{{rel}}llms.txt">llms.txt<small>plain text for agents</small></a>
+</div>
+</details>
+<a class="btn pri" href="#compare">Browse {n} {word}</a>
+</div>
+</header>'''
 
 
 def cta_strip(n):
-    """The same actions, one compact row. Internal links use the {{rel}} placeholder."""
+    """Quiet text row for the bottom of a page. Internal links use the {{rel}} placeholder."""
     word = "tool" if n == 1 else "tools"
-    return f'''<nav class="cta" aria-label="Start here, again">
-<a class="btn pri" href="{{rel}}#compare"><span class="prm" aria-hidden="true">&gt;</span> Browse {n} {word}</a>
-<a class="btn" href="{{rel}}data.json" download>data.json</a>
-<a class="btn" href="{{rel}}data.csv" download>data.csv</a>
-<a class="btn" href="{{rel}}llms.txt">llms.txt</a>
-{ext_a(X_URL, "Follow @JeffreyD3V", "btn")}
-{ext_a(ISSUE_TOOL, "Suggest a tool", "btn")}
-{ext_a(ISSUE_CHANGE, "Report a policy change", "btn")}
-{ext_a(REPO_URL, "Star on GitHub", "btn")}
+    return f'''<nav class="cta-line" aria-label="More actions">
+<p class="cta-links"><a href="{{rel}}#compare">Browse {n} {word}</a><a href="{{rel}}data.json" download>data.json</a><a href="{{rel}}data.csv" download>data.csv</a><a href="{{rel}}llms.txt">llms.txt</a>{ext_a(X_URL, "Follow on X")}{ext_a(ISSUE_TOOL, "Suggest a tool")}{ext_a(ISSUE_CHANGE, "Report a change")}{ext_a(REPO_URL, "GitHub")}</p>
 <p class="cta-note">Vendor or sponsor? {ext_a(ISSUE_VENDOR, "Open an issue")} or DM {ext_a(X_URL, "@JeffreyD3V")}.</p>
 </nav>'''
 
 
-def follow_panel():
-    return panel("Change alerts", f'''<p class="small">The email list is not live. Follow {ext_a(X_URL, "@JeffreyD3V")} on X when a checked policy changes.</p>
-<p class="follow-go">{ext_a(X_URL, "Follow @JeffreyD3V", "btn")}</p>''', meta="on X", pid="alerts")
+def contribute_panel():
+    def row(url, label, hint):
+        return f'<li><a href="{e(url)}" rel="noopener noreferrer">{e(label)}<small>{e(hint)}</small></a></li>'
+    rows = "".join([
+        row(ISSUE_TOOL, "Suggest a tool", "open an issue"),
+        row(ISSUE_CHANGE, "Report a policy change", "open an issue"),
+        row(REPO_URL, "Star on GitHub", "the repo"),
+        row(X_URL, "Follow on X", "@JeffreyD3V"),
+    ])
+    return panel("Contribute", f'''<ul class="rows">{rows}</ul>
+<p class="note">The email list is not live. Follow on X for policy changes.</p>''', meta="issues", pid="contribute", bcls="pn-b flush")
 
 
 def terminal_card(v):
@@ -474,16 +489,10 @@ def build_index(vendors, st, files, evs, up):
                    f"{s['monitor_errors']} fetch errors · {unidx} cited pages not indexed yet"),
     ])
     body = f"""
-<div class="head">
-<div><p class="eyebrow">AI data-policy monitor · {s['n']} services · {s['total_fields']} sourced fields</p>
-<h1>What happens to your prompts after you hit enter</h1>
-<p class="lede">Training, retention, zero data retention and data residency for {s['n']} AI tools. Every value quotes the vendor's own policy page with the date it was checked.</p>
-{cta_hero(s['n'])}</div>
-{legend()}
-</div>
+{dash_header(s['n'], s['total_fields'])}
 <div class="grid" role="list" aria-label="Key numbers">{stats_html.replace('<div class="pn c2">', '<div class="pn c2" role="listitem">')}</div>
 <div class="grid">
-{panel("Field status heatmap", f'<div class="scroll-x">{svg_heatmap(vendors, cats)}</div>', meta=f"{s['n']} × {len(FIELD_ORDER)} cells", cls="c7", pid="heatmap", foot="Hover or focus a cell for the exact value. Each cell links to its evidence.")}
+{panel("Field status heatmap", f'<div class="scroll-x">{svg_heatmap(vendors, cats)}</div>', meta=f"{s['n']} × {len(FIELD_ORDER)} cells", cls="c7", pid="heatmap", tools=legend(), foot="Hover or focus a cell for the exact value. Each cell links to its evidence.")}
 <div class="c5 stack">{panel("Default retention", f'<div class="scroll-x">{ret_svg}</div><p class="fn">Log scale. Bars span the shortest to longest period in the value; ∞ = until you delete it. No fixed number: ' + "; ".join(f'<a href="vendors/{v["slug"]}/#retention">{e(short_name(v))}</a> “{e(v["fields"]["retention"]["value"])}”' for v in no_number) + '.</p>', meta=f"{len(ret_rows)} with a stated period", pid="retention")}
 {panel("Field split", svg_field_bars(vendors), meta=f"{s['n']} tools per field", pid="split")}</div>
 </div>
@@ -522,7 +531,7 @@ def build_index(vendors, st, files, evs, up):
 <li><span class="m">GET</span><a href="data.csv" download>/data.csv<small>one row per tool, 5 columns per field</small></a><span class="sz">{human_size(files['data.csv'])}</span></li>
 <li><span class="m">GET</span><a href="llms.txt">/llms.txt<small>plain-text map for agents and LLM tools</small></a><span class="sz">{human_size(files['llms.txt'])}</span></li>
 </ul>{terminal_card(vendors[0])}''', meta="free to reuse", cls="c8", pid="data", bcls="pn-b flush")}
-<div class="c4" style="display:flex;flex-direction:column">{follow_panel()}</div>
+<div class="c4" style="display:flex;flex-direction:column">{contribute_panel()}</div>
 </div>
 {cta_strip(s['n'])}
 """
