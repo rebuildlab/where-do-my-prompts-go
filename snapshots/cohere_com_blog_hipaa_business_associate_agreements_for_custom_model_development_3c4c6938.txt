@@ -21,15 +21,16 @@ AI isn’t a shortcut.
 It’s how business gets ahead.
 Contact sales
 Read this next
-Technology
-Inside Cohere Model Vault: Building a verifiable confidential AI inference
-Oct 22, 2026
-8 min read
-Product Launch
-Introducing Confidential Computing on Cohere Model Vault
-Oct 22, 2026
-4 min read
 Research
-Can AI understand culture?
-Oct 22, 2026
+Rethinking Confidence in Reasoning Models
+Oct 20, 2026
+6 min read
+Enterprise AI
+Energy & Utilities
+AI for utilities requires capability and control
+Oct 15, 2026
+6 min read
+Enterprise AI
+Agent sprawl: How to manage agent proliferation in the enterprise
+Oct 15, 2026
 5 min read

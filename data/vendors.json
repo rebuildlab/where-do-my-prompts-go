@@ -280,7 +280,7 @@
    "name": "Cohere",
    "category": "Model APIs",
    "vendor": "Cohere",
-   "region_filter": "unverified",
+   "region_filter": "none",
    "notes": "",
    "fields": {
     "trains_by_default": {
@@ -635,11 +635,11 @@
      "checked": "2026-10-21"
     },
     "abuse_monitoring": {
-     "value": "provider ZDR; Claude Fable retained",
+     "value": "provider ZDR, except Claude Fable 5 / 5.1 (Anthropic retains)",
      "detail": "Copilot runs real-time content filters on all prompts and outputs. GitHub has ZDR agreements with OpenAI, Anthropic (GA features) and xAI, and Google does not log prompts for abuse monitoring. Exception: Anthropic retains prompts and outputs for Claude Fable 5 / 5.1 to run safety classifiers; a ZDR exemption is available to eligible customers until the end of 2026.",
      "quote": "When Claude Fable 5 or Claude Fable 5.1 is used, Anthropic retains data, including prompts and outputs, by default to operate safety classifiers that detect harmful use.",
      "source": "https://docs.github.com/en/copilot/reference/ai-models/model-hosting",
-     "checked": "2026-10-21"
+     "checked": "2026-10-23"
     },
     "residency": {
      "value": "EU, Australia, US, Japan (GHE.com)",
@@ -808,7 +808,7 @@
    "name": "Windsurf (Devin Desktop)",
    "category": "Coding tools",
    "vendor": "Cognition",
-   "region_filter": "unverified",
+   "region_filter": "none",
    "notes": "",
    "fields": {
     "trains_by_default": {
