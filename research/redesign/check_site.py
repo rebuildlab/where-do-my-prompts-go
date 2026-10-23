@@ -46,6 +46,18 @@ for html_path in ROOT.rglob("index.html"):
         problems.append(f"{html_path.relative_to(ROOT)}: Method nav does not point at about/")
     if re.search(r'href="[^"]*method/"', nav.group(1)):
         problems.append(f"{html_path.relative_to(ROOT)}: nav links to /method/")
+home_html = (ROOT / "index.html").read_text() if (ROOT / "index.html").exists() else ""
+if 'href="#compare"' not in home_html or "Browse" not in home_html:
+    problems.append("home: missing browse CTA")
+if 'type="email"' in home_html or "you@company.com" in home_html:
+    problems.append("home: email signup still looks live")
+for needle in ("https://x.com/JeffreyD3V", "suggest-a-tool.md", "report-a-policy-change.md",
+               "vendor-or-sponsor.md", "https://github.com/rebuildlab/where-do-my-prompts-go"):
+    if needle not in home_html:
+        problems.append(f"home: missing link {needle}")
+vendor_pages = list((ROOT / "vendors").glob("*/index.html")) if (ROOT / "vendors").exists() else []
+if vendor_pages and "suggest-a-tool.md" not in vendor_pages[0].read_text():
+    problems.append("vendor page: missing CTA strip")
 with sync_playwright() as p:
     b = p.chromium.launch(executable_path="/usr/bin/google-chrome", args=["--no-sandbox"])
     for scheme in ("light", "dark"):

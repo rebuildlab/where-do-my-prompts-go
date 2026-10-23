@@ -23,7 +23,12 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "public"
 SITE_NAME = "Where Do My Prompts Go?"
 SITE_URL = os.environ.get("SITE_URL", "").rstrip("/")
-CONTACT_URL = os.environ.get("CONTACT_URL", "")  # e.g. a form or mailto: link; empty = "coming soon"
+CONTACT_URL = os.environ.get("CONTACT_URL", "")  # optional extra correction link; the GitHub issues below always work
+REPO_URL = "https://github.com/rebuildlab/where-do-my-prompts-go"
+X_URL = "https://x.com/JeffreyD3V"
+ISSUE_TOOL = REPO_URL + "/issues/new?template=suggest-a-tool.md&title=Suggest%20a%20tool%3A%20"
+ISSUE_CHANGE = REPO_URL + "/issues/new?template=report-a-policy-change.md&title=Policy%20change%3A%20"
+ISSUE_VENDOR = REPO_URL + "/issues/new?template=vendor-or-sponsor.md&title=Vendor%20or%20sponsor%3A%20"
 e = html.escape
 LABELS = {}
 HAVE_OG = False  # set in main() once the PNG cards exist
@@ -284,14 +289,44 @@ def tone_strip(counts, total, cls="strip"):
 
 # ---------- pages ----------
 
-def signup_panel():
-    return panel("Alerts", """<p class="small">Email when a policy changes. A nightly job diffs every source page. Sign-ups aren't live yet, so nothing you type here is sent anywhere.</p>
-<form class="signup-form" onsubmit="event.preventDefault(); this.querySelector('.signup-note').hidden=false;">
-<label class="sr" for="email">Email</label>
-<input id="email" type="email" placeholder="you@company.com" autocomplete="email">
-<button type="submit" class="btn">Notify me</button>
-<p class="signup-note" hidden role="status">Not wired up yet. Nothing was sent or stored.</p>
-</form>""", meta="not live", pid="alerts")
+def ext_a(url, text, cls=""):
+    c = f' class="{cls}"' if cls else ""
+    return f'<a{c} href="{e(url)}" rel="noopener noreferrer">{e(text)}</a>'
+
+
+def cta_hero(n):
+    """Primary actions under the headline. {rel} is filled in by page()."""
+    word = "tool" if n == 1 else "tools"
+    return f'''<nav class="acts" aria-label="Start here">
+<a class="btn pri" href="#compare"><span class="prm" aria-hidden="true">&gt;</span> Browse {n} {word}</a>
+<span class="acts-g"><span class="k">get</span>
+<a class="btn" href="{{rel}}data.json" download>data.json</a>
+<a class="btn" href="{{rel}}data.csv" download>data.csv</a>
+<a class="btn" href="{{rel}}llms.txt">llms.txt</a></span>
+{ext_a(X_URL, "Follow @JeffreyD3V", "btn")}
+</nav>
+<p class="acts-line">{ext_a(ISSUE_TOOL, "Suggest a tool")} · {ext_a(ISSUE_CHANGE, "Report a policy change")} · {ext_a(REPO_URL, "Star on GitHub")}</p>'''
+
+
+def cta_strip(n):
+    """The same actions, one compact row. Internal links use the {{rel}} placeholder."""
+    word = "tool" if n == 1 else "tools"
+    return f'''<nav class="cta" aria-label="Start here, again">
+<a class="btn pri" href="{{rel}}#compare"><span class="prm" aria-hidden="true">&gt;</span> Browse {n} {word}</a>
+<a class="btn" href="{{rel}}data.json" download>data.json</a>
+<a class="btn" href="{{rel}}data.csv" download>data.csv</a>
+<a class="btn" href="{{rel}}llms.txt">llms.txt</a>
+{ext_a(X_URL, "Follow @JeffreyD3V", "btn")}
+{ext_a(ISSUE_TOOL, "Suggest a tool", "btn")}
+{ext_a(ISSUE_CHANGE, "Report a policy change", "btn")}
+{ext_a(REPO_URL, "Star on GitHub", "btn")}
+<p class="cta-note">Vendor or sponsor? {ext_a(ISSUE_VENDOR, "Open an issue")} or DM {ext_a(X_URL, "@JeffreyD3V")}.</p>
+</nav>'''
+
+
+def follow_panel():
+    return panel("Change alerts", f'''<p class="small">The email list is not live. Follow {ext_a(X_URL, "@JeffreyD3V")} on X when a checked policy changes.</p>
+<p class="follow-go">{ext_a(X_URL, "Follow @JeffreyD3V", "btn")}</p>''', meta="on X", pid="alerts")
 
 
 def terminal_card(v):
@@ -442,7 +477,8 @@ def build_index(vendors, st, files, evs, up):
 <div class="head">
 <div><p class="eyebrow">AI data-policy monitor · {s['n']} services · {s['total_fields']} sourced fields</p>
 <h1>What happens to your prompts after you hit enter</h1>
-<p class="lede">Training, retention, zero data retention and data residency for {s['n']} AI tools. Every value quotes the vendor's own policy page with the date it was checked.</p></div>
+<p class="lede">Training, retention, zero data retention and data residency for {s['n']} AI tools. Every value quotes the vendor's own policy page with the date it was checked.</p>
+{cta_hero(s['n'])}</div>
 {legend()}
 </div>
 <div class="grid" role="list" aria-label="Key numbers">{stats_html.replace('<div class="pn c2">', '<div class="pn c2" role="listitem">')}</div>
@@ -486,8 +522,9 @@ def build_index(vendors, st, files, evs, up):
 <li><span class="m">GET</span><a href="data.csv" download>/data.csv<small>one row per tool, 5 columns per field</small></a><span class="sz">{human_size(files['data.csv'])}</span></li>
 <li><span class="m">GET</span><a href="llms.txt">/llms.txt<small>plain-text map for agents and LLM tools</small></a><span class="sz">{human_size(files['llms.txt'])}</span></li>
 </ul>{terminal_card(vendors[0])}''', meta="free to reuse", cls="c8", pid="data", bcls="pn-b flush")}
-<div class="c4" style="display:flex;flex-direction:column">{signup_panel()}</div>
+<div class="c4" style="display:flex;flex-direction:column">{follow_panel()}</div>
 </div>
+{cta_strip(s['n'])}
 """
     desc = f"Sourced comparison of how {s['n']} AI tools handle your data: training defaults, retention, ZDR, regions, SOC 2, HIPAA BAA. Checked {s['baseline']}."
     ld = {"@context": "https://schema.org", "@type": "Dataset", "name": SITE_NAME,
@@ -594,6 +631,7 @@ def build_vendor(v, vendors, idx, snapshots, uprow):
 </div>
 <nav class="pager" aria-label="Other tools"><a href="../{prev_v['slug']}/"><span>← previous</span>{e(prev_v['name'])}</a><a href="../{next_v['slug']}/"><span>next →</span>{e(next_v['name'])}</a></nav>
 <p class="fix">Spotted something wrong or out of date? Corrections are welcome; see <a href="../../about/#corrections">how to send one</a>. <a href="../../about/#colours">How statuses are assigned</a>.</p>
+{cta_strip(len(vendors))}
 """
     desc = f"{v['name']}: {tr['value']} on training by default; retention {f['retention']['value']}; ZDR {f['zdr']['value']}. Sourced from official pages, checked {checked}."
     return page(title, body, desc[:300], f"/vendors/{v['slug']}/", head, og_image=f"/og/{v['slug']}.png")
@@ -623,8 +661,9 @@ def build_changelog(entries, vendors, st, n_reports, evs, up):
 
 
 def build_about(vendors, st):
-    contact = (f'<a href="{e(CONTACT_URL)}">send a correction</a>' if CONTACT_URL
-               else "use the correction link (it goes live with the site)")
+    contact = f'<a href="{e(ISSUE_CHANGE)}" rel="noopener noreferrer">open a GitHub issue</a>'
+    if CONTACT_URL:
+        contact += f' or <a href="{e(CONTACT_URL)}">use this link</a>'
     rules = "".join(f"<tr><th scope='row'>{e(LABELS[k])}</th><td>{e(TONE_RULES[k])}</td></tr>" for k in FIELD_ORDER)
     shapes = {"ok": "filled circle", "mid": "triangle", "bad": "square", "unk": "hollow ring", "na": "dash"}
     leds = "".join(f"<tr><td>{led(t, 'big')}</td><th scope='row'>{TONE_LABEL[t]}</th><td>{shapes[t]}</td></tr>" for t in TONES)
@@ -658,7 +697,7 @@ def build_about(vendors, st):
 <li>This is not legal advice.</li>
 </ul>
 <h2 id="corrections">Corrections</h2>
-<p>Corrections are welcome, especially from people who work at these vendors. Point to an official page that shows the right answer and the entry gets updated with the new source and date. To report one, {contact}.</p>
+<p>Corrections are welcome, especially from people who work at these vendors. Point to an official page that shows the right answer and the entry gets updated with the new source and date. To report one, {contact}. To ask for a tool that is not listed, <a href="{e(ISSUE_TOOL)}" rel="noopener noreferrer">suggest a tool</a>.</p>
 <h2>Data</h2>
 <p>{st['n']} tools, newest field check {e(st['checked'])}. Download the full dataset as <a href="../data.csv" download>CSV</a> or <a href="../data.json" download>JSON</a>.</p>"""
     body = f"""<div class="head"><div><p class="eyebrow">method</p><h1>How this is sourced</h1>
