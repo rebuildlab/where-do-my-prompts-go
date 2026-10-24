@@ -7,6 +7,7 @@ https://arize.com/privacy-policy/
 https://arize.com/trust-center/
 https://assets.ctfassets.net/8aevphvgewt8/9rRh60u9m8AJGCKPHSnkI/f665de2992d6aa66bab425d19a559dd1/TPL-202510-GitHubDataProtectionAgreement.pdf
 https://aws.amazon.com/bedrock/faqs/
+https://buttondown.com/refer/wheredomypromptsgo
 https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html
 https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html
 https://cdn.deepseek.com/policies/en-US/model-algorithm-disclosure.html
