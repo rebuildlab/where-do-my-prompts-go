@@ -1571,38 +1571,6 @@ Model ID
 Description
 Max request (tokens)
 Training data (up to)
-gpt-4o-mini-audio-preview
-(2024-12-17)
-Preview
-Audio model for audio and text generation.
-Input: 128,000
-Output: 16,384
-September 2023
-gpt-4o-audio-preview
-(2024-12-17)
-Audio model for audio and text generation.
-Input: 128,000
-Output: 16,384
-September 2023
-gpt-4o-realtime-preview
-(2025-06-03)
-Audio model for real-time audio processing.
-Input: 32,000
-Output: 4,096
-October 2023
-gpt-4o-realtime-preview
-(2024-12-17)
-Audio model for real-time audio processing.
-Input: 16,000
-Output: 4,096
-October 2023
-gpt-4o-mini-realtime-preview
-(2024-12-17)
-Preview
-Audio model for real-time audio processing.
-Input: 128,000
-Output: 4,096
-October 2023
 gpt-audio
 (2025-08-28)
 gpt-audio-mini

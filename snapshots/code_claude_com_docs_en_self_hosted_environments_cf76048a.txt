@@ -43,7 +43,7 @@ Runner lifecycle
 covers the rule.
 You can start runners yourself and keep them running, or run the
 autoscaling orchestrator
-, a second process you host, which starts runners as sessions queue; each runner exits on its own when its work finishes. Either way, you set the environment up once, and it appears in the picker on every supported surface.
+, a second process you host, which starts runners as sessions queue. Either way, you set the environment up once, and it appears in the picker on every supported surface.
 ​
 Availability and limitations
 Check these before planning a rollout:
@@ -250,10 +250,15 @@ NO_PROXY
 ; set them in each process’s environment. The variables cover control-plane calls, the orchestrator’s
 SCM connector
 WebSocket, and the built-in clone for HTTPS remotes, and sessions inherit them from the runner. Session streaming uses server-sent events over HTTPS, so a proxy in the path must not buffer responses.
-If your proxy also requires a
+Proxy authentication
+: if your proxy also requires a
 Proxy-Authorization
 header, the runner can add it to each connection it opens to the proxy; see
 Authenticate to an egress proxy
+.
+Long-lived responses
+: if a runner picks up a session but Claude never answers its first message, your proxy may be the cause. See
+A session is picked up, but Claude never answers its first message
 .
 ​
 What stays on your infrastructure

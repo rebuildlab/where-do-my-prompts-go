@@ -322,7 +322,6 @@ prompt_cache_options.ttl
 controls the minimum cache lifetime, not this maximum application-state retention period. To learn more, see the
 prompt caching guide
 .
-When Zero Data Retention is not enabled for an organization, all queries use extended prompt caching for all supported models.
 For server-side compaction, no data is retained when
 store="false"
 .
@@ -358,8 +357,6 @@ gpt-image-2.5-flare-2026-09-08
 gpt-image-2
 ,
 gpt-image-1.5
-,
-gpt-image-1
 , and
 gpt-image-1-mini
 .
@@ -1077,23 +1074,13 @@ gpt-4.1-mini-2025-04-14
 Images
 Supported models
 gpt-image-2
-gpt-image-1
 gpt-image-1.5
-+
-1
-model
-snapshot
 gpt-image-1-mini
 /v1/images/generations
 Images
 Supported models
 gpt-image-2
-gpt-image-1
 gpt-image-1.5
-+
-1
-model
-snapshot
 gpt-image-1-mini
 /v1/moderations
 Moderation
@@ -1343,23 +1330,13 @@ gpt-4.1-mini-2025-04-14
 /v1/images/edits
 Images
 gpt-image-2
-gpt-image-1
 gpt-image-1.5
-+
-1
-model
-snapshot
 gpt-image-1-mini
 —
 /v1/images/generations
 Images
 gpt-image-2
-gpt-image-1
 gpt-image-1.5
-+
-1
-model
-snapshot
 gpt-image-1-mini
 —
 /v1/moderations
@@ -2074,8 +2051,6 @@ gpt-image-2.5-flare-2026-09-08
 ,
 gpt-image-2
 ,
-gpt-image-1
-,
 gpt-image-1.5
 ,
 gpt-image-1-mini
@@ -2094,8 +2069,6 @@ gpt-image-2.5-flare
 gpt-image-2.5-flare-2026-09-08
 ,
 gpt-image-2
-,
-gpt-image-1
 ,
 gpt-image-1.5
 ,
