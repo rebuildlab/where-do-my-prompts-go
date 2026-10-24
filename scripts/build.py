@@ -144,6 +144,7 @@ def page(title, body, desc, path, extra_head="", rel=None, og_image="/og.png", a
 <footer class="foot"><div class="wrap">
 <p><strong>Independent.</strong> Every value links to the vendor's own page. Not legal advice; check the source and your contract before you sign anything.</p>
 <p class="mono">data: <a href="{rel}data.json">data.json</a> · <a href="{rel}data.csv">data.csv</a> · <a href="{rel}llms.txt">llms.txt</a> · <a href="{rel}about/">method</a> · <a href="{rel}changelog/">changelog</a></p>
+<p class="mono">Code <a href="https://github.com/rebuildlab/where-do-my-prompts-go/blob/main/LICENSE">MIT</a> · Data <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
 </div></footer>
 <script src="{rel}assets/app.js" defer></script>
 </body>

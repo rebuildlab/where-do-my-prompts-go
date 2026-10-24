@@ -90,3 +90,12 @@ and add an entry to `data/changelog.json` only after checking.
 Known gaps: openai.com returns 403 to scripted requests; trust.mistral.ai renders
 client-side only; AWS pages failed TLS from the build box (they load fine in a
 browser). These keep their last snapshot (or none) and are listed in each report.
+
+## License
+
+The code is [MIT](LICENSE). Copyright 2026 rebuildlab.
+
+The data (`data/`, plus the built `data.json`, `data.csv` and `llms.txt`) is
+[CC BY 4.0](LICENSE-DATA.md). Credit "Where Do My Prompts Go? by rebuildlab" and
+link to https://rebuildlab.github.io/where-do-my-prompts-go/ . Quoted vendor text
+remains the vendor's and is quoted for reference.
