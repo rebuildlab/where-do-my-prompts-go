@@ -53,15 +53,29 @@ if "<summary" not in home_html or ">Export data<" not in home_html:
     problems.append("home: missing Export menu")
 if 'class="acts"' in home_html or '>get</span>' in home_html:
     problems.append("home: old equal-weight button row still present")
-if 'type="email"' in home_html or "you@company.com" in home_html:
-    problems.append("home: email signup still looks live")
+if "email list is not live" in home_html or "you@company.com" in home_html:
+    problems.append("home: stale email copy")
+if home_html.count('id="alerts"') != 1 or 'href="#alerts"' not in home_html:
+    problems.append("home: missing email alerts link or form")
+if 'action="https://buttondown.com/api/emails/embed-subscribe/wheredomypromptsgo"' not in home_html:
+    problems.append("home: alert form does not post to Buttondown")
+if home_html.count('name="email"') != 1 or home_html.count('type="email"') != 1 or 'target="_blank"' not in home_html:
+    problems.append("home: alert form is not a plain email post")
+if "buttondown.com/refer/wheredomypromptsgo" not in home_html:
+    problems.append("home: missing Buttondown credit")
 for needle in ("https://x.com/JeffreyD3V", "suggest-a-tool.md", "report-a-policy-change.md",
                "vendor-or-sponsor.md", "https://github.com/rebuildlab/where-do-my-prompts-go"):
     if needle not in home_html:
         problems.append(f"home: missing link {needle}")
 vendor_pages = list((ROOT / "vendors").glob("*/index.html")) if (ROOT / "vendors").exists() else []
-if vendor_pages and "suggest-a-tool.md" not in vendor_pages[0].read_text():
-    problems.append("vendor page: missing CTA strip")
+if vendor_pages:
+    vendor_html = vendor_pages[0].read_text()
+    if "suggest-a-tool.md" not in vendor_html:
+        problems.append("vendor page: missing CTA strip")
+    if 'action="https://buttondown.com/api/emails/embed-subscribe/wheredomypromptsgo"' not in vendor_html:
+        problems.append("vendor page: missing alert form")
+    if "email list is not live" in vendor_html:
+        problems.append("vendor page: stale email copy")
 with sync_playwright() as p:
     b = p.chromium.launch(executable_path="/usr/bin/google-chrome", args=["--no-sandbox"])
     for scheme in ("light", "dark"):

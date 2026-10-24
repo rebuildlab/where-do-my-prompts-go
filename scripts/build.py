@@ -29,6 +29,8 @@ X_URL = "https://x.com/JeffreyD3V"
 ISSUE_TOOL = REPO_URL + "/issues/new?template=suggest-a-tool.md&title=Suggest%20a%20tool%3A%20"
 ISSUE_CHANGE = REPO_URL + "/issues/new?template=report-a-policy-change.md&title=Policy%20change%3A%20"
 ISSUE_VENDOR = REPO_URL + "/issues/new?template=vendor-or-sponsor.md&title=Vendor%20or%20sponsor%3A%20"
+ALERTS_ACTION = "https://buttondown.com/api/emails/embed-subscribe/wheredomypromptsgo"
+ALERTS_CREDIT = "https://buttondown.com/refer/wheredomypromptsgo"
 e = html.escape
 LABELS = {}
 HAVE_OG = False  # set in main() once the PNG cards exist
@@ -341,7 +343,7 @@ def hero(vendors, st, cats):
 </div>
 </details>
 </div>
-<p class="hero-quiet">{ext_a(X_URL, "Follow on X")}{ext_a(REPO_URL, "GitHub")}</p>
+<p class="hero-quiet"><a href="#alerts">Email alerts</a>{ext_a(X_URL, "Follow on X")}{ext_a(REPO_URL, "GitHub")}</p>
 </div>
 <div class="hero-stage">
 <div class="hero-board" aria-hidden="true">
@@ -361,6 +363,17 @@ def cta_strip(n):
 </nav>'''
 
 
+def alert_form():
+    """Plain Buttondown signup. Posts in a new tab; no script."""
+    return f'''<form class="alert" id="alerts" action="{e(ALERTS_ACTION)}" method="post" target="_blank">
+<label class="sr" for="alerts-email">Email</label>
+<input id="alerts-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" inputmode="email">
+<button type="submit">Get weekly alerts</button>
+<p class="alert-note">Weekly policy changes. Confirm by email. Unsubscribe anytime.</p>
+<p class="alert-by">{ext_a(ALERTS_CREDIT, "Powered by Buttondown")}</p>
+</form>'''
+
+
 def contribute_panel():
     def row(url, label, hint):
         return f'<li><a href="{e(url)}" rel="noopener noreferrer">{e(label)}<small>{e(hint)}</small></a></li>'
@@ -371,7 +384,7 @@ def contribute_panel():
         row(X_URL, "Follow on X", "@JeffreyD3V"),
     ])
     return panel("Contribute", f'''<ul class="rows">{rows}</ul>
-<p class="note">The email list is not live. Follow on X for policy changes.</p>''', meta="issues", pid="contribute", bcls="pn-b flush")
+{alert_form()}''', meta="issues", pid="contribute", bcls="pn-b flush")
 
 
 def terminal_card(v):
@@ -670,6 +683,7 @@ def build_vendor(v, vendors, idx, snapshots, uprow):
 </div>
 <nav class="pager" aria-label="Other tools"><a href="../{prev_v['slug']}/"><span>← previous</span>{e(prev_v['name'])}</a><a href="../{next_v['slug']}/"><span>next →</span>{e(next_v['name'])}</a></nav>
 <p class="fix">Spotted something wrong or out of date? Corrections are welcome; see <a href="../../about/#corrections">how to send one</a>. <a href="../../about/#colours">How statuses are assigned</a>.</p>
+<div class="alert-wrap">{alert_form()}</div>
 {cta_strip(len(vendors))}
 """
     desc = f"{v['name']}: {tr['value']} on training by default; retention {f['retention']['value']}; ZDR {f['zdr']['value']}. Sourced from official pages, checked {checked}."
