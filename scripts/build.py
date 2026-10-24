@@ -167,7 +167,8 @@ FAVICON_SVG = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
 
 # ---------- inline SVG charts (all from vendors.json) ----------
 
-def svg_heatmap(vendors, cats):
+def svg_heatmap(vendors, cats, links=True):
+    """Field heatmap. links=False is the decorative hero copy: no anchors, no duplicate ids."""
     LW, CW, RH, GH, TOP = 164, 46, 22, 24, 86
     W = LW + CW * len(FIELD_ORDER) + 34
     y = TOP
@@ -180,19 +181,22 @@ def svg_heatmap(vendors, cats):
                      f'<line class="hm-rule" x1="0" x2="{W}" y1="{y + 21.5}" y2="{y + 21.5}"/>')
         y += GH
         for v in [v for v in vendors if v["category"] == c]:
-            parts.append(f'<a href="{{rel}}vendors/{v["slug"]}/"><text class="hm-name" x="0" y="{y + 15}">{e(short_name(v))}</text></a>')
+            name = f'<text class="hm-name" x="0" y="{y + 15}">{e(short_name(v))}</text>'
+            parts.append(f'<a href="{{rel}}vendors/{v["slug"]}/">{name}</a>' if links else name)
             for i, k in enumerate(FIELD_ORDER):
                 x = LW + i * CW
                 f = v["fields"][k]
                 t = f["_tone"]
-                parts.append(
-                    f'<a href="{{rel}}vendors/{v["slug"]}/#{k}" tabindex="-1"><title>{e(v["name"])}: {e(LABELS[k])} = {e(f["value"])} ({TONE_LABEL[t]})</title>'
-                    f'<rect class="hm hm-{t}" x="{x + 2}" y="{y + 2}" width="{CW - 4}" height="{RH - 4}" rx="3"/>'
-                    f'<text class="hm-g hm-g-{t}" x="{x + CW / 2}" y="{y + 15}">{TONE_GLYPH[t]}</text></a>')
+                cell = (f'<title>{e(v["name"])}: {e(LABELS[k])} = {e(f["value"])} ({TONE_LABEL[t]})</title>'
+                        f'<rect class="hm hm-{t}" x="{x + 2}" y="{y + 2}" width="{CW - 4}" height="{RH - 4}" rx="3"/>'
+                        f'<text class="hm-g hm-g-{t}" x="{x + CW / 2}" y="{y + 15}">{TONE_GLYPH[t]}</text>')
+                parts.append(f'<a href="{{rel}}vendors/{v["slug"]}/#{k}" tabindex="-1">{cell}</a>' if links else f'<g>{cell}</g>')
             y += RH
     H = y + 4
     counts = {t: sum(v["_counts"][t] for v in vendors) for t in TONES}
     desc = ", ".join(f"{counts[t]} {TONE_LABEL[t].lower()}" for t in TONES)
+    if not links:
+        return f'<svg class="chart heatmap" viewBox="0 0 {W} {H}" aria-hidden="true">{"".join(parts)}</svg>'
     return (f'<svg class="chart heatmap" viewBox="0 0 {W} {H}" role="group" aria-labelledby="hm-t hm-d">'
             f'<title id="hm-t">Status of {len(FIELD_ORDER)} policy fields for {len(vendors)} tools</title>'
             f'<desc id="hm-d">{len(vendors) * len(FIELD_ORDER)} cells: {desc}. The comparison table below has the same data as text.</desc>'
@@ -298,28 +302,53 @@ def ext_a(url, text, cls=""):
     return f'<a{c} href="{e(url)}" rel="noopener noreferrer">{e(text)}</a>'
 
 
-def dash_header(n, fields):
-    """One dashboard header: title and description on the left, a few actions on the right."""
+def hero(vendors, st, cats):
+    """Centred banner, then a tilted picture of this page's own numbers.
+
+    The picture is the same KPI counts and the same heatmap SVG as the dashboard
+    below (links stripped so it is not a second set of controls). It is rebuilt
+    by scripts/build.py on every run, so it stays in step with the data.
+    """
+    s = st
+    n = s["n"]
     word = "tool" if n == 1 else "tools"
-    return f'''<header class="dash">
-<div class="dash-copy">
-<p class="eyebrow">AI data-policy monitor · {n} services · {fields} sourced fields</p>
+    ok_src = s["monitored_pages"] - s["monitor_errors"]
+    src_tone = "ok" if not s["monitor_errors"] else "mid"
+    tiles = [
+        ("ok", "trains by default", f'{s["trains_no"]}/{n}', "don't train by default"),
+        ("ok", "zero data retention", f'{s["zdr_available"]}/{s["zdr_applicable"]}', "offer ZDR"),
+        ("mid", "default retention", f'{len(s["zero_retention"])}/{n}', "keep nothing"),
+        (src_tone, "source monitor", f'{ok_src}/{s["monitored_pages"]}', f'ok on {s["monitor_last"]}'),
+    ]
+    cards = "".join(
+        f'<div class="hb-card"><span class="k">{led(t)}{label}</span>'
+        f'<span class="num">{num}</span><span class="sub">{sub}</span></div>'
+        for t, label, num, sub in tiles)
+    fields = len(FIELD_ORDER)
+    return f'''<section class="hero">
+<div class="hero-copy">
 <h1>What happens to your prompts after you hit enter</h1>
-<p class="lede">Training, retention, zero data retention and data residency. Every value quotes the vendor's own page and the date it was checked.</p>
-</div>
-<div class="dash-actions">
-<span class="dash-quiet">{ext_a(X_URL, "Follow on X")}{ext_a(REPO_URL, "GitHub")}</span>
+<p class="lede">Training, retention, ZDR and residency for {n} AI tools, quoted from each vendor.</p>
+<div class="hero-actions">
+<a class="btn pri" href="#compare">Browse {n} {word}</a>
 <details class="menu">
-<summary class="btn">Export</summary>
+<summary class="btn">Export data</summary>
 <div class="menu-pop" role="group" aria-label="Download the data">
 <a href="{{rel}}data.json" download>data.json<small>full dataset</small></a>
 <a href="{{rel}}data.csv" download>data.csv<small>one row per tool</small></a>
 <a href="{{rel}}llms.txt">llms.txt<small>plain text for agents</small></a>
 </div>
 </details>
-<a class="btn pri" href="#compare">Browse {n} {word}</a>
 </div>
-</header>'''
+<p class="hero-quiet">{ext_a(X_URL, "Follow on X")}{ext_a(REPO_URL, "GitHub")}</p>
+</div>
+<div class="hero-stage">
+<div class="hero-board" aria-hidden="true">
+<div class="hb-kpis">{cards}</div>
+<div class="hb-heat"><div class="hb-cap"><span class="k">Field status heatmap</span><span>{n} × {fields} cells</span></div>{svg_heatmap(vendors, cats, links=False)}</div>
+</div>
+</div>
+</section>'''
 
 
 def cta_strip(n):
@@ -489,7 +518,7 @@ def build_index(vendors, st, files, evs, up):
                    f"{s['monitor_errors']} fetch errors · {unidx} cited pages not indexed yet"),
     ])
     body = f"""
-{dash_header(s['n'], s['total_fields'])}
+{hero(vendors, s, cats)}
 <div class="grid" role="list" aria-label="Key numbers">{stats_html.replace('<div class="pn c2">', '<div class="pn c2" role="listitem">')}</div>
 <div class="grid">
 {panel("Field status heatmap", f'<div class="scroll-x">{svg_heatmap(vendors, cats)}</div>', meta=f"{s['n']} × {len(FIELD_ORDER)} cells", cls="c7", pid="heatmap", tools=legend(), foot="Hover or focus a cell for the exact value. Each cell links to its evidence.")}

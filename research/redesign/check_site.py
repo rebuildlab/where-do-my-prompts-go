@@ -49,7 +49,7 @@ for html_path in ROOT.rglob("index.html"):
 home_html = (ROOT / "index.html").read_text() if (ROOT / "index.html").exists() else ""
 if 'href="#compare"' not in home_html or "Browse" not in home_html:
     problems.append("home: missing browse CTA")
-if "<summary" not in home_html or ">Export<" not in home_html:
+if "<summary" not in home_html or ">Export data<" not in home_html:
     problems.append("home: missing Export menu")
 if 'class="acts"' in home_html or '>get</span>' in home_html:
     problems.append("home: old equal-weight button row still present")
