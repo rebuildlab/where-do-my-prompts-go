@@ -21,6 +21,7 @@ https://console.groq.com/docs/legal/customer-business-associate-addendum
 https://console.groq.com/docs/legal/customer-data-processing-addendum
 https://console.groq.com/docs/legal/services-agreement
 https://console.groq.com/docs/your-data
+https://creativecommons.org/licenses/by/4.0/
 https://cursor.com/data-use
 https://cursor.com/docs/cloud-agent/self-hosted
 https://cursor.com/docs/enterprise/baa
@@ -61,6 +62,7 @@ https://fireworks.ai/privacy-policy
 https://github.blog/changelog/2024-12-06-the-latest-github-and-github-copilot-soc-reports-are-now-available/
 https://github.com/features/copilot
 https://github.com/rebuildlab/where-do-my-prompts-go
+https://github.com/rebuildlab/where-do-my-prompts-go/blob/main/LICENSE
 https://github.com/rebuildlab/where-do-my-prompts-go/issues/new?template=report-a-policy-change.md&title=Policy%20change%3A%20
 https://github.com/rebuildlab/where-do-my-prompts-go/issues/new?template=suggest-a-tool.md&title=Suggest%20a%20tool%3A%20
 https://github.com/rebuildlab/where-do-my-prompts-go/issues/new?template=vendor-or-sponsor.md&title=Vendor%20or%20sponsor%3A%20
