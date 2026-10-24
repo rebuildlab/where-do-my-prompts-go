@@ -23,7 +23,12 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "public"
 SITE_NAME = "Where Do My Prompts Go?"
 SITE_URL = os.environ.get("SITE_URL", "").rstrip("/")
-CONTACT_URL = os.environ.get("CONTACT_URL", "")  # e.g. a form or mailto: link; empty = "coming soon"
+CONTACT_URL = os.environ.get("CONTACT_URL", "")  # optional extra correction link; the GitHub issues below always work
+REPO_URL = "https://github.com/rebuildlab/where-do-my-prompts-go"
+X_URL = "https://x.com/JeffreyD3V"
+ISSUE_TOOL = REPO_URL + "/issues/new?template=suggest-a-tool.md&title=Suggest%20a%20tool%3A%20"
+ISSUE_CHANGE = REPO_URL + "/issues/new?template=report-a-policy-change.md&title=Policy%20change%3A%20"
+ISSUE_VENDOR = REPO_URL + "/issues/new?template=vendor-or-sponsor.md&title=Vendor%20or%20sponsor%3A%20"
 e = html.escape
 LABELS = {}
 HAVE_OG = False  # set in main() once the PNG cards exist
@@ -58,12 +63,16 @@ def abs_url(path):
     return (SITE_URL + path) if SITE_URL else path
 
 
-def panel(title, body, meta="", cls="", pid="", bcls="pn-b", foot="", tag="section"):
+def panel(title, body, meta="", cls="", pid="", bcls="pn-b", foot="", tag="section", tools=""):
     hid = f"{pid}-h" if pid else ""
+    side = ""
+    if tools or meta:
+        meta_html = f'<span class="pn-meta">{meta}</span>' if meta else ""
+        side = f'<div class="pn-tools">{tools}{meta_html}</div>'
     return (f'<{tag} class="pn {cls}"{f" id={chr(34)}{pid}{chr(34)}" if pid else ""}'
             f'{f" aria-labelledby={chr(34)}{hid}{chr(34)}" if hid else ""}>'
             f'<header class="pn-h"><h2{f" id={chr(34)}{hid}{chr(34)}" if hid else ""}>{title}</h2>'
-            f'{f"<span class={chr(34)}pn-meta{chr(34)}>{meta}</span>" if meta else ""}</header>'
+            f'{side}</header>'
             f'<div class="{bcls}">{body}</div>{f"<div class={chr(34)}pn-f{chr(34)}>{foot}</div>" if foot else ""}</{tag}>')
 
 
@@ -158,7 +167,8 @@ FAVICON_SVG = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
 
 # ---------- inline SVG charts (all from vendors.json) ----------
 
-def svg_heatmap(vendors, cats):
+def svg_heatmap(vendors, cats, links=True):
+    """Field heatmap. links=False is the decorative hero copy: no anchors, no duplicate ids."""
     LW, CW, RH, GH, TOP = 164, 46, 22, 24, 86
     W = LW + CW * len(FIELD_ORDER) + 34
     y = TOP
@@ -171,19 +181,22 @@ def svg_heatmap(vendors, cats):
                      f'<line class="hm-rule" x1="0" x2="{W}" y1="{y + 21.5}" y2="{y + 21.5}"/>')
         y += GH
         for v in [v for v in vendors if v["category"] == c]:
-            parts.append(f'<a href="{{rel}}vendors/{v["slug"]}/"><text class="hm-name" x="0" y="{y + 15}">{e(short_name(v))}</text></a>')
+            name = f'<text class="hm-name" x="0" y="{y + 15}">{e(short_name(v))}</text>'
+            parts.append(f'<a href="{{rel}}vendors/{v["slug"]}/">{name}</a>' if links else name)
             for i, k in enumerate(FIELD_ORDER):
                 x = LW + i * CW
                 f = v["fields"][k]
                 t = f["_tone"]
-                parts.append(
-                    f'<a href="{{rel}}vendors/{v["slug"]}/#{k}" tabindex="-1"><title>{e(v["name"])}: {e(LABELS[k])} = {e(f["value"])} ({TONE_LABEL[t]})</title>'
-                    f'<rect class="hm hm-{t}" x="{x + 2}" y="{y + 2}" width="{CW - 4}" height="{RH - 4}" rx="3"/>'
-                    f'<text class="hm-g hm-g-{t}" x="{x + CW / 2}" y="{y + 15}">{TONE_GLYPH[t]}</text></a>')
+                cell = (f'<title>{e(v["name"])}: {e(LABELS[k])} = {e(f["value"])} ({TONE_LABEL[t]})</title>'
+                        f'<rect class="hm hm-{t}" x="{x + 2}" y="{y + 2}" width="{CW - 4}" height="{RH - 4}" rx="3"/>'
+                        f'<text class="hm-g hm-g-{t}" x="{x + CW / 2}" y="{y + 15}">{TONE_GLYPH[t]}</text>')
+                parts.append(f'<a href="{{rel}}vendors/{v["slug"]}/#{k}" tabindex="-1">{cell}</a>' if links else f'<g>{cell}</g>')
             y += RH
     H = y + 4
     counts = {t: sum(v["_counts"][t] for v in vendors) for t in TONES}
     desc = ", ".join(f"{counts[t]} {TONE_LABEL[t].lower()}" for t in TONES)
+    if not links:
+        return f'<svg class="chart heatmap" viewBox="0 0 {W} {H}" aria-hidden="true">{"".join(parts)}</svg>'
     return (f'<svg class="chart heatmap" viewBox="0 0 {W} {H}" role="group" aria-labelledby="hm-t hm-d">'
             f'<title id="hm-t">Status of {len(FIELD_ORDER)} policy fields for {len(vendors)} tools</title>'
             f'<desc id="hm-d">{len(vendors) * len(FIELD_ORDER)} cells: {desc}. The comparison table below has the same data as text.</desc>'
@@ -284,14 +297,80 @@ def tone_strip(counts, total, cls="strip"):
 
 # ---------- pages ----------
 
-def signup_panel():
-    return panel("Alerts", """<p class="small">Email when a policy changes. A nightly job diffs every source page. Sign-ups aren't live yet, so nothing you type here is sent anywhere.</p>
-<form class="signup-form" onsubmit="event.preventDefault(); this.querySelector('.signup-note').hidden=false;">
-<label class="sr" for="email">Email</label>
-<input id="email" type="email" placeholder="you@company.com" autocomplete="email">
-<button type="submit" class="btn">Notify me</button>
-<p class="signup-note" hidden role="status">Not wired up yet. Nothing was sent or stored.</p>
-</form>""", meta="not live", pid="alerts")
+def ext_a(url, text, cls=""):
+    c = f' class="{cls}"' if cls else ""
+    return f'<a{c} href="{e(url)}" rel="noopener noreferrer">{e(text)}</a>'
+
+
+def hero(vendors, st, cats):
+    """Centred banner, then a tilted picture of this page's own numbers.
+
+    The picture is the same KPI counts and the same heatmap SVG as the dashboard
+    below (links stripped so it is not a second set of controls). It is rebuilt
+    by scripts/build.py on every run, so it stays in step with the data.
+    """
+    s = st
+    n = s["n"]
+    word = "tool" if n == 1 else "tools"
+    ok_src = s["monitored_pages"] - s["monitor_errors"]
+    src_tone = "ok" if not s["monitor_errors"] else "mid"
+    tiles = [
+        ("ok", "trains by default", f'{s["trains_no"]}/{n}', "don't train by default"),
+        ("ok", "zero data retention", f'{s["zdr_available"]}/{s["zdr_applicable"]}', "offer ZDR"),
+        ("mid", "default retention", f'{len(s["zero_retention"])}/{n}', "keep nothing"),
+        (src_tone, "source monitor", f'{ok_src}/{s["monitored_pages"]}', f'ok on {s["monitor_last"]}'),
+    ]
+    cards = "".join(
+        f'<div class="hb-card"><span class="k">{led(t)}{label}</span>'
+        f'<span class="num">{num}</span><span class="sub">{sub}</span></div>'
+        for t, label, num, sub in tiles)
+    fields = len(FIELD_ORDER)
+    return f'''<section class="hero">
+<div class="hero-copy">
+<h1>What happens to your prompts after you hit enter</h1>
+<p class="lede">Training, retention, ZDR and residency for {n} AI tools, quoted from each vendor.</p>
+<div class="hero-actions">
+<a class="btn pri" href="#compare">Browse {n} {word}</a>
+<details class="menu">
+<summary class="btn">Export data</summary>
+<div class="menu-pop" role="group" aria-label="Download the data">
+<a href="{{rel}}data.json" download>data.json<small>full dataset</small></a>
+<a href="{{rel}}data.csv" download>data.csv<small>one row per tool</small></a>
+<a href="{{rel}}llms.txt">llms.txt<small>plain text for agents</small></a>
+</div>
+</details>
+</div>
+<p class="hero-quiet">{ext_a(X_URL, "Follow on X")}{ext_a(REPO_URL, "GitHub")}</p>
+</div>
+<div class="hero-stage">
+<div class="hero-board" aria-hidden="true">
+<div class="hb-kpis">{cards}</div>
+<div class="hb-heat"><div class="hb-cap"><span class="k">Field status heatmap</span><span>{n} × {fields} cells</span></div>{svg_heatmap(vendors, cats, links=False)}</div>
+</div>
+</div>
+</section>'''
+
+
+def cta_strip(n):
+    """Quiet text row for the bottom of a page. Internal links use the {{rel}} placeholder."""
+    word = "tool" if n == 1 else "tools"
+    return f'''<nav class="cta-line" aria-label="More actions">
+<p class="cta-links"><a href="{{rel}}#compare">Browse {n} {word}</a><a href="{{rel}}data.json" download>data.json</a><a href="{{rel}}data.csv" download>data.csv</a><a href="{{rel}}llms.txt">llms.txt</a>{ext_a(X_URL, "Follow on X")}{ext_a(ISSUE_TOOL, "Suggest a tool")}{ext_a(ISSUE_CHANGE, "Report a change")}{ext_a(REPO_URL, "GitHub")}</p>
+<p class="cta-note">Vendor or sponsor? {ext_a(ISSUE_VENDOR, "Open an issue")} or DM {ext_a(X_URL, "@JeffreyD3V")}.</p>
+</nav>'''
+
+
+def contribute_panel():
+    def row(url, label, hint):
+        return f'<li><a href="{e(url)}" rel="noopener noreferrer">{e(label)}<small>{e(hint)}</small></a></li>'
+    rows = "".join([
+        row(ISSUE_TOOL, "Suggest a tool", "open an issue"),
+        row(ISSUE_CHANGE, "Report a policy change", "open an issue"),
+        row(REPO_URL, "Star on GitHub", "the repo"),
+        row(X_URL, "Follow on X", "@JeffreyD3V"),
+    ])
+    return panel("Contribute", f'''<ul class="rows">{rows}</ul>
+<p class="note">The email list is not live. Follow on X for policy changes.</p>''', meta="issues", pid="contribute", bcls="pn-b flush")
 
 
 def terminal_card(v):
@@ -439,15 +518,10 @@ def build_index(vendors, st, files, evs, up):
                    f"{s['monitor_errors']} fetch errors · {unidx} cited pages not indexed yet"),
     ])
     body = f"""
-<div class="head">
-<div><p class="eyebrow">AI data-policy monitor · {s['n']} services · {s['total_fields']} sourced fields</p>
-<h1>What happens to your prompts after you hit enter</h1>
-<p class="lede">Training, retention, zero data retention and data residency for {s['n']} AI tools. Every value quotes the vendor's own policy page with the date it was checked.</p></div>
-{legend()}
-</div>
+{hero(vendors, s, cats)}
 <div class="grid" role="list" aria-label="Key numbers">{stats_html.replace('<div class="pn c2">', '<div class="pn c2" role="listitem">')}</div>
 <div class="grid">
-{panel("Field status heatmap", f'<div class="scroll-x">{svg_heatmap(vendors, cats)}</div>', meta=f"{s['n']} × {len(FIELD_ORDER)} cells", cls="c7", pid="heatmap", foot="Hover or focus a cell for the exact value. Each cell links to its evidence.")}
+{panel("Field status heatmap", f'<div class="scroll-x">{svg_heatmap(vendors, cats)}</div>', meta=f"{s['n']} × {len(FIELD_ORDER)} cells", cls="c7", pid="heatmap", tools=legend(), foot="Hover or focus a cell for the exact value. Each cell links to its evidence.")}
 <div class="c5 stack">{panel("Default retention", f'<div class="scroll-x">{ret_svg}</div><p class="fn">Log scale. Bars span the shortest to longest period in the value; ∞ = until you delete it. No fixed number: ' + "; ".join(f'<a href="vendors/{v["slug"]}/#retention">{e(short_name(v))}</a> “{e(v["fields"]["retention"]["value"])}”' for v in no_number) + '.</p>', meta=f"{len(ret_rows)} with a stated period", pid="retention")}
 {panel("Field split", svg_field_bars(vendors), meta=f"{s['n']} tools per field", pid="split")}</div>
 </div>
@@ -486,8 +560,9 @@ def build_index(vendors, st, files, evs, up):
 <li><span class="m">GET</span><a href="data.csv" download>/data.csv<small>one row per tool, 5 columns per field</small></a><span class="sz">{human_size(files['data.csv'])}</span></li>
 <li><span class="m">GET</span><a href="llms.txt">/llms.txt<small>plain-text map for agents and LLM tools</small></a><span class="sz">{human_size(files['llms.txt'])}</span></li>
 </ul>{terminal_card(vendors[0])}''', meta="free to reuse", cls="c8", pid="data", bcls="pn-b flush")}
-<div class="c4" style="display:flex;flex-direction:column">{signup_panel()}</div>
+<div class="c4" style="display:flex;flex-direction:column">{contribute_panel()}</div>
 </div>
+{cta_strip(s['n'])}
 """
     desc = f"Sourced comparison of how {s['n']} AI tools handle your data: training defaults, retention, ZDR, regions, SOC 2, HIPAA BAA. Checked {s['baseline']}."
     ld = {"@context": "https://schema.org", "@type": "Dataset", "name": SITE_NAME,
@@ -594,6 +669,7 @@ def build_vendor(v, vendors, idx, snapshots, uprow):
 </div>
 <nav class="pager" aria-label="Other tools"><a href="../{prev_v['slug']}/"><span>← previous</span>{e(prev_v['name'])}</a><a href="../{next_v['slug']}/"><span>next →</span>{e(next_v['name'])}</a></nav>
 <p class="fix">Spotted something wrong or out of date? Corrections are welcome; see <a href="../../about/#corrections">how to send one</a>. <a href="../../about/#colours">How statuses are assigned</a>.</p>
+{cta_strip(len(vendors))}
 """
     desc = f"{v['name']}: {tr['value']} on training by default; retention {f['retention']['value']}; ZDR {f['zdr']['value']}. Sourced from official pages, checked {checked}."
     return page(title, body, desc[:300], f"/vendors/{v['slug']}/", head, og_image=f"/og/{v['slug']}.png")
@@ -623,8 +699,9 @@ def build_changelog(entries, vendors, st, n_reports, evs, up):
 
 
 def build_about(vendors, st):
-    contact = (f'<a href="{e(CONTACT_URL)}">send a correction</a>' if CONTACT_URL
-               else "use the correction link (it goes live with the site)")
+    contact = f'<a href="{e(ISSUE_CHANGE)}" rel="noopener noreferrer">open a GitHub issue</a>'
+    if CONTACT_URL:
+        contact += f' or <a href="{e(CONTACT_URL)}">use this link</a>'
     rules = "".join(f"<tr><th scope='row'>{e(LABELS[k])}</th><td>{e(TONE_RULES[k])}</td></tr>" for k in FIELD_ORDER)
     shapes = {"ok": "filled circle", "mid": "triangle", "bad": "square", "unk": "hollow ring", "na": "dash"}
     leds = "".join(f"<tr><td>{led(t, 'big')}</td><th scope='row'>{TONE_LABEL[t]}</th><td>{shapes[t]}</td></tr>" for t in TONES)
@@ -658,7 +735,7 @@ def build_about(vendors, st):
 <li>This is not legal advice.</li>
 </ul>
 <h2 id="corrections">Corrections</h2>
-<p>Corrections are welcome, especially from people who work at these vendors. Point to an official page that shows the right answer and the entry gets updated with the new source and date. To report one, {contact}.</p>
+<p>Corrections are welcome, especially from people who work at these vendors. Point to an official page that shows the right answer and the entry gets updated with the new source and date. To report one, {contact}. To ask for a tool that is not listed, <a href="{e(ISSUE_TOOL)}" rel="noopener noreferrer">suggest a tool</a>.</p>
 <h2>Data</h2>
 <p>{st['n']} tools, newest field check {e(st['checked'])}. Download the full dataset as <a href="../data.csv" download>CSV</a> or <a href="../data.json" download>JSON</a>.</p>"""
     body = f"""<div class="head"><div><p class="eyebrow">method</p><h1>How this is sourced</h1>

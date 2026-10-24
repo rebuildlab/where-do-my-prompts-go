@@ -23,6 +23,17 @@
       try{done(document.execCommand('copy'));}catch(e){done(false);}document.body.removeChild(t);}
   });
 
+  // Export menu: close on outside click or Escape
+  document.addEventListener('click',function(ev){
+    [].forEach.call(document.querySelectorAll('details.menu[open]'),function(d){
+      if(!d.contains(ev.target))d.removeAttribute('open');
+    });
+  });
+  document.addEventListener('keydown',function(ev){
+    if(ev.key!=='Escape')return;
+    [].forEach.call(document.querySelectorAll('details.menu[open]'),function(d){d.removeAttribute('open');});
+  });
+
   // Event-stream severity filters
   [].forEach.call(document.querySelectorAll('.logbar'),function(bar){
     var log=bar.parentNode.querySelector('.log');if(!log)return;

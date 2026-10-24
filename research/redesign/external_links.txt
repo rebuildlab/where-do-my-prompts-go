@@ -60,6 +60,10 @@ https://docs.x.ai/docs/key-information/regions
 https://fireworks.ai/privacy-policy
 https://github.blog/changelog/2024-12-06-the-latest-github-and-github-copilot-soc-reports-are-now-available/
 https://github.com/features/copilot
+https://github.com/rebuildlab/where-do-my-prompts-go
+https://github.com/rebuildlab/where-do-my-prompts-go/issues/new?template=report-a-policy-change.md&title=Policy%20change%3A%20
+https://github.com/rebuildlab/where-do-my-prompts-go/issues/new?template=suggest-a-tool.md&title=Suggest%20a%20tool%3A%20
+https://github.com/rebuildlab/where-do-my-prompts-go/issues/new?template=vendor-or-sponsor.md&title=Vendor%20or%20sponsor%3A%20
 https://help.mistral.ai/en/articles/347612-can-i-activate-zero-data-retention-zdr
 https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models
 https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data
@@ -151,3 +155,4 @@ https://www.together.ai/gpu-clusters
 https://www.together.ai/privacy
 https://www.together.ai/terms-of-service
 https://x.ai/legal/terms-of-service-enterprise
+https://x.com/JeffreyD3V
