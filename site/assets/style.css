@@ -239,10 +239,10 @@ table.rules th{width:200px;font-weight:600}
 .hero-quiet{display:flex;justify-content:center;gap:18px;margin:16px 0 0}
 .hero-quiet a{font:var(--fs-xs) var(--mono);color:var(--muted);text-decoration:none}
 .hero-quiet a:hover{color:var(--fg)}
-.hero-stage{height:500px;margin:40px calc(var(--pad) * -1) 28px;overflow:hidden;pointer-events:none;perspective:1100px;perspective-origin:50% 10%;
-  -webkit-mask-image:linear-gradient(#000 0%,#000 88%,transparent 100%);mask-image:linear-gradient(#000 0%,#000 88%,transparent 100%)}
-.hero-board{width:980px;max-width:none;margin:8px auto 0;padding:16px;text-align:left;background:var(--panel);border:1px solid var(--line2);border-radius:12px;
-  box-shadow:0 50px 90px rgba(0,0,0,.55);transform:rotateX(46deg) rotateZ(-14deg);transform-origin:center top}
+.hero-stage{height:520px;margin:40px calc(var(--pad) * -1) 28px;overflow:hidden;pointer-events:none;perspective:1800px;perspective-origin:50% 0;
+  -webkit-mask-image:linear-gradient(#000 0%,#000 92%,transparent 100%);mask-image:linear-gradient(#000 0%,#000 92%,transparent 100%)}
+.hero-board{width:min(920px,calc(100% - 120px));margin:76px auto 0;padding:16px;text-align:left;background:var(--panel);border:1px solid var(--line2);border-radius:12px;
+  box-shadow:0 40px 80px rgba(0,0,0,.5);transform:rotateX(28deg) rotateZ(-6deg);transform-origin:center top}
 .hb-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:12px}
 .hb-card{display:flex;flex-direction:column;gap:6px;padding:12px;background:var(--panel2);border:1px solid var(--line);border-radius:var(--r)}
 .hb-card .num{font:600 28px/1 var(--mono);letter-spacing:-.03em;color:var(--fg)}
@@ -383,8 +383,8 @@ table.rules th{width:200px;font-weight:600}
   .hero h1{font-size:30px}
   .hero-actions{flex-direction:column;align-items:stretch}
   .hero-actions .menu,.hero-actions .btn{width:100%;justify-content:center}
-  .hero-stage{height:360px;margin-top:24px}
-  .hero-board{width:108%;margin-top:0;transform:rotateX(34deg) rotateZ(-10deg)}
+  .hero-stage{height:400px;margin-top:24px}
+  .hero-board{width:calc(100% - 48px);margin:40px auto 0;transform:rotateX(18deg) rotateZ(-4deg)}
   .hb-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hb-heat{height:180px}
   .hb-card .num{font-size:22px}
