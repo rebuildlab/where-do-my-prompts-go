@@ -145,7 +145,7 @@ def page(title, body, desc, path, extra_head="", rel=None, og_image="/og.png", a
 </main>
 <footer class="foot"><div class="wrap">
 <p><strong>Independent.</strong> Every value links to the vendor's own page. Not legal advice; check the source and your contract before you sign anything.</p>
-<p class="mono">data: <a href="{rel}data.json">data.json</a> · <a href="{rel}data.csv">data.csv</a> · <a href="{rel}llms.txt">llms.txt</a> · <a href="{rel}about/">method</a> · <a href="{rel}changelog/">changelog</a></p>
+<p class="mono">data: <a href="{rel}data.json">data.json</a> · <a href="{rel}data.csv">data.csv</a> · <a href="{rel}llms.txt">llms.txt</a> · <a href="{rel}about/">method</a> · <a href="{rel}changelog/">changelog</a> · <a href="{rel}funding/">funding</a></p>
 <p class="mono">Code <a href="https://github.com/rebuildlab/where-do-my-prompts-go/blob/main/LICENSE">MIT</a> · Data <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
 </div></footer>
 <script src="{rel}assets/app.js" defer></script>
@@ -756,11 +756,49 @@ def build_about(vendors, st):
 <p>{st['n']} tools, newest field check {e(st['checked'])}. Download the full dataset as <a href="../data.csv" download>CSV</a> or <a href="../data.json" download>JSON</a>.</p>
 <p>This site counts visits with {ext_a("https://www.goatcounter.com", "GoatCounter")}, which uses no cookies and collects no personal data.</p>"""
     body = f"""<div class="head"><div><p class="eyebrow">method</p><h1>How this is sourced</h1>
-<p class="lede">An independent tracker. No vendor pays for placement, reviews entries, or sees them before they're published.</p></div>{legend()}</div>
+<p class="lede">An independent tracker. No vendor pays for placement, reviews entries, or sees them before they're published. <a href="../funding/">How it is funded</a>.</p></div>{legend()}</div>
 <div class="grid"><div class="c8">{panel("Method", prose, bcls="pn-b prose", pid="method")}</div>
 <div class="c4"><div class="side">{panel("Field split", svg_field_bars(vendors), meta=f"{st['n']} tools", pid="split")}</div></div></div>"""
     return page(f"Method and sources · {SITE_NAME}", body,
                 "How the AI data-policy tracker is sourced, what 'unverified' means, and how to send corrections.", "/about/", active="about/")
+
+
+FUNDING_UPDATED = "2026-10-25"  # change when the sponsor log changes
+
+
+def build_funding(vendors, st):
+    rules = [
+        ("Sponsors never touch the data.", "No sponsor, advertiser or affiliate partner can change, add, remove, delay or preview any value, status colour, changelog entry or newsletter item. Every value keeps its quote, source link and checked date."),
+        ("Tracked vendors can't buy anything.", f"None of the {st['n']} tracked tools, and no company that owns one, can sponsor, advertise, buy a listing or be an affiliate link."),
+        ("If a sponsor gets tracked, the sponsorship ends.", "If we add a sponsor's product to the tracker, or a tracked vendor buys the sponsor, we finish or refund the current booking and take no new ones. The new entry is researched like every other entry."),
+        ("No paying to get in.", "Nobody can pay to be added to the tracker, to be reviewed faster, or to get a badge."),
+        ("Paid things are labeled.", "Every paid spot says “Sponsored”. Every affiliate link says “Paid link” next to it and uses <code>rel=\"sponsored\"</code>. Paid spots never appear inside the tracker table."),
+        ("One at a time.", "At most one sponsor per newsletter issue and one sponsor slot on the site."),
+        ("No tracking.", "No tracking pixels and no ad scripts that follow readers. The subscriber list is never sold or shared."),
+        ("Ads are checked.", "If an ad makes a claim about how the sponsor handles data, it must link to the sponsor's own policy page. We can refuse any ad."),
+        ("Public log.", "Every sponsor and affiliate program is listed in the sponsor log with dates, and stays listed after it ends."),
+    ]
+    items = "".join(f"<li><strong>{t}</strong> {d}</li>" for t, d in rules)
+    prose = f"""<h2 id="today">Money today: none</h2>
+<p>There are no sponsors, no affiliate links and no paid listings. Nobody pays for this site. No vendor pays for placement, reviews entries, or sees them before they're published.</p>
+<p>That may change one day. The site may later carry a sponsor or a few affiliate links. If it does, the rules below apply. They are written down now, before any money comes in, so you can hold us to them.</p>
+<h2 id="rules">Rules for any future money</h2>
+<ol>{items}</ol>
+<h2 id="hosting">Hosting</h2>
+<p>The site is hosted for free on GitHub Pages. GitHub is owned by Microsoft, and two Microsoft products, <a href="../vendors/github-copilot/">GitHub Copilot</a> and <a href="../vendors/azure-openai/">Azure OpenAI</a>, are tracked here. They are checked the same way as every other tool, and Microsoft has no say over any entry.</p>
+<h2 id="problems">Found a problem?</h2>
+<p>Every value links to its source. If an entry looks wrong, <a href="{e(ISSUE_CHANGE)}" rel="noopener noreferrer">open a GitHub issue</a>. If you think we broke one of these rules, or you have a question about sponsoring, <a href="{e(ISSUE_VENDOR)}" rel="noopener noreferrer">open a vendor or sponsor issue</a>.</p>"""
+    log_rows = [("Current sponsors", "none"), ("Past sponsors", "none"), ("Affiliate programs", "none"), ("Paid listings", "none")]
+    log = ("<div class=\"tablewrap\"><table class=\"rules\"><caption class=\"sr\">Sponsor log</caption><tbody>"
+           + "".join(f"<tr><th scope='row'>{k}</th><td>{v}</td></tr>" for k, v in log_rows)
+           + f"<tr><th scope='row'>Last updated</th><td><time datetime=\"{FUNDING_UPDATED}\">{FUNDING_UPDATED}</time></td></tr></tbody></table></div>")
+    body = f"""<div class="head"><div><p class="eyebrow">funding</p><h1>Funding and independence</h1>
+<p class="lede">Where Do My Prompts Go? is free to use, and the data is free to download and reuse. Here is how it is paid for, and the rules for any money in the future.</p></div></div>
+<div class="grid"><div class="c8">{panel("Funding", prose, bcls="pn-b prose", pid="funding")}</div>
+<div class="c4"><div class="side">{panel("Sponsor log", log, meta="0 sponsors", pid="log")}</div></div></div>"""
+    return page(f"Funding and independence · {SITE_NAME}", body,
+                "Who pays for this AI data-policy tracker (nobody yet), and the rules any future sponsor or affiliate link must follow.",
+                "/funding/", active="funding/")  # not in the top nav; keeps Dashboard from showing as current
 
 
 def build_llms(vendors, checked):
@@ -785,7 +823,8 @@ def build_llms(vendors, checked):
     lines += ["", "## Pages", "",
               f"- [Dashboard]({u('/')}): status panels, policy event stream and comparison table of all tools",
               f"- [Method]({u('/about/')}): how values are sourced and what \"unverified\" means",
-              f"- [Changelog]({u('/changelog/')}): confirmed policy changes, checker runs and fetch errors", "", "## Tools", ""]
+              f"- [Changelog]({u('/changelog/')}): confirmed policy changes, checker runs and fetch errors",
+              f"- [Funding]({u('/funding/')}): who pays for the site (no one yet) and the rules for sponsors and affiliate links", "", "## Tools", ""]
     for v in vendors:
         f = v["fields"]
         lines.append(f"- [{v['name']}]({u('/vendors/' + v['slug'] + '/')}): {v['category']}; "
@@ -856,6 +895,8 @@ def main():
     (OUT / "changelog" / "index.html").write_text(build_changelog(changelog, vendors, st, n_reports, evs, up))
     (OUT / "about").mkdir()
     (OUT / "about" / "index.html").write_text(build_about(vendors, st))
+    (OUT / "funding").mkdir()
+    (OUT / "funding" / "index.html").write_text(build_funding(vendors, st))
     # /method/ is the old path. Same depth as /about/, so the canonical path drives asset links.
     (OUT / "method").mkdir()
     (OUT / "method" / "index.html").write_text(page(
@@ -873,7 +914,7 @@ def main():
         "Page not found", "/404.html", rel=nf_rel))
     (OUT / "robots.txt").write_text("User-agent: *\nAllow: /\n" + (f"Sitemap: {SITE_URL}/sitemap.xml\n" if SITE_URL else ""))
     if SITE_URL:
-        paths = ["/", "/changelog/", "/about/", "/method/"] + [f"/vendors/{v['slug']}/" for v in vendors]
+        paths = ["/", "/changelog/", "/about/", "/method/", "/funding/"] + [f"/vendors/{v['slug']}/" for v in vendors]
         urls = "".join(f"<url><loc>{e(SITE_URL + p)}</loc><lastmod>{full_check}</lastmod></url>" for p in paths)
         (OUT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>')
     print(f"Built {len(vendors)} vendor pages into {OUT.relative_to(ROOT)}/" + ("" if SITE_URL else " (set SITE_URL to emit canonical links and sitemap.xml)"))
