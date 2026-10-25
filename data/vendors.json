@@ -48,11 +48,11 @@
      "checked": "2026-10-21"
     },
     "residency": {
-     "value": "US, EU, AU, CA, JP, IN, SG, KR, UAE",
-     "detail": "Per-project regions. Singapore (sg.api.openai.com) gives regional storage only, not regional processing. Non-US regions require MAM or ZDR approval and a Modified Retention amendment.",
-     "quote": "To use data residency with any region other than the United States, you must be approved for abuse monitoring controls, and execute a Modified Retention amendment.",
+     "value": "US, EU, AU, CA, JP, IN, SG, KR, UK, UAE",
+     "detail": "Per-project regions. Singapore (sg.api.openai.com) and the United Kingdom (gb.api.openai.com) give regional storage only, not regional processing; the same is true for AU, CA, JP, IN and KR. Regional processing is listed only for the US, EU and UAE. Non-US regions require MAM or ZDR approval and a Modified Retention amendment.",
+     "quote": "To use data residency with any region other than the United States, you must be approved for abuse monitoring controls, and execute a Modified Retention amendment. … United Kingdom* | gb.api.openai.com | Yes | No | Yes",
      "source": "https://platform.openai.com/docs/guides/your-data",
-     "checked": "2026-10-21"
+     "checked": "2026-10-25"
     },
     "certifications": {
      "value": "SOC 2 Type 2",

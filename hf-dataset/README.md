@@ -30,7 +30,7 @@ Each row is one tool and one field. Each verified value comes with the URL of th
 a quote from that page and the date it was checked.
 
 - Site: <SITE_URL>
-- Last full check: 2026-10-21
+- Last full check: 2026-10-25
 - Rows: 200 (25 tools x 8 fields)
 - Unverified rows: 26
 
