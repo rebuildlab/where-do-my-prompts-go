@@ -10,6 +10,13 @@ Usage:
 
 Exit code is 0 even when changes are found (so CI doesn't go red); the report
 file is the signal. Use --fail-on-change to exit 1 instead.
+
+Pages that come back as an empty JavaScript shell (HTTP 200 but almost no text)
+are fetched a second time in headless Chromium, if Playwright is installed
+(pip install playwright && python -m playwright install --with-deps chromium).
+The index records "method": "rendered" for those pages. Without Playwright, or
+if the rendered page is still empty, the page is reported as a fetch error,
+exactly as before. Use --no-render to skip the browser step.
 """
 import argparse, datetime, difflib, hashlib, json, re, sys, time
 from pathlib import Path
@@ -91,12 +98,60 @@ def fetch(url):
     return r.status_code, r.text
 
 
+class Renderer:
+    """Headless Chromium for pages that need JavaScript. Started only when a page
+    needs it, so a normal run never launches a browser."""
+
+    def __init__(self):
+        self._pw = self._browser = None
+        self.unavailable = None  # reason string once we know we can't render
+
+    def html(self, url):
+        if self.unavailable:
+            return None, self.unavailable
+        if self._browser is None:
+            try:
+                from playwright.sync_api import sync_playwright
+            except ImportError:
+                self.unavailable = "Playwright not installed, could not render"
+                return None, self.unavailable
+            try:
+                self._pw = sync_playwright().start()
+                self._browser = self._pw.chromium.launch(headless=True)
+            except Exception as e:  # e.g. browser binary missing
+                self.unavailable = f"could not start headless Chromium ({e.__class__.__name__})"
+                return None, self.unavailable
+        page = self._browser.new_page(user_agent=UA, locale="en-US")
+        try:
+            resp = page.goto(url, wait_until="domcontentloaded", timeout=45000)
+            try:
+                page.wait_for_load_state("networkidle", timeout=10000)
+            except Exception:
+                pass
+            status = resp.status if resp else None
+            if status != 200:
+                return None, f"rendered page returned HTTP {status}"
+            return page.content(), None
+        except Exception as e:
+            return None, f"render error: {e.__class__.__name__}"
+        finally:
+            page.close()
+
+    def close(self):
+        if self._browser:
+            self._browser.close()
+        if self._pw:
+            self._pw.stop()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", help="only URLs containing this substring")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--fail-on-change", action="store_true")
     ap.add_argument("--delay", type=float, default=1.0, help="seconds between requests")
+    ap.add_argument("--no-render", action="store_true",
+                    help="don't retry JavaScript-only pages in headless Chromium")
     args = ap.parse_args()
 
     cfg = load_config()
@@ -107,6 +162,7 @@ def main():
     index = json.loads(index_path.read_text()) if index_path.exists() else {}
 
     changed, failed, created, same = [], [], [], 0
+    renderer = None if args.no_render else Renderer()
     urls = source_urls()
     for i, (url, slugs) in enumerate(urls.items()):
         if args.only and args.only not in url:
@@ -120,8 +176,20 @@ def main():
             print(f"FAIL  {url}  ({e.__class__.__name__})")
             continue
         text = normalise(main_text(html), patterns) if status == 200 else ""
+        method = "http"
+        if status == 200 and len(text) < 200 and renderer:
+            # HTTP 200 but an empty shell: the text is drawn by JavaScript. Try a real browser.
+            rhtml, rwhy = renderer.html(url)
+            rtext = normalise(main_text(rhtml), patterns) if rhtml else ""
+            if len(rtext) >= 200:
+                text, method = rtext, "rendered"
+                print(f"REND  {url}  (plain HTTP gave {len(normalise(main_text(html), patterns))} chars)")
+            elif rhtml:
+                rwhy = f"rendered page has only {len(rtext)} chars of text"
         if status != 200 or len(text) < 200:
             why = f"HTTP {status}" if status != 200 else f"only {len(text)} chars of text (likely JavaScript-rendered)"
+            if status == 200 and renderer and method == "http":
+                why += f"; {rwhy}"
             failed.append((url, slugs, why))
             print(f"FAIL  {url}  ({why})")
             # keep the previous good snapshot; don't overwrite with nothing
@@ -144,7 +212,12 @@ def main():
             path.write_text(text)
             index[url] = {"file": path.name, "sha256": digest, "vendors": slugs,
                           "last_checked": today, "last_error": None}
+            if method != "http":
+                index[url]["method"] = method
         time.sleep(args.delay)
+
+    if renderer:
+        renderer.close()
 
     if not args.dry_run:
         index_path.write_text(json.dumps(index, indent=2, sort_keys=True))

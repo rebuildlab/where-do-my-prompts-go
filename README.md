@@ -84,6 +84,13 @@ python3 scripts/check_policies.py --only anthropic.com
 python3 scripts/check_policies.py --dry-run    # report only, write nothing
 ```
 
+If a page returns HTTP 200 but almost no text (an empty JavaScript shell), the checker
+loads it again in headless Chromium when Playwright is installed
+(`pip install playwright && python -m playwright install --with-deps chromium`; the
+nightly workflow does this). Those pages get `"method": "rendered"` in
+`snapshots/index.json`. Without Playwright, or with `--no-render`, they are reported as
+fetch errors as before.
+
 A diff means "re-read the page", not "the fact changed". Update `data/vendors.json`
 and add an entry to `data/changelog.json` only after checking.
 
