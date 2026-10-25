@@ -9,7 +9,7 @@ If Pillow is installed (pip install pillow), the PNG social cards and favicon PN
 regenerated from the same data by scripts/make_graphics.py; otherwise they are skipped
 with a warning (set REQUIRE_GRAPHICS=1 to make that an error, e.g. in CI).
 """
-import csv, html, json, math, os, shutil, sys
+import csv, html, json, math, os, re, shutil, sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -754,7 +754,7 @@ def build_about(vendors, st):
 <p>Corrections are welcome, especially from people who work at these vendors. Point to an official page that shows the right answer and the entry gets updated with the new source and date. To report one, {contact}. To ask for a tool that is not listed, <a href="{e(ISSUE_TOOL)}" rel="noopener noreferrer">suggest a tool</a>.</p>
 <h2>Data</h2>
 <p>{st['n']} tools, newest field check {e(st['checked'])}. Download the full dataset as <a href="../data.csv" download>CSV</a> or <a href="../data.json" download>JSON</a>.</p>
-<p>This site counts visits with {ext_a("https://www.cloudflare.com/web-analytics/", "Cloudflare Web Analytics")}, which uses no cookies and does not track you across sites.</p>"""
+<p>This site counts visits with {ext_a("https://www.cloudflare.com/web-analytics/", "Cloudflare Web Analytics")}, which uses no cookies and does not track you across sites. <a href="../notes/analytics/">Why I picked Cloudflare over GoatCounter</a>.</p>"""
     body = f"""<div class="head"><div><p class="eyebrow">method</p><h1>How this is sourced</h1>
 <p class="lede">An independent tracker. No vendor pays for placement, reviews entries, or sees them before they're published. <a href="../funding/">How it is funded</a>.</p></div>{legend()}</div>
 <div class="grid"><div class="c8">{panel("Method", prose, bcls="pn-b prose", pid="method")}</div>
@@ -800,6 +800,98 @@ def build_funding(vendors, st):
                 "Who pays for this AI data-policy tracker (nobody yet), and the rules any future sponsor or affiliate link must follow.",
                 "/funding/", active="funding/")  # not in the top nav; keeps Dashboard from showing as current
 
+
+ANALYTICS_MD = '# GoatCounter or Cloudflare Web Analytics: what I learned switching in one evening\n\nMy site, Where Do My Prompts Go?, tracks what 25 AI tools do with your data, with a source for every entry. It is a static site on GitHub Pages. Because the whole site is about privacy, I had one hard rule for analytics: no cookies, and no tracking people across sites.\n\nOn October 25, 2026 I added analytics twice. First GoatCounter, then Cloudflare Web Analytics. This post is what I found. I have no traffic data yet, so this is not about whose numbers are better. It is about setup, privacy, and who each tool suits.\n\n## Round one: GoatCounter\n\nGoatCounter is a free, open source analytics tool made by one developer, Martin Tournoij. The repo has been on GitHub since May 2019 and has about 6.1k stars. Sign-up was an email, a password, and an email check. Then I pasted one tag:\n\n```html\n<script data-goatcounter="https://YOURSITE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>\n```\n\nThat was PR #7, a +3/-1 change. It worked.\n\nBut it looked a bit weird to me. The script loads from `gc.zgo.at`, a domain most people have never seen, and the dashboard is very plain. Nothing was wrong with it. It just did not feel as familiar as I wanted for a site that asks readers to trust it.\n\n## Round two: Cloudflare Web Analytics\n\nSo I switched in PR #9. Cloudflare Web Analytics is also free. I had to create a Cloudflare account, add the site, and copy a snippet. My site does not go through Cloudflare\'s proxy. You do not need to change DNS; the JS snippet is enough. The beacon loads from `static.cloudflareinsights.com`.\n\nThe diff was small: +2/-2 in one file. One line swapped the script tag. The other updated my Method page, which now says the site "uses no cookies and does not track you across sites."\n\n## What each one actually does\n\nBoth tools say they set no cookies. GoatCounter says it stores nothing in the browser at all: no cookies, no localStorage. Cloudflare says its beacon does not read or store cookies, localStorage, sessionStorage or IndexedDB.\n\nIP addresses are handled differently. GoatCounter keeps a mix of site, IP and browser string in memory for up to 8 hours, so a reload is not counted as a new visit. That mix is never written to disk. Cloudflare says it gets the IP as part of the normal request, drops it at the nearest data center, and does not store it in its main databases or logs. It counts a "visit" as a page view that came from another site, so it does not need to remember you.\n\nWhat gets kept is different too. GoatCounter stores counts per day or per hour (path, browser, OS, country, language, screen width) in separate tables that cannot be joined. You choose how long to keep data: 31 days to 5 years, or 0 to keep it forever. Cloudflare keeps full beacon data for 7 days, then keeps about a 10% sample. In the dashboard you can see the last six months.\n\nCloudflare also measures page speed (Core Web Vitals). GoatCounter has events and campaign tracking. Cloudflare says it does not support UTM parameters or custom events yet.\n\n## GDPR and banners\n\nI am not a lawyer, so I will only repeat what each side says. GoatCounter has a page saying it "probably doesn\'t require a GDPR consent notice," because it stores no personal data and site owners have a legitimate interest in counting visits. Cloudflare says Web Analytics "does not collect or use your visitors\' personal data." I did not find a Cloudflare page that says plainly whether you need a banner. My site shows none, and the Method page explains what runs.\n\n## Script size and ad blockers\n\nI measured both scripts with curl on October 25, 2026:\n\n- GoatCounter `count.js`: 9,213 bytes, about 3.3 KB gzipped\n- Cloudflare `beacon.min.js`: 31,853 bytes, about 10.3 KB gzipped\n\nBoth are blocked by ad blockers. The EasyPrivacy filter list blocks `gc.zgo.at` and `cloudflareinsights.com` when they load as third-party scripts. Cloudflare\'s own FAQ admits its beacon is blocked by Adblock Plus, Brave and others. So with either tool, readers who block trackers will not be counted. On a privacy site, many of mine probably do. I am fine with that.\n\n## Quick comparison\n\n| | GoatCounter | Cloudflare Web Analytics |\n|---|---|---|\n| Cookies | None | None |\n| IP address | In memory up to 8 h, not stored | Dropped at data center, not stored |\n| Data kept | Your choice (31 d to 5 y, or forever) | 6 months in dashboard |\n| Open source | Yes (EUPL 1.2, slightly modified) | No |\n| Self-host | Yes (SQLite or PostgreSQL) | No |\n| Price | Free for reasonable use, donations | Free, no traffic limit stated |\n| Sites | Not stated | Soft limit of 10 per account |\n| Export / API | JSON and CSV export, JSON API | GraphQL API |\n| Script (gzip) | about 3.3 KB | about 10.3 KB |\n| Events, UTM | Yes | Not yet |\n| Run by | One developer in Ireland, servers in Finland and Germany | Cloudflare, Inc., US public company (NYSE: NET) |\n\n## Which one fits who\n\nPick GoatCounter if you want code you can read, want to self-host one day, want to set your own retention, or want events and campaigns. You also have to be fine with an odd domain and a plain dashboard. You can host `count.js` yourself if the domain bothers you.\n\nPick Cloudflare Web Analytics if you want a name readers already know, page speed numbers, and no traffic worries. In exchange you trust a big US company, you cannot see the code, and you get six months of history.\n\nI moved to Cloudflare mostly because of how it feels, not because GoatCounter failed me. I am also giving up open source code and control over retention. If I ever want those back, switching is still a two-line change.\n\n---\n\n## Sources\n\n- My PRs: https://github.com/rebuildlab/where-do-my-prompts-go/pull/7 and https://github.com/rebuildlab/where-do-my-prompts-go/pull/9\n- GoatCounter home and pricing: https://www.goatcounter.com/\n- GoatCounter privacy policy (what is stored, IP, servers, operator): https://www.goatcounter.com/help/privacy\n- GoatCounter sessions (8-hour in-memory mapping): https://www.goatcounter.com/help/sessions\n- GoatCounter GDPR page: https://www.goatcounter.com/help/gdpr\n- GoatCounter CSV export: https://www.goatcounter.com/help/export\n- GoatCounter JSON API: https://www.goatcounter.com/help/api\n- GoatCounter license: https://github.com/arp242/goatcounter/blob/master/LICENSE\n- GoatCounter self-hosting (README): https://github.com/arp242/goatcounter\n- GoatCounter retention setting (source): https://github.com/arp242/goatcounter/blob/master/tpl/settings_main.gohtml and https://github.com/arp242/goatcounter/blob/master/settings.go\n- GoatCounter repo stats (created 2019-05-28, 6,095 stars on Oct 25, 2026): https://api.github.com/repos/arp242/goatcounter\n- Cloudflare Web Analytics about: https://developers.cloudflare.com/web-analytics/about/\n- Cloudflare FAQ (ad blockers, sampling, 7 days, six months, 10 sites, no UTM or events): https://developers.cloudflare.com/web-analytics/faq/\n- Cloudflare data collection: https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/\n- Cloudflare RUM beacon privacy and IP handling: https://developers.cloudflare.com/speed/observatory/rum-beacon/\n- Cloudflare launch post (no cookies, no fingerprinting, how visits are counted, free with no traffic limits): https://blog.cloudflare.com/privacy-first-web-analytics/\n- Cloudflare dimensions and GraphQL API: https://developers.cloudflare.com/web-analytics/data-metrics/dimensions/\n- Cloudflare, Inc. investor relations (NYSE: NET): https://www.cloudflare.net/home/default.aspx\n- EasyPrivacy filter list: https://easylist.to/easylist/easyprivacy.txt\n- Script sizes: measured with `curl -s URL | wc -c` and `curl -s URL | gzip -9 | wc -c` on Oct 25, 2026, about 23:40 WIB (UTC+7). Wire size with gzip was 3,401 and 10,264 bytes.\n'
+
+
+def md_inline(text):
+    """Inline code spans and bare URLs. The words stay as written."""
+    out = []
+    for part in re.split(r"(`[^`]+`)", text):
+        if len(part) >= 2 and part.startswith("`") and part.endswith("`"):
+            out.append(f"<code>{e(part[1:-1])}</code>")
+            continue
+        esc = e(part)
+        out.append(re.sub(r"https?://[^\s<&]+", lambda m: f'<a href="{m.group(0)}">{m.group(0)}</a>', esc))
+    return "".join(out)
+
+
+def md_table(rows):
+    parsed = []
+    for row in rows:
+        cells = [c.strip() for c in row.strip().strip("|").split("|")]
+        if cells and all(re.fullmatch(r":?-{3,}:?", c or "") for c in cells):
+            continue
+        parsed.append(cells)
+    head, body = parsed[0], parsed[1:]
+    thead = "<thead><tr>" + "".join(f"<th scope=\"col\">{md_inline(c)}</th>" for c in head) + "</tr></thead>"
+    trs = []
+    for cells in body:
+        bits = []
+        for i, c in enumerate(cells):
+            bits.append(f"<th scope=\"row\">{md_inline(c)}</th>" if i == 0 else f"<td>{md_inline(c)}</td>")
+        trs.append("<tr>" + "".join(bits) + "</tr>")
+    return '<div class="tablewrap"><table class="rules">' + thead + "<tbody>" + "".join(trs) + "</tbody></table></div>"
+
+
+def render_md(md):
+    lines = md.split("\n")
+    i, n, blocks = 0, len(lines), []
+    while i < n:
+        line = lines[i]
+        if line.startswith("```"):
+            i += 1
+            buf = []
+            while i < n and not lines[i].startswith("```"):
+                buf.append(lines[i])
+                i += 1
+            i += 1
+            blocks.append(f'<pre class="term"><code>{e(chr(10).join(buf))}</code></pre>')
+            continue
+        if line.strip() == "---":
+            blocks.append("<hr>")
+            i += 1
+            continue
+        if line.startswith("|"):
+            buf = []
+            while i < n and lines[i].startswith("|"):
+                buf.append(lines[i])
+                i += 1
+            blocks.append(md_table(buf))
+            continue
+        if line.startswith("## "):
+            blocks.append(f"<h2>{md_inline(line[3:])}</h2>")
+            i += 1
+            continue
+        if line.startswith("# "):
+            blocks.append(f"<h1>{md_inline(line[2:])}</h1>")
+            i += 1
+            continue
+        if line.startswith("- "):
+            items = []
+            while i < n and lines[i].startswith("- "):
+                items.append(f"<li>{md_inline(lines[i][2:])}</li>")
+                i += 1
+            blocks.append("<ul>" + "".join(items) + "</ul>")
+            continue
+        if not line.strip():
+            i += 1
+            continue
+        buf = [line.strip()]
+        i += 1
+        while (i < n and lines[i].strip() and not lines[i].startswith(("## ", "# ", "- ", "|", "```"))
+               and lines[i].strip() != "---"):
+            buf.append(lines[i].strip())
+            i += 1
+        blocks.append("<p>" + md_inline(" ".join(buf)) + "</p>")
+    return "\n".join(blocks)
+
+
+def build_analytics_note():
+    title = "GoatCounter or Cloudflare Web Analytics: what I learned switching in one evening"
+    desc = "What I found switching this site from GoatCounter to Cloudflare Web Analytics: setup, privacy, and who each tool suits."
+    body = f'<article class="pn"><div class="pn-b prose">{render_md(ANALYTICS_MD)}</div></article>'
+    return page(title, body, desc, "/notes/analytics/", active="notes/")
 
 def build_llms(vendors, checked):
     """llms.txt (https://llmstxt.org): a plain-text map of the site for agents and LLM tools."""
@@ -897,6 +989,9 @@ def main():
     (OUT / "about" / "index.html").write_text(build_about(vendors, st))
     (OUT / "funding").mkdir()
     (OUT / "funding" / "index.html").write_text(build_funding(vendors, st))
+    note_dir = OUT / "notes" / "analytics"
+    note_dir.mkdir(parents=True)
+    (note_dir / "index.html").write_text(build_analytics_note())
     # /method/ is the old path. Same depth as /about/, so the canonical path drives asset links.
     (OUT / "method").mkdir()
     (OUT / "method" / "index.html").write_text(page(
@@ -914,7 +1009,7 @@ def main():
         "Page not found", "/404.html", rel=nf_rel))
     (OUT / "robots.txt").write_text("User-agent: *\nAllow: /\n" + (f"Sitemap: {SITE_URL}/sitemap.xml\n" if SITE_URL else ""))
     if SITE_URL:
-        paths = ["/", "/changelog/", "/about/", "/method/", "/funding/"] + [f"/vendors/{v['slug']}/" for v in vendors]
+        paths = ["/", "/changelog/", "/about/", "/method/", "/funding/", "/notes/analytics/"] + [f"/vendors/{v['slug']}/" for v in vendors]
         urls = "".join(f"<url><loc>{e(SITE_URL + p)}</loc><lastmod>{full_check}</lastmod></url>" for p in paths)
         (OUT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>')
     print(f"Built {len(vendors)} vendor pages into {OUT.relative_to(ROOT)}/" + ("" if SITE_URL else " (set SITE_URL to emit canonical links and sitemap.xml)"))
