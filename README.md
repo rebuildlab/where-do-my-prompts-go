@@ -11,7 +11,7 @@ If an official page didn't clearly say it, the value is `unverified`.
 
 ```
 data/vendors.json            source of truth (one record per tool)
-data/changelog.json          confirmed policy changes shown on /changelog/ (empty for now)
+data/changelog.json          confirmed policy changes shown on /changelog/
 scripts/build.py             static site generator -> public/ (HTML, inline SVG charts, llms.txt; stdlib only)
 scripts/derive.py            status colours, retention parsing and headline stats shared by the build
 scripts/make_graphics.py     og.png, og/<slug>.png, favicon.ico, apple-touch-icon.png (needs Pillow)

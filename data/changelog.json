@@ -1,1 +1,12 @@
-{"entries": []}
+{
+  "entries": [
+    {
+      "date": "2026-10-25",
+      "vendor": "OpenAI API",
+      "slug": "openai-api",
+      "field": "residency",
+      "summary": "Added UK (gb.api.openai.com) to data residency regions. Storage only: no regional processing in the UK.",
+      "source": "https://platform.openai.com/docs/guides/your-data"
+    }
+  ]
+}
