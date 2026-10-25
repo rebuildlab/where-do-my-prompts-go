@@ -149,7 +149,7 @@ def page(title, body, desc, path, extra_head="", rel=None, og_image="/og.png", a
 <p class="mono">Code <a href="https://github.com/rebuildlab/where-do-my-prompts-go/blob/main/LICENSE">MIT</a> · Data <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
 </div></footer>
 <script src="{rel}assets/app.js" defer></script>
-<script data-goatcounter="https://wdmpg.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "d85896aec39e4edca687df91995c013d"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 """
@@ -754,7 +754,7 @@ def build_about(vendors, st):
 <p>Corrections are welcome, especially from people who work at these vendors. Point to an official page that shows the right answer and the entry gets updated with the new source and date. To report one, {contact}. To ask for a tool that is not listed, <a href="{e(ISSUE_TOOL)}" rel="noopener noreferrer">suggest a tool</a>.</p>
 <h2>Data</h2>
 <p>{st['n']} tools, newest field check {e(st['checked'])}. Download the full dataset as <a href="../data.csv" download>CSV</a> or <a href="../data.json" download>JSON</a>.</p>
-<p>This site counts visits with {ext_a("https://www.goatcounter.com", "GoatCounter")}, which uses no cookies and collects no personal data.</p>"""
+<p>This site counts visits with {ext_a("https://www.cloudflare.com/web-analytics/", "Cloudflare Web Analytics")}, which uses no cookies and does not track you across sites.</p>"""
     body = f"""<div class="head"><div><p class="eyebrow">method</p><h1>How this is sourced</h1>
 <p class="lede">An independent tracker. No vendor pays for placement, reviews entries, or sees them before they're published. <a href="../funding/">How it is funded</a>.</p></div>{legend()}</div>
 <div class="grid"><div class="c8">{panel("Method", prose, bcls="pn-b prose", pid="method")}</div>
