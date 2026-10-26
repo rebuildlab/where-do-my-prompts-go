@@ -2,7 +2,7 @@ name: Nightly policy check
 
 on:
   schedule:
-    - cron: "0 18 * * *"   # 18:00 UTC = 02:00 Asia/Kuala_Lumpur
+    - cron: "0 18 * * *"   # 18:00 UTC daily; 02:00 the next day in Asia/Kuala_Lumpur (UTC+8)
   workflow_dispatch: {}
 
 permissions:

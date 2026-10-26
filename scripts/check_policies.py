@@ -11,12 +11,20 @@ Usage:
 Exit code is 0 even when changes are found (so CI doesn't go red); the report
 file is the signal. Use --fail-on-change to exit 1 instead.
 
-Pages that come back as an empty JavaScript shell (HTTP 200 but almost no text)
-are fetched a second time in headless Chromium, if Playwright is installed
+Pages that come back as an empty JavaScript shell (HTTP 200 but almost no text),
+and pages a bot wall rejects (HTTP 401, 403, 429, or 503), are fetched again in
+headless Chromium, if Playwright is installed
 (pip install playwright && python -m playwright install --with-deps chromium).
-The index records "method": "rendered" for those pages. Without Playwright, or
-if the rendered page is still empty, the page is reported as a fetch error,
+The browser waits until the document has real text, because some apps (the
+Vanta trust center at trust.mistral.ai, for one) never go network-idle. The
+index records "method": "rendered" for those pages. Without Playwright, or if
+the rendered page is still empty, the page is reported as a fetch error,
 exactly as before. Use --no-render to skip the browser step.
+
+Every URL already stored in snapshots/index.json is checked too, even when no
+current field cites it. Otherwise a dropped source stays frozen on its old
+last_checked date and never appears in the run summary. Those URLs are printed
+with a STALE line.
 """
 import argparse, datetime, difflib, hashlib, json, re, sys, time
 from pathlib import Path
@@ -33,6 +41,11 @@ UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/126 Safari/537.36")
 DROP_TAGS = ["script", "style", "noscript", "svg", "nav", "footer", "header",
              "form", "iframe", "button", "template"]
+# Below this, a 200 response is treated as an empty shell and rendered.
+MIN_TEXT = 200
+# Statuses that usually mean a bot wall rather than a missing page. A browser
+# often gets the real document (x.ai/security is HTTP 403 to requests).
+RENDER_STATUSES = (401, 403, 429, 503)
 
 
 def load_config():
@@ -98,6 +111,32 @@ def fetch(url):
     return r.status_code, r.text
 
 
+def needs_render(status, text_len):
+    """Plain HTTP did not yield a document: empty shell, or a bot wall."""
+    return (status == 200 and text_len < MIN_TEXT) or status in RENDER_STATUSES
+
+
+def is_challenge(text):
+    """A long Cloudflare interstitial is not the page we asked for."""
+    head = text[:800].lower()
+    return ("attention required" in head and "cloudflare" in head) or "just a moment" in head
+
+
+def merge_index_urls(urls, index):
+    """Add snapshot-index URLs that no current field cites.
+
+    The checker used to fetch only vendors.json and extra_urls, then write the
+    whole index back. Pages that had left the source list kept their old
+    last_checked and were never mentioned, so a failure or a gap could sit
+    there for every later run.
+    """
+    for u, prev in index.items():
+        if u in urls:
+            continue
+        urls[u] = sorted(prev.get("vendors") or [])
+    return urls
+
+
 class Renderer:
     """Headless Chromium for pages that need JavaScript. Started only when a page
     needs it, so a normal run never launches a browser."""
@@ -124,10 +163,26 @@ class Renderer:
         page = self._browser.new_page(user_agent=UA, locale="en-US")
         try:
             resp = page.goto(url, wait_until="domcontentloaded", timeout=45000)
+            # Vanta (trust.mistral.ai) keeps the network busy, so networkidle
+            # fires while the shell is still empty. Wait until the body has text
+            # and that text has stopped growing, then read the document.
             try:
-                page.wait_for_load_state("networkidle", timeout=10000)
+                page.wait_for_function(
+                    """() => {
+                        const n = document.body ? document.body.innerText.trim().length : 0;
+                        if (n < 200) return false;
+                        const now = Date.now();
+                        const prev = window.__wdmpgText || {n: -1, t: now};
+                        if (n !== prev.n) { window.__wdmpgText = {n, t: now}; return false; }
+                        return now - prev.t >= 1500;
+                    }""",
+                    timeout=25000,
+                )
             except Exception:
-                pass
+                try:
+                    page.wait_for_load_state("networkidle", timeout=10000)
+                except Exception:
+                    pass
             status = resp.status if resp else None
             if status != 200:
                 return None, f"rendered page returned HTTP {status}"
@@ -164,57 +219,84 @@ def main():
     changed, failed, created, same = [], [], [], 0
     renderer = None if args.no_render else Renderer()
     urls = source_urls()
+    cited = set(urls)
+    urls = dict(sorted(merge_index_urls(dict(urls), index).items()))
+    stale_n = 0
+
+    def note_failure(url, slugs, why, path):
+        failed.append((url, slugs, why))
+        print(f"FAIL  {url}  ({why})")
+        # keep the previous good snapshot; don't overwrite it with nothing
+        if not args.dry_run:
+            index.setdefault(url, {}).update({"last_attempt": today, "last_error": why, "file": path.name})
+
     for i, (url, slugs) in enumerate(urls.items()):
         if args.only and args.only not in url:
             continue
         key = url_key(url)
         path = SNAP / f"{key}.txt"
         try:
-            status, html = fetch(url)
-        except requests.RequestException as e:
-            failed.append((url, slugs, f"request error: {e.__class__.__name__}"))
-            print(f"FAIL  {url}  ({e.__class__.__name__})")
-            continue
-        text = normalise(main_text(html), patterns) if status == 200 else ""
-        method = "http"
-        if status == 200 and len(text) < 200 and renderer:
-            # HTTP 200 but an empty shell: the text is drawn by JavaScript. Try a real browser.
-            rhtml, rwhy = renderer.html(url)
-            rtext = normalise(main_text(rhtml), patterns) if rhtml else ""
-            if len(rtext) >= 200:
-                text, method = rtext, "rendered"
-                print(f"REND  {url}  (plain HTTP gave {len(normalise(main_text(html), patterns))} chars)")
-            elif rhtml:
-                rwhy = f"rendered page has only {len(rtext)} chars of text"
-        if status != 200 or len(text) < 200:
-            why = f"HTTP {status}" if status != 200 else f"only {len(text)} chars of text (likely JavaScript-rendered)"
-            if status == 200 and renderer and method == "http":
-                why += f"; {rwhy}"
-            failed.append((url, slugs, why))
-            print(f"FAIL  {url}  ({why})")
-            # keep the previous good snapshot; don't overwrite with nothing
+            if url not in cited:
+                prev_meta = index.get(url, {})
+                when = prev_meta.get("last_checked") or prev_meta.get("last_attempt") or "never"
+                err = prev_meta.get("last_error")
+                extra = f"; {err}" if err else ""
+                stale_n += 1
+                print(f"STALE {url}  (in snapshots/index.json, not cited by a current field; last {when}{extra})")
+            try:
+                status, html = fetch(url)
+            except requests.RequestException as e:
+                note_failure(url, slugs, f"request error: {e.__class__.__name__}", path)
+                continue
+            text = normalise(main_text(html), patterns) if status == 200 else ""
+            method = "http"
+            rwhy = None
+            tried_render = False
+            if needs_render(status, len(text)) and renderer:
+                # Empty shell, or a bot wall. A real browser can still read the page.
+                tried_render = True
+                plain_len, orig_status = len(text), status
+                rhtml, rwhy = renderer.html(url)
+                rtext = normalise(main_text(rhtml), patterns) if rhtml else ""
+                if rtext and is_challenge(rtext):
+                    rwhy = "rendered page is a bot check, not the document"
+                    rtext = ""
+                if len(rtext) >= MIN_TEXT:
+                    text, method, status = rtext, "rendered", 200
+                    print(f"REND  {url}  (plain HTTP {orig_status}, {plain_len} chars; rendered {len(text)} chars)")
+                elif rhtml and not rwhy:
+                    rwhy = f"rendered page has only {len(rtext)} chars of text"
+            if status != 200 or len(text) < MIN_TEXT:
+                why = (f"HTTP {status}" if status != 200
+                       else f"only {len(text)} chars of text (likely JavaScript-rendered)")
+                if tried_render and rwhy:
+                    why += f"; {rwhy}"
+                note_failure(url, slugs, why, path)
+                continue
+            digest = hashlib.sha256(text.encode()).hexdigest()
+            prev = path.read_text() if path.exists() else None
+            if prev is None:
+                created.append(url)
+                print(f"NEW   {url}")
+            elif prev != text:
+                diff = list(difflib.unified_diff(prev.split("\n"), text.split("\n"),
+                                                 "previous", "current", lineterm="", n=2))
+                changed.append((url, slugs, diff))
+                print(f"DIFF  {url}  ({sum(1 for d in diff if d[:1] in '+-')} lines)")
+            else:
+                same += 1
+            if url not in cited:
+                print(f"OK    {url}  ({len(text)} chars via {method})")
             if not args.dry_run:
-                index.setdefault(url, {}).update({"last_attempt": today, "last_error": why, "file": path.name})
+                path.write_text(text)
+                index[url] = {"file": path.name, "sha256": digest, "vendors": slugs,
+                              "last_checked": today, "last_error": None}
+                if method != "http":
+                    index[url]["method"] = method
+            time.sleep(args.delay)
+        except Exception as e:
+            note_failure(url, slugs, f"unexpected {type(e).__name__}: {e}"[:300], path)
             continue
-        digest = hashlib.sha256(text.encode()).hexdigest()
-        prev = path.read_text() if path.exists() else None
-        if prev is None:
-            created.append(url)
-            print(f"NEW   {url}")
-        elif prev != text:
-            diff = list(difflib.unified_diff(prev.split("\n"), text.split("\n"),
-                                             "previous", "current", lineterm="", n=2))
-            changed.append((url, slugs, diff))
-            print(f"DIFF  {url}  ({sum(1 for d in diff if d[:1] in '+-')} lines)")
-        else:
-            same += 1
-        if not args.dry_run:
-            path.write_text(text)
-            index[url] = {"file": path.name, "sha256": digest, "vendors": slugs,
-                          "last_checked": today, "last_error": None}
-            if method != "http":
-                index[url]["method"] = method
-        time.sleep(args.delay)
 
     if renderer:
         renderer.close()
@@ -223,7 +305,18 @@ def main():
         index_path.write_text(json.dumps(index, indent=2, sort_keys=True))
 
     print(f"\n{len(urls)} sources | {len(created)} new | {len(changed)} changed | "
-          f"{same} unchanged | {len(failed)} failed")
+          f"{same} unchanged | {len(failed)} failed | {stale_n} not cited by current fields")
+    if not args.dry_run and not args.only:
+        skipped = []
+        for u, prev in sorted(index.items()):
+            stamp = max(prev.get("last_checked") or "", prev.get("last_attempt") or "")
+            if stamp < today:
+                skipped.append((u, stamp or "never", prev.get("last_error")))
+        if skipped:
+            print(f"\nSKIPPED {len(skipped)} source(s) were not fetched and are still stale:")
+            for u, when, err in skipped:
+                extra = f"; {err}" if err else ""
+                print(f"  SKIP  {u}  (last {when}{extra})")
 
     if changed and not args.dry_run:
         CHANGES.mkdir(exist_ok=True)
