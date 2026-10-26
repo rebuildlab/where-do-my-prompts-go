@@ -84,18 +84,22 @@ python3 scripts/check_policies.py --only anthropic.com
 python3 scripts/check_policies.py --dry-run    # report only, write nothing
 ```
 
-If a page returns HTTP 200 but almost no text (an empty JavaScript shell), the checker
-loads it again in headless Chromium when Playwright is installed
+If a page returns HTTP 200 but almost no text (an empty JavaScript shell), or the
+request is blocked (HTTP 401, 403, 429, or 503), the checker loads it again in
+headless Chromium when Playwright is installed
 (`pip install playwright && python -m playwright install --with-deps chromium`; the
-nightly workflow does this). Those pages get `"method": "rendered"` in
-`snapshots/index.json`. Without Playwright, or with `--no-render`, they are reported as
-fetch errors as before.
+nightly workflow does this). The browser waits until the page has real text.
+Those pages get `"method": "rendered"` in `snapshots/index.json`. Without
+Playwright, or with `--no-render`, they are reported as fetch errors as before.
+A URL that is only in `snapshots/index.json` is checked again and printed as STALE.
 
 A diff means "re-read the page", not "the fact changed". Update `data/vendors.json`
 and add an entry to `data/changelog.json` only after checking.
 
-Known gaps: openai.com returns 403 to scripted requests; trust.mistral.ai renders
-client-side only; AWS pages failed TLS from the build box (they load fine in a
+Known gaps: openai.com returns 403 to scripted requests, and the checker retries
+blocked pages in Chromium; trust.mistral.ai is a JavaScript app and is read the
+same way. A page that remains only in the snapshot index is checked again and
+named in the run log. AWS pages failed TLS from the build box (they load fine in a
 browser). These keep their last snapshot (or none) and are listed in each report.
 
 ## License
