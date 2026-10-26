@@ -13,6 +13,7 @@ GPT-6 Astra
 GPT-6 Luna
 GPT-6 Sol
 GPT-6.1 Sol
+GPT-6.1 Terra
 These models are hosted by OpenAI and GitHub's Azure infrastructure.
 OpenAI makes the
 following data commitment

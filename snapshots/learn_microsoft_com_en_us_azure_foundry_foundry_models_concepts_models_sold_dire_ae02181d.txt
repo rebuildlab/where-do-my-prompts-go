@@ -54,6 +54,9 @@ Description
 GPT-6.1 series
 NEW
 gpt-6.1-sol
+,
+NEW
+gpt-6.1-terra
 GPT-6 series
 NEW
 gpt-6-astra
@@ -297,6 +300,30 @@ Input: 922,000
 Output: 128,000
 128,000
 April 2026
+gpt-6.1-terra
+(2026-10-26)
+-
+Reasoning
+-
+Responses API
+.
+-
+Multi-agent orchestration
+(preview).
+- Chat Completions API.
+- Structured outputs.
+- Text and image processing.
+- Functions, tools, and parallel tool calling.
+-
+Computer use
+-
+Full summary of capabilities
+.
+1,050,000
+Input: 922,000
+Output: 128,000
+128,000
+June 2026
 GPT-6
 For model availability across all regions, grouped by deployment category, see
 Region availability for Foundry Models sold by Azure

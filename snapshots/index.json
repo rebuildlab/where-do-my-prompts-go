@@ -138,7 +138,7 @@
     "file": "cohere_com_blog_hipaa_business_associate_agreements_for_custom_model_development_3c4c6938.txt",
     "last_checked": "2026-10-26",
     "last_error": null,
-    "sha256": "3ab9e58190494dde086104bc1fbe4f31d2dcc4ebe44673bc4f9c404105e6da68",
+    "sha256": "45b85ad6536ff3db310423be43b3658efbae1accd5b358c08da26ac30abbf9f0",
     "vendors": [
       "cohere"
     ]
@@ -282,7 +282,7 @@
     "file": "developers_openai_com_codex_pricing_91566121.txt",
     "last_checked": "2026-10-26",
     "last_error": null,
-    "sha256": "ec3b07b42c764fe4a5563cc8a54597512a72d7e0ec81f7200489e6e157f79492",
+    "sha256": "0cded8b9b4a4c4036d631a3c27d5a5f34545e0287e64e5e88f4d626369c7886c",
     "vendors": [
       "openai-codex"
     ]
@@ -328,7 +328,7 @@
     "file": "docs_anthropic_com_en_docs_build_with_claude_zero_data_retention_fbfaa208.txt",
     "last_checked": "2026-10-26",
     "last_error": null,
-    "sha256": "d80630cf7888d2cc3d38e872473496ab360be544457f81e9feda6a080f666221",
+    "sha256": "161eec58c759ab55021764064e4bb344dc17daab540306b9b30e67f3f3f25509",
     "vendors": [
       "anthropic-api"
     ]
@@ -400,7 +400,7 @@
     "file": "docs_github_com_en_copilot_reference_ai_models_model_hosting_f2c245aa.txt",
     "last_checked": "2026-10-26",
     "last_error": null,
-    "sha256": "6b84a2523f9d309f080571f0808470c7a3938b5b4d1d3ad95ad021baee6cf54b",
+    "sha256": "3dab425b260d41614a4ba593c70af7773bc0150387eedf3ff2254ba80454401c",
     "vendors": [
       "github-copilot"
     ]
@@ -630,7 +630,7 @@
     "file": "huggingface_co_deepseek_ai_a544e39d.txt",
     "last_checked": "2026-10-26",
     "last_error": null,
-    "sha256": "00c975df314358ccd5c47415386a613ad420d12180808e761e50af0b067e63ca",
+    "sha256": "3fc3d9209ea2d9a47f2dca402ae6e44f67e6d915afe87adcf123a46242619d6d",
     "vendors": [
       "deepseek"
     ]
@@ -639,7 +639,7 @@
     "file": "huggingface_co_xai_org_grok_2_4ebd8248.txt",
     "last_checked": "2026-10-26",
     "last_error": null,
-    "sha256": "ae4e45e58b100cd0906d5556d7386d7dc8079c1efef76cfcffd8319481c37b90",
+    "sha256": "e11ed95e5862cd7bd85155dcfb4a1c890cb5b4aafcf2e2c0f6f2ca9b9f617a2c",
     "vendors": [
       "xai"
     ]
@@ -657,7 +657,7 @@
     "file": "langfuse_com_security_89b00596.txt",
     "last_checked": "2026-10-26",
     "last_error": null,
-    "sha256": "bedc0014b32021bae798b3e948a04a43de05c61ed4ba12107544c9c8cb408073",
+    "sha256": "ce0a1c3dd91d9a3260a0f0f14917a1c3e87bc9aaa4bda15ba0f301d62bb51598",
     "vendors": [
       "langfuse"
     ]
@@ -738,7 +738,7 @@
     "file": "learn_microsoft_com_en_us_azure_foundry_foundry_models_concepts_models_sold_dire_ae02181d.txt",
     "last_checked": "2026-10-26",
     "last_error": null,
-    "sha256": "fbb74b4d53fc5334bbf7b872a39533dfa7b827b0cb8ac8b5b6da491e059156ba",
+    "sha256": "6fc9f337782606c4fe6735af8eb04dd113a986c38858e324aa1d65bc4c513961",
     "vendors": [
       "azure-openai"
     ]
@@ -855,7 +855,7 @@
     "file": "platform_openai_com_docs_guides_your_data_31bebb73.txt",
     "last_checked": "2026-10-26",
     "last_error": null,
-    "sha256": "ffae07420864438633aef2c01051fcb69510621af945e91e764f623b91e12a4a",
+    "sha256": "b714c7b6e92131b7ac61007f42bb6d15fe79182a3918afd32196d6d53d89b99d",
     "vendors": [
       "openai-api"
     ]
@@ -894,7 +894,7 @@
     "last_checked": "2026-10-26",
     "last_error": null,
     "method": "rendered",
-    "sha256": "781d049db3b7d5756a52225b80d48fd9b2aafee7080533055f4cf490b58a253d",
+    "sha256": "0f73117777c5c995b4590bbc8b20a357dde5c359074502a970107999f6d42d62",
     "vendors": []
   },
   "https://trustcenter.cohere.com/subprocessors": {
@@ -1043,7 +1043,7 @@
     "file": "www_together_ai_gpu_clusters_26ca165b.txt",
     "last_checked": "2026-10-26",
     "last_error": null,
-    "sha256": "9ffb5077b2fd288f333fdace92a1417bebbae9a7c266dedf38e4b2c7e6bc439d",
+    "sha256": "fa24a4cf8c33c010fb181bca23ab8ebca8ad9961002ecf00ac3470ff57cac11f",
     "vendors": [
       "together-ai"
     ]

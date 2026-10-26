@@ -37,7 +37,7 @@ Langfuse is the most widely adopted LLM Engineering platform, used by
 50,000+
 companies
 , with
-36,491
+36,530
 GitHub stars
 ,
 65M+
