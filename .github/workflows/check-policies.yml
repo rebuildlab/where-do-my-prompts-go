@@ -4,13 +4,6 @@ on:
   schedule:
     - cron: "0 18 * * *"   # 18:00 UTC daily; 02:00 the next day in Asia/Kuala_Lumpur (UTC+8)
   workflow_dispatch: {}
-  # One run of this branch. workflow_dispatch is not available to the agent token.
-  # The path filter keeps the snapshot commit this job pushes from starting another run.
-  push:
-    branches:
-      - cursor/fix-checker-stale-f43f
-    paths:
-      - .github/workflows/check-policies.yml
 
 permissions:
   contents: write
