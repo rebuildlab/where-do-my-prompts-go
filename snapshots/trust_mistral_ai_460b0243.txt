@@ -1,0 +1,101 @@
+Security at Mistral AI
+Welcome to Mistral Trust Center. Our commitment to data privacy and security is embedded in every part of our business. Use this Trust Center to learn about our security posture and request access to our security documentation.
+security@mistral.ai
+Privacy Policy
+Opens in new tab
+Compliance
+ISO 27001
+ISO 27701
+SOC 2 Type II
+Resources
+View all
+Compliance Reports
+Statement of Applicability (Mistral AI)
+Opens in new tab
+View 1 more
+Other documents
+Certificate of Cyber Insurance (Mistral AI)
+Penetration Testing Report 2026
+Incident Reports
+MAI-2026-002 - Mini Shai-Hulud security incident
+Opens in new tab
+Controls
+Updated 4 minutes ago
+View all
+Infrastructure security
+Unique account authentication enforced
+Access control procedures established
+Remote access encrypted enforced
+View 1 more Infrastructure security control
+Organizational security
+Asset disposal procedures utilized
+Employee reference checks performed
+Confidentiality Agreement acknowledged by contractors
+View 3 more Organizational security controls
+Product security
+Control self-assessments conducted
+Penetration testing performed
+Vulnerability and system monitoring procedures established
+Internal security procedures
+Continuity and Disaster Recovery plans established
+Continuity and Disaster Recovery plans tested
+Cybersecurity insurance maintained
+View 21 more Internal security procedures controls
+Data and privacy
+Data retention procedures established
+Customer data deleted upon leaving
+Data classification policy established
+Subprocessors
+View all
+Microsoft Inc.
+•
+Cloud Infrastructure
+Sweden, Norway
+Products: Vibe, Studio / API
+Google LLC
+•
+Cloud Infrastructure
+Netherlands, Belgium, United States (US API endpoint)
+Products: Vibe, Studio/API (US API)
+Mistral Compute
+•
+Cloud infrastructure
+France
+Products: All
+CoreWeave Inc.
+•
+Inference Provider
+EEA
+Products: All SaaS
+Updates
+View all
+General
+Mistral Vibe security update
+Published September 14, 2026
+We released Mistral Vibe 2.25.4 on 12 September 2026, the same day we became aware of the published CVE advisories. This version includes fixes for six reported shell permission vulnerabilities (CVE-2026-87983 through CVE-2026-87988). We recommend upgrading to 2.25.4 or later and restarting Vibe.
+Read the full advisory:
+https://docs.mistral.ai/resources/security-advisories/MAI-2026-003
+Opens in new tab
+Incident
+Mistral AI’s response to Mini Shai-Hulud security incident
+Published May 14, 2026
+A group of attackers temporarily compromised one of our codebase management systems on Tuesday, 26/05/12, through a third-party software supply chain attack described as Mini Shai-Hulud. Go to
+https://docs.mistral.ai/resources/security-advisories
+Opens in new tab
+for more information.
+We rapidly neutralized the attack and mitigated its effects. We took the necessary actions to fully secure our infrastructure and support our customers with guidelines. The investigation is now closed. The attackers were not able to access anything other than certain non-core code repositories. Neither our hosted services, managed user data, nor any of our research and testing environments were compromised.
+Privacy
+Addition of a new subprocessor for Le Chat
+Published May 7, 2025
+We are writing to inform you of a recent addition to Mistral AI's subprocessor list for Le Chat, effective as of May 7th 2025:
+Merge.
+We use Merge to provide our new "Connector" feature on Le Chat. Merge allows us to retrieve the ACL (Access Control List) from the third-party service you connect to our Mistral AI Products, as applicable. The data retrieved by Merge is transferred to the United States. Merge will not process your personal data unless you activate this new feature in your workspace.
+If you would like to receive email notifications of changes to our subprocessors list, you can subscribe by clicking on the bell icon and adding your email address.
+General
+Addition of a subscription button
+Published April 24, 2025
+Welcome to Mistral AI's Trust Center!
+With this platform, we provide you with the latest updates related to our Trust Center. Starting today, you can subscribe to receive notifications by clicking the subscription button (bell icon at the top right) and registering your email address.
+We will only send you notifications about important updates, such as:
+Changes to our list of subprocessors (additions or removals),
+The release of new security reports.

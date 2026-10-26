@@ -42,7 +42,7 @@ Updated
 Jun 28
 •
 •
-16
+17
 3B
 •
 Updated
@@ -104,7 +104,7 @@ Updated
 Jun 28
 •
 •
-16
+17
 3B
 •
 Updated
@@ -186,7 +186,7 @@ Image-Text-to-Text
 763B
 •
 Updated
-9 days ago
+10 days ago
 •
 •
 •
@@ -209,7 +209,7 @@ Aug 13
 •
 •
 •
-899
+900
 Text Generation
 •
 304B
