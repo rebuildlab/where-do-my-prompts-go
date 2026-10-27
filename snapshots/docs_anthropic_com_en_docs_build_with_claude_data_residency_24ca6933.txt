@@ -12,10 +12,10 @@ Claude Managed Agents
 supports geographic pinning at the agent level:
 inference_geo
 on an
-agent's model configuration
+agent’s model configuration
 pins the geography that serves model requests for sessions running that agent, with
 per-session overrides
-at session create. Agents without a pin follow the workspace's default inference geo on each request. Managed Agents also respects the Workspace geo configured in Console, and with
+at session create. Agents without a pin follow the workspace’s default inference geo on each request. Managed Agents also respects the Workspace geo configured in Console, and with
 self-hosted sandboxes
 , tool execution and the sandbox filesystem stay on infrastructure you control; the contents of attached
 memory stores
@@ -165,7 +165,7 @@ as its default inference geo. The Claude Console shows both settings as read-onl
 inference_geo: "us"
 on each request.
 Workspace geo
-Workspace geo is set when you create a workspace and can't be changed afterward. Currently,
+Workspace geo is set when you create a workspace and can’t be changed afterward. Currently,
 "us"
 is the only available workspace geo.
 To set workspace geo, create a new workspace in the
@@ -201,7 +201,7 @@ Workspace geo is not configurable. Every workspace uses
 "us"
 as its workspace geo, and the
 Workspace geo
-field doesn't appear in the Claude Console.
+field doesn’t appear in the Claude Console.
 Pricing
 Data residency pricing varies by model generation:
 Claude 4.6 and later models:
@@ -215,7 +215,7 @@ inference_geo: "global"
 ):
 Standard pricing applies.
 Older models:
-Don't support
+Don’t support
 inference_geo
 (see
 Model availability
@@ -225,7 +225,7 @@ Data residency pricing
 for details.
 The same multiplier applies to
 Claude Managed Agents
-: when an agent's
+: when an agent’s
 model configuration
 pins
 inference_geo
@@ -278,7 +278,7 @@ allowed_inference_geos: ["us"]
 default_inference_geo: "us"
 All API requests using keys from your workspace continue to run on US-based infrastructure. No action is needed to maintain your current behavior.
 If you want to use global routing
-If your data residency requirements have changed and you want to take advantage of global routing for better performance and availability, update your workspace's inference geo settings to include
+If your data residency requirements have changed and you want to take advantage of global routing for better performance and availability, update your workspace’s inference geo settings to include
 "global"
 in the allowed geos and set
 default_inference_geo
@@ -303,7 +303,7 @@ are available.
 Workspace geo:
 Only
 "us"
-is currently available. Workspace geo can't be changed after workspace creation.
+is currently available. Workspace geo can’t be changed after workspace creation.
 Next steps
 
 Data residency pricing

@@ -268,9 +268,9 @@ For Kubernetes deployments (GCP and Azure), each Brainstore pod must run on its 
 ​
 Readers
 Readers serve ad-hoc queries, including those from the API and user-defined BTQL queries. Plan for a minimum of 2 reader nodes in production to ensure high availability.
-A specialized reader variant —
+A specialized reader variant,
 fast readers
-— serves predictable UI queries (paginated viewers, span and trace lookups) in isolation from standard reader nodes, keeping the UI responsive while resource-intensive queries run on readers. On
+, serves predictable UI queries (paginated viewers, span and trace lookups) in isolation from standard reader nodes, keeping the UI responsive while resource-intensive queries run on readers. On
 GCP and Azure
 , fast readers are enabled by default with 2 replicas starting in Helm chart v5.0.0. On
 AWS
@@ -290,9 +290,9 @@ CPU
 16 vCPUs
 16 vCPUs
 Memory
-8GB RAM
-32GB RAM
-32GB RAM
+16GB RAM
+64GB RAM
+64GB RAM
 Storage size
 128GB
 1024GB+
@@ -319,8 +319,8 @@ CPU
 4 vCPUs
 32 vCPUs
 Memory
-8GB RAM
-64GB RAM
+16GB RAM
+128GB RAM
 Storage size
 128GB
 1024GB+

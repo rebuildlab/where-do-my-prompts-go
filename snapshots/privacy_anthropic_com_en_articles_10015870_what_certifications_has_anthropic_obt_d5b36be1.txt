@@ -13,8 +13,8 @@ Trust Portal
 .
 Related Articles
 Business Associate Agreements (BAA) for Commercial Customers
+Does Anthropic crawl data from the web, and how can site owners block the crawler?
 I have a zero data retention agreement with Anthropic. What products does it apply to?
 How does Anthropic protect the personal data of Claude users?
-Anthropic Interviewer sessions completed after March 23, 2026
 Anthropic Interviewer sessions completed in December 2025
 Did this answer your question?

@@ -59,6 +59,9 @@ Hybrid & Multicloud
 AI & Machine Learning
 Infrastructure Modernization
 Related articles
+Infrastructure Modernization
+Introducing VMware solution on Google Cloud
+By Sunny Dua • 8-minute read
 Hybrid & Multicloud
 Managed RAG search inside the sovereign perimeter: Gemini on GDC enterprise search
 By Rohan Grover • 4-minute read
@@ -68,6 +71,3 @@ By Muninder Sambi • 5-minute read
 Databases
 Spanner Omni, now GA: A distributed, multi-model database that you can deploy anywhere
 By Jagan R. Athreya • 5-minute read
-Networking
-How Uber improves network reliability while unblocking cloud migration
-By Jean He • 6-minute read

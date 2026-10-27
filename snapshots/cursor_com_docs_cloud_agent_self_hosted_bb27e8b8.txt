@@ -285,6 +285,13 @@ A personal credential: browser login, or a personal user API key from
 Cursor Dashboard → API Keys
 .
 agent login
+On a team,
+Allow Personal Machines
+turned on by a team admin in the
+Cloud Agents dashboard
+. It's the team's Remote Control setting. While it's off, Cloud Agents can't run on members' machines, except agents a
+Project
+starts when the team allows Self-Hosted Machines.
 Team Pools
 A
 Cursor Enterprise plan

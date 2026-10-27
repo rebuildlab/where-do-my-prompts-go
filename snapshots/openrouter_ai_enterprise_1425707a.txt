@@ -66,7 +66,7 @@ Budgets per workspace, API key, and member, with workspace and key alerts
 Bring your own provider keys and keep your negotiated discounts
 Price-aware routing across providers
 Total spend
-$42K
+$41.9K
 12.3%
 vs prev period
 Blended $/1M
@@ -162,7 +162,7 @@ A dedicated engineering contact
 Frequently asked questions
 Inference is billed at provider prices, with discounted fees at higher volume. Sales will quote based on your workloads.
 Yes. Bring your own keys (BYOK) to keep your negotiated rates and capacity, while OpenRouter handles routing, failover, budgets, and logging.
-Prompts are not logged by default. You can enforce zero data retention so requests only go to providers that do not retain data.
+Prompts are not logged by default, and OpenRouter retains content only if you opt in to logging or it is flagged for CSAM review. You can enforce zero data retention so requests only go to providers that do not retain data.
 Yes. Requests to eu.openrouter.ai that run on shared capacity go to shared provider endpoints in Europe (the EU/EEA, the UK, and Switzerland), and those to us.openrouter.ai go to shared provider endpoints in the US. Requests served by your own BYOK key go to your deployment's region, which you control. A private endpoint is eligible when its provider region, or the region you declared for it, is in that region. A declared region is your attestation, so make sure it matches where the endpoint runs. If no endpoint eligible for the region (shared, BYOK, or private) can serve the request, it errors instead of leaving the region. Account and billing records may be stored or processed in the US.
 Yes. Enterprise agreements include SLAs, priority support, invoiced billing, and credit lines.
 Already on OpenRouter?

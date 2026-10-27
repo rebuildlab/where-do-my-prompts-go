@@ -1,12 +1,11 @@
 Pricing
-Free
+Pay as you go
 $0
-Use any cloud model with pay-as-you-go usage credits.
+Pay per token for every cloud model.
 Includes:
 Run models locally
-Starter usage credits included
-Includes access to starter models
-Add credits to unlock all models
+No subscription
+3 concurrent requests
 No service fees
 Get started
 Pro
@@ -20,10 +19,9 @@ For shorter, well-defined day-to-day tasks
 $100
 / mo.
 For power users who run multiple agents simultaneously
-Everything in Free, plus:
+Everything in Pay as you go, plus:
 $60 of usage credits per month
 Access to larger pro models
-Run multiple models concurrently
 Fast mode
 (coming soon)
 Get Pro
@@ -178,9 +176,9 @@ How fast is Ollama?
 Speed depends on model size, architecture, and hardware optimization. We target and monitor for low time-to-first-token and high throughput across all cloud models. Priority tiers with faster performance may be available in the future.
 Usage
 How does monthly usage work?
-Pro, Max, and Team plans include a set dollar amount of usage credits each month. Free accounts include a starter amount of usage for a smaller set of starter models. Buying usage credits unlocks all models. Running models on your own hardware is always unlimited.
+Pro, Max, and Team plans include a set dollar amount of usage credits each month. Pay as you go accounts pay for each request with usage credits. Running models on your own hardware is always unlimited.
 When does my monthly included usage reset?
-On Pro, Max, and Team plans, included usage resets monthly on the same day of the month your subscription started, including on annual plans. On the Free plan, usage resets monthly from the date you signed up.
+On Pro, Max, and Team plans, included usage resets monthly on the same day of the month your subscription started, including on annual plans.
 Does unused included usage roll over to the next month?
 No. Instead, your included amount refreshes at each monthly reset.
 How is usage measured?
@@ -188,13 +186,13 @@ Usage is measured in tokens at each model's rates. The
 model pricing table
 lists the input, cached input, and output price per million tokens for every cloud model.
 How do usage credits work?
-Every plan, including Free, can buy usage credits. Ollama uses included plan credits first, then draws from the purchased usage credit balance. Team usage draws from one balance shared by the organization.
+Every plan, including Pay as you go, can buy usage credits. Ollama uses included plan credits first, then draws from the purchased usage credit balance. Team usage draws from one balance shared by the organization.
 How do I know when I've hit my limit?
 Check your usage
 here
 anytime. On paid plans, Ollama sends an email reminder at 90% of your included monthly usage. You can turn this off in settings.
 How many requests can I run at once?
-Concurrency limits ensure dedicated capacity for workflows that need multiple requests running simultaneously. Free includes 1 concurrent request, Pro 3, and Max and Team 10.
+Concurrency limits ensure dedicated capacity for workflows that need multiple requests running simultaneously. Pay as you go and Pro include 3 concurrent requests, and Max and Team 10.
 Requests beyond your plan's concurrency limit are queued and processed as soon as a slot is available. Queued requests are held up to a fixed limit - if the queue is full, the request will be rejected until one of your concurrency slots opens.
 What happens to my usage if I switch from an existing Pro or Max plan to the new one?
 Your usage is reset: the new plan's full monthly amount is available as soon as you switch, and the session and weekly limits of the old plans no longer apply. Your reset date stays on your subscription's original start date. Switch any time from your
