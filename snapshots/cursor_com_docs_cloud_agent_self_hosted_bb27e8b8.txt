@@ -287,11 +287,13 @@ Cursor Dashboard → API Keys
 agent login
 On a team,
 Allow Personal Machines
+or
+Allow Self-Hosted Machines
 turned on by a team admin in the
 Cloud Agents dashboard
-. It's the team's Remote Control setting. While it's off, Cloud Agents can't run on members' machines, except agents a
-Project
-starts when the team allows Self-Hosted Machines.
+.
+Allow Personal Machines
+is the team's Remote Control setting. While both are off, Cloud Agents can't run on members' machines.
 Team Pools
 A
 Cursor Enterprise plan

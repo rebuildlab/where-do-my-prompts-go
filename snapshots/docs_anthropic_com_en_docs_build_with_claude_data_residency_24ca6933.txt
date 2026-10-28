@@ -1,3 +1,39 @@
+Data residency
+APIs
+
+Messages API
+Available
+
+Managed Agents
+Available
+Cloud platforms
+
+Claude API
+Available
+
+Claude Platform on AWS
+Available
+
+Claude Models on Google Cloud
+Anthropic managed
+Available
+Data handling
+
+ZDR eligible
+
+HIPAA eligible
+
+Usage differs by product
+
+Messages API
+Set
+inference_geo
+on each request, or set a default for the workspace.
+
+Managed Agents
+Pin
+inference_geo
+in the agent’s model configuration; override it at session creation.
 Data residency controls let you manage where your data is processed and stored. Two independent settings govern this:
 Inference geo:
 Controls where model inference runs, on a per-request basis. Set through the
@@ -21,10 +57,6 @@ self-hosted sandboxes
 memory stores
 remain stored by Anthropic and are copied to your sandbox for the session.
 Inference geo
-
-To learn how zero data retention (ZDR) applies to this feature, see
-API and data retention
-.
 The
 inference_geo
 parameter controls where model inference runs for a specific API request. Add it to any
@@ -314,4 +346,147 @@ Learn about workspace configuration.
 
 Usage and Cost API
 Track usage and costs by data residency.
+Availability
+Data residency is available on select models and eligible for zero data retention and HIPAA readiness.
+API support
+
+Messages API
+Usage
+Set
+inference_geo
+on each request, or set a default for the workspace.
+Status
+Available
+Cloud platforms
+
+Claude API
+Models
+
+Claude Haiku 4.5
+Not supported
+
+Claude Opus 4.5
+Not supported
+
+Claude Sonnet 4.5
+Not supported
+
+All other models
+Status
+Available
+Cloud platforms
+
+Claude Platform on AWS
+Models
+
+Claude Haiku 4.5
+Not supported
+
+Claude Opus 4.5
+Not supported
+
+Claude Sonnet 4.5
+Not supported
+
+All other models
+Workspace geo is not configurable.
+Status
+Available
+Cloud platforms
+
+Claude Models on Google Cloud
+Anthropic managed
+Models
+
+Claude Haiku 4.5
+Not supported
+
+Claude Opus 4.5
+Not supported
+
+Claude Sonnet 4.5
+Not supported
+
+All other models
+Workspace geo is not configurable.
+
+Managed Agents
+Usage
+Pin
+inference_geo
+in the agent’s model configuration, and override it per session at session creation. An agent with no pin follows the workspace default.
+Status
+Available
+Cloud platforms
+
+Claude API
+Models
+
+Claude Haiku 4.5
+Not supported
+
+Claude Opus 4.5
+Not supported
+
+Claude Sonnet 4.5
+Not supported
+
+All other models
+Status
+Available
+Cloud platforms
+
+Claude Platform on AWS
+Models
+
+Claude Haiku 4.5
+Not supported
+
+Claude Opus 4.5
+Not supported
+
+Claude Sonnet 4.5
+Not supported
+
+All other models
+Workspace geo is not configurable; Managed Agents sessions there run with workspace geo “us”.
+Data handling
+Data handling overview
+
+Applicable endpoints
+/v1/messages
+with
+inference_geo
+Zero data retention
+
+Eligible
+Excludes
+Covered Models
+HIPAA
+
+Eligible
 Was this page helpful?
+Data residency
+APIs
+
+Messages API
+Available
+
+Managed Agents
+Available
+Cloud platforms
+
+Claude API
+Available
+
+Claude Platform on AWS
+Available
+
+Claude Models on Google Cloud
+Anthropic managed
+Available
+Data handling
+
+ZDR eligible
+
+HIPAA eligible

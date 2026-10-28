@@ -65,6 +65,6 @@ At Arize we care deeply about the safety and security of our customer’s data a
 Our Partners
 Arize partners help implement protective measures to ensure comprehensive security. We work closely with these and other partners.
 Bug Bounty
-We host a year-round bug bounty program facilitated by Yogosha. Find security issues and get rewarded by joining the Yogosha Strick Force.
+We host a year-round bug bounty program facilitated by Yogosha. Find security issues and get rewarded by joining the Yogosha Strike Force.
 Join Yogosha
 Report an issue

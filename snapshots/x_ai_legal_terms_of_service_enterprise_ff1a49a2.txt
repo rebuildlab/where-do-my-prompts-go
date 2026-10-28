@@ -1,6 +1,7 @@
 Terms of Service - Enterprise
-Last Updated: August 14, 2026
+Last Updated: October 27, 2026
 Previous versions
+August 14, 2026
 May 12, 2026
 April 10, 2026
 June 27, 2025
@@ -10,7 +11,7 @@ October 29, 2024
 September 5, 2024
 These Terms of Service — Enterprise (this “
 Agreement
-”) are entered into between SpaceXAI LLC (“
+”) are entered into between SpaceX Super Intelligence LLC (“
 SpaceXSI
 ”) and the business customer of SpaceXSI for SpaceXSI business services (“
 Customer

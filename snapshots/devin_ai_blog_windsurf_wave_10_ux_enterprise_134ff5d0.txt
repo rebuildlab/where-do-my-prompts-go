@@ -29,14 +29,11 @@ and surfaces like the
 Browser
 , we always look for opportunities to improve the UX of our overall platform.
 In this Wave, we made browsing past conversations much more easy and intuitive:
-Watch at
-https://exafunction.github.io/public/videos/cascade/cascade-conversation-history.mp4
+Watch at https://exafunction.github.io/public/videos/cascade/cascade-conversation-history.mp4
 We also added added some visual polish throughout, such as file-type based icons for at-mentions and inline citations, and code blocks matching the overall Editor’s syntax highlighting to help with visual differentiation from the monocolor text:
-Watch at
-https://exafunction.github.io/public/videos/cascade/at-mention-icon-refresh.mp4
+Watch at https://exafunction.github.io/public/videos/cascade/at-mention-icon-refresh.mp4
 When Cascade runs terminal commands, you can now interact with that inline terminal, which is especially helpful when executing the terminal command fully requires interactivity:
-Watch at
-https://exafunction.github.io/public/videos/cascade/cascade-integrated-terminal.mp4
+Watch at https://exafunction.github.io/public/videos/cascade/cascade-integrated-terminal.mp4
 Finally, we’ve finally sunset Legacy mode in the Windsurf Editor, as everyone was (rightfully) using the agentic Write and Chat modes.
 Concluding Thoughts
 That’s a wrap on Wave 10! With extending flow awareness to planning and the browser, we are only continuing to expand the frontier of possibility with the overall Windsurf platform. And with a number of

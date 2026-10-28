@@ -25,7 +25,7 @@ Opt-out option
 store=False
 in your API requests to prevent any conversation data from being retained.
 Retention period
-: All stored conversation data is automatically deleted after 30 days.
+: Stored conversation data is kept for up to 30 days and is automatically deleted no later than that. Stored responses are held in a cache and can be evicted earlier, often within about an hour, so they are not guaranteed to be retrievable for the full period.
 Immediate deletion
 : You can immediately delete stored conversation data using the DELETE API endpoint by providing the
 response_id

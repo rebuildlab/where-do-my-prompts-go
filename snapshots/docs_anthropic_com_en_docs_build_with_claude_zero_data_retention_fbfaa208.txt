@@ -242,7 +242,9 @@ Save
 Verify
 Requests to Covered Models from this workspace now succeed. Workspaces without an override continue to follow the organization default.
 Feature eligibility
-The following table lists which Claude API features are eligible for ZDR and HIPAA readiness arrangements.
+The following tables list which Claude API features are eligible for ZDR and HIPAA readiness arrangements. They split the features as the
+Features overview
+does.
 Each eligibility column uses three values:
 Yes:
 The feature is fully eligible under the arrangement. For ZDR, “Yes” also assumes you are using a model that does not require 30-day data retention;
@@ -258,19 +260,19 @@ The feature is not eligible. Under HIPAA readiness, the API blocks requests that
 error, unless the feature’s Details column says otherwise. Under ZDR, the API does
 not
 block these features; using one is a choice to step outside your ZDR arrangement for that specific data, and the feature’s own documented retention policy applies. Features marked “No” for ZDR are typically stateful (they store jobs, files, or container state), which is why they cannot be zero-retention.
+Platform features
+Features that relate to both the
+Messages API
+and
+Claude Managed Agents
+. Some are available in only one of them. This table gives each feature’s eligibility in the Messages API. In Claude Managed Agents, no feature is eligible for ZDR or HIPAA readiness; see the Claude Managed Agents row under
+Managed Agents features
+.
 Feature
 Endpoint
 ZDR eligible
 HIPAA eligible
 Details
-1M token context window
-/v1/messages
-Yes
-Yes
-Adaptive thinking
-/v1/messages
-Yes
-Yes
 Advisor tool
 /v1/messages
 with
@@ -286,90 +288,57 @@ with
 skills
 No
 No
-Skill data retained according to standard policy. See
-Agent Skills data retention
-.
-Bash tool
-/v1/messages
-with
-bash
-tool
-Yes
-Yes
-Client-side tool run in your environment.
+Skill data retained according to standard policy.
+Learn more
+about
+Agent Skills
+(
+ZDR
+)
 Batch processing
 /v1/messages/batches
 No
 No
-29-day retention; async storage required. See
-Batch processing data retention
-.
-Browser use
+29-day retention; async storage required.
+Learn more
+about
+Batch processing
+(
+ZDR
+)
+Browser use tool
 /v1/messages
 with
 browser
 toolset
 Yes
 No
-Client-side tool. Anthropic does not run browser actions or retain page content beyond standard API handling. Not covered under HIPAA readiness; requests that include the browser use tool are not blocked. See
-Browser use data retention
-.
-Cache diagnostics
-/v1/messages
-with
-diagnostics
-Yes (qualified)
-No
-Your prompts and Claude’s outputs are not stored. A fingerprint of cryptographic hashes and token-count estimates is retained briefly to allow comparison against the next request. See
-Cache diagnostics data retention
-.
+Client-side tool. Anthropic does not run browser actions or retain page content beyond standard API handling.
+Learn more
+about
+Browser use tool
+(
+ZDR
+)
+Not covered under HIPAA readiness; requests that include the browser use tool are not blocked.
 Citations
 /v1/messages
 Yes
 Yes
-Claude Managed Agents
-/v1/agents
-/v1/sessions
-/v1/environments
-No
-No
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including
-Self-hosted sandboxes
-.
-Code execution
-/v1/messages
-with
-code_execution
-tool
-No
-No
-Container data retained up to 30 days. See
-Code execution data retention
-.
-Computer use
+Computer use tool
 /v1/messages
 with
 computer
 toolset or tool
 Yes
 Yes
-Client-side tool where screenshots and files are captured and stored in your environment, not by Anthropic. See
-Computer use data retention
-.
-Context editing
-/v1/messages
-with
-context_management
-Yes
-No
-Context edits (tool use clearing and thinking clearing) are applied in real time.
-Context management (compaction)
-/v1/messages
-with
-context_management
-Yes
-No
-Server-side compaction results are returned and round-tripped statelessly through the API response.
+Client-side tool where screenshots and files are captured and stored in your environment, not by Anthropic.
+Learn more
+about
+Computer use tool
+(
+ZDR
+)
 Data residency
 /v1/messages
 with
@@ -393,29 +362,208 @@ Files API
 /v1/files
 No
 No
-Files retained until explicitly deleted or they reach their configured expiration. See
-Files API file lifecycle
-.
-Fine-grained tool streaming
-/v1/messages
-Yes
-Yes
+Files retained until explicitly deleted or they reach their configured expiration.
+Learn more
+about
+Files API
+(
+ZDR
+)
 MCP connector
 /v1/messages
 with
 mcp_servers
 No
 No
-Data retained according to standard policy. See
-MCP connector data retention
-.
+Data retained according to standard policy.
+Learn more
+about
+MCP connector
+(
+ZDR
+)
 MCP tunnels
 /v1/tunnels
 No
 No
-Research preview. See
-MCP tunnels security
-for the data-flow boundary and subprocessor details.
+Research preview. The MCP tunnels security page describes the data-flow boundary and subprocessor details.
+Learn more
+about
+MCP tunnels
+(
+ZDR
+)
+Mid-conversation system messages
+/v1/messages
+with
+role: "system"
+messages
+Yes
+Yes
+Request-shape capability of the Messages API; mid-conversation system messages flow through the standard inference path and nothing is stored server-side after the response.
+PDF support
+/v1/messages
+Yes
+Yes
+HIPAA eligibility applies to PDFs sent inline through the Messages API, not through the Files API.
+Programmatic tool calling
+/v1/messages
+with
+code_execution
+tool
+No
+No
+Built on code execution containers; data retained up to 30 days.
+Learn more
+about
+Programmatic tool calling
+(
+ZDR
+)
+Prompt caching
+/v1/messages
+Yes
+Yes
+Your prompts and Claude’s outputs are not stored. KV cache representations and cryptographic hashes are held in memory for the cache TTL and promptly deleted after expiry.
+Learn more
+about
+Prompt caching
+(
+ZDR
+)
+
+Part of
+Prompt caching
+:
+Cache diagnostics
+/v1/messages
+with
+diagnostics
+Yes (qualified)
+No
+Your prompts and Claude’s outputs are not stored. A fingerprint of cryptographic hashes and token-count estimates is retained briefly to allow comparison against the next request.
+Learn more
+about
+Cache diagnostics
+(
+ZDR
+)
+Search results
+/v1/messages
+with
+search_results
+source
+Yes
+Yes
+Structured outputs
+/v1/messages
+Yes (qualified)
+Yes
+Your prompts and Claude’s outputs are not stored. Only the JSON schema is cached, for up to 24 hours since last use. This also covers strict tool use (
+strict: true
+on tools), which uses the same grammar pipeline.
+Learn more
+about
+Structured outputs
+(
+ZDR
+)
+PHI must not be included in JSON schema definitions; see PHI handling guidelines.
+Learn more
+about
+Structured outputs
+(
+HIPAA
+)
+Thinking
+/v1/messages
+with
+thinking
+Yes
+Yes
+
+Part of
+Thinking
+:
+Adaptive thinking
+/v1/messages
+Yes
+Yes
+Threshold compaction
+/v1/messages
+with
+context_management
+Yes
+No
+Server-side compaction results are returned and round-tripped statelessly through the API response.
+Token counting
+/v1/messages/count_tokens
+Yes
+Yes
+Count tokens before sending requests.
+Tool search tool
+/v1/messages
+with
+tool_search
+tool
+Yes
+No
+Server-side tool run by Anthropic; the tool definitions in the request are searched in memory per call and nothing is stored after the response.
+Web fetch tool
+/v1/messages
+with
+web_fetch
+tool
+Yes
+No
+Fetched web content returned in the API response. Dynamic filtering for web fetch is not eligible for ZDR or HIPAA. Website publishers might retain request data (such as fetched URLs and request metadata) according to their own policies.
+Web search tool
+/v1/messages
+with
+web_search
+tool
+Yes
+Yes
+Real-time web search results returned in the API response. Dynamic filtering for web search is not eligible for ZDR or HIPAA.
+Messages API features
+Feature
+Endpoint
+ZDR eligible
+HIPAA eligible
+Details
+Bash tool
+/v1/messages
+with
+bash
+tool
+Yes
+Yes
+Client-side tool run in your environment.
+Code execution tool
+/v1/messages
+with
+code_execution
+tool
+No
+No
+Container data retained up to 30 days.
+Learn more
+about
+Code execution tool
+(
+ZDR
+)
+Context editing
+/v1/messages
+with
+context_management
+Yes
+No
+Context edits (tool use clearing and thinking clearing) are applied in real time.
+Fine-grained tool streaming
+/v1/messages
+Yes
+Yes
 Memory tool
 /v1/messages
 with
@@ -429,61 +577,6 @@ Messages API
 Yes
 Yes
 Standard API calls for generating Claude responses.
-Mid-conversation system messages
-/v1/messages
-with
-role: "system"
-messages
-Yes
-Yes
-Request-shape capability of the Messages API; mid-conversation system messages flow through the standard inference path and nothing is stored server-side after the response.
-OpenTelemetry export
-/v1/organizations/telemetry_destinations
-Yes
-No
-Beta. Spans have the same ZDR eligibility as the feature that produces them. HIPAA organizations can export metadata. SDK spans go directly from your environment to your exporter. After delivery, the data is held by the service that you chose, outside Anthropic, under that service’s retention and access controls.
-PDF support
-/v1/messages
-Yes
-Yes
-HIPAA eligibility applies to PDFs sent inline through the Messages API, not through the Files API.
-Programmatic tool calling
-/v1/messages
-with
-code_execution
-tool
-No
-No
-Built on code execution containers; data retained up to 30 days. See
-Programmatic tool calling data retention
-.
-Prompt caching
-/v1/messages
-Yes
-Yes
-Your prompts and Claude’s outputs are not stored. KV cache representations and cryptographic hashes are held in memory for the cache TTL and promptly deleted after expiry. See
-Prompt caching
-.
-Search results
-/v1/messages
-with
-search_results
-source
-Yes
-Yes
-Structured outputs
-/v1/messages
-Yes (qualified)
-Yes
-Your prompts and Claude’s outputs are not stored. Only the JSON schema is cached, for up to 24 hours since last use. This also covers
-strict tool use
-(
-strict: true
-on tools), which uses the same grammar pipeline. PHI must not be included in JSON schema definitions; see
-PHI handling guidelines
-. See
-Structured outputs data retention
-.
 Text editor tool
 /v1/messages
 with
@@ -492,25 +585,34 @@ tool
 Yes
 Yes
 Client-side tool run in your environment.
-Thinking
+Managed Agents features
+Feature
+Endpoint
+ZDR eligible
+HIPAA eligible
+Details
+Claude Managed Agents
+/v1/agents
+/v1/sessions
+/v1/environments
+No
+No
+Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Other features
+Feature
+Endpoint
+ZDR eligible
+HIPAA eligible
+Details
+1M token context window
 /v1/messages
-with
-thinking
 Yes
 Yes
-Token counting
-/v1/messages/count_tokens
-Yes
-Yes
-Count tokens before sending requests.
-Tool search
-/v1/messages
-with
-tool_search
-tool
+OpenTelemetry export
+/v1/organizations/telemetry_destinations
 Yes
 No
-Server-side tool run by Anthropic; the tool definitions in the request are searched in memory per call and nothing is stored after the response.
+Beta. Spans have the same ZDR eligibility as the feature that produces them. HIPAA organizations can export metadata. SDK spans go directly from your environment to your exporter. After delivery, the data is held by the service that you chose, outside Anthropic, under that service’s retention and access controls.
 User profiles
 /v1/user_profiles
 No
@@ -518,26 +620,6 @@ No
 Profiles are metadata about your end customers and don’t contain prompts or outputs. The profile data you send is retained according to standard policy until you delete the profile. HIPAA-enabled organizations can use user profiles, but the user profiles API is not a HIPAA-eligible service and PHI must not be included in the profile data you send. See
 What a profile contains and how Anthropic uses it
 .
-Web fetch
-/v1/messages
-with
-web_fetch
-tool
-Yes
-No
-Fetched web content returned in the API response.
-Dynamic filtering for web fetch
-is not eligible for ZDR or HIPAA. Website publishers might retain request data (such as fetched URLs and request metadata) according to their own policies.
-Web search
-/v1/messages
-with
-web_search
-tool
-Yes
-Yes
-Real-time web search results returned in the API response.
-Dynamic filtering for web search
-is not eligible for ZDR or HIPAA.
 Retention regardless of arrangement
 Even with ZDR or HIPAA arrangements in place, Anthropic may retain data where required by law or where it has been flagged by Anthropic’s automated trust and safety systems. As a result, if a chat or session is flagged, Anthropic may retain inputs and outputs for up to 2 years.
 Frequently asked questions

@@ -20,7 +20,7 @@ Incident Reports
 MAI-2026-002 - Mini Shai-Hulud security incident
 Opens in new tab
 Controls
-Updated 9 minutes ago
+Updated 6 minutes ago
 View all
 Infrastructure security
 Unique account authentication enforced

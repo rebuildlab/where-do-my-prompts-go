@@ -47,10 +47,10 @@ delete them
 through the API, CLI, or web console.
 ​
 Enterprise deployments
-For data-residency, regulatory, or compliance requirements, Together supports private networking and VPC-based deployments, including in EU regions, on
+For data-residency, regulatory, or compliance requirements, Together supports private networking and virtual private cloud (VPC) deployments on
 dedicated endpoints
-.
-Contact us
+, including in EU regions.
+Contact sales
 to discuss the right setup for your workload.
 ​
 Privacy requests
