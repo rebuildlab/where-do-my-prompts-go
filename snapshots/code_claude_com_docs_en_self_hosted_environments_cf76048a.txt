@@ -90,10 +90,21 @@ and
 Code Review
 sessions don’t route to them yet. Support for those two surfaces follows separately.
 Repositories
-: sessions check out repositories from GitHub; see
+: sessions check out repositories from GitHub or GitHub Enterprise Server. Sessions started with an
+--environment
+dispatch can also use another git host:
+GitHub
+: see
 GitHub authentication options
-. For a GitHub Enterprise Server host, see its
+.
+GitHub Enterprise Server
+: see its
 network requirements
+.
+Another git host
+: see the
+requirements for starting a session with
+--environment
 .
 Billing
 : sessions in a self-hosted environment consume your organization’s Claude Code usage the same way sessions in Anthropic-hosted environments do.
@@ -218,12 +229,12 @@ Session child
 api.anthropic.com
 , and makes its own outbound calls for model inference and for git commands run during the session. In a session that uses
 Anthropic-managed git
-, the child sends its
+, the child opens a WebSocket connection to
+api.anthropic.com
+that carries github.com traffic from
 git
 and
 gh
-traffic for github.com over a WebSocket connection it opens to
-api.anthropic.com
 .
 SCM connector
 : the optional orchestrator

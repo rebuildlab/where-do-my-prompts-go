@@ -54,12 +54,6 @@ ThunderKittens vs cuBLAS
 ~2× faster
 ThunderKittens’ FP8 kernel for NVIDIA HGX B200 matches NVIDIA cuBLAS GEMM performance while delivering ~2× speedup over H100 FP8 GEMMs, leveraging Blackwell’s Tensor Core–accelerated matrix operations.
 learn more
-Fully managed, high-performance shared filesystems for faster training and innovation cycle
-Provision and attach shared storage volumes for your GPU clusters to store and persist your training data, model weights — ensure your GPUs do not starve for data.
-WEKA excels at high IOPS workloads
-With strong metadata performance. It scored 826.86 on IO500 and delivers sub 200 microsecond latency. Heavy small file operations and metadata intensive tasks like checkpoint discovery across hundreds of training ranks.
-VAST simplifies operations
-VAST's disaggregated architecture separates compute from storage for straightforward capacity expansion and a unified namespace. Built for enterprise environments where operational simplicity and broad feature coverage matter most.
 Flexible pricing models
 Both options are fully self-serve. Choose based on your capacity requirements and commitment level.
 On-Demand

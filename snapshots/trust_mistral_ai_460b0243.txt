@@ -20,7 +20,7 @@ Incident Reports
 MAI-2026-002 - Mini Shai-Hulud security incident
 Opens in new tab
 Controls
-Updated 6 minutes ago
+Updated less than a minute ago
 View all
 Infrastructure security
 Unique account authentication enforced
@@ -34,7 +34,6 @@ Confidentiality Agreement acknowledged by contractors
 View 3 more Organizational security controls
 Product security
 Control self-assessments conducted
-Penetration testing performed
 Vulnerability and system monitoring procedures established
 Internal security procedures
 Continuity and Disaster Recovery plans established

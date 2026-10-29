@@ -1767,8 +1767,8 @@ Training types
 Deployment options
 MAI-Code-1.1-Flash
 (preview)
-Managed: â (RFT)
-Interactive: â
+Managed Training: â (RFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1779,8 +1779,8 @@ Managed compute: â
 Fireworks: â
 Muse-Glimmer-30B
 (preview)
-Managed: â (SFT, RFT)
-Interactive: â
+Managed Training: â (SFT, RFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1790,8 +1790,8 @@ Managed compute: â
 Fireworks: â
 1
 Llama-3.3-70B-Instruct
-Managed: â (SFT)
-Interactive: â
+Managed Training: â (SFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1801,8 +1801,8 @@ Serverless: â
 Managed compute: â
 Fireworks: â
 Qwen3-32B
-Managed: â (SFT)
-Interactive: â
+Managed Training: â (SFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1813,8 +1813,8 @@ Managed compute: â
 Fireworks: â
 Qwen3.6-35B-A3B
 (preview)
-Managed: â (SFT, RFT)
-Interactive: â
+Managed Training: â (SFT, RFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1825,8 +1825,8 @@ Fireworks: â
 1
 Qwen3.8-27B
 (preview)
-Managed: â (SFT, RFT)
-Interactive: â
+Managed Training: â (SFT, RFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1836,8 +1836,8 @@ Managed compute: â
 Fireworks: â
 1
 gpt-oss-20b
-Managed: â (SFT)
-Interactive: â
+Managed Training: â (SFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1848,8 +1848,8 @@ Managed compute: â
 Fireworks: â
 gpt-oss-120b
 (preview)
-Managed: â (SFT, RFT)
-Interactive: â
+Managed Training: â (SFT, RFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1860,8 +1860,8 @@ Fireworks: â
 1
 Ministral-3B
 (2411)
-Managed: â (SFT)
-Interactive: â
+Managed Training: â (SFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1872,8 +1872,8 @@ Managed compute: â
 Fireworks: â
 gpt-4o-mini
 (2024-07-18)
-Managed: â (SFT)
-Interactive: â
+Managed Training: â (SFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1884,8 +1884,8 @@ Managed compute: â
 Fireworks: â
 gpt-4o
 (2024-08-06)
-Managed: â (SFT, DPO)
-Interactive: â
+Managed Training: â (SFT, DPO)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1896,8 +1896,8 @@ Managed compute: â
 Fireworks: â
 gpt-4.1
 (2025-04-14)
-Managed: â (SFT, DPO)
-Interactive: â
+Managed Training: â (SFT, DPO)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1907,8 +1907,8 @@ Managed compute: â
 Fireworks: â
 gpt-4.1-mini
 (2025-04-14)
-Managed: â (SFT, DPO)
-Interactive: â
+Managed Training: â (SFT, DPO)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1918,8 +1918,8 @@ Managed compute: â
 Fireworks: â
 gpt-4.1-nano
 (2025-04-14)
-Managed: â (SFT, DPO)
-Interactive: â
+Managed Training: â (SFT, DPO)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1929,8 +1929,8 @@ Managed compute: â
 Fireworks: â
 o4-mini
 (2025-04-16)
-Managed: â (RFT)
-Interactive: â
+Managed Training: â (RFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1941,8 +1941,8 @@ Fireworks: â
 gpt-5
 (2025-08-07)
 3
-Managed: â (RFT)
-Interactive: â
+Managed Training: â (RFT)
+Programmed Training: â
 Standard: â
 Data zone: â
 Global: â
@@ -1953,8 +1953,8 @@ Managed compute: â
 Fireworks: â
 MedImageInsight-Premium
 (preview)
-Managed: â (SFT)
-Interactive: â
+Managed Training: â (SFT)
+Programmed Training: â
 Global
 Serverless: â
 2
@@ -1962,8 +1962,8 @@ Managed compute: â
 Fireworks: â
 CXRReportgen-Premium
 (preview)
-Managed: â (SFT)
-Interactive: â
+Managed Training: â (SFT)
+Programmed Training: â
 Global
 Serverless: â
 2
@@ -1989,10 +1989,10 @@ more affordable
 training per token, but doesn't offer
 data residency
 .
-The table lists the Foundry project regions required to use Global managed fine-tuning and interactive training (preview). Choose a region supported for your model and training approach, including the restrictions below. Standard and Data zone training have separate regional support.
+The following table lists the Foundry project regions required to use Global Managed Training and Programmed Training (preview). Choose a region supported for your model and training approach, including the restrictions in the notes. Standard and Data zone training have separate regional support.
 Foundry project region
-Managed fine-tuning
-Interactive training (preview)
+Managed Training
+Programmed Training (preview)
 Australia East
 â
 â
@@ -2093,7 +2093,7 @@ West US 3
 â
 â
 1
-Managed fine-tuning for
+Managed Training for
 Qwen3.6-35B-A3B
 ,
 Qwen3.8-27B
@@ -2105,11 +2105,11 @@ isn't supported in this region.
 2
 Vision fine-tuning isn't supported in Japan East.
 3
-Managed fine-tuning for
+Managed Training for
 gpt-4.1-nano
 isn't supported in Poland Central.
 4
-UAE North supports Global managed fine-tuning only for
+UAE North supports Global Managed Training only for
 Qwen3.6-35B-A3B
 ,
 Qwen3.8-27B
@@ -3568,7 +3568,7 @@ Microsoft Foundry Models lifecycle and support policy
 Deployment overview for Foundry Models
 Add and configure models to Foundry Models
 Deployment types in Foundry Models
-Fine-tuning and interactive training
+Fine-tuning and Programmed Training
 Fine-tuning overview
 .
 Model availability
@@ -3580,4 +3580,4 @@ Need help with this topic?
 Want to try using Ask Learn to clarify or guide you through this topic?
 Additional resources
 Last updated on
-2026-10-08
+2026-10-29

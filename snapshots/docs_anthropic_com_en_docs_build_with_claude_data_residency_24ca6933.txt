@@ -344,8 +344,8 @@ View data residency pricing details.
 Workspaces
 Learn about workspace configuration.
 
-Usage and Cost API
-Track usage and costs by data residency.
+Usage and Cost Analytics API
+Track usage and costs by inference geo.
 Availability
 Data residency is available on select models and eligible for zero data retention and HIPAA readiness.
 API support

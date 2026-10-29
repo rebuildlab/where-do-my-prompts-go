@@ -1,10 +1,20 @@
 This overview covers topics related to managing users, organizations, workspaces, agents, and applications within LangSmith.
 ​
 Resource hierarchy
+LangSmith organizes access and data in four levels. An
+organization
+contains workspaces. Each
+workspace
+contains agents or applications.
+Agents and applications
+group the
+resources
+you work with, such as tracing projects and datasets.
 ​
 Organizations
-An organization is a logical grouping of users within LangSmith that defines shared settings applying across all of its workspaces. These settings govern organization-wide concerns rather than individual projects within a workspace. Common organization-level configurations include user management, single sign-on (SSO), OAuth provider configuration, custom role creation, billing, and usage tracking. Typically, there is one organization per company. An organization can have multiple workspaces. For more details, see the
-setup guide
+An organization is a logical grouping of users within LangSmith that defines shared settings applying across all of its workspaces. These settings govern organization-wide concerns rather than individual projects within a workspace. Common organization-level configurations include user management, single sign-on (SSO), OAuth provider configuration, custom role creation, billing, and usage tracking.
+Typically, there is one organization per company. An organization can have multiple workspaces. For configuration details, see
+Set up an organization
 .
 When you log in for the first time, a personal organization will be created for you automatically. If you’d like to collaborate with others, you can create a separate organization and invite your team members to join. There are a few important differences between your personal organization and shared organizations:
 Feature
@@ -24,14 +34,18 @@ All other plans available
 ​
 Workspaces
 Workspaces were formerly called Tenants. Some code and APIs may still reference the old name for a period of time during the transition.
-A workspace is a logical grouping of users and resources within an organization. Workspaces are commonly used to isolate teams or business units, providing separation between projects and their associated resources. A workspace separates trust boundaries for resources and access control. Users are granted permissions at the workspace level, which determine their access to resources in that workspace, including tracing projects, datasets, annotation queues, and prompts. For details on setup, see the
-setup guide
-and for details on permissions see
-Workspaces (RBAC)
+A workspace is a logical grouping of users and
+resources
+within an organization. Workspaces are commonly used to isolate teams or business units, providing separation between projects and their associated resources.
+A workspace separates trust boundaries for resources and access control. Users are granted permissions at the workspace level, which determine their access to resources in that workspace, including tracing projects, datasets, annotation queues, and prompts. To configure one, see
+Set up a workspace
+. For details on permissions, see
+Workspace roles
 .
 We recommend creating a separate workspace for each team within your organization. To organize resources even further, you can group them within a workspace by
 agent or application
-, depending on which information architecture your workspace uses. For guidance on different workspace organization models based on your team’s isolation requirements, refer to
+, depending on which information architecture your workspace uses.
+For guidance on different workspace organization models based on your team’s isolation requirements, refer to
 Workload isolation
 .
 ​
@@ -64,25 +78,31 @@ ABAC
 Any resource can be created without being tagged to either one. Those resources are visible when all agents or applications are in view.
 ​
 Resources
-Resources are the concrete entities used to build, run, and observe applications and agents, such as tracing projects, prompts, datasets, and deployments. Resources are scoped to a specific application.
+Resources are the concrete entities used to build, run, and observe applications and agents. Examples include
+tracing projects
+,
+prompts
+,
+datasets
+, and
+deployments
+. Resources are scoped to a specific agent or application.
 ​
-Additional info
-The following diagram explains the relationship between organizations, workspaces, applications, and resources:
-See the table below for details on which features are available in which scope(s). In an agent-based workspace, read Application in this table as
-agent
-:
+Where settings live
+The following diagram shows the relationship between organizations, workspaces, agents or applications, and resources:
+See the table below for details on which features are available in which scope(s):
 Resource/Setting
 Scope
 Trace Projects
-Workspace or Application
+Workspace or agent/application
 Annotation Queues
-Workspace or Application
+Workspace or agent/application
 Deployments
-Workspace or Application
+Workspace or agent/application
 Datasets & Experiments
-Workspace or Application
+Workspace or agent/application
 Prompts
-Workspace or Application
+Workspace or agent/application
 Resource Tags
 Workspace
 API Keys
@@ -105,7 +125,7 @@ Assigning Organization Roles
 Organization
 RBAC: Creating/Editing/Deleting Custom Roles
 Organization
-* Data retention settings and usage limits will be available soon for the organization level as well
+* Data retention settings and usage limits will be available soon for the organization level as well.
 ** Self-hosted installations may enable workspace-level invites of users to the organization via a feature flag. For details, refer to the
 self-hosted user management docs
 .
@@ -125,22 +145,25 @@ to select the
 Resource tags
 page in the sidebar.
 ​
-User management and RBAC
+Users and roles
+This section covers who can access LangSmith and what they can do: users, the three types of API keys, and the roles that grant permissions.
 ​
 Users
 A user is a person who has access to LangSmith. Users can be members of one or more organizations and workspaces within those organizations.
-Organization members are managed on the
+Manage members from the
 Settings
-page: select
+page, which has separate sections for the organization and the workspace:
+Organization
+>
 Members
-in the organization settings.
-And workspace members are managed on the
-Workspaces
-page under
-Settings
-.
+: Manage members of the organization.
+Workspace
+>
+Members
+: Manage members of the current workspace.
 ​
 API keys
+LangSmith API keys authenticate requests to LangSmith. They are separate from the model provider keys, such as OpenAI or Anthropic keys, that your application uses to call models.
 We ended support for legacy API keys prefixed with
 ls__
 on October 22, 2024 in favor of personal access tokens (PATs) and service keys. We require using PATs and service keys for all new integrations. API keys prefixed with
@@ -149,10 +172,10 @@ will no longer work as of October 22, 2024.
 ​
 Expiration dates
 When you create an API key, you have the option to set an expiration date. Adding an expiration date to keys enhances security and minimizes the risk of unauthorized access. For example, you may set expiration dates on keys for temporary tasks that require elevated access.
-By default, keys never expire. Once expired, an API key is no longer valid and cannot be reactivated or have its expiration modified.
+Once expired, an API key is no longer valid and cannot be reactivated or have its expiration modified.
 ​
 Personal access tokens (PATs)
-Personal Access Tokens (PATs) are used to authenticate requests to the LangSmith API. They are created by users and scoped to a user. The PAT will have the same permissions as the user that created it. We recommend not using these to authenticate requests from your application, but rather using them for personal scripts or tools that interact with the LangSmith API. If the user associated with the PAT is removed from the organization, the PAT will no longer work.
+Personal Access Tokens (PATs) are used to authenticate requests to the LangSmith API. They are created by users and scoped to a user. The PAT will have the same permissions as the user that created it.
 PATs are prefixed with
 lsv2_pt_
 Members can deactivate, reactivate, or delete their own PATs.
@@ -162,15 +185,18 @@ Organization Operators
 can also list, deactivate, reactivate, and delete any member’s PAT.
 Deactivating a token stops authentication but keeps its record, owner, and last use visible with a
 Deactivated
-badge. Deactivation is reversible; deletion permanently removes the record. Reactivation preserves the original expiration date and is unavailable once that date has passed. Because authentication results are cached, these changes take effect within a minute rather than instantly. Service keys can only be deleted, not deactivated.
+badge. Deactivation is reversible; deletion permanently removes the record. Reactivation preserves the original expiration date and is unavailable once that date has passed. Because authentication results are cached, these changes take effect within a minute rather than instantly.
 For the steps and authentication-cache timing, refer to
 Deactivate or delete a personal access token
 .
+Avoid using PATs to authenticate requests from your application. Instead, use them for personal scripts or tools that interact with the LangSmith API. If the user associated with the PAT is removed from the organization, the PAT will no longer work.
 ​
 Service keys
-Service keys are similar to PATs, but are used to authenticate requests to the LangSmith API on behalf of a service account. Only admins can create service keys. We recommend using these for applications / services that need to interact with the LangSmith API, such as LangGraph agents or other integrations. Service keys may be scoped to a single workspace, multiple workspaces, or the entire organization, and can be used to authenticate requests to the LangSmith API for whichever workspace(s) it has access to.
+Service keys are similar to PATs, but are used to authenticate requests to the LangSmith API on behalf of a service account. Only admins can create service keys. We recommend using service keys for applications or services that need to interact with the LangSmith API, such as LangGraph agents or other integrations.
+Service keys may be scoped to a single workspace, multiple workspaces, or the entire organization. They can be used to authenticate requests to the LangSmith API for whichever workspace(s) it has access to.
 Service keys are prefixed with
 lsv2_sk_
+Service keys can only be deleted, not deactivated.
 Use the
 X-Tenant-Id
 header to specify the target workspace.
@@ -182,8 +208,9 @@ X-Tenant-Id
 header when accessing workspace-scoped resources. Without it, the request will fail with a
 403 Forbidden
 error.
-To see how to create a service key or Personal Access Token, see the
-setup guide
+To create any type of API key, see
+Create an account and API key
+.
 ​
 Tracing keys
 Tracing keys are organization-owned credentials with fixed permissions to submit traces and create projects in selected workspaces. They do not grant access to stored traces, experiments, saved views, or administration.
@@ -193,43 +220,64 @@ prefix. Their scope is fixed at creation, and they remain valid when the creator
 Tracing keys
 .
 ​
-Organization roles
-Organization roles are distinct from the
-Enterprise feature workspace RBAC
-and are used in the context of multiple
-workspaces
-. Your organization role determines your workspace membership characteristics and your
-organization-level permissions
+Roles
+Each user has one organization role, which applies across the organization. On Enterprise plans, each user also has one workspace role in every workspace they belong to. Manage both in
+Settings
+>
+Roles
+. For more information, see
+Role-based access control
 .
-The organization role selected also impacts workspace membership as described here:
+​
+Organization roles
+Your organization role determines your
+organization-level permissions
+and your workspace membership. Organization roles are distinct from
+workspace roles
+(an Enterprise feature), and apply across all workspaces in the organization.
+Each organization role affects workspace membership as follows:
+The role of
 Organization Admin
-grants full access to manage all organization configuration, users, billing, and workspaces.
+grants a user full access to manage all organization configuration, users, billing, and workspaces.
 An Organization Admin has
 Admin
 access to all workspaces in an organization.
+The role of
+Organization Operator
+grants a user management access to workspaces and non-admin users for day-to-day operations, without admin-level privileges such as managing Organization Admins.
+An Organization Operator is added only to the workspaces they create or are invited to.
+The role of
 Organization User
-may read organization information but cannot execute any write actions at the organization level. An Organization User may create
+grants a user permission to read organization information. However, they cannot execute any write actions at the organization level. An Organization User may create
 Personal Access Tokens
 .
 An Organization User can be added to a subset of workspaces and assigned workspace roles as usual (if RBAC is enabled), which specify permissions at the workspace level.
+The role of
 Organization Viewer
-is equivalent to Organization User, but
+is equivalent to Organization User, but a user with this role
 cannot
-create Personal Access Tokens. (for self-hosted, available in Helm chart version 0.11.25+).
+create Personal Access Tokens. Self-hosted installations require Helm chart version 0.11.25 or later for this role.
+The role of
+Organization Restricted
+grants a user access to their assigned workspaces without organization-wide read access, so the user cannot list organization members. Workspace-scoped service keys can also hold this role.
 The Organization User and Organization Viewer roles are only available in organizations on
 Plus and Enterprise plans
 . In Developer organizations (single workspace), all users are assigned the Organization Admin role by default.
 See
-security settings
+Security settings
 for instructions on how to disable PAT creation for the entire organization.
 For more information on setting up organizations and workspaces, refer to the
 organization setup guide
-for more information.
-The following table provides an overview of organization level permissions:
+.
+Organization-level permissions by role:
+Organization Restricted
 Organization Viewer
 Organization User
+Organization Operator
 Organization Admin
 View organization configuration
+✅
+✅
 ✅
 ✅
 ✅
@@ -237,98 +285,113 @@ View organization roles
 ✅
 ✅
 ✅
+✅
+✅
 View organization members
+❌
+✅
 ✅
 ✅
 ✅
 View data retention settings
+❌
+✅
 ✅
 ✅
 ✅
 View usage limits
+❌
+✅
 ✅
 ✅
 ✅
 Create personal access tokens (PATs)
 ❌
+❌
+✅
 ✅
 ✅
 View, deactivate, reactivate, and delete any member’s PATs
 ❌
 ❌
+❌
+✅
 ✅
 Admin access to all workspaces
+❌
+❌
 ❌
 ❌
 ✅
 Manage billing settings
 ❌
 ❌
+❌
+✅
 ✅
 Create workspaces
 ❌
 ❌
+❌
+✅
 ✅
 Create, edit, and delete organization roles
 ❌
 ❌
+❌
+✅
 ✅
 Invite new users to organization
 ❌
 ❌
+❌
+✅*
 ✅
 Delete user invites
 ❌
 ❌
+❌
+✅*
 ✅
 Remove users from an organization
 ❌
 ❌
+❌
+✅*
 ✅
 Update data retention settings
 ❌
 ❌
+❌
+✅
 ✅
 Update usage limits
 ❌
 ❌
+❌
 ✅
+✅
+* Organization Operators cannot invite, remove, or delete invites for Organization Admins.
 For a comprehensive list of required permissions along with the operations and roles that can perform them, refer to the
 Organization and workspace reference
 .
 ​
-Workspace roles (RBAC)
-RBAC (Role-Based Access Control) is a feature that is only available to Enterprise customers. If you are interested in this feature,
+Workspace roles
+RBAC (Role-Based Access Control) is only available to Enterprise customers. If you are interested in this feature,
 contact our sales team
 . Other plans default to using the Admin role for all users.
-Roles are used to define the set of permissions that a user has within a workspace. There are three built-in system roles that cannot be edited:
+On Enterprise plans, workspace roles define the permissions a user has within a workspace. There are three built-in workspace roles that cannot be edited:
 Workspace Admin
 has full access to all resources within the workspace.
 Workspace Editor
-has full permissions except for workspace management (adding/removing users, changing roles, configuring service keys).
+can create, edit, and delete most resources, but cannot delete runs, change workspace settings, or manage workspace members.
 Workspace Viewer
 has read-only access to all resources within the workspace.
-Organization admins
-can also create/edit custom roles with specific permissions for different resources.
-You can manage roles in
-Settings
->
-Roles
-.
-For comprehensive documentation on roles and permissions, refer to the
-Role-based access control
-guide.
-For more details on assigning and creating roles, refer to the
-User Management
-guide.
-For a comprehensive list of required permissions along with the operations and roles that can perform them, refer to the
-Organization and workspace reference
-.
+Organization Admins
+can also create and edit custom roles with specific permissions for different resources.
 ​
-Best practices
-​
-Environment separation
-How to separate environments depends on which information architecture your workspace uses:
+Separate environments
+An environment is a stage in your release process, such as development, staging, or production. How to separate environments depends on which information architecture your workspace uses:
 Agent-based workspaces
 have environments built in, drawn from a fixed set of four. An
 agent
@@ -681,10 +744,6 @@ additional
 to your workspace-wide and plan limits. A trace must be within every applicable limit to be ingested.
 Per-user limits count only traces attributed to a specific workspace member. Traces sent with an API key or service key that isn’t tied to a member are not counted toward a per-user limit.
 Limit values are cached, so it may take a minute or two before a new or changed limit applies.
-​
-Related content
-Tutorial on how to
-enforce spend limits
 ​
 Additional resources
 Release policy

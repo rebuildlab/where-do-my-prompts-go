@@ -58,6 +58,7 @@ Posted in
 Hybrid & Multicloud
 AI & Machine Learning
 Infrastructure Modernization
+Google Distributed Cloud - GDC
 Related articles
 Infrastructure Modernization
 Introducing VMware solution on Google Cloud
