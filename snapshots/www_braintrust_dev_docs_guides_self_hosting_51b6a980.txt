@@ -82,6 +82,9 @@ Braintrust strongly recommends using these Terraform modules because they are ke
 If the module conflicts with your organization’s infrastructure standards, you can deploy Braintrust in a dedicated cloud account or project to address these concerns. If you still can’t use the standard artifacts as published, see
 Non-standard self-hosted
 .
+These modules deploy the data plane. To manage the resources inside your organization as code, such as projects, permission groups, and access control, use the separate
+Braintrust Terraform provider
+.
 Legacy customers
 : If you previously deployed using AWS CloudFormation, the
 CloudFormation guide

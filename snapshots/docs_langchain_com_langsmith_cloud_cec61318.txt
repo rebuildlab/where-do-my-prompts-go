@@ -249,6 +249,39 @@ ingress rule configuration
 .
 Select the source project by your LangSmith SaaS region, not the Vertex AI model’s region. Pod or node scaling does not change the source project number. Moving the source workload or VPC network to another project can change the required allowlist.
 ​
+Egress IP inventory
+Fetch the
+egress IP inventory (JSON)
+to automate allowlist updates.
+Filter
+addresses
+by:
+service
+:
+langsmith
+or
+langsmith-deployment
+(deployed agents).
+cloud
+:
+gcp
+or
+aws
+.
+region
+:
+us
+,
+eu
+, or
+apac
+.
+Allowlist every matching
+cidr
+. Listed addresses may be used now or in the future. Poll periodically and compare
+version
+to detect changes. Review additions and removals before updating firewall rules.
+​
 Ingress into LangChain SaaS
 The LangChain endpoints map to the following static IP addresses for traffic that terminates on our
 GCP load balancers

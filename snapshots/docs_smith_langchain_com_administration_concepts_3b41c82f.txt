@@ -36,7 +36,7 @@ Workspaces
 Workspaces were formerly called Tenants. Some code and APIs may still reference the old name for a period of time during the transition.
 A workspace is a logical grouping of users and
 resources
-within an organization. Workspaces are commonly used to isolate teams or business units, providing separation between projects and their associated resources.
+within an organization. Workspaces are commonly used to isolate business units, providing separation between projects and their associated resources.
 A workspace separates trust boundaries for resources and access control. Users are granted permissions at the workspace level, which determine their access to resources in that workspace, including tracing projects, datasets, annotation queues, and prompts. To configure one, see
 Set up a workspace
 . For details on permissions, see
@@ -196,6 +196,7 @@ Service keys are similar to PATs, but are used to authenticate requests to the L
 Service keys may be scoped to a single workspace, multiple workspaces, or the entire organization. They can be used to authenticate requests to the LangSmith API for whichever workspace(s) it has access to.
 Service keys are prefixed with
 lsv2_sk_
+.
 Service keys can only be deleted, not deactivated.
 Use the
 X-Tenant-Id
@@ -389,6 +390,9 @@ Workspace Viewer
 has read-only access to all resources within the workspace.
 Organization Admins
 can also create and edit custom roles with specific permissions for different resources.
+To give a group of users a role in several workspaces at once, use
+teams
+.
 ​
 Separate environments
 An environment is a stage in your release process, such as development, staging, or production. How to separate environments depends on which information architecture your workspace uses:

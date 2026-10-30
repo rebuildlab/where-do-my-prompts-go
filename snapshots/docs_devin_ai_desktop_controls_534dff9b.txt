@@ -88,7 +88,7 @@ The highest level of terminal command auto-execution members can enable in Casca
 Devin CLI permissions
 below.
 Teams & Enterprise
-Terminal
+—
 Devin Sandbox
 Force sandbox mode on for Devin CLI and Devin Local sessions, restricting file system and network access to granted scopes. Re-read at the start of every prompt.
 Enterprise
@@ -110,7 +110,7 @@ Sandbox
 Web search
 Allow agents to search the open web. Disabled by default for enterprise teams. Does not block reading specific URLs: in Cascade every page read then requires manual approval, and Devin CLI URL reads are unaffected.
 Enterprise
-Web Search
+—
 Devin CLI permissions
 Team-enforced
 allow
@@ -164,19 +164,19 @@ Learn more
 Allow MCP
 Allow members to add and configure MCP servers in Devin Desktop.
 Teams & Enterprise
-MCP admin controls
+MCP servers
 MCP allowlist
 Explicit list of MCP servers members may use. Once a single server is allowlisted, all other servers are blocked. Server entries can include a config template with regex patterns.
 Teams & Enterprise
-MCP allowlist
+MCP permissions
 MCP registry
 Enforce the configured registries: when on, members can only connect to servers that appear in a registry (in addition to the allowlist); when off, the registries only populate the marketplace.
 Teams & Enterprise
-MCP registry
+Installing MCP servers
 MCP registry URLs
 One or more registry URLs that provide the list of approved MCP servers. Multiple registries are unioned.
 Teams & Enterprise
-MCP registry
+Installing MCP servers
 ACP registry configuration
 A static registry of approved ACP agents, pushed to every member so they don’t configure agents individually.
 Teams & Enterprise
@@ -283,7 +283,7 @@ Learn more
 Command lists
 Legacy team-wide allowlist and denylist for terminal commands, merged with each member’s own lists. Used as a fallback where Devin CLI permissions are not configured. The denylist always wins.
 Teams & Enterprise
-Terminal
+—
 Enable Cascade
 Where members can use the legacy Cascade agent.
 Enterprise
@@ -295,11 +295,11 @@ Cascade
 Arena mode
 Allow members to compare side-by-side responses from multiple models.
 Teams & Enterprise
-Arena
+—
 App deploys
 Allow members to connect Netlify and deploy from Cascade. Windsurf dashboard only.
 Teams & Enterprise
-App Deploys
+—
 ​
 Account administration
 The Windsurf dashboard also hosts account-level controls that are not Devin Desktop settings but affect who can sign in and what they can do:
@@ -430,16 +430,16 @@ What it provides
 Learn more
 rules/*.md
 Organization-wide rules applied to every workspace.
-System-level rules
+Rules
 workflows/*.md
 Workflows available in every workspace.
 System-level workflows
 skills/<name>/SKILL.md
 Skills available in every workspace.
-System-level skills
+Skills
 hooks.json
 Hooks that run alongside team and workspace hooks.
-Hooks enterprise distribution
+Hooks
 system.json
 Pins Devin CLI sign-in to your enterprise host or account and forces an outbound proxy.
 Devin CLI system configuration

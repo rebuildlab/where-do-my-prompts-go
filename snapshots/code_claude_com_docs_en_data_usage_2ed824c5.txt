@@ -2,9 +2,9 @@
 Data policies
 ​
 Data training policy
-Consumer users (Free, Pro, and Max plans)
+Consumer users (Free, Pro, Max, and Ultra plans)
 :
-We give you the choice to allow your data to be used to improve future Claude models. We will train new models using data from Free, Pro, and Max accounts when this setting is on (including when you use Claude Code from these accounts).
+We give you the choice to allow your data to be used to improve future Claude models. We will train new models using data from Free, Pro, Max, and Ultra accounts when this setting is on (including when you use Claude Code from these accounts).
 Commercial users
 : (Team and Enterprise plans, API, 3rd-party platforms, and Claude Gov) maintain existing policies: Anthropic does not train generative models using code or prompts sent to Claude Code under commercial terms, unless the customer has chosen to provide their data to us for model improvement (for example, the
 Developer Partner Program
@@ -77,7 +77,7 @@ and
 ​
 Data retention
 Anthropic retains Claude Code data based on your account type and preferences.
-Consumer users (Free, Pro, and Max plans)
+Consumer users (Free, Pro, Max, and Ultra plans)
 :
 Users who allow data use for model improvement: 5-year retention period to support model development and safety improvements
 Users who don’t allow data use for model improvement: 30-day retention period
@@ -109,7 +109,7 @@ For full details, please review our
 Commercial Terms of Service
 (for Team, Enterprise, and API users) or
 Consumer Terms
-(for Free, Pro, and Max users) and
+(for Free, Pro, Max, and Ultra users) and
 Privacy Policy
 .
 ​
@@ -188,7 +188,7 @@ Error reports
 DISABLE_ERROR_REPORTING=1
 to opt out.
 Error reporting is on only when all of these apply:
-you sign in with a Claude Pro or Max subscription
+you sign in with a Claude Pro, Max, or Ultra subscription
 you’re running Claude Code v2.1.198 or later
 you’re connecting directly to the Claude API
 your organization doesn’t have a zero data retention or HIPAA agreement
@@ -246,7 +246,7 @@ Default off.
 CLAUDE_CODE_USE_ANTHROPIC_AWS
 must be 1.
 Error reports
-On for Pro and Max sign-ins on v2.1.198+, otherwise off.
+On for Pro, Max, and Ultra sign-ins on v2.1.198+, otherwise off.
 DISABLE_ERROR_REPORTING=1
 to disable.
 Default off.

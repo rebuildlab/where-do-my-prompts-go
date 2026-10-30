@@ -1,7 +1,7 @@
 One platform for everyone who builds, funds, secures, and buys AI
 Give every team the models they want and the controls they need.
 Developers and engineering
-500+ models, one API
+600+ models, one API
 OpenAI-compatible API
 Provider and model fallbacks
 Task-based model routing
@@ -35,7 +35,7 @@ Providers
 80
 +
 Models
-500
+600
 +
 The right model for every task, within your rules
 Integrate once. Build with the latest models on day 0

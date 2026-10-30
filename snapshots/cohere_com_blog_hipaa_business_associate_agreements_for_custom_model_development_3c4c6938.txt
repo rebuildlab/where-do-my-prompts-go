@@ -21,6 +21,10 @@ AI isn’t a shortcut.
 It’s how business gets ahead.
 Contact sales
 Read this next
+Company News
+Cohere advances C$4 billion commitment to strengthen Canada’s AI leadership and significantly expand its national workforce
+Oct 30, 2026
+3 min read
 Enterprise AI
 AI for Developers
 Build a financial research assistant with Cohere on AWS
@@ -31,9 +35,3 @@ Company News
 Who Gets to Build the Frontier for AI
 Oct 29, 2026
 11 min read
-Partner
-Financial Services
-Product Launch
-PitchBook in North: Private market intelligence for enterprise teams
-Oct 26, 2026
-2 min read
