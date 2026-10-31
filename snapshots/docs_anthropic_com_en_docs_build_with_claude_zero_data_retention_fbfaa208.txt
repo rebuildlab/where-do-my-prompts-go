@@ -290,22 +290,14 @@ No
 No
 Skill data retained according to standard policy.
 Learn more
-about
-Agent Skills
-(
-ZDR
-)
+about Agent Skills (ZDR)
 Batch processing
 /v1/messages/batches
 No
 No
 29-day retention; async storage required.
 Learn more
-about
-Batch processing
-(
-ZDR
-)
+about Batch processing (ZDR)
 Browser use tool
 /v1/messages
 with
@@ -315,11 +307,7 @@ Yes
 No
 Client-side tool. Anthropic does not run browser actions or retain page content beyond standard API handling.
 Learn more
-about
-Browser use tool
-(
-ZDR
-)
+about Browser use tool (ZDR)
 Not covered under HIPAA readiness; requests that include the browser use tool are not blocked.
 Citations
 /v1/messages
@@ -334,11 +322,7 @@ Yes
 Yes
 Client-side tool where screenshots and files are captured and stored in your environment, not by Anthropic.
 Learn more
-about
-Computer use tool
-(
-ZDR
-)
+about Computer use tool (ZDR)
 Data residency
 /v1/messages
 with
@@ -364,11 +348,7 @@ No
 No
 Files retained until explicitly deleted or they reach their configured expiration.
 Learn more
-about
-Files API
-(
-ZDR
-)
+about Files API (ZDR)
 MCP connector
 /v1/messages
 with
@@ -377,22 +357,14 @@ No
 No
 Data retained according to standard policy.
 Learn more
-about
-MCP connector
-(
-ZDR
-)
+about MCP connector (ZDR)
 MCP tunnels
 /v1/tunnels
 No
 No
 Research preview. The MCP tunnels security page describes the data-flow boundary and subprocessor details.
 Learn more
-about
-MCP tunnels
-(
-ZDR
-)
+about MCP tunnels (ZDR)
 Mid-conversation system messages
 /v1/messages
 with
@@ -415,26 +387,16 @@ No
 No
 Built on code execution containers; data retained up to 30 days.
 Learn more
-about
-Programmatic tool calling
-(
-ZDR
-)
+about Programmatic tool calling (ZDR)
 Prompt caching
 /v1/messages
 Yes
 Yes
 Your prompts and Claude’s outputs are not stored. KV cache representations and cryptographic hashes are held in memory for the cache TTL and promptly deleted after expiry.
 Learn more
-about
-Prompt caching
-(
-ZDR
-)
+about Prompt caching (ZDR)
 
-Part of
-Prompt caching
-:
+Part of Prompt caching:
 Cache diagnostics
 /v1/messages
 with
@@ -443,11 +405,7 @@ Yes (qualified)
 No
 Your prompts and Claude’s outputs are not stored. A fingerprint of cryptographic hashes and token-count estimates is retained briefly to allow comparison against the next request.
 Learn more
-about
-Cache diagnostics
-(
-ZDR
-)
+about Cache diagnostics (ZDR)
 Search results
 /v1/messages
 with
@@ -463,18 +421,10 @@ Your prompts and Claude’s outputs are not stored. Only the JSON schema is cach
 strict: true
 on tools), which uses the same grammar pipeline.
 Learn more
-about
-Structured outputs
-(
-ZDR
-)
+about Structured outputs (ZDR)
 PHI must not be included in JSON schema definitions; see PHI handling guidelines.
 Learn more
-about
-Structured outputs
-(
-HIPAA
-)
+about Structured outputs (HIPAA)
 Thinking
 /v1/messages
 with
@@ -482,9 +432,7 @@ thinking
 Yes
 Yes
 
-Part of
-Thinking
-:
+Part of Thinking:
 Adaptive thinking
 /v1/messages
 Yes
@@ -548,11 +496,7 @@ No
 No
 Container data retained up to 30 days.
 Learn more
-about
-Code execution tool
-(
-ZDR
-)
+about Code execution tool (ZDR)
 Context editing
 /v1/messages
 with
