@@ -99,7 +99,7 @@ def page(title, body, desc, path, extra_head="", rel=None, og_image="/og.png", a
     s = STATUS
     pt = "ok" if not s["errors"] else "mid"
     pill = (f'<a class="pill {pt}" href="{rel}changelog/#checks">{led(pt)}'
-            f'{s["checked_n"]}<span class="sw"> sources</span> checked · {s["errors"]}<span class="sw"> fetch</span> error{"s" if s["errors"] != 1 else ""}</a>')
+            f'{s["checked_n"]}<span class="sw"> sources</span> checked, {s["errors"]}<span class="sw"> fetch</span> error{"s" if s["errors"] != 1 else ""}</a>')
     body = body.replace("{rel}", rel)
     return f"""<!doctype html>
 <html lang="en">
@@ -136,7 +136,7 @@ def page(title, body, desc, path, extra_head="", rel=None, og_image="/og.png", a
 <div class="wrap status" aria-label="Data status">
 {pill}
 <span>last check <b><time datetime="{s['last']}">{s['last']}</time></b></span>
-<span class="ver">data <b>v{s['version']}</b> · sha256 <b>{s['sha']}</b></span>
+<span class="ver">data <b>v{s['version']}</b>, sha256 <b>{s['sha']}</b></span>
 <span class="dl"><a href="{rel}data.json" download>data.json</a><a href="{rel}data.csv" download>data.csv</a><a href="{rel}llms.txt">llms.txt</a></span>
 </div>
 </header>
@@ -145,8 +145,8 @@ def page(title, body, desc, path, extra_head="", rel=None, og_image="/og.png", a
 </main>
 <footer class="foot"><div class="wrap">
 <p><strong>Independent.</strong> Every value links to the vendor's own page. Not legal advice; check the source and your contract before you sign anything.</p>
-<p class="mono">data: <a href="{rel}data.json">data.json</a> · <a href="{rel}data.csv">data.csv</a> · <a href="{rel}llms.txt">llms.txt</a> · <a href="{rel}about/">method</a> · <a href="{rel}changelog/">changelog</a> · <a href="{rel}funding/">funding</a></p>
-<p class="mono">Code <a href="https://github.com/rebuildlab/where-do-my-prompts-go/blob/main/LICENSE">MIT</a> · Data <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+<ul class="foot-links" aria-label="Data and pages"><li><a href="{rel}data.json">data.json</a></li><li><a href="{rel}data.csv">data.csv</a></li><li><a href="{rel}llms.txt">llms.txt</a></li><li><a href="{rel}about/">Method</a></li><li><a href="{rel}changelog/">Changelog</a></li><li><a href="{rel}funding/">Funding</a></li></ul>
+<p>Code: <a href="https://github.com/rebuildlab/where-do-my-prompts-go/blob/main/LICENSE">MIT</a>. Data: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
 </div></footer>
 <script src="{rel}assets/app.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "d85896aec39e4edca687df91995c013d"}}'></script><!-- End Cloudflare Web Analytics -->
@@ -181,7 +181,7 @@ def svg_heatmap(vendors, cats, links=True):
         cx = LW + i * CW + CW / 2
         parts.append(f'<text class="hm-col" transform="translate({cx + 4},{TOP - 8}) rotate(-50)">{e(SHORT[k])}</text>')
     for c in cats:
-        parts.append(f'<text class="hm-cat" x="0" y="{y + 16}">{e(c.upper())}</text>'
+        parts.append(f'<text class="hm-cat" x="0" y="{y + 16}">{e(c)}</text>'
                      f'<line class="hm-rule" x1="0" x2="{W}" y1="{y + 21.5}" y2="{y + 21.5}"/>')
         y += GH
         for v in [v for v in vendors if v["category"] == c]:
@@ -193,7 +193,7 @@ def svg_heatmap(vendors, cats, links=True):
                 t = f["_tone"]
                 cell = (f'<title>{e(v["name"])}: {e(LABELS[k])} = {e(f["value"])} ({TONE_LABEL[t]})</title>'
                         f'<rect class="hm hm-{t}" x="{x + 2}" y="{y + 2}" width="{CW - 4}" height="{RH - 4}" rx="3"/>'
-                        f'<text class="hm-g hm-g-{t}" x="{x + CW / 2}" y="{y + 15}">{TONE_GLYPH[t]}</text>')
+                        f'<text class="hm-g hm-g-{t}" x="{x + CW / 2}" y="{y + 15}">{TONE_GLYPH[t].replace('–', '-')}</text>')
                 parts.append(f'<a href="{{rel}}vendors/{v["slug"]}/#{k}" tabindex="-1">{cell}</a>' if links else f'<g>{cell}</g>')
             y += RH
     H = y + 4
@@ -232,7 +232,7 @@ def svg_retention(vendors):
         r, t = v["_ret"], v["fields"]["retention"]["_tone"]
         x1, x2 = ret_x(r["lo"], xa, xb, xinf), ret_x(r["hi"], xa, xb, xinf)
         cy = y + RH / 2
-        lab = fmt_days(r["lo"]) if r["lo"] == r["hi"] else f'{fmt_days(r["lo"])}–{fmt_days(r["hi"])}'
+        lab = fmt_days(r["lo"]) if r["lo"] == r["hi"] else f'{fmt_days(r["lo"])}-{fmt_days(r["hi"])}'
         lab = lab.replace("until deleted", "∞")
         bar = (f'<rect class="rb rb-{t}" x="{x1 - 5:.1f}" y="{cy - 5}" width="{x2 - x1 + 10:.1f}" height="10" rx="5"/>'
                if x2 > x1 else f'<circle class="rb rb-{t}" cx="{x1:.1f}" cy="{cy}" r="5.5"/>')
@@ -319,10 +319,10 @@ def hero(vendors, st, cats):
     ok_src = s["monitored_pages"] - s["monitor_errors"]
     src_tone = "ok" if not s["monitor_errors"] else "mid"
     tiles = [
-        ("ok", "trains by default", f'{s["trains_no"]}/{n}', "don't train by default"),
-        ("ok", "zero data retention", f'{s["zdr_available"]}/{s["zdr_applicable"]}', "offer ZDR"),
-        ("mid", "default retention", f'{len(s["zero_retention"])}/{n}', "keep nothing"),
-        (src_tone, "source monitor", f'{ok_src}/{s["monitored_pages"]}', f'ok on {s["monitor_last"]}'),
+        ("ok", "Trains by default", f'{s["trains_no"]}/{n}', "don't train by default"),
+        ("ok", "Zero data retention", f'{s["zdr_available"]}/{s["zdr_applicable"]}', "offer ZDR"),
+        ("mid", "Default retention", f'{len(s["zero_retention"])}/{n}', "keep nothing"),
+        (src_tone, "Source monitor", f'{ok_src}/{s["monitored_pages"]}', f'ok on {s["monitor_last"]}'),
     ]
     cards = "".join(
         f'<div class="hb-card"><span class="k">{led(t)}{label}</span>'
@@ -331,8 +331,8 @@ def hero(vendors, st, cats):
     fields = len(FIELD_ORDER)
     return f'''<section class="hero">
 <div class="hero-copy">
-<h1>What happens to your prompts after you hit enter</h1>
-<p class="lede">Training, retention, ZDR and residency for {n} AI tools, quoted from each vendor.</p>
+<h1>Where your AI prompts go</h1>
+<p class="lede">Training, retention, ZDR and residency for {n} AI tools, from vendor pages.</p>
 <div class="hero-actions">
 <a class="btn pri" href="#compare">Browse {n} {word}</a>
 <details class="menu">
@@ -349,7 +349,7 @@ def hero(vendors, st, cats):
 <div class="hero-stage">
 <div class="hero-board" aria-hidden="true">
 <div class="hb-kpis">{cards}</div>
-<div class="hb-heat"><div class="hb-cap"><span class="k">Field status heatmap</span><span>{n} × {fields} cells</span></div>{svg_heatmap(vendors, cats, links=False)}</div>
+<div class="hb-heat"><div class="hb-cap"><span class="k">Field status heatmap</span><span>{n} tools, {fields} fields</span></div>{svg_heatmap(vendors, cats, links=False)}</div>
 </div>
 </div>
 </section>'''
@@ -416,7 +416,7 @@ def event_lines(evs, vendors, limit=None):
         src = (f'<a class="src" href="{e(x["src"])}" rel="nofollow noopener">{e(domain(x["src"]))}</a>'
                if x.get("src") and x["sev"] == "ERROR" else "")
         out.append(f'<li class="ln {x["sev"]}" data-sev="{x["sev"]}"><time datetime="{x["date"]}">{x["date"]}</time>'
-                   f'<span class="tag">{x["sev"]}</span><span class="who">{",".join(parts)}</span>'
+                   f'<span class="tag">{x["sev"].capitalize()}</span><span class="who">{",".join(parts)}</span>'
                    f'<span class="fld">{e(x["field"])}</span><span class="msg">{e(x["msg"])}{src}</span></li>')
     return "".join(out)
 
@@ -430,25 +430,25 @@ def full_check_sentence(st):
 
 def event_panel(evs, vendors, pid="events", limit=None, extra_meta=""):
     counts = {s: sum(1 for x in evs if x["sev"] == s) for s in SEV_ORDER}
-    btns = (f'<button type="button" data-sev="" aria-pressed="true">all {len(evs)}</button>'
-            + "".join(f'<button type="button" data-sev="{s}" aria-pressed="false">{s.lower()} {counts[s]}</button>'
+    btns = (f'<button type="button" data-sev="" aria-pressed="true">All {len(evs)}</button>'
+            + "".join(f'<button type="button" data-sev="{s}" aria-pressed="false">{s.capitalize()} {counts[s]}</button>'
                       for s in SEV_ORDER))
     shown = evs[:limit] if limit else evs
     body = (f'<div class="logbar" role="group" aria-label="Filter events by severity">{btns}</div>'
             f'<ol class="log scroll" tabindex="0" aria-label="Policy events, newest first">{event_lines(shown, vendors)}</ol>')
-    srcs = "changelog.json · snapshots/index.json · vendors.json"
+    srcs = "changelog.json, snapshots/index.json and vendors.json"
     foot = (f'<p>Every line comes from a file in the repo ({srcs}). Dates only: the checker records the day, not the time. '
             + (f'Showing the newest {len(shown)} of {len(evs)}. <a href="{{rel}}changelog/#events">Full stream</a>.' if len(shown) < len(evs) else "")
             + extra_meta + '</p>')
     return panel("Policy event stream", body, meta=f"{len(evs)} events", pid=pid, bcls="pn-b flush", foot=foot)
 
 
-CELL_GLYPH = {"ok": "✓", "mid": "!", "bad": "×", "none": "–"}
+CELL_GLYPH = {"ok": "✓", "mid": "!", "bad": "×", "none": "-"}
 CELL_LABEL = {"ok": "all sources fetched", "mid": "some sources failed", "bad": "all sources failed",
               "none": "no source in the checker index"}
 
 
-def uptime_panel(dates, rows, pid="checks"):
+def uptime_panel(dates, rows, pid="checks", collapse=False):
     lis = []
     for r in rows:
         cells = "".join(
@@ -456,18 +456,22 @@ def uptime_panel(dates, rows, pid="checks"):
             f'<span aria-hidden="true">{CELL_GLYPH[c["state"]]}</span><span class="sr">{c["date"]}: {CELL_LABEL[c["state"]]}</span></span>'
             for c in r["cells"])
         last = r["cells"][-1] if r["cells"] else None
-        ratio = f'{last["ok"]}/{last["n"]}' if last and last["n"] else "–"
+        ratio = f'{last["ok"]}/{last["n"]}' if last and last["n"] else "-"
         lis.append(f'<li><a class="nm" href="{{rel}}vendors/{r["slug"]}/#sources">{e(r["name"])}</a><span class="cells">{cells}</span>'
-                   f'<span class="ratio">{ratio}</span><span class="unm">{len(r["unmonitored"]) or "–"}</span></li>')
+                   f'<span class="ratio">{ratio}</span><span class="unm">{len(r["unmonitored"]) or "-"}</span></li>')
     start = dates[0] if dates else "n/a"
-    head = ('<div class="up-head" aria-hidden="true"><span>tool</span><span>runs</span><span>last ok</span><span>not idx</span></div>')
-    leg = " · ".join(f'<span class="cell {k}" style="display:inline-grid;width:16px;height:12px" aria-hidden="true">{g}</span> {CELL_LABEL[k]}'
+    head = ('<div class="up-head" aria-hidden="true"><span>Tool</span><span>Runs</span><span>Last ok</span><span>Not idx</span></div>')
+    leg = "".join(f'<span class="leg-i"><span class="cell {k}" style="display:inline-grid;width:16px;height:12px" aria-hidden="true">{g}</span> {CELL_LABEL[k]}</span>'
                      for k, g in CELL_GLYPH.items())
-    foot = (f'<p class="note-line"><strong class="mono">history starts {start}</strong> · {len(dates)} run{"s" if len(dates) != 1 else ""} on record</p>'
+    foot = (f'<p class="note-line"><strong class="mono">history starts {start}</strong>, {len(dates)} run{"s" if len(dates) != 1 else ""} on record</p>'
             f'<p>One cell per nightly run, read from snapshots/index.json and its git history. Older runs are not reconstructed. '
-            f'“not idx” = pages a field cites that the checker has not fetched yet.</p><p>{leg}</p>')
-    return panel("Source checks by tool", head + f'<ul class="up scroll" tabindex="0" aria-label="Source check results per tool">{"".join(lis)}</ul>',
-                 meta=f"{len(rows)} tools · {len(dates)} run{'s' if len(dates) != 1 else ''}", pid=pid, bcls="pn-b flush", foot=foot)
+            f'“not idx” = pages a field cites that the checker has not fetched yet.</p><p class="leg-row">{leg}</p>')
+    inner = head + f'<ul class="up scroll" tabindex="0" aria-label="Source check results per tool">{"".join(lis)}</ul>'
+    if collapse:
+        inner = f'<details class="more pad"><summary>Show results for {len(rows)} tools</summary>{inner}</details>'
+        foot = f'<p>One cell per nightly run. Key and notes on the <a href="{{rel}}changelog/#checks">changelog</a>.</p>'
+    return panel("Source checks by tool", inner,
+                 meta=f"{len(rows)} tools, {len(dates)} run{'s' if len(dates) != 1 else ''}", pid=pid, bcls="pn-b flush", foot=foot)
 
 
 def stat_panel(href, k, t, num, lbl, strip, sub, cls="c2"):
@@ -490,12 +494,12 @@ def build_index(vendors, st, files, evs, up):
             f'data-baa="{f["hipaa_baa"]["_tone"]}" data-unk="{v["_counts"]["unk"]}" data-name="{e(v["name"].lower())}" '
             f'data-search="{e((v["slug"] + " " + v["name"] + " " + v["vendor"] + " " + v["category"]).lower())}">'
             f'<th scope="row" data-rank="0"><a href="vendors/{v["slug"]}/">{e(v["name"])}</a>'
-            f'<small>{e(v["vendor"])} · {e(v["category"])}</small>{tone_strip(v["_counts"], 8)}</th>'
+            f'<small>{e(v["vendor"])}, {e(v["category"])}</small>{tone_strip(v["_counts"], 8)}</th>'
             + cell("trains_by_default") + cell("retention") + cell("zdr") + cell("abuse_monitoring")
             + cell("residency", REGION_LABEL[v["region_filter"]])
             + cell("certifications") + cell("hipaa_baa") + cell("self_host") + "</tr>")
     opt = lambda vals: "".join(f'<option value="{e(a)}">{e(b)}</option>' for a, b in vals)
-    heads = [("Service", "name")] + [(SHORT[k] if k != "residency" else "SG / APAC", k) for k in FIELD_ORDER]
+    heads = [("Service", "name")] + [(SHORT[k] if k != "residency" else "SG/APAC region", k) for k in FIELD_ORDER]
     thead = "".join(
         f'<th scope="col" aria-sort="none"><button type="button" data-col="{i}">{e(h)}<span class="arr" aria-hidden="true"></span></button></th>'
         for i, (h, _) in enumerate(heads))
@@ -512,43 +516,43 @@ def build_index(vendors, st, files, evs, up):
     src_counts = {"ok": ok_src, "bad": s["monitor_errors"]}
     unidx = len({u for r in up[1] for u in r["unmonitored"]})
     stats_html = "".join([
-        stat_panel("?trains=no#compare", "trains by default", "ok", f"{s['trains_no']}<small>/{s['n']}</small>",
+        stat_panel("?trains=no#compare", "Trains by default", "ok", f"{s['trains_no']}<small>/{s['n']}</small>",
                    "don't train on your data by default", tone_strip(stat_trains, s["n"]),
-                   f"{s['trains_depends']} depend · {s['trains_unverified']} unverified · {s['trains_yes']} yes"),
-        stat_panel("?zdr=available#compare", "zero data retention", "ok", f"{s['zdr_available']}<small>/{s['zdr_applicable']}</small>",
+                   f"{s['trains_depends']} depend, {s['trains_unverified']} unverified, {s['trains_yes']} yes"),
+        stat_panel("?zdr=available#compare", "Zero data retention", "ok", f"{s['zdr_available']}<small>/{s['zdr_applicable']}</small>",
                    "offer ZDR in some form", tone_strip(zdr_counts, s["zdr_applicable"]),
                    f"{s['n'] - s['zdr_applicable']} observability tools: n/a"),
-        stat_panel("#retention", "default retention", "mid", f"{len(s['zero_retention'])}<small>/{s['n']}</small>",
+        stat_panel("#retention", "Default retention", "mid", f"{len(s['zero_retention'])}<small>/{s['n']}</small>",
                    "keep nothing by default", tone_strip(ret_counts, s["n"]),
                    f"{len(s['longest_retention'])} keep data until deleted"),
-        stat_panel("?region=sg#compare", "sg / apac region", "mid", f"{s['sg_region']}<small>/{s['n']}</small>",
+        stat_panel("?region=sg#compare", "SG/APAC region", "mid", f"{s['sg_region']}<small>/{s['n']}</small>",
                    f"offer a Singapore region; {s['apac_region']} offer APAC", tone_strip(reg_counts, s["n"]),
                    f"{sum(1 for v in vendors if v['region_filter'] == 'unverified')} region unverified"),
-        stat_panel("about/#unverified", "unverified fields", "unk", f"{s['unverified']}<small>/{s['total_fields']}</small>",
+        stat_panel("about/#unverified", "Unverified fields", "unk", f"{s['unverified']}<small>/{s['total_fields']}</small>",
                    "no official page said it clearly", tone_strip(unk_counts, s["total_fields"]),
-                   "WARN lines in the event stream"),
-        stat_panel("#checks", "source monitor", "mid" if s["monitor_errors"] else "ok",
+                   "Warn lines in the event stream"),
+        stat_panel("#checks", "Source monitor", "mid" if s["monitor_errors"] else "ok",
                    f"{ok_src}<small>/{s['monitored_pages']}</small>", f"pages fetched OK on {s['monitor_last']}",
                    tone_strip(src_counts, s["monitored_pages"]),
-                   f"{s['monitor_errors']} fetch errors · {unidx} cited pages not indexed yet"),
+                   f"{s['monitor_errors']} fetch errors, {unidx} cited pages not indexed yet"),
     ])
     body = f"""
 {hero(vendors, s, cats)}
 <div class="grid" role="list" aria-label="Key numbers">{stats_html.replace('<div class="pn c2">', '<div class="pn c2" role="listitem">')}</div>
 <div class="grid">
-{panel("Field status heatmap", f'<div class="scroll-x">{svg_heatmap(vendors, cats)}</div>', meta=f"{s['n']} × {len(FIELD_ORDER)} cells", cls="c7", pid="heatmap", tools=legend(), foot="Hover or focus a cell for the exact value. Each cell links to its evidence.")}
-<div class="c5 stack">{panel("Default retention", f'<div class="scroll-x">{ret_svg}</div><p class="fn">Log scale. Bars span the shortest to longest period in the value; ∞ = until you delete it. No fixed number: ' + "; ".join(f'<a href="vendors/{v["slug"]}/#retention">{e(short_name(v))}</a> “{e(v["fields"]["retention"]["value"])}”' for v in no_number) + '.</p>', meta=f"{len(ret_rows)} with a stated period", pid="retention")}
+{panel("Field status heatmap", f'<div class="scroll-x">{svg_heatmap(vendors, cats)}</div>', meta=f"{s['n']} tools, {len(FIELD_ORDER)} fields", cls="c7", pid="heatmap", tools=legend(), foot="Hover or focus a cell for the exact value. Each cell links to its evidence.")}
+<div class="c5 stack">{panel("Default retention", f'<div class="scroll-x">{ret_svg}</div><details class="more"><summary>How to read this chart, and tools with no fixed number</summary><p class="fn">Log scale. Bars span the shortest to longest period in the value; ∞ = until you delete it. No fixed number: ' + "; ".join(f'<a href="vendors/{v["slug"]}/#retention">{e(short_name(v))}</a> “{e(v["fields"]["retention"]["value"])}”' for v in no_number) + '.</p></details>', meta=f"{len(ret_rows)} with a stated period", pid="retention")}
 {panel("Field split", svg_field_bars(vendors), meta=f"{s['n']} tools per field", pid="split")}</div>
 </div>
 <div class="grid">
-<div class="c7" style="display:flex">{event_panel(evs, vendors, limit=40, extra_meta=" " + full_check_sentence(st))}</div>
-<div class="c5" style="display:flex">{uptime_panel(*up)}</div>
+<div class="c7" style="display:flex">{event_panel(evs, vendors, limit=8, extra_meta=" " + full_check_sentence(st))}</div>
+<div class="c5" style="display:flex">{uptime_panel(*up, collapse=True)}</div>
 </div>
 <section id="compare" class="pn" aria-labelledby="compare-h" style="margin-bottom:var(--s3)">
 <header class="pn-h"><h2 id="compare-h">Services</h2><span id="count" class="pn-meta" aria-live="polite"></span></header>
 <div class="pn-b" role="search" aria-label="Filter services">
-<div class="qbar"><label for="q">query&gt;</label><input id="q" type="text" spellcheck="false" autocomplete="off" placeholder="vendor:openai trains:no region:sg" aria-describedby="qhelp"><kbd aria-hidden="true">/</kbd><button type="button" id="reset">clear</button></div>
-<p class="qhelp" id="qhelp">keys: <code>vendor:</code> <code>cat:</code> <code>trains:</code>no|depends|yes|unverified <code>zdr:</code>yes|available|partial|not-offered|n/a|unverified <code>region:</code>sg|apac|none|unverified <code>baa:yes</code> · other words search names</p>
+<div class="qbar"><label for="q">Query</label><input id="q" type="text" spellcheck="false" autocomplete="off" placeholder="vendor:openai trains:no region:sg" aria-describedby="qhelp"><kbd aria-hidden="true">/</kbd><button type="button" id="reset">Clear</button></div>
+<details class="more qhelp-wrap"><summary>Query syntax</summary><p class="qhelp" id="qhelp">Keys: <code>vendor:</code> <code>cat:</code> <code>trains:</code>no|depends|yes|unverified <code>zdr:</code>yes|available|partial|not-offered|n/a|unverified <code>region:</code>sg|apac|none|unverified <code>baa:yes</code>. Other words search names.</p></details>
 <p class="qparsed" id="qparsed" aria-live="polite"></p>
 <div class="facets">
 <select id="f-cat" aria-label="Category"><option value="">cat: any</option>{opt((c, c) for c in cats)}</select>
@@ -574,7 +578,7 @@ def build_index(vendors, st, files, evs, up):
 <li><span class="m">GET</span><a href="data.json" download>/data.json<small>full dataset, nested by tool and field</small></a><span class="sz">{human_size(files['data.json'])}</span></li>
 <li><span class="m">GET</span><a href="data.csv" download>/data.csv<small>one row per tool, 5 columns per field</small></a><span class="sz">{human_size(files['data.csv'])}</span></li>
 <li><span class="m">GET</span><a href="llms.txt">/llms.txt<small>plain-text map for agents and LLM tools</small></a><span class="sz">{human_size(files['llms.txt'])}</span></li>
-</ul>{terminal_card(vendors[0])}''', meta="free to reuse", cls="c8", pid="data", bcls="pn-b flush")}
+</ul><details class="more pad"><summary>Example query with jq</summary>{terminal_card(vendors[0])}</details>''', meta="free to reuse", cls="c8", pid="data", bcls="pn-b flush")}
 <div class="c4" style="display:flex;flex-direction:column">{contribute_panel()}</div>
 </div>
 {cta_strip(s['n'])}
@@ -605,8 +609,8 @@ def build_vendor(v, vendors, idx, snapshots, uprow):
         f'<div class="pn {f[k]["_tone"]} c3"><a class="fp {f[k]["_tone"]}" href="#{k}"><span class="k">{led(f[k]["_tone"])}{e(SHORT[k])}</span>'
         f'<span class="val">{e(REGION_LABEL[v["region_filter"]] if k == "residency" else f[k]["value"])}'
         f'<span class="sr"> ({TONE_LABEL[f[k]["_tone"]]})</span></span>'
-        f'<span class="st">{TONE_LABEL[f[k]["_tone"]].lower()} · checked {f[k]["checked"]}</span></a></div>' for k in FIELD_ORDER)
-    TAG = {"ok": "OK", "mid": "WARN", "bad": "FAIL", "unk": "UNVERIF", "na": "N/A"}
+        f'<span class="st">{TONE_LABEL[f[k]["_tone"]]}, checked {f[k]["checked"]}</span></a></div>' for k in FIELD_ORDER)
+    TAG = {"ok": "Ok", "mid": "Warn", "bad": "Fail", "unk": "Unverified", "na": "n/a"}
     entries = []
     for k in FIELD_ORDER:
         x = f[k]
@@ -638,17 +642,17 @@ def build_vendor(v, vendors, idx, snapshots, uprow):
     for u in srcs:
         x = snaps.get(u)
         if not x:
-            stt = '<span class="s-none">NOT IDX</span>'
+            stt = '<span class="s-none">Not idx</span>'
             why = "cited, not fetched by the checker yet"
         elif x.get("last_error") and (x.get("last_attempt") or "") >= (x.get("last_checked") or ""):
-            stt = '<span class="s-bad">× ERROR</span>'
+            stt = '<span class="s-bad">× Error</span>'
             why = f'{e(x["last_error"])} on {e(x.get("last_attempt", ""))}'
         else:
-            stt = '<span class="s-ok">✓ OK</span>'
+            stt = '<span class="s-ok">✓ Ok</span>'
             why = f'fetched {e(x.get("last_checked", ""))}'
         flds = ", ".join(SHORT[k] for k in FIELD_ORDER if f[k]["source"] == u)
         src_items.append(f'<li>{stt}<span><a href="{e(u)}" rel="nofollow noopener">{e(domain(u))}{e(u.split(domain(u), 1)[-1][:60])}</a>'
-                         f'<small>{why} · {e(flds)}</small></span></li>')
+                         f'<small>{why}: {e(flds)}</small></span></li>')
     toc = "".join(f'<li><a href="#{k}">{led(f[k]["_tone"])}{e(SHORT[k])}</a></li>' for k in FIELD_ORDER)
     prev_v, next_v = vendors[idx - 1], vendors[(idx + 1) % len(vendors)]
     faq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
@@ -676,7 +680,7 @@ def build_vendor(v, vendors, idx, snapshots, uprow):
 {f'<aside class="notice" role="note"><strong>NOTICE</strong><p>{e(v["notes"])}</p></aside>' if v.get("notes") else ""}
 <div class="grid" role="list" aria-label="Field status">{tiles.replace('c3"><a', 'c3" role="listitem"><a')}</div>
 <div class="grid">
-<div class="c8">{panel("Evidence log", "".join(entries), meta=f"{len(FIELD_ORDER)} entries · newest check {checked}", pid="evidence", bcls="pn-b flush")}</div>
+<div class="c8">{panel("Evidence log", "".join(entries), meta=f"{len(FIELD_ORDER)} entries, newest check {checked}", pid="evidence", bcls="pn-b flush")}</div>
 <div class="c4"><div class="side">
 {panel("Fields", f'<ol class="toc">{toc}</ol>', bcls="pn-b flush", tag="nav")}
 {panel("Source checks", f'<ul class="srcs">{"".join(src_items)}</ul>', meta=f"{len(srcs)} pages", pid="sources", bcls="pn-b flush")}
@@ -697,14 +701,14 @@ def build_changelog(entries, vendors, st, n_reports, evs, up):
     for x in sorted(entries, key=lambda x: x["date"], reverse=True):
         name = x.get("vendor", "")
         link = f'<a href="../vendors/{x["slug"]}/">{e(name)}</a>' if x.get("slug") in by_slug else e(name)
-        items.append(f'<li class="ln CHANGE"><time datetime="{e(x["date"])}">{e(x["date"])}</time><span class="tag">CHANGE</span>'
+        items.append(f'<li class="ln CHANGE"><time datetime="{e(x["date"])}">{e(x["date"])}</time><span class="tag">Change</span>'
                      f'<span class="who">{link}</span><span class="fld">{e(x.get("field", ""))}</span><span class="msg">{e(x["summary"])}'
                      + (f' <a class="src" href="{e(x["source"])}" rel="nofollow noopener">source</a>' if x.get("source") else "")
                      + '</span></li>')
     confirmed = (f'<ol class="log">{"".join(items)}</ol>' if items else
                  '<p class="empty-note">0 entries in data/changelog.json. When a nightly diff turns into a confirmed change, '
                  'it lands here with the date, the tool and a link to the source. A raw page diff on its own is not enough.</p>')
-    body = f"""<div class="head"><div><p class="eyebrow">changelog · events</p><h1>Policy changes and checker events</h1>
+    body = f"""<div class="head"><div><h1>Policy changes and checker events</h1>
 <p class="lede">Confirmed policy changes, nightly checker results, fetch errors and unverified fields, newest first. {full_check_sentence(st)} Baseline {st['baseline']}; {n_reports} diff report{'s' if n_reports != 1 else ''} on file.</p></div></div>
 <div class="grid"><div class="c12">{panel("Confirmed policy changes", confirmed, meta=f"{len(entries)} entr{'y' if len(entries) == 1 else 'ies'}", pid="confirmed", bcls="pn-b flush")}</div></div>
 <div class="grid">
@@ -718,7 +722,7 @@ def build_about(vendors, st):
     contact = f'<a href="{e(ISSUE_CHANGE)}" rel="noopener noreferrer">open a GitHub issue</a>'
     if CONTACT_URL:
         contact += f' or <a href="{e(CONTACT_URL)}">use this link</a>'
-    rules = "".join(f"<tr><th scope='row'>{e(LABELS[k])}</th><td>{e(TONE_RULES[k])}</td></tr>" for k in FIELD_ORDER)
+    rules = "".join(f"<tr><th scope='row'>{e(LABELS[k])}</th><td>{e(TONE_RULES[k]).replace(" · ", "; ")}</td></tr>" for k in FIELD_ORDER)
     shapes = {"ok": "filled circle", "mid": "triangle", "bad": "square", "unk": "hollow ring", "na": "dash"}
     leds = "".join(f"<tr><td>{led(t, 'big')}</td><th scope='row'>{TONE_LABEL[t]}</th><td>{shapes[t]}</td></tr>" for t in TONES)
     prose = f"""<h2>Where the data comes from</h2>
@@ -755,7 +759,7 @@ def build_about(vendors, st):
 <h2>Data</h2>
 <p>{st['n']} tools, newest field check {e(st['checked'])}. Download the full dataset as <a href="../data.csv" download>CSV</a> or <a href="../data.json" download>JSON</a>.</p>
 <p>This site counts visits with {ext_a("https://www.cloudflare.com/web-analytics/", "Cloudflare Web Analytics")}, which uses no cookies and does not track you across sites. <a href="../notes/analytics/">Why I picked Cloudflare over GoatCounter</a>.</p>"""
-    body = f"""<div class="head"><div><p class="eyebrow">method</p><h1>How this is sourced</h1>
+    body = f"""<div class="head"><div><h1>How this is sourced</h1>
 <p class="lede">An independent tracker. No vendor pays for placement, reviews entries, or sees them before they're published. <a href="../funding/">How it is funded</a>.</p></div>{legend()}</div>
 <div class="grid"><div class="c8">{panel("Method", prose, bcls="pn-b prose", pid="method")}</div>
 <div class="c4"><div class="side">{panel("Field split", svg_field_bars(vendors), meta=f"{st['n']} tools", pid="split")}</div></div></div>"""
@@ -792,7 +796,7 @@ def build_funding(vendors, st):
     log = ("<div class=\"tablewrap\"><table class=\"rules\"><caption class=\"sr\">Sponsor log</caption><tbody>"
            + "".join(f"<tr><th scope='row'>{k}</th><td>{v}</td></tr>" for k, v in log_rows)
            + f"<tr><th scope='row'>Last updated</th><td><time datetime=\"{FUNDING_UPDATED}\">{FUNDING_UPDATED}</time></td></tr></tbody></table></div>")
-    body = f"""<div class="head"><div><p class="eyebrow">funding</p><h1>Funding and independence</h1>
+    body = f"""<div class="head"><div><h1>Funding and independence</h1>
 <p class="lede">Where Do My Prompts Go? is free to use, and the data is free to download and reuse. Here is how it is paid for, and the rules for any money in the future.</p></div></div>
 <div class="grid"><div class="c8">{panel("Funding", prose, bcls="pn-b prose", pid="funding")}</div>
 <div class="c4"><div class="side">{panel("Sponsor log", log, meta="0 sponsors", pid="log")}</div></div></div>"""
