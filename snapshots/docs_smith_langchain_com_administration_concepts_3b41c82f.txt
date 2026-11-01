@@ -427,8 +427,8 @@ Resource tags
 (
 Environment: prod
 ): Use these to
-organize and filter
-resources across your workspace. Apply resource tags to tracing projects, datasets, and other resources (including prompts) to group them by environment, which enables filtering in the UI.
+organize
+resources across your workspace. Apply resource tags to tracing projects, datasets, and other resources (including prompts) to group them by environment.
 Commit tags
 (
 prod
