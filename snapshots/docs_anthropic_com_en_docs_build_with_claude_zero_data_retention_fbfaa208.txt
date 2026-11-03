@@ -516,6 +516,15 @@ tool
 Yes
 Yes
 Client-side memory storage where you control data retention.
+Message threads
+/v1/messages
+with
+thread
+No
+No
+A thread’s contents (the conversation, system prompt, and tools) are held in memory, encrypted under a server-managed key, never written to durable storage, and deleted no more than 1 hour after the thread’s last use. Using this feature does not affect your use of other ZDR eligible features.
+Learn more
+about Message threads (ZDR)
 Messages API
 /v1/messages
 Yes

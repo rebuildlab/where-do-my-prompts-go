@@ -1,12 +1,10 @@
-Gemini 4 Argon is now available.
-Try it out
-.
-Home
-Gemini API
-Docs
+info
+Welcome to the new home for Gemini API documentation in Google AI Studio.
+arrow_back
+Get API key
 Zero data retention in the Gemini Developer API
-This page outlines details of what is commonly referred to as "zero data retention"
-in the Gemini Developer API.
+This page outlines details of what is commonly referred to as "zero data
+retention" in the Gemini Developer API.
 Training restriction
 As outlined in the
 Gemini API Terms of Service
@@ -91,7 +89,8 @@ ttl
 or
 expire_time
 . To achieve an
-absolute zero-data footprint, do not utilize the cached_content feature.
+absolute zero-data footprint, do not utilize the cached_
+content feature.
 Implicit In-Memory Caching
 : By default, Gemini models cache data
 in-memory to reduce latency and cost for developers. This data is strictly
@@ -106,15 +105,23 @@ Review the
 Gemini API Additional Terms of Service
 .
 If you require enterprise-grade, self-serve ZDR controls, see the
-Gemini Enterprise Agent Platform
+Gemini
+Enterprise Agent Platform
 zero data retention
 guide
 .
-Except as otherwise noted, the content of this page is licensed under the
-Creative Commons Attribution 4.0 License
-, and code samples are licensed under the
-Apache 2.0 License
-. For details, see the
-Google Developers Site Policies
-. Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-09-14 UTC.
+On this page
+expand_less
+Training restriction
+Customer data retention and achieving zero data retention
+What's next
+Press / to filter
+Enable applet notifications
+Disable applet notifications
+Enable autocomplete suggestions while typing
+Disable autocomplete suggestions
+Submit: Ctrl + Enter
+Newline: Enter
+Submit: Enter
+Newline: Shift + Enter
+Copy page as markdown

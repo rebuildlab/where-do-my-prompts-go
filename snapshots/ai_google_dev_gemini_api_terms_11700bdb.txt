@@ -1,9 +1,7 @@
-Gemini 4 Argon is now available.
-Try it out
-.
-Home
-Gemini API
-Docs
+info
+Welcome to the new home for Gemini API documentation in Google AI Studio.
+arrow_back
+Get API key
 Gemini API Additional Terms of Service
 Effective March 23, 2026
 To use
@@ -223,7 +221,7 @@ the service's access and connection to data, applications, and systems, and
 exercising judgment and supervision when and if the service is used in
 production environments. You will not automatically bypass any requests for
 human confirmation.
-Grounding with Google Search​​
+Grounding with Google Search
 "Grounding with Google Search" is a Service that provides Grounded Results and
 Search Suggestions and can be used through Google AI Studio (as an Unpaid
 Service), and via Gemini API as a (Paid Service). "Grounded Results" mean
@@ -256,11 +254,12 @@ with Google Search to extract or collect one or more of these components for
 another purpose (for example, using programmatic or automated means to collect
 Links, using Links to build an index, or using Links to identify destination
 pages for crawling or scraping).
-You will not, and will not allow your end user or any third party to, copy, store,
+You will not, and will not allow your end user or any third party to, copy,
+store,
 or implement any click tracking, Link-tracking or other monitoring of Grounded
 Results or Search Suggestions, except that:
-You may copy and store, for up to two (2) years, the text of the Grounded Result(s): (1) that
-were displayed by you only to evaluate and
+You may copy and store, for up to two (2) years, the text of the Grounded
+Result(s): (1) that were displayed by you only to evaluate and
 optimize the display of the Grounded Results in your application; (2)
 in chat history of an end user of your application
 only for the purpose of allowing that end user to view their chat history;
@@ -333,7 +332,8 @@ will be identified via the Google Maps Links. Notwithstanding anything to the
 contrary in the Agreement, Google and its content providers retain all rights to
 Google Maps Data.
 Use restrictions
-You will only use Grounding with Google Maps in an application that is owned and
+You will only use Grounding with Google Maps in an application that is owned
+and
 operated by you and will only use Grounding with Google Maps to display the
 Google Maps Grounded Results with the associated Google Maps Links to the
 end user who initiated the prompt. An end user is an individual you permit
@@ -348,16 +348,16 @@ You will comply with the Documentation for Grounding with Google Maps.
 You will not, and will not allow your end users or any third party to:
 cache or store Google Maps Grounded Results except that you may cache or
 store Google Maps Grounded Results:
-for up to ninety (90) days, only to evaluate and optimize the display of the
-Google Maps Grounded Results for your application; or,
-in the chat history of an end user in your application for up to six (6)
-months for the purpose of allowing that end user to view their chat history or
-to maintain prior conversation context for that end user within your application
-(Section 4 (a) overrides any cache header);
+for up to ninety (90) days, only to evaluate and optimize the display
+of the Google Maps Grounded Results for your application; or,
+in the chat history of an end user in your application for up to six
+(6) months for the purpose of allowing that end user to view their chat
+history or to maintain prior conversation context for that end user
+within your application (Section 4 (a) overrides any cache header);
 scrape or export any Google Maps Data;
 train on any Google Maps Data; or
-distribute or market any Customer Applications in any Prohibited Territory
-as defined in the Documentation.
+distribute or market any Customer Applications in any Prohibited
+Territory as defined in the Documentation.
 Data Collection and How Google Uses Your Data
 You acknowledge that it is reasonably
 necessary for Google to store prompts, contextual information that you may
@@ -400,15 +400,34 @@ Don't rely on the Services for medical, mental health, legal, financial, or
 other professional advice. Any content regarding those topics is provided for
 informational purposes only, does not constitute medical diagnosis or treatment,
 and is not a substitute for advice from a qualified professional.
-Note:
-Previous versions of these Additional Terms are
+lightbulb
+Note: Previous versions of these Additional Terms are
 archived here
 .
-Except as otherwise noted, the content of this page is licensed under the
-Creative Commons Attribution 4.0 License
-, and code samples are licensed under the
-Apache 2.0 License
-. For details, see the
-Google Developers Site Policies
-. Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-28 UTC.
+On this page
+expand_less
+Age Requirements
+Use Restrictions
+Use of Generated Content
+Unpaid Services
+How Google Uses Your Data
+Paid Services
+How Google Uses Your Data
+Payment Terms
+Agentic Services
+Grounding with Google Search
+Use Restrictions
+Data Collection and How Google Uses Your Data
+Grounding with Google Maps
+Hardware Safety
+Disclaimers
+Press / to filter
+Enable applet notifications
+Disable applet notifications
+Enable autocomplete suggestions while typing
+Disable autocomplete suggestions
+Submit: Ctrl + Enter
+Newline: Enter
+Submit: Enter
+Newline: Shift + Enter
+Copy page as markdown

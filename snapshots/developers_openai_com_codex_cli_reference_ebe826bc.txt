@@ -761,11 +761,18 @@ D
 "Run the remaining checks"
 --thread
 accepts a UUID or exact session name. Use a UUID when sessions
-share the same name. The command also accepts
+share the same name. Queued messages use the session’s model. The command
+accepts text only.
+Add
+--resume
+to queue the message and then resume the session if it isn’t
+already loaded. Resuming requires a running local daemon or a server selected
+with
 --remote
-and
+. Use
 --remote-auth-token-env
-; image attachments aren’t supported.
+if the server requires a token.
+If Codex can’t resume the session, it prints a warning and still exits successfully.
 codex app-server
 Launch the Codex app server locally. This is primarily for development and debugging and may change without notice.
 Key
@@ -775,12 +782,8 @@ Details
 boolean
 Defaults analytics to enabled for first-party app-server clients unless the user opts out in config.
 --code-mode-host
-ws://HOST/PATH | wss://HOST/PATH
-Connect to a remote Code Mode host instead of starting a local host. This outbound connection is shared across threads and is separate from
---listen
-; use
-wss://
-for remote hosts.
+http://HOST[:PORT] | https://HOST[:PORT]
+Share an outbound HTTP/2 gRPC connection to a remote Code Mode host across threads. Supply an HTTP or HTTPS origin without credentials, a path, a query, or a fragment.
 --listen
 stdio:// | ws://IP:PORT | unix:// | unix://PATH | off
 Transport listener URL. Use
@@ -853,13 +856,9 @@ Defaults analytics to enabled for first-party app-server clients unless the user
 Key
 --code-mode-host
 Type / Values
-ws://HOST/PATH | wss://HOST/PATH
+http://HOST[:PORT] | https://HOST[:PORT]
 Details
-Connect to a remote Code Mode host instead of starting a local host. This outbound connection is shared across threads and is separate from
---listen
-; use
-wss://
-for remote hosts.
+Share an outbound HTTP/2 gRPC connection to a remote Code Mode host across threads. Supply an HTTP or HTTPS origin without credentials, a path, a query, or a fragment.
 Key
 --listen
 Type / Values
@@ -966,16 +965,12 @@ to accept WebSocket handshakes on Codex’s default Unix socket, or
 to choose a socket path. If you generate schemas for client bindings, add
 --experimental
 to include gated fields and methods.
-Add
---code-mode-host wss://code-mode.example.com/host
-to connect app-server to
-a remote Code Mode host instead of starting a local host. This outbound
-connection is separate from
+Use
+--code-mode-host https://code-mode.example.com
+to connect all threads in
+the app-server process to a remote Code Mode host over gRPC.
 --listen
-and shared by every thread in the
-app-server process. Use
-ws://
-only for a localhost or SSH-forwarded host.
+controls how clients connect to the app server.
 codex remote-control
 Run
 codex remote-control
@@ -1216,6 +1211,8 @@ codex unarchive
 Archive or restore a saved interactive session by session ID or session name.
 Use these commands when you want to clean up the session picker without deleting
 the transcript. Session IDs take precedence over session names.
+When you archive or restore a session, Codex also tries to archive or restore
+the subagent sessions it spawned, including their descendants.
 codex
 archive
 <
@@ -1468,6 +1465,9 @@ Use ASCII status labels and separators in human-readable output.
 --json
 boolean
 Emit a redacted machine-readable support report.
+--network-only
+boolean
+Limit checks to configuration, the network environment, provider HTTP connectivity, and Responses WebSocket connectivity.
 --no-color
 boolean
 Disable ANSI color in human-readable output.
@@ -1492,6 +1492,12 @@ Type / Values
 boolean
 Details
 Emit a redacted machine-readable support report.
+Key
+--network-only
+Type / Values
+boolean
+Details
+Limit checks to configuration, the network environment, provider HTTP connectivity, and Responses WebSocket connectivity.
 Key
 --no-color
 Type / Values
@@ -1582,6 +1588,9 @@ Set the workspace root before executing the task.
 --color
 always | never | auto
 Control ANSI color in stdout.
+--cyber-access-program
+standard | daybreak_blue | daybreak_red
+Request a cyber access program for this turn (experimental, OpenAI provider only). Requires access for the account and model. Unavailable with review. A fork requires a prompt.
 --dangerously-bypass-approvals-and-sandbox, --yolo
 boolean
 Bypass approval prompts and sandboxing. Dangerous—only use inside an isolated runner.
@@ -1631,7 +1640,7 @@ path
 Write the assistant’s final message to a file. Useful for downstream scripting.
 --output-schema
 path
-JSON Schema file describing the expected final response shape. Codex validates tool output against it.
+Path to a JSON Schema for the model's final response.
 --profile, -p
 string
 Layer
@@ -1643,6 +1652,9 @@ Sandbox policy for model-generated commands. Defaults to configuration.
 --skip-git-repo-check
 boolean
 Allow running outside a Git repository (useful for one-off directories).
+--thread-source
+SOURCE
+Set the source label for a new or forked thread. Resuming a thread keeps its original label.
 --worktree
 boolean
 Run a new or forked session in a managed Git worktree. Requires local execution; can't be combined with
@@ -1698,6 +1710,12 @@ always | never | auto
 Details
 Control ANSI color in stdout.
 Key
+--cyber-access-program
+Type / Values
+standard | daybreak_blue | daybreak_red
+Details
+Request a cyber access program for this turn (experimental, OpenAI provider only). Requires access for the account and model. Unavailable with review. A fork requires a prompt.
+Key
 --dangerously-bypass-approvals-and-sandbox, --yolo
 Type / Values
 boolean
@@ -1782,7 +1800,7 @@ Key
 Type / Values
 path
 Details
-JSON Schema file describing the expected final response shape. Codex validates tool output against it.
+Path to a JSON Schema for the model's final response.
 Key
 --profile, -p
 Type / Values
@@ -1803,6 +1821,12 @@ Type / Values
 boolean
 Details
 Allow running outside a Git repository (useful for one-off directories).
+Key
+--thread-source
+Type / Values
+SOURCE
+Details
+Set the source label for a new or forked thread. Resuming a thread keeps its original label.
 Key
 --worktree
 Type / Values
@@ -2067,8 +2091,10 @@ List configured MCP servers. Add
 --json
 for machine-readable output.
 login <name>
---scopes scope1,scope2
-Start an OAuth login for a streamable HTTP server (servers that support OAuth only).
+[--scopes scope1,scope2] [--no-browser] [--oauth-client-registration auto|cimd|dcr]
+Sign in to a streamable HTTP server that supports OAuth. With
+--no-browser
+, open the printed URL in a browser and paste the full redirect URL into the CLI.
 logout <name>
 Remove stored OAuth credentials for a streamable HTTP server.
 remove <name>
@@ -2100,9 +2126,11 @@ for machine-readable output.
 Key
 login <name>
 Type / Values
---scopes scope1,scope2
+[--scopes scope1,scope2] [--no-browser] [--oauth-client-registration auto|cimd|dcr]
 Details
-Start an OAuth login for a streamable HTTP server (servers that support OAuth only).
+Sign in to a streamable HTTP server that supports OAuth. With
+--no-browser
+, open the printed URL in a browser and paste the full redirect URL into the CLI.
 Key
 logout <name>
 Details
@@ -2493,9 +2521,11 @@ to continue the most recent session.
 codex fork
 Fork a previous interactive session into a new chat. By default,
 codex fork
-opens the session picker; add
+opens the session picker. Use
 --last
-to fork your most recent session instead.
+to fork the most recent session in the current directory. Use
+--last --all
+to fork the most recent session across all directories.
 When the current and saved session directories differ,
 codex fork
 uses the
@@ -2790,6 +2820,12 @@ Details
 Command to execute under the native Windows sandbox. Provide the executable after
 --
 .
+Before removing the legacy Windows sandbox, stop the apps that use it. If the
+sandbox provisioning service is installed, stop it too. Then run
+codex sandbox uninstall
+as an administrator.
+The command removes machine-wide sandbox accounts and network rules. It keeps
+your Codex home, including sandbox directories and filesystem permissions.
 codex update
 Check for and apply a Codex CLI update when the installed release supports self-update. Debug builds print a message telling you to install a release build instead.
 Flag combinations and safety tips
@@ -2830,9 +2866,9 @@ Press
 Ctrl
 +
 O
-or run
+to copy the latest completed response. Run
 /copy
-to copy the latest completed Codex output.
+to choose what to copy.
 Prefix a line with
 !
 to run a local shell command under the current approval and sandbox settings.
@@ -2903,6 +2939,9 @@ Relax or tighten approval requirements mid-session, such as switching between Au
 /ide
 Include open files, current selection, and other IDE context.
 Pull editor context into the next prompt without re-explaining what’s open in your IDE.
+/config
+Search and change terminal preferences.
+Adjust the theme, notifications, keyboard shortcuts, or text selection.
 /keymap
 Remap TUI keyboard shortcuts.
 Inspect and persist custom shortcut bindings in
@@ -2947,10 +2986,12 @@ Remove the transcript and descendant sessions when archiving isn’t enough.
 Summarize the visible chat to free tokens.
 Use after long runs so Codex retains key points without blowing the context window.
 /copy
-Copy the latest completed Codex output.
-Grab the latest finished response or plan text without manually selecting it. You can also press
-Ctrl+O
-.
+Copy a response, code block, or quote.
+Use
+Ctrl
++
+O
+to copy the latest completed response without using the menu.
 /diff
 Show the Git diff, including files Git isn’t tracking yet.
 Review Codex’s edits before you commit or run tests.
@@ -3000,9 +3041,18 @@ gpt-6-luna
 or
 gpt-6.1-sol
 if shown.
+/presets
+Save and run prompts or slash commands.
+Recall a command or prompt you use frequently.
 /fast
 Toggle a Fast service tier when the model catalog exposes one.
 Turn the current model’s Fast tier on or off and persist the selection.
+/daybreak
+Toggle Daybreak when your account and model are eligible.
+Use an approved cyber access program for a chat.
+/voice
+Start or stop a voice conversation when available.
+Speak to Codex in a terminal build that supports voice.
 /plan
 Switch to plan mode and optionally send a prompt.
 Ask Codex to propose an execution plan before implementation work starts.
@@ -3103,6 +3153,13 @@ only when you need to retry a recent action that automatic review
 denied.
 Control your session with slash commands
 The following workflows keep your session on track without restarting Codex.
+Change terminal preferences with
+/config
+Type
+/config
+to open terminal preferences. Browse settings by group or press
+/
+to search. Codex saves your changes automatically.
 Choose the terminal mode with
 /tui
 Type
@@ -3175,8 +3232,11 @@ Type
 Review the server connection and available actions.
 Expected: Codex offers to install the latest public stable release or use the
 current CLI build for the local background server. Confirming an update exits
-Codex and may interrupt active work. For a remote connection, manage the server
-on its host.
+Codex and may interrupt active work. To restart a managed local server, choose
+Restart background server
+and confirm. Codex reconnects automatically. The restart may
+interrupt active or queued work in other chats. For a remote connection, manage
+the server on its host.
 Inspect warnings with
 /warnings
 Type
@@ -3201,6 +3261,25 @@ from the popup.
 Expected: Codex confirms the new model in the transcript. Run
 /status
 to verify the change.
+To change settings for the current session directly, use
+/model [model] [--reasoning=<level>] [--speed=<tier>]
+. For example,
+/model --reasoning=high
+keeps the current model and sets its reasoning effort
+to high if the model supports it.
+Reuse prompts and commands with
+/presets
+Type
+/presets
+and press
+n
+to save a prompt or slash command in a
+numbered slot. Press
+s
+to create a preset from your current model,
+permissions, terminal title, or status line. To run a saved preset, open
+/presets
+and press its number.
 Toggle Fast mode with
 /fast
 Type
@@ -3217,6 +3296,29 @@ Fast tier commands are catalog-driven. If the current model doesn’t advertise 
 Fast tier, Codex won’t show
 /fast
 .
+Toggle Daybreak
+If you use the OpenAI provider and your account and model have
+Daybreak access
+, use
+/daybreak
+to turn Daybreak on or off. Codex applies the selection to the current
+chat and saves it as the default for future chats.
+Talk to Codex with
+/voice
+When your CLI build and session support voice, use
+/voice
+or
+F8
+to
+start or stop a voice conversation. Use
+/voice mute
+to turn your microphone on or off
+and
+/voice stop
+to end the conversation. Use
+/voice settings
+to choose a
+voice for future conversations.
 Switch to plan mode with
 /plan
 Type
@@ -3301,13 +3403,9 @@ or
 Cursor
 .
 Select the setup, project files, or recent chats you want to migrate.
-Expected: Codex opens the external-agent import picker and imports the selected
-supported artifacts into Codex configuration and local files. Session discovery
-includes up to 50 chats from the last 30 days.
-Run
-/import
-from a local TUI session. It’s unavailable while a task is running,
-in remote sessions, and while connected to the local app-server daemon.
+Codex looks for up to 50 chats from the last 30 days. When connected to a local
+daemon or remote server, Codex reads and imports files on the machine running
+the daemon or server. Wait until the current task finishes before starting an import.
 For the desktop app workflow and supported artifact types, see
 Import from
 another agent
@@ -3371,8 +3469,13 @@ Read Only
 to review edits. When named
 permission profiles are active, the picker also shows configured custom
 profiles and their descriptions.
-Expected: Codex announces the updated policy. Future actions respect the
-updated approval mode until you change it again.
+To select a profile by ID for this session, use
+/permissions <profile-id> [--approval-policy=<policy>] [--reviewer=user|auto_review]
+.
+For example,
+/permissions :workspace --approval-policy=on-request --reviewer=user
+selects workspace access and sends approval requests to you when permitted by
+your configuration.
 Include IDE context with
 /ide
 Type
@@ -3405,21 +3508,23 @@ Expected: Codex configures the elevated Windows sandbox and selects the
 corresponding automatic approval preset.
 Copy the latest response with
 /copy
-Type
+In scrollback mode, type
 /copy
-and press Enter.
-Expected: Codex copies the latest completed Codex output to your clipboard.
-If a turn is still running,
+and choose the whole response, a code block,
+or a quote from the latest completed response. In fullscreen mode, select a
+block in the transcript. Press
+Enter
+to copy your selection.
+After
+/status
+, use
 /copy
-uses the latest completed output instead of
-the in-progress response. The command is unavailable before the first completed
-Codex output and immediately after a rollback.
-You can also press
+to copy the full status or an individual field.
+To copy the latest completed response directly, press
 Ctrl
 +
 O
-from the main TUI to copy the
-latest completed response without opening the slash command menu.
+.
 Toggle raw scrollback with
 /raw
 Type
@@ -3480,7 +3585,7 @@ mcp_servers
 rules
 ,
 and
-experimental_network
+network_proxy
 when configured.
 Use this output to debug why an effective setting differs from
 config.toml
@@ -3499,6 +3604,13 @@ config.toml
 Available status-line items include model, model+reasoning, context stats, rate
 limits, git branch, token counters, session id, current directory/project root,
 and Codex version.
+To set the footer for this session only, list the items in display order. For
+example,
+/statusline model project-name
+shows the model before the project name. Use
+/statusline --clear
+to hide
+all items for the session.
 Configure terminal title items with
 /title
 Type
@@ -3512,6 +3624,13 @@ config.toml
 .
 Available title items include app name, project, spinner, status, thread, git
 branch, model, and task progress.
+To set the title for this session only, list the items in display order. For
+example,
+/title project-name model
+shows the project name before the model. Use
+/title --clear
+to clear the title items for
+the session.
 Choose a syntax theme with
 /theme
 Type
@@ -3636,7 +3755,16 @@ Resume a saved chat with
 Type
 /resume
 and press Enter.
-Choose the session you want from the saved-session picker.
+Choose a search scope in the picker.
+Cwd
+shows chats from the current
+directory.
+Repo
+, when available, includes the corresponding directory in
+linked local worktrees.
+All
+searches across directories.
+Select the chat you want to resume.
 Expected: Codex reloads the selected chat’s transcript so you can pick
 up where you left off, keeping the original history intact.
 Fork the current chat with
@@ -3878,8 +4006,6 @@ Open MCP status to view connected servers.
 Configure whether the chat can use or generate memories, when Memories is available.
 /model
 Choose the model for the current chat.
-/personality
-Choose how Codex responds, when the current model supports personalities.
 /plan
 Toggle plan mode for multi-step planning.
 /project

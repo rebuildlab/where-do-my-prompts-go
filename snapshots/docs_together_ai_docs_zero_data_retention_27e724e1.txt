@@ -1,22 +1,21 @@
 Together AI supports zero data retention (ZDR) at the organization level. With ZDR enabled, the prompts you send and the outputs models return are not stored by Together, and are not used for any secondary purpose.
 ​
 Enable ZDR
-ZDR is not enabled by default. To enable it:
-Open the
+ZDR is not enabled by default. To enable it for your organization:
+Go to the
 Privacy
 section of
 Organization Settings
 .
-Set
-Store prompts and model responses
-to
-No
+Turn off
+Prompt storage
 .
-Turning off prompt storage also turns off passthrough models automatically, because passthrough requires retained prompts. Non-passthrough models keep working as normal.
-ZDR applies from the moment you enable it. It does not retroactively affect data processed before then. To delete previously stored data, use the delete option in your settings or email
-[email protected]
+Turning off prompt storage also turns off
+passthrough models
+, because passthrough requires retained prompts. Non-passthrough models keep working as normal.
+ZDR applies only to requests sent after you enable it. To delete data stored before then, use the delete option in your settings or
+email the privacy team
 .
-A similar storage toggle exists on your personal account profile, but it only applies to traffic sent under your personal account outside an organization. When a request uses an organization’s API key, the organization setting is what applies.
 ​
 Default behavior
 Unless your organization enables ZDR, Together stores the prompts you send and the responses models return, and may use them for product improvements. This data will never be shared with third parties, and you can delete it at any time.
@@ -54,8 +53,8 @@ Contact sales
 to discuss the right setup for your workload.
 ​
 Privacy requests
-For data access or deletion requests beyond what’s covered above, email
-[email protected]
+For data access or deletion requests beyond what’s covered above,
+email the privacy team
 . The
 privacy policy
 is the authoritative legal statement of Together’s data practices.

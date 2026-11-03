@@ -61,7 +61,7 @@ Contact your AWS account team or AWS Support if you have additional
 questions.
 Document Conventions
 Configuration and vulnerability analysis in Amazon Bedrock
-Prompt injection security
+Watermarking
 Did this page help you? - Yes
 Thanks for letting us know we're doing a good job!
 If you've got a moment, please tell us what we did right so we can do more of it.
