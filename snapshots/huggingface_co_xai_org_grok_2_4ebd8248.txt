@@ -34,7 +34,7 @@ The weights are licensed under the
 Grok 2 Community License Agreement
 .
 Downloads last month
-7,205
+6,998
 Inference Providers
 NEW
 This model isn't deployed by any Inference Provider.
@@ -44,7 +44,7 @@ Ask for provider support
 Model tree for
 xai-org/grok-2
 Finetunes
-8 models
+10 models
 Merges
 1 model
 Quantizations

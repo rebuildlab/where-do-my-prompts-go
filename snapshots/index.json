@@ -140,7 +140,7 @@
     "file": "cohere_com_blog_hipaa_business_associate_agreements_for_custom_model_development_3c4c6938.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "e2662b2de0831aecec09834cba3ba90eeb7ff7bf76e830baf8e2a2f950107959",
+    "sha256": "ff34330e0a15d130a04c3426fa884b9f7c2a2d4e0da35c42cf421032a499cee1",
     "vendors": [
       "cohere"
     ]
@@ -366,7 +366,7 @@
     "file": "docs_fireworks_ai_accounts_data_residency_1134fe79.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "e6c79e5e9bfde0a8fbe14aaf76bbc8b52edf462f1e4f69dd726467b4a26ddfc1",
+    "sha256": "b35e69db74b8069001f8f6d0daaf93884e8a3b4c62229c8bd9429e1224e3b38b",
     "vendors": [
       "fireworks-ai"
     ]
@@ -553,7 +553,7 @@
     "file": "fireworks_ai_privacy_policy_24cba4dd.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "4bda1406e9ee5cf087e92b3e4e560d4c137fa7059aa780bec477bcfd74772222",
+    "sha256": "28bc311acacfcea6d739facf372de8991f8ef1f7f9fece7a86fd3c5dba77f4f0",
     "vendors": [
       "fireworks-ai"
     ]
@@ -632,7 +632,7 @@
     "file": "huggingface_co_deepseek_ai_a544e39d.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "178f1f4834b82edcc46e3607ac07299bff57c7b70a07913c4f2cc81b37fa0048",
+    "sha256": "77cea03c3ae2950e27cca6956c29194d83ae4279e9048ba2057cca74878b157b",
     "vendors": [
       "deepseek"
     ]
@@ -641,7 +641,7 @@
     "file": "huggingface_co_xai_org_grok_2_4ebd8248.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "be04bc4a1243eae09614d280a27744ff3c331b4c47e30beab75f2de36b4b43b2",
+    "sha256": "18363d18648ef55b433b32ba2492cf1f2b98032703d16d1fc62d75468c42a18a",
     "vendors": [
       "xai"
     ]
@@ -659,7 +659,7 @@
     "file": "langfuse_com_security_89b00596.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "73fc720becaf56b55fbf8131d60fe5179c36a1db8716f4df593ae4071813cd70",
+    "sha256": "8bbd2c3e34a6d376d4c648d498a336d3f268a2c65e9a36332d48187e113a9d0a",
     "vendors": [
       "langfuse"
     ]
@@ -776,7 +776,7 @@
     "file": "ollama_com_cloud_57b7bd75.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "194eea58e38fda7d8d9c34c23905b2d344bd936fdd844a535f5c57cf6ce422e0",
+    "sha256": "e3c98c455c34efba4905c8c0fe2e2e9540595960b07c85a508cfc73e20f432bf",
     "vendors": [
       "ollama-cloud"
     ]
@@ -785,7 +785,7 @@
     "file": "ollama_com_privacy_a17cead2.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "0a453e67100ab93b5da4be4ff7edbdf18e13709a214cfd7b719142cd9e023a26",
+    "sha256": "ad0477532e8401a561ef5d64da4921abd708ae5d4ccffcdbaeabadad31242382",
     "vendors": [
       "ollama-cloud"
     ]
@@ -812,7 +812,7 @@
     "file": "openrouter_ai_docs_features_privacy_and_logging_a7e3e9a3.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "e61dcd2f74177fe747f6c207199bdcdbac139fedd03dc26796f56f0b4a271069",
+    "sha256": "ff6c0ed2c1469dc93364af27b7f16751ecbd418bf1161d3e9fa72e27a787fb2c",
     "vendors": [
       "openrouter"
     ]
@@ -821,7 +821,7 @@
     "file": "openrouter_ai_docs_features_zdr_71ab3739.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "cec573327b60cbad24e514deb05f0840992a68667dd27220cb8eb1c907d833e8",
+    "sha256": "f09dc2e54b27e0511668c302e7eea4c0b48beaa10927abd00c1071106078b8c7",
     "vendors": [
       "openrouter"
     ]
@@ -866,7 +866,7 @@
     "file": "privacy_anthropic_com_en_articles_10015870_what_certifications_has_anthropic_obt_d5b36be1.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "12c82b589f0a195bbc7a081b89d9c915533a772d2414de6ec55636cc8ddf9c81",
+    "sha256": "5a5f97eacc51ac0a6dacba5c4874c7fff14703d404aaeaeec62eb45005ac2a33",
     "vendors": [
       "anthropic-api",
       "claude-code"
@@ -876,7 +876,7 @@
     "file": "privacy_anthropic_com_en_articles_7996866_how_long_do_you_store_my_organization__d41bf307.txt",
     "last_checked": "2026-11-03",
     "last_error": null,
-    "sha256": "a78fa87cb4c9d5d127cd377bb86dfc0856d99be1b5041437cfe7f7a63fac090c",
+    "sha256": "e8aa60d02bee1293c3723fd3f5e3c1957638035c1c439a466baad955291589de",
     "vendors": [
       "anthropic-api",
       "claude-code"
@@ -896,7 +896,7 @@
     "last_checked": "2026-11-03",
     "last_error": null,
     "method": "rendered",
-    "sha256": "a7d42278329bd5f8e1ff4de6214242df3813273cc3aabe3fd2d1a6b616e25d63",
+    "sha256": "54962f6753b78a82350388069fe152f9b97eb8926a31ff135becc494216ad18e",
     "vendors": []
   },
   "https://trustcenter.cohere.com/subprocessors": {

@@ -176,7 +176,7 @@ here
 .
 Do models support tool calling?
 Yes. Cloud models that are trained to support tools are tested for tool calling and with real agent workflows before they go live. If something isn't working, let us know at
-[email protected]
+support@ollama.com
 .
 What quantization or data format do cloud models use?
 Native weights, as released by the model provider. On modern NVIDIA hardware, models may use accelerated data formats supported by Blackwell and Vera Rubin architectures (e.g. NVFP4).

@@ -91,5 +91,5 @@ A privacy breach occurs when there is unauthorized access to or collection, use,
 We may update this Privacy Policy from time to time. We will notify you of material changes by updating the “Last updated” date and, where appropriate, providing additional notice. Your use of our services constitutes your binding acceptance of such changes.
 12. Contact Us
 Ollama Inc. is the data controller of this Privacy Policy. If you have questions about this Privacy Policy or wish to exercise your rights, contact us at
-[email protected]
+hello@ollama.com
 .
