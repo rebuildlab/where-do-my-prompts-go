@@ -159,7 +159,7 @@ parameter is available on the Claude API (first-party),
 Claude Platform on AWS
 , and
 Claude Models on Google Cloud (Anthropic managed)
-. On Amazon Bedrock and Claude Models on Google Cloud (Google managed), the inference region is determined by the endpoint URL or inference profile, so
+. On Claude Models on Google Cloud (Google managed) and Amazon Bedrock, the inference region is determined by the endpoint URL or inference profile, so
 inference_geo
 is not applicable. On
 Claude in Microsoft Foundry
@@ -252,7 +252,7 @@ inference_geo
 (see
 Model availability
 ). Standard pricing applies. Requests that include the parameter return a 400 error.
-This pricing applies to the Claude API (first-party), Claude Platform on AWS, and Claude Models on Google Cloud (Anthropic managed). On Claude in Microsoft Foundry, the same 1.1x multiplier applies to deployments hosted on Azure that use the US Data Zone Standard deployment type. Partner-operated platforms, Bedrock and Claude Models on Google Cloud (Google managed), have their own regional pricing. See
+This pricing applies to the Claude API (first-party), Claude Platform on AWS, and Claude Models on Google Cloud (Anthropic managed). On Claude in Microsoft Foundry, the same 1.1x multiplier applies to deployments hosted on Azure that use the US Data Zone Standard deployment type. Partner-operated platforms, Claude Models on Google Cloud (Google managed) and Bedrock, have their own regional pricing. See
 Data residency pricing
 for details.
 The same multiplier applies to

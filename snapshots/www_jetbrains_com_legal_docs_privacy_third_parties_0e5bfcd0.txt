@@ -1,6 +1,6 @@
 Sales Support
 Third-Party Services
-Version 3.15, effective as of September 30, 2026
+Version 3.16, effective as of November 4, 2026
 JetBrains s.r.o. (“
 JetBrains
 ”) is a products and services provider based in the Czech Republic (EU), so its activities are directly regulated by the EU General Data Protection Regulation (GDPR). JetBrains relies on certain third parties and affiliates, which may host some products offered by JetBrains, facilitate communication between JetBrains and customers, or otherwise help JetBrains with certain processes. Due to the nature of their engagement, these entities may have access to certain data shared by customers (including but not limited to some personal data). Here is a more detailed overview of the third parties and JetBrains affiliates to which customer data can be made available.
@@ -99,6 +99,10 @@ Junie CLI
 Error reporting, crash diagnostics, and service reliability monitoring
 Sentry / Functional Software, Inc.
 US
+Air
+Cloud security monitoring and scanning
+Upwind Security UK Ltd.
+EU
 B. Third Parties Supporting JetBrains Internal Processes (Other Recipients)
 When JetBrains processes data for internal purposes as a data controller, other JetBrains affiliates listed
 here
@@ -124,6 +128,9 @@ Google Cloud Platform
 ;
 • Providers of data integration and streaming services for internal business systems, such as
 Confluent Cloud
+;
+• Providers of data enrichment, sales prospecting, and outreach services, such as
+Clay
 ;
 • Providers of messaging services, such as
 Marketo

@@ -33,6 +33,7 @@ does not delete data. See
 data access vs. data
 retention
 for details.
+Project Settings > General > Data Retention. Enter 30 and click “Save”; the project now keeps data for 30 days.
 Data retention can also be configured via the
 Organization Management API
 .

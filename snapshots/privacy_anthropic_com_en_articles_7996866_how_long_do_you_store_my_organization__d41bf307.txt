@@ -48,8 +48,8 @@ Data Processing Addendum
 Related Articles
 Can you delete data sent via Claude?
 I have a zero data retention agreement with Anthropic. What products does it apply to?
-Can you delete data that I sent via Team and Enterprise plans?
 How long do you store my data?
+Configure custom data retention controls for Enterprise plans
 Data retention practices for Covered Models
 Did this answer your question?
 Table of contents

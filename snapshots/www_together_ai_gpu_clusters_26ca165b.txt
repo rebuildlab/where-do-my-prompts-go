@@ -191,7 +191,7 @@ Options available based on the scale of the projects in Asia and the Middle East
 Choose from global regions to meet data residency and compliance requirements—HIPAA for healthcare, GDPR for Europe, or banking regulations.
 Infrastructure you can trust at scale.
 Production-grade security.
-We take security and compliance seriously, with strict data privacy controls to keep your information protected. Your data and models remain fully under your ownership, safeguarded by robust security measures.
+As an NVIDIA Cloud Partner, Together builds and operates clusters on NVIDIA NCP reference architectures for predictable performance and faster time to production. Your data and models remain under your control with strict privacy safeguards and SOC 2–compliant security practices.
 Learn More
 As an NVIDIA Cloud Partner, Together builds and operates clusters on NVIDIA NCP reference architectures for predictable performance and faster time to production. Your data and models remain under your control with strict privacy safeguards and SOC 2–compliant security practices.
 preferred partner

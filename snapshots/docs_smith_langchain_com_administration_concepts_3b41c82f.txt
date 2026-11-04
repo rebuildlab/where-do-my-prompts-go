@@ -663,7 +663,7 @@ endpoint has additional per-tenant rate limits based on query parameters. See
 Query traces using the SDK
 for details.
 ​
-Handling 429s responses in your application
+Handle 429 responses in your application
 Since some 429 responses are temporary and may succeed on a successive call, if you are directly calling the LangSmith API in your application we recommend implementing retry logic with exponential backoff and jitter.
 For convenience, LangChain applications built with the LangSmith SDK has this capability built-in.
 It is important to note that if you are saturating the endpoints for extended periods of time, retries may not be effective as your application will eventually run large enough backlogs to exhaust all retries.
@@ -697,7 +697,7 @@ add feedback to traces
 add runs to annotation queues
 Each of these features may cause an auto upgrade, so we shut them off when the limit is reached.
 ​
-Updating usage limits
+Update usage limits
 Usage limits can be updated from the
 Settings
 page under

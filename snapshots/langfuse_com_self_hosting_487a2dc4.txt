@@ -42,12 +42,14 @@ Scroll to explore →
 Web connections
 Worker connections
 Optional
-Each component links to its setup guide. The LLM API can also run in the same VPC or a peered VPC.
+Each component links to its setup guide. The optional AI gateway relays model requests from your apps and coding agents to your LLM providers and records them in Langfuse. LLM providers can also run in the same VPC or a peered VPC.
 View architecture components
 Langfuse consists of two application containers, storage components, and an optional LLM API/Gateway.
 Application Containers
 Langfuse Web: The main web application serving the Langfuse UI and APIs.
 Langfuse Worker: A worker that asynchronously processes events.
+Langfuse AI Gateway
+(optional, beta): Relays model requests from applications and coding agents to LLM providers and records them in Langfuse.
 Storage Components
 :
 Postgres
@@ -105,6 +107,7 @@ Langfuse supports many configuration options and self-hosted features.
 For more details, please refer to the
 configuration guide
 .
+AI Gateway (beta)
 Authentication & SSO
 Automated Access Provisioning
 Caching

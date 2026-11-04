@@ -4,7 +4,7 @@ api.anthropic.com
 Claude in Microsoft Foundry
 , and
 Claude Models on Google Cloud (Anthropic managed)
-, where Anthropic is the data processor. On Amazon Bedrock and Claude Models on Google Cloud (Google managed), the cloud provider is the data processor; refer to those platforms’ data retention and compliance documentation for their equivalent controls.
+, where Anthropic is the data processor. On Claude Models on Google Cloud (Google managed) and Amazon Bedrock, the cloud provider is the data processor; refer to those platforms’ data retention and compliance documentation for their equivalent controls.
 Anthropic offers two data handling arrangements for the Claude API:
 zero data retention (ZDR)
 and
@@ -38,6 +38,9 @@ Zero data retention (ZDR)
 Under a ZDR arrangement, Anthropic does not store customer prompts or responses at rest after the API response is returned. To request ZDR for your organization, contact the
 Anthropic sales team
 . ZDR is enabled per organization; each new organization requires ZDR to be enabled separately by your account team, and enablement does not automatically extend to other organizations under the same account.
+Organizations with a ZDR arrangement cannot call the Claude API directly from a browser: the API rejects their cross-origin (CORS) requests. To call the API from a web application, send the requests from your own back end. See
+Browser-based applications
+.
 What ZDR covers
 Claude Messages and Token Counting APIs:
 ZDR applies to these endpoints for eligible features listed in the
@@ -61,7 +64,7 @@ Any usage in the Claude Console, including playground.
 Claude Managed Agents:
 Claude Managed Agents is a stateful resource; session transcripts persist until you delete them.
 Claude consumer products:
-Claude Free, Pro, Max, and Ultra plans, including when customers on those plans use Claude's web, desktop, or mobile apps or Claude Code.
+Claude Free, Pro, Max, and Ultra plans, including when customers on those plans use Claude’s web, desktop, or mobile apps or Claude Code.
 Claude Teams and Claude Enterprise product interfaces:
 These interfaces are not ZDR-eligible. The one exception is Claude Code on Claude Enterprise, which has its own ZDR offering, separate from the ZDR arrangement described on this page. That offering is available only to qualified accounts on Claude Enterprise and requires separate enablement by Anthropic. See the
 Claude Code ZDR documentation
@@ -74,10 +77,6 @@ Model-specific data retention requirements
 .
 Third-party integrations:
 Data processed by third-party websites, tools, or other integrations is not covered, though some may have similar offerings. Review each service’s data handling practices.
-Cross-Origin Resource Sharing (CORS):
-CORS is not supported for organizations with ZDR arrangements. To make API calls from browser-based applications, route requests through a backend proxy server. See the
-API security guidance
-for proxy patterns and API-key handling.
 Flagged content and legal holds:
 See
 Retention regardless of arrangement
@@ -608,7 +607,7 @@ Getting started with HIPAA readiness
 Anthropic sales team
 .
 Claude Models on Google Cloud (Anthropic managed)
-follows the same data retention policy as the first-party Claude API, and Anthropic is the data processor. ZDR is available there on request. On Amazon Bedrock and Claude Models on Google Cloud (Google managed), the cloud provider is the data processor; refer to those platforms’ data retention and compliance policies for their equivalent controls.
+follows the same data retention policy as the first-party Claude API, and Anthropic is the data processor. ZDR is available there on request. On Claude Models on Google Cloud (Google managed) and Amazon Bedrock, the cloud provider is the data processor; refer to those platforms’ data retention and compliance policies for their equivalent controls.
 Claude Platform on AWS follows the same data retention policy as the first-party Claude API. ZDR is available on request; contact your Anthropic account representative to enable it. HIPAA readiness is not available on Claude Platform on AWS. See
 Claude Platform on AWS
 for details.

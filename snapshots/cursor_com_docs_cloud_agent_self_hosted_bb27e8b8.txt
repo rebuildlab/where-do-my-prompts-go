@@ -74,7 +74,7 @@ cloud-agent-artifacts.s3.us-east-1.amazonaws.com
 only when the agent's store isn't available, so blocking
 cloud-agent-artifacts
 alone doesn't stop uploads. Blocking both only prevents artifacts from uploading. The agent continues to work, including tool calls and results, but its artifacts won't appear in pull requests or the dashboard.
-You can connect up to 200 workers per user and 1000 per team. For
+You can connect up to 10,000 workers per user and 10,000 per team. For
 larger company-wide deployments,
 contact
 us
