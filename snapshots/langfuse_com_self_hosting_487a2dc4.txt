@@ -38,11 +38,38 @@ GitHub issues
 Architecture
 Langfuse only depends on open source components and can be deployed locally, on cloud infrastructure, or on-premises.
 Deployment architecture
-Scroll to explore →
+Apps & agents
+UI, API & SDKs
+Model requests → AI Gateway
+Requests → Langfuse Web
+VPC / on-premises
+AI Gateway
+Optional · beta
+langfuse/ai-gateway
+Resolve · traces
+Langfuse Web
+UI & API server
+langfuse/langfuse
+Web connections
+PostgreSQL
+Transactional data
+Redis / Valkey
+Cache & job queue
+ClickHouse
+Observability data
+S3 / Blob storage
+Events & attachments
+Background processing
+Langfuse Worker
+Async event processing
+langfuse/worker
+Playground · evaluations
+LLM providers
+Optional · bring your own
 Web connections
 Worker connections
 Optional
-Each component links to its setup guide. The optional AI gateway relays model requests from your apps and coding agents to your LLM providers and records them in Langfuse. LLM providers can also run in the same VPC or a peered VPC.
+The optional AI gateway relays model requests from your apps and coding agents to your LLM providers and records them in Langfuse. LLM providers can also run in the same VPC or a peered VPC.
 View architecture components
 Langfuse consists of two application containers, storage components, and an optional LLM API/Gateway.
 Application Containers

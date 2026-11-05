@@ -4,11 +4,9 @@ Trust center
 is the central resource for information about Braintrust’s security practices, certifications, and policies. It provides up-to-date details for customers and partners.
 ​
 Deployment options
-In addition to SaaS, where Braintrust operates both the control plane and the data plane, Braintrust offers deployment options that keep your sensitive AI data within your own cloud account while you continue to use Braintrust’s managed UI and platform features. With
+Braintrust offers two deployment options. With SaaS, Braintrust operates both the control plane and the data plane in Braintrust-managed infrastructure. With
 BYOC
-, Braintrust operates the data plane in your cloud. With
-self-hosting
-, your team operates it. See
+, Braintrust operates the data plane in your own cloud account, so your sensitive AI data stays there while you continue to use Braintrust’s managed UI and platform features. See
 Deployment options
 for a comparison.
 ​
@@ -67,16 +65,16 @@ to control how long records are kept.
 ​
 Data encryption
 All data is encrypted at rest and in transit. LLM provider API keys and secrets are encrypted using AES-256 with unique 256-bit keys and nonces. For
-self-hosted deployments
-, you control encryption keys through your cloud provider’s key management system (AWS KMS, Google Cloud KMS, Azure Key Vault).
+BYOC deployments
+, you control the encryption keys in your own cloud account.
 For supported providers, you can avoid storing a long-lived provider credential altogether with
 workload identity federation
 , where Braintrust exchanges a short-lived OIDC token for a provider access token at request time.
 ​
 Network security
-The data plane runs in an isolated VPC with no access to internal infrastructure (hosted) or in your own VPC (self-hosted).
+The data plane runs in an isolated VPC with no access to internal infrastructure (SaaS) or in your own cloud account (BYOC).
 Custom code functions
-can execute in quarantined VPCs on AWS deployments. Self-hosted deployments support firewall and VPN deployment for additional security. SDKs and browser UI communicate directly with your data plane via CORS — no customer data flows through Braintrust’s control plane. Self-hosted deployments can access private network resources like internal LLM models, proprietary tools, and private databases. See
+can execute in quarantined VPCs on AWS deployments. SDKs and browser UI communicate directly with your data plane via CORS — no customer data flows through Braintrust’s control plane. See
 Architecture
 for details.
 ​
@@ -140,11 +138,9 @@ For self-hosted deployments on GCP and Azure, custom code runs in the same proce
 ​
 Data residency and retention
 BYOC
-and
-self-hosted
 deployments keep all sensitive data (experiment logs, traces, datasets, prompts) within your cloud account and region for regulatory compliance. Configure
 automated retention policies
-to delete logs, experiments, or datasets after specified periods (e.g., 7-day retention for development, 90-day retention for production, 180-day retention for experiments). For self-hosted deployments v1.1.21+, data is soft-deleted with a 24-hour grace period before permanent removal.
+to delete logs, experiments, or datasets after specified periods (e.g., 7-day retention for development, 90-day retention for production, 180-day retention for experiments).
 Export to cloud storage
 periodically with JSON Lines or Parquet formats, or export on-demand via API in JSON/Parquet for entire projects or organizations.
 When
@@ -170,7 +166,7 @@ contact Braintrust
 ​
 GDPR
 For GDPR compliance requirements, Braintrust can execute Data Processing Agreements (DPAs) to satisfy certain data processing obligations. However, for full GDPR compliance, organizations should use a
-BYOC or self-hosted deployment
+BYOC deployment
 with data residency in the EU.
 To discuss your specific GDPR requirements,
 contact Braintrust

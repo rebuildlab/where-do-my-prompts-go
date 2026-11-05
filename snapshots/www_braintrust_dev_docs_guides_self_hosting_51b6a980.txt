@@ -1,23 +1,40 @@
-Self-hosting
-is
-only available on the
-Enterprise plan
+Self-hosting is a legacy deployment option. Starting November 4, 2026, it isn’t available to new customers. These guides support organizations that already operate a self-hosted data plane. To keep data in your own cloud, see
+Bring your own cloud (BYOC)
 .
-Braintrust offers a self-hosted deployment option that separates data storage from platform management. You deploy and control the infrastructure that stores your sensitive AI data, while Braintrust provides the managed UI, authentication, and platform updates. This gives you full control over your data without the operational overhead of running the entire platform.
-If you want data residency in your own cloud without operating the data plane yourself, consider
-BYOC
-, where Braintrust operates the deployment. For a comparison of all deployment options, see
-Deployment options
-.
+A self-hosted deployment separates data storage from platform management. Your team deploys and operates the data plane that stores your sensitive AI data, while Braintrust provides the managed UI, authentication, and platform updates.
 ​
-Use cases
-Self-hosting is designed for organizations with specific requirements:
-Data residency and compliance
-: Meet regulatory or contractual obligations by keeping all customer data (experiment logs, traces, datasets, and prompts) within your own cloud account and region.
-Security posture and isolation
-: Deploy the data plane behind your firewall or VPN, using your own IAM policies, KMS encryption keys, and audit trails. This ensures sensitive data never traverses external networks.
-Access to private resources
-: Connect to internal LLM models, proprietary tools, or private APIs that are not accessible from the public internet. The data plane runs within your network and can access resources in your VPC or private network.
+Self-hosting guides
+Deploy
+Architecture
+: Understand the control plane, data plane, and where data is stored.
+Deploy Braintrust
+: Deploy the data plane on AWS, GCP, or Azure.
+CloudFormation
+: Manage a legacy AWS CloudFormation deployment.
+Configure
+Configure your deployment
+: Review the settings available after deployment.
+Security and access
+: Restrict organization access, secure customer data, and harden pods.
+Networking and connectivity
+: Configure URLs, rate limits, load balancers, and network access paths.
+Scaling and storage
+: Size API and Brainstore compute.
+Self-host the Braintrust Gateway
+: Deploy the Gateway in your data plane.
+Loop runtime
+: Run Loop threads in isolated sandboxes on AWS or GCP.
+Telemetry and data retention
+: Control telemetry and enable data retention.
+Upgrade
+Upgrade your deployment
+: Follow the routine upgrade process.
+Upgrade to data plane v2.x
+: Migrate to the data plane v2 series.
+Upgrade to Terraform module v6
+: Move AWS API traffic from Lambda to ECS.
+Upgrade to Terraform module v7
+: Route AWS API traffic to ECS and deploy the Gateway by default.
 ​
 How it works
 Braintrust’s architecture has two main components:

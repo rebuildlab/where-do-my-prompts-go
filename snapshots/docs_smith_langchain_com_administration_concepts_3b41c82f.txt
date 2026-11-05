@@ -1,18 +1,22 @@
-This overview covers topics related to managing users, organizations, workspaces, agents, and applications within LangSmith.
+This overview covers topics related to managing users, organizations, workspaces, and agents within LangSmith.
 ​
 Resource hierarchy
 LangSmith organizes access and data in four levels. An
 organization
 contains workspaces. Each
 workspace
-contains agents or applications.
-Agents and applications
-group the
+contains agents.
+Agents
+organize your traces by environment and group the
 resources
-you work with, such as tracing projects and datasets.
+you work with, such as datasets and prompts.
+Self-hosted LangSmith groups resources by application instead of agent. For details, see
+Self-hosted workspaces
+.
+The following diagram shows the relationship between organizations, workspaces, agents, environments, and resources:
 ​
 Organizations
-An organization is a logical grouping of users within LangSmith that defines shared settings applying across all of its workspaces. These settings govern organization-wide concerns rather than individual projects within a workspace. Common organization-level configurations include user management, single sign-on (SSO), OAuth provider configuration, custom role creation, billing, and usage tracking.
+An organization is a logical grouping of users within LangSmith that defines shared settings applying across all of its workspaces. These settings govern organization-wide concerns rather than the agents and resources within a workspace. Common organization-level configurations include user management, single sign-on (SSO), OAuth provider configuration, custom role creation, billing, and usage tracking.
 Typically, there is one organization per company. An organization can have multiple workspaces. For configuration details, see
 Set up an organization
 .
@@ -34,75 +38,65 @@ All other plans available
 ​
 Workspaces
 Workspaces were formerly called Tenants. Some code and APIs may still reference the old name for a period of time during the transition.
-A workspace is a logical grouping of users and
+A workspace is a logical grouping of users, agents, and
 resources
-within an organization. Workspaces are commonly used to isolate business units, providing separation between projects and their associated resources.
-A workspace separates trust boundaries for resources and access control. Users are granted permissions at the workspace level, which determine their access to resources in that workspace, including tracing projects, datasets, annotation queues, and prompts. To configure one, see
+within an organization. Workspaces are commonly used to isolate business units, so each unit’s agents and resources stay separate from other units’.
+A workspace separates trust boundaries for resources and access control. Users are granted permissions at the workspace level, which determine their access to resources in that workspace, including datasets, annotation queues, and prompts. To configure one, see
 Set up a workspace
 . For details on permissions, see
 Workspace roles
 .
-We recommend creating a separate workspace for each team within your organization. To organize resources even further, you can group them within a workspace by
-agent or application
-, depending on which information architecture your workspace uses.
+Create a separate workspace for each team within your organization. To organize resources even further, you can group them within a workspace by
+agent
+.
 For guidance on different workspace organization models based on your team’s isolation requirements, refer to
 Workload isolation
 .
 ​
-Agents and applications
-Agents and applications are logical groupings of resources within a workspace, one level below the workspace itself. The grouping keeps the UI organized by surfacing only the resources associated with the agent or application currently in context.
-What that grouping is called, and which control selects it, depends on which information architecture your workspace uses. The control at the top left tells you which one you are on:
-Agent-based workspaces
-call it an
+Agents
+An
 agent
-, and an agent’s traces divide further into
+is a logical grouping of resources within a workspace, one level below the workspace itself. The grouping keeps the UI organized by surfacing only the resources associated with the agent currently in context. An agent’s traces divide further into
 environments
-drawn from a fixed set of four. Select one from the agent picker in the top bar, or select
+drawn from a fixed set of four.
+Select an agent from the agent switcher in the top bar, or select
 All agents
-to see every resource in the workspace. For more information, see
+. For more information, see
 Navigate agents
 .
-Project-based workspaces
-call it an application, which can group any project within a team rather than an agent alone. Select one from the
-Application
-dropdown at the top of the sidebar in the
-LangSmith UI
-, or select
-All applications
-to see every resource in the workspace.
-Both are built on top of
-resource tags
-and can be used to control resource access using
-ABAC
-.
-Any resource can be created without being tagged to either one. Those resources are visible when all agents or applications are in view.
+LangSmith links traces to an agent through the agent’s environments, and links datasets, prompts, annotation queues, and deployments to an agent with the reserved
+Agent
+resource tag
+key.
+Tracing pages require you to select an agent. Datasets, prompts, annotation queues, and deployments can exist without an agent. Selecting
+All agents
+shows these unlinked resources along with every agent’s resources. Selecting a specific agent shows only that agent’s resources.
 ​
 Resources
-Resources are the concrete entities used to build, run, and observe applications and agents. Examples include
-tracing projects
-,
+Resources are the concrete entities used to build, run, and observe agents. Examples include
 prompts
 ,
 datasets
+,
+annotation queues
 , and
 deployments
-. Resources are scoped to a specific agent or application.
+. Resources can be scoped to a specific agent.
 ​
 Where settings live
-The following diagram shows the relationship between organizations, workspaces, agents or applications, and resources:
 See the table below for details on which features are available in which scope(s):
 Resource/Setting
 Scope
 Trace Projects
-Workspace or agent/application
+Workspace or agent
 Annotation Queues
-Workspace or agent/application
+Workspace or agent
 Deployments
-Workspace or agent/application
+Workspace or agent
 Datasets & Experiments
-Workspace or agent/application
+Workspace or agent
 Prompts
-Workspace or agent/application
+Workspace or agent
 Resource Tags
 Workspace
 API Keys
@@ -144,6 +138,69 @@ LangSmith UI
 to select the
 Resource tags
 page in the sidebar.
+​
+Separate environments
+An environment is a stage in your release process, such as development, staging, or production. Agents have environments built in, drawn from a fixed set of four. An
+agent
+divides its traces across them, so no tagging convention is required. For more information, see
+Agent environments
+.
+Self-hosted LangSmith separates environments with resource tags instead. For details, see
+Self-hosted workspaces
+.
+In either case, avoid using separate workspaces for environment separation, because resources cannot be shared across workspaces, which prevents you from promoting resources such as prompts between environments.
+Resource tags vs. commit tags for prompt management
+While both types of tags can use environment terminology like
+dev
+,
+staging
+, and
+prod
+, they serve different purposes:
+Resource tags
+(
+Environment: prod
+): Use these to
+organize
+resources across your workspace. Apply resource tags to tracing projects, datasets, and other resources (including prompts) to group them by environment.
+Commit tags
+(
+prod
+tag): Use these to manage which
+prompt version
+your code references. Commit tags are labels that point to specific commits in a prompt’s history. When your code pulls a prompt by tag name (e.g.,
+client.pull_prompt("prompt-name:prod")
+), it retrieves whichever commit that tag currently points to. To promote a prompt from
+staging
+to
+prod
+, move the commit tag to point to the desired version.
+Resource tags organize
+which resources
+belong to an environment. Commit tags let you control
+which version
+of a prompt your code references without changing the code itself.
+​
+Self-hosted workspaces
+Self-hosted LangSmith uses project-based workspaces, which group resources by application rather than agent. An application can group any project within a team. Select one from the
+Application
+dropdown at the top of the sidebar, or select
+All applications
+to see every resource in the workspace.
+Project-based workspaces separate environments with
+resource tags
+: the default tag key
+Environment
+, with a different value per environment (for example,
+dev
+,
+staging
+,
+prod
+).
+To check which type of workspace you have, see
+How agent-based workspaces differ
+.
 ​
 Users and roles
 This section covers who can access LangSmith and what they can do: users, the three types of API keys, and the roles that grant permissions.
@@ -393,59 +450,6 @@ can also create and edit custom roles with specific permissions for different re
 To give a group of users a role in several workspaces at once, use
 teams
 .
-​
-Separate environments
-An environment is a stage in your release process, such as development, staging, or production. How to separate environments depends on which information architecture your workspace uses:
-Agent-based workspaces
-have environments built in, drawn from a fixed set of four. An
-agent
-divides its traces across them, and every trace lands in one environment of one agent, so no tagging convention is required. For more information, see
-Agent environments
-.
-Project-based workspaces
-use
-resource tags
-to organize resources by environment, with the default tag key
-Environment
-and a different value per environment (for example,
-dev
-,
-staging
-,
-prod
-).
-In either case, avoid using separate workspaces for environment separation, because resources cannot be shared across workspaces, which prevents you from promoting resources such as prompts between environments.
-Resource tags vs. commit tags for prompt management
-While both types of tags can use environment terminology like
-dev
-,
-staging
-, and
-prod
-, they serve different purposes:
-Resource tags
-(
-Environment: prod
-): Use these to
-organize
-resources across your workspace. Apply resource tags to tracing projects, datasets, and other resources (including prompts) to group them by environment.
-Commit tags
-(
-prod
-tag): Use these to manage which
-prompt version
-your code references. Commit tags are labels that point to specific commits in a prompt’s history. When your code pulls a prompt by tag name (e.g.,
-client.pull_prompt("prompt-name:prod")
-), it retrieves whichever commit that tag currently points to. To promote a prompt from
-staging
-to
-prod
-, move the commit tag to point to the desired version.
-Resource tags organize
-which resources
-belong to an environment. Commit tags let you control
-which version
-of a prompt your code references without changing the code itself.
 ​
 Usage and billing
 ​
@@ -750,7 +754,7 @@ to your workspace-wide and plan limits. A trace must be within every applicable 
 Per-user limits count only traces attributed to a specific workspace member. Traces sent with an API key or service key that isn’t tied to a member are not counted toward a per-user limit.
 Limit values are cached, so it may take a minute or two before a new or changed limit applies.
 ​
-Additional resources
+See also
 Release policy
 : Learn about the self-hosted release channels, cadence, and version numbering.
 Connect these docs

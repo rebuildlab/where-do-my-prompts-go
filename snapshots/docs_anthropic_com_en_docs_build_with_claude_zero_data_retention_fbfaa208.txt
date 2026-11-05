@@ -1,9 +1,9 @@
 This page covers the Claude API (
 api.anthropic.com
 ), Claude Platform on AWS,
-Claude in Microsoft Foundry
-, and
 Claude Models on Google Cloud (Anthropic managed)
+, and
+Claude in Microsoft Foundry
 , where Anthropic is the data processor. On Claude Models on Google Cloud (Google managed) and Amazon Bedrock, the cloud provider is the data processor; refer to those platforms’ data retention and compliance documentation for their equivalent controls.
 Anthropic offers two data handling arrangements for the Claude API:
 zero data retention (ZDR)
@@ -31,9 +31,11 @@ retains data for 6 years. Chat, file, and project content from claude.ai follows
 claude.ai > Organization settings > Data and privacy
 , unless a user deletes it sooner.
 Local session transcripts
-(from sessions on users’ machines, in apps such as Cowork and Claude Code) are stored for 6 years by default, or for your organization’s custom conversation retention period when a finite one is set (the same claude.ai setting).
+come from sessions on users’ machines, in apps such as Cowork and Claude Code. These transcripts are stored for 6 years by default, or for your organization’s custom conversation retention period when a finite one is set (the same claude.ai setting).
 Remote session transcripts
-(Cowork in the cloud) are retained for 6 years, unless a user deletes the session sooner. The Compliance API does not capture local sessions for which ZDR is in effect. For organizations with HIPAA readiness enabled, it captures Cowork and Claude Code local sessions only and stores their transcripts for 30 days.
+(Cowork in the cloud and Claude Tag) have no default retention period. See
+Retention and deletion
+. The Compliance API does not capture local sessions for which ZDR is in effect. For organizations with HIPAA readiness enabled, it captures Cowork and Claude Code local sessions only and stores their transcripts for 30 days.
 Zero data retention (ZDR)
 Under a ZDR arrangement, Anthropic does not store customer prompts or responses at rest after the API response is returned. To request ZDR for your organization, contact the
 Anthropic sales team
@@ -581,7 +583,7 @@ feature eligibility table
 legend for what “Yes (qualified)” means and
 How Anthropic approaches data retention
 for the commitments that govern these features.
-Nothing blocks the request. Features marked “No” for ZDR are fundamentally stateful: the Batch API stores your jobs, the Files API stores your files, and code execution runs in persistent containers. Data for these features is retained per the feature’s documented policy. Using them is a choice to step outside your ZDR arrangement for that specific data.
+Nothing blocks the request. Features marked “No” for ZDR are fundamentally stateful: the Batch API stores your jobs, the Files API stores your files, and code execution runs in persistent containers. Data for these features is retained according to the feature’s documented policy. Using them is a choice to step outside your ZDR arrangement for that specific data.
 Contact your Anthropic account representative to discuss deletion options for non-ZDR features.
 ZDR prevents customer data from being stored at rest after the API response is returned. HIPAA readiness involves a broader set of privacy and security safeguards that protect PHI throughout its lifecycle, including encryption, access controls, and audit logging. Under HIPAA readiness, data can be retained with these safeguards in place rather than requiring immediate deletion. The two arrangements cover different feature sets; see the
 feature eligibility table
@@ -631,5 +633,6 @@ Structured outputs
 Prompt caching
 Batch processing
 Files API reference
+Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.
 Trust Center
 Was this page helpful?

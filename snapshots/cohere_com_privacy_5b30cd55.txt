@@ -22,6 +22,11 @@ Compass
 Intelligent search and discovery
 Model Vault
 Dedicated model inference platform
+North Capabilities
+Agents
+Automations
+Skills
+Libraries
 Models
 Command
 Generative language models
@@ -130,6 +135,11 @@ Compass
 Intelligent search and discovery
 Model Vault
 Dedicated model inference platform
+North Capabilities
+Agents
+Automations
+Skills
+Libraries
 Models
 Command
 Generative language models

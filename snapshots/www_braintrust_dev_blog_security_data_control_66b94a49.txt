@@ -23,11 +23,11 @@ Flexible deployment models
 Braintrust supports multiple deployment options to meet you where you are:
 Fully managed SaaS
 : Fast onboarding with enterprise-grade security. SOC 2 Type II certified, HIPAA compliant, with all data encrypted in transit and at rest. Comprehensive access controls and regular security audits. Customer data is hosted in AWS, with regional choice including the EU.
-Hybrid deployment
-: The best of both worlds for teams with strict data residency or compliance requirements. Hybrid deployment addresses the specific needs of security-conscious organizations.
-Hybrid architecture: security by design
+Bring your own cloud (BYOC)
+: Braintrust operates the data plane in your own cloud account for teams with strict data residency or compliance requirements.
+BYOC architecture: security by design
 Braintrust's
-hybrid deployment model
+BYOC deployment model
 separates the
 control plane
 (UI,
@@ -35,20 +35,19 @@ metadata
 , authentication) from the
 data plane
 (your actual AI data). Here's what that means for security:
-Your data plane lives entirely in your environment.
-All
-experiment
+Your data plane lives in your cloud account.
+Experiment
 logs
-, traces, datasets, prompts, completions, and customer inputs stay within your VPC or on-premises infrastructure. Braintrust's servers never store or proxy this sensitive data.
+, traces, datasets, prompts, completions, and customer inputs are stored in your account. Features you enable can send data to external destinations, such as model providers or export storage.
 The control plane handles only metadata.
-Braintrust manages the web UI, authentication (via Clerk), and lightweight metadata like project names and API key hashes. Zero AI data transits through our infrastructure.
-You get SaaS convenience with on-prem control.
-Instant UI updates and new features without manually upgrading anything, while your sensitive data remains behind your firewall or VPN.
+Braintrust manages the web UI, authentication (via Clerk), and lightweight metadata like project names and API key hashes. It doesn't store or process the contents of your data-plane records.
+You get SaaS convenience with control over your cloud account.
+Braintrust deploys, upgrades, monitors, and repairs the data-plane services. You control the account, network, encryption keys, audit logs, and organization policies.
 Use cases that matter
 1. Built-in data masking
 Configure global masking functions to automatically redact PII (emails, phone numbers, SSNs) before logging data. Masking applies to inputs, outputs, metadata, and context fields, ensuring sensitive information never leaves your environment unprotected.
 2. Your sensitive data stays with you
-Deploy behind your firewall with your own identity access management policies, encryption key management, and audit trails. Use VPC peering, private networking, or complete air-gapping. The control plane never requires network access to your data plane; all browser and SDK requests go directly to your infrastructure via CORS.
+With BYOC, your sensitive AI data is stored and processed in your own cloud account. Browser and SDK requests go directly to your data plane, while you continue to use Braintrust's managed UI and platform features.
 3. Braintrust does not train on your data
 Braintrust's AI assistant,
 Loop
@@ -67,16 +66,11 @@ Trust Center
 : Access SOC 2 reports, security controls, and compliance documentation
 Security documentation
 : Detailed technical security architecture and policies
-Hybrid deployment guide
-: Deep dive into our architecture and data flow
-Terraform modules
-: Deploy with official infrastructure-as-code templates for
-AWS
-,
-GCP
-, and
-Azure
-Hybrid deployment gives you enterprise-grade security and complete data control, with the speed and innovation of a modern SaaS platform. Companies like Notion, Stripe, Zapier, Ramp, and Coursera trust Braintrust to handle their most sensitive AI workloads.
+Deployment options
+: Compare data residency and operational responsibilities
+BYOC guide
+: Review how Braintrust operates the data plane in your cloud account
+Companies like Notion, Stripe, Zapier, and Coursera trust Braintrust to handle their most sensitive AI workloads.
 Ready to evaluate Braintrust? Start with our
 Trust Center
 or reach out at

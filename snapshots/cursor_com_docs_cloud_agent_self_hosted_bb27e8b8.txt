@@ -22,7 +22,7 @@ Cloudflare Tunnel
 ).
 You have custom hardware, such as GPU machines or Macs for iOS development. Use a machine you already run, or a VM from a
 partner host
-such as AWS Lambda, Cloudflare, Namespace, Modal, Daytona, E2B, Vercel, Tensorlake, or Superserve.
+such as AWS Lambda, Cloudflare, Namespace, Modal, Daytona, E2B, Vercel, Tensorlake, Superserve, or Render.
 You have custom images, such as a different operating system or an existing build pipeline, that are difficult to save as a
 Cloud Agent build
 .
@@ -267,7 +267,7 @@ in your cluster and creates one worker Pod per claimed request, or keeps warm Po
 Integrations
 .
 Partner hosts and templates.
-Run pool workers on AWS Lambda, Cloudflare, Namespace, Modal, Daytona, E2B, Vercel, Tensorlake, Coder, or Superserve with partner guides, or clone a Cursor reference template for AWS Lambda MicroVMs, Cloudflare Containers, or Kubernetes. See
+Run pool workers on AWS Lambda, Cloudflare, Namespace, Modal, Daytona, E2B, Vercel, Tensorlake, Coder, Superserve, or Render with partner guides, or clone a Cursor reference template for AWS Lambda MicroVMs, Cloudflare Containers, or Kubernetes. See
 Integrations
 .
 Deployment guides, partner guides, and templates are reference architectures. You own the worker image, infrastructure, secrets, scaling policy, and production validation.
@@ -335,7 +335,7 @@ Team Pools
 scale worker capacity
 with a controller.
 Integrations
-: partner guides for AWS Lambda, Cloudflare, Namespace, Modal, Daytona, E2B, Vercel, Tensorlake, Coder, and Superserve, and reference templates for AWS Lambda MicroVMs, Cloudflare Containers, and Kubernetes (
+: partner guides for AWS Lambda, Cloudflare, Namespace, Modal, Daytona, E2B, Vercel, Tensorlake, Coder, Superserve, and Render, and reference templates for AWS Lambda MicroVMs, Cloudflare Containers, and Kubernetes (
 anysphere/k8s-workers
 ).
 Computer use
