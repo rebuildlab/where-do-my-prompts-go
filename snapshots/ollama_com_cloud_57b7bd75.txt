@@ -60,6 +60,10 @@ Model
 Input
 Cached input
 Output
+beam
+$0.125
+$0.015
+$0.40
 clef
 $0.24
 -

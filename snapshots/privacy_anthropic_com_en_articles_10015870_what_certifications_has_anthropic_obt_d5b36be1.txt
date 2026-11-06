@@ -1,5 +1,5 @@
 What Certifications has Anthropic obtained?
-Updated this week
+Updated over a week ago
 This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max, Ultra, and when accounts from those plans use Claude Code, see
 here
 .
@@ -14,7 +14,7 @@ Trust Portal
 Related Articles
 Business Associate Agreements (BAA) for Commercial Customers
 I have a zero data retention agreement with Anthropic. What products does it apply to?
+What Cookies Does Anthropic Use?
 Does Anthropic Act as a Data Processor or Controller?
 How does Anthropic protect the personal data of Claude users?
-Anthropic Interviewer sessions completed after September 29, 2026
 Did this answer your question?

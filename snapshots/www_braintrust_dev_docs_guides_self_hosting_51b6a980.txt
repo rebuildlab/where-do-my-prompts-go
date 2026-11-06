@@ -1,9 +1,14 @@
-Self-hosting is a legacy deployment option. Starting November 4, 2026, it isn’t available to new customers. These guides support organizations that already operate a self-hosted data plane. To keep data in your own cloud, see
+These guides support organizations that already operate a self-hosted data plane. For new organizations looking to keep data in your own cloud, see
 Bring your own cloud (BYOC)
 .
 A self-hosted deployment separates data storage from platform management. Your team deploys and operates the data plane that stores your sensitive AI data, while Braintrust provides the managed UI, authentication, and platform updates.
 ​
 Self-hosting guides
+Releases and availability
+Self-hosting releases
+: Review release notes and the minimum Terraform or Helm version for each data plane version.
+Feature availability
+: Find the data plane version each feature requires and which features each cloud supports.
 Deploy
 Architecture
 : Understand the control plane, data plane, and where data is stored.
@@ -169,6 +174,8 @@ to get started.
 Upgrades
 Braintrust ships new data plane versions 1-2 times per month. You can find the details of each release on the
 Self-hosting releases
+page. To check which data plane version a feature requires, see
+Feature availability
 .
 Braintrust recommends upgrading each time a new version is published.
 New features often depend on data plane changes, and when they do, Braintrust will automatically gate those features until you upgrade.
