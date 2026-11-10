@@ -49,15 +49,12 @@ cloud architecture reference
 for details.
 ​
 How can I see my organization’s region?
-Check your URL - organizations on
-https://smith.langchain.com
-are in GCP US, organizations on
-https://eu.smith.langchain.com
-are in GCP EU, organizations on
-https://apac.smith.langchain.com
-are in GCP APAC, and organizations on
-https://aws.smith.langchain.com
-are in AWS US.
+Open the LangSmith UI, and check the hostname in your browser’s address bar. Each region has its own hostname:
+Region
+GCP US
+GCP EU
+GCP APAC
+AWS US
 ​
 Can I switch my organization between regions?
 We do not support migration between regions at this time, but if you are interested in this feature, please contact support via

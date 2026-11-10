@@ -2,16 +2,20 @@ Ai coding agent
 GitHub Copilot
 Move from a single task to a project spanning repositories without losing context. Bring in the tools you use, automate recurring work, and decide what ships.
 Download for macOS (Silicon)
+GitHub Copilot App download options
 See plans & pricing
 GitHub Copilot
 GitHub Copilot Desktop App
 Download for macOS (Silicon)
+GitHub Copilot App download options
 GitHub Copilot CLI
 Install in CLI
+Copilot CLI install options
 Install in CLI
 GitHub Copilot in Visual Studio Code
 Open in
 Visual Studio Code
+Open in IDE
 Open in VS Code
 More ways to get started with GitHub Copilot
 Open a Copilot session with the task, discussion, and repository context already connected.

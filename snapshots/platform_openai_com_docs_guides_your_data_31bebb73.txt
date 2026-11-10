@@ -580,6 +580,9 @@ Support by region
 to compare regional capabilities and expand the services available in each region. Use
 API Endpoint, tool and model support
 for complete model lists and a detailed service view. Support for regional storage does not imply support for regional processing.
+In Australia, India, and Japan, organizations with active Zero Data Retention can use
+gpt-6-luna
+for regional processing. These regions support Standard pay-as-you-go only. Use a project in the selected region. The Responses and Chat Completions APIs support text and image inputs and text output. Hosted tools are unavailable for regional processing in these three regions.
 Fast mode supports EU data residency for GPT-6.1 Sol, GPT-6.1 Terra, and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra or GPT-6 Sol. GPT-6.1 Sol, GPT-6.1 Terra, GPT-6 Sol, and GPT-6 Luna support EU data residency with Standard, Flex, and Batch processing.
 Ultrafast mode
 for GPT-6.1 Sol supports US and EU data residency and global processing. GPT-6 Astra Ultrafast supports US data residency and global processing only.
@@ -632,14 +635,17 @@ Text, Audio, Voice, Image
 Storage
 Yes
 Processing
-No
+Yes
 Requires MAM or ZDR
+***
 /v1/audio/transcriptions, /v1/audio/translations, /v1/audio/speech
 Storage
 /v1/batches
 Storage
 /v1/chat/completions
 Storage
+Processing
+gpt-6-luna
 Canada
 ca.api.openai.com
 Text, Audio, Voice, Image
@@ -662,14 +668,17 @@ Text, Audio, Voice, Image
 Storage
 Yes
 Processing
-No
+Yes
 Requires MAM or ZDR
+***
 /v1/audio/transcriptions, /v1/audio/translations, /v1/audio/speech
 Storage
 /v1/batches
 Storage
 /v1/chat/completions
 Storage
+Processing
+gpt-6-luna
 India
 in.api.openai.com
 Text, Audio, Voice, Image
@@ -677,14 +686,17 @@ Text, Audio, Voice, Image
 Storage
 Yes
 Processing
-No
+Yes
 Requires MAM or ZDR
+***
 /v1/audio/transcriptions, /v1/audio/translations, /v1/audio/speech
 Storage
 /v1/batches
 Storage
 /v1/chat/completions
 Storage
+Processing
+gpt-6-luna
 Singapore
 sg.api.openai.com
 Text, Audio, Voice, Image
@@ -798,11 +810,13 @@ Processing
 Australia
 au.api.openai.com
 Storage
+Processing
 Storage
 Yes
 Processing
-No
+Yes
 Requires MAM or ZDR
+***
 Modes:
 Text, Audio, Voice, Image
 *
@@ -813,6 +827,8 @@ Storage
 Storage
 /v1/chat/completions
 Storage
+Processing
+gpt-6-luna
 Canada
 ca.api.openai.com
 Storage
@@ -834,11 +850,13 @@ Storage
 Japan
 jp.api.openai.com
 Storage
+Processing
 Storage
 Yes
 Processing
-No
+Yes
 Requires MAM or ZDR
+***
 Modes:
 Text, Audio, Voice, Image
 *
@@ -849,14 +867,18 @@ Storage
 Storage
 /v1/chat/completions
 Storage
+Processing
+gpt-6-luna
 India
 in.api.openai.com
 Storage
+Processing
 Storage
 Yes
 Processing
-No
+Yes
 Requires MAM or ZDR
+***
 Modes:
 Text, Audio, Voice, Image
 *
@@ -867,6 +889,8 @@ Storage
 Storage
 /v1/chat/completions
 Storage
+Processing
+gpt-6-luna
 Singapore
 sg.api.openai.com
 Storage
@@ -949,6 +973,7 @@ snapshot
 gpt-5.2-2025-12-11
 * Image support in these regions requires approval for enhanced Zero Data Retention or enhanced Modified Abuse Monitoring.
 ** Requires Zero Data Retention, Modified Abuse Monitoring, Private Retention with PSP, or Safety Retention.
+*** Regional processing in Australia, India, and Japan requires active Zero Data Retention (ZDR). Modified Abuse Monitoring (MAM) alone is insufficient.
 API Endpoint, tool and model support
 Filter by service, endpoint, tool, or model snapshot.
 Filter endpoint support by service
@@ -1598,8 +1623,8 @@ Supported input modalities
 Australia*
 au.api.openai.com
 Yes
-No
 Yes
+Yes***
 Text, Audio, Voice, Image
 /v1/audio/transcriptions, /v1/audio/translations, /v1/audio/speech
 /v1/batches
@@ -1622,7 +1647,14 @@ Remote MCP server tool
 Scale Tier
 Structured Outputs (excluding schema)
 Supported input modalities
-None
+/v1/chat/completions
+(
+gpt-6-luna
+)
+/v1/responses
+(
+gpt-6-luna
+)
 Canada*
 ca.api.openai.com
 Yes
@@ -1654,8 +1686,8 @@ None
 Japan*
 jp.api.openai.com
 Yes
-No
 Yes
+Yes***
 Text, Audio, Voice, Image
 /v1/audio/transcriptions, /v1/audio/translations, /v1/audio/speech
 /v1/batches
@@ -1678,12 +1710,19 @@ Remote MCP server tool
 Scale Tier
 Structured Outputs (excluding schema)
 Supported input modalities
-None
+/v1/chat/completions
+(
+gpt-6-luna
+)
+/v1/responses
+(
+gpt-6-luna
+)
 India*
 in.api.openai.com
 Yes
-No
 Yes
+Yes***
 Text, Audio, Voice, Image
 /v1/audio/transcriptions, /v1/audio/translations, /v1/audio/speech
 /v1/batches
@@ -1706,7 +1745,14 @@ Remote MCP server tool
 Scale Tier
 Structured Outputs (excluding schema)
 Supported input modalities
-None
+/v1/chat/completions
+(
+gpt-6-luna
+)
+/v1/responses
+(
+gpt-6-luna
+)
 Singapore*
 sg.api.openai.com
 Yes
@@ -1842,6 +1888,7 @@ gpt-5.2-2025-12-11
 )
 * Image support in these regions requires approval for enhanced Zero Data Retention or enhanced Modified Abuse Monitoring.
 ** Requires Zero Data Retention, Modified Abuse Monitoring, Private Retention with PSP, or Safety Retention.
+*** Regional processing in Australia, India, and Japan requires active Zero Data Retention (ZDR). Modified Abuse Monitoring (MAM) alone is insufficient.
 API Endpoint, tool and model support
 Endpoint or feature
 Service
@@ -1947,7 +1994,7 @@ GPT-6.1 Sol, GPT-6.1 Terra, GPT-6 Sol, and GPT-6 Luna support EU data residency 
 /v1/chat/completions
 Chat Completions
 All listed regions
-United States, Europe (EEA + Switzerland), United Arab Emirates
+United States, Europe (EEA + Switzerland), United Arab Emirates, Australia, India, Japan
 gpt-6-astra
 ,
 gpt-6.1-sol
@@ -2013,6 +2060,8 @@ gpt-5.6-luna
 gpt-5.5-2026-04-23
 ,
 gpt-5.2-2025-12-11
+Australia, India, Japan:
+gpt-6-luna
 Fast mode supports EU data residency for GPT-6.1 Sol, GPT-6.1 Terra, and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra or GPT-6 Sol. GPT-6.1 Sol and GPT-6.1 Terra support only US and EU data residency.
 /v1/decisions
 Decisions
@@ -2150,7 +2199,7 @@ None
 /v1/responses
 Responses
 All listed regions
-United States, Europe (EEA + Switzerland), United Arab Emirates
+United States, Europe (EEA + Switzerland), United Arab Emirates, Australia, India, Japan
 gpt-6-astra
 ,
 gpt-6.1-sol
@@ -2230,6 +2279,8 @@ gpt-5.6-luna
 gpt-5.5-2026-04-23
 ,
 gpt-5.2-2025-12-11
+Australia, India, Japan:
+gpt-6-luna
 Fast mode supports EU data residency for GPT-6.1 Sol, GPT-6.1 Terra, and GPT-6 Luna. Fast mode is not available with EU data residency for GPT-6 Astra or GPT-6 Sol. GPT-6.1 Sol and GPT-6.1 Terra support only US and EU data residency.
 /v1/responses File Search
 Responses

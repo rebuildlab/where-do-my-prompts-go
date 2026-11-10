@@ -1,21 +1,27 @@
 AI & ML interests
 None defined yet.
 Recent Activity
-msr2000
-published
-a model
-24 days ago
+GeeeekExplorer
+new
+activity
+about 20 hours ago
+deepseek-ai/DeepSeek-V4.1-Flash
+:
+Sync the chat template with the 16 October encoding.py, make it load in llama.cpp and transformers.js, and add a response template
+GeeeekExplorer
+new
+activity
+about 20 hours ago
 deepseek-ai/DeepSeek-V4.1-Flash-1017
-msr2000
-updated
-a collection
-24 days ago
-DeepSeek-V4
-msr2000
-updated
-a model
-24 days ago
+:
+Add a response template
+GeeeekExplorer
+new
+activity
+about 20 hours ago
 deepseek-ai/DeepSeek-V4.1-Flash-1017
+:
+Add chat template
 View all activity
 Papers
 DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression
@@ -64,7 +70,7 @@ Updated
 Apr 27
 •
 •
-357
+358
 Text Generation
 •
 291B
@@ -126,7 +132,7 @@ Updated
 Apr 27
 •
 •
-357
+358
 Text Generation
 •
 291B
@@ -177,7 +183,7 @@ Image-Text-to-Text
 763B
 •
 Updated
-24 days ago
+about 20 hours ago
 •
 •
 •
@@ -186,7 +192,7 @@ Image-Text-to-Text
 763B
 •
 Updated
-25 days ago
+26 days ago
 •
 •
 •
@@ -242,7 +248,7 @@ Jul 4
 Updated
 Jun 28
 •
-583
+595
 •
 14
 2B
@@ -250,7 +256,7 @@ Jun 28
 Updated
 Jun 28
 •
-433
+431
 •
 4
 2B
@@ -258,7 +264,7 @@ Jun 28
 Updated
 Jun 28
 •
-773
+776
 •
 3
 View 106

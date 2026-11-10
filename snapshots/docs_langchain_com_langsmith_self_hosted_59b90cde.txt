@@ -63,7 +63,12 @@ standalone servers
 .
 ​
 Architecture
-A self-hosted LangSmith instance runs a set of application services backed by several storage services.
+A self-hosted LangSmith instance runs a set of application services backed by several storage services. When you enable
+SmithDB
+, its services run inside the application, and its metastore and object storage join the storage services.
+The diagram groups the backend, platform backend, queue, ingest queue, and Insights and Chat agents as backend services. The
+Services
+table describes each one.
 To access the LangSmith UI and send API requests, expose the
 LangSmith frontend
 service. Depending on your installation method, this can be a load balancer or a port exposed on the host machine.
@@ -84,12 +89,22 @@ LangSmith backend
 The backend is the main entrypoint for CRUD API requests and handles the majority of the business logic for the application. This includes handling requests from the frontend and SDK, preparing traces for ingestion, and supporting the hub API.
 LangSmith queue
 The queue handles incoming traces and feedback to ensure that they are ingested and persisted into the traces and feedback datastore asynchronously, handling checks for data integrity and ensuring successful insert into the datastore, handling retries in situations such as database errors or the temporary inability to connect to the database.
+LangSmith ingest queue
+The ingest queue is a worker that persists queued runs and feedback into the traces and feedback datastore. It also runs background tasks, such as backfills.
 LangSmith platform backend
 The platform backend is another critical service that primarily handles authentication, run ingestion, and other high-volume tasks.
 LangSmith Playground
 The Playground is a service that handles forwarding requests to various LLM APIs to support the Playground feature. This can also be used to connect to your own custom model servers.
 LangSmith ACE (Arbitrary Code Execution) backend
 The ACE backend is a service that handles executing arbitrary code in a secure environment. This is used to support running custom code within LangSmith.
+Insights and Chat agents
+The
+Insights
+and
+Chat
+agents run as separate deployments, each with its own bundled PostgreSQL and Redis. Both are enabled by default. See
+Configure Insights and Chat
+.
 ​
 Storage services
 LangSmith bundles all storage services by default. You can configure it to use external versions of all storage services. For production, use external storage services.
@@ -98,14 +113,18 @@ Description
 ClickHouse
 ClickHouse
 is a high-performance, column-oriented SQL database management system (DBMS) for online analytical processing (OLAP).
-LangSmith uses ClickHouse as the primary data store for traces and feedback (high-volume data).
+LangSmith uses ClickHouse as the primary data store for traces and feedback (high-volume data). On LangSmith 0.17 and later, a new installation can run
+SmithDB
+without ClickHouse.
 💡
 Connect to external ClickHouse
 SmithDB
 SmithDB is an optional columnar datastore built for agent trace data: deeply nested spans, multi-modal content, and spans that stay open for hours.
-SmithDB is available on LangSmith 0.17 and later.
+SmithDB is available on LangSmith 0.17 and later. It requires a dedicated PostgreSQL 18 or later database for its metastore and a dedicated object storage bucket, separate from the main PostgreSQL database and blob storage.
 💡
 Enable SmithDB
+-
+Prepare supporting infrastructure
 PostgreSQL
 PostgreSQL
 is a powerful, open source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated data workloads.

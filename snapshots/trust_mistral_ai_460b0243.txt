@@ -20,13 +20,12 @@ Incident Reports
 MAI-2026-002 - Mini Shai-Hulud security incident
 Opens in new tab
 Controls
-Updated 8 minutes ago
+Updated 6 minutes ago
 View all
 Infrastructure security
-Unique account authentication enforced
 Access control procedures established
 Remote access encrypted enforced
-View 1 more Infrastructure security control
+Network segmentation implemented
 Organizational security
 Asset disposal procedures utilized
 Employee reference checks performed

@@ -58,10 +58,17 @@ api2.cursor.sh
 and
 api2direct.cursor.sh
 for the agent session
+api3.cursor.sh
+for worker metrics
+downloads.cursor.com
+for the CLI installer and updates
 agent-stores.s3.us-east-1.amazonaws.com
-and
+for agent store sync and artifact uploads, including screenshots
 cloud-agent-artifacts.s3.us-east-1.amazonaws.com
-for artifact uploads
+for artifact uploads when the agent's store isn't available
+See
+Networking
+for a connectivity check and what breaks when each host is blocked.
 No inbound ports, public IPs, or VPN tunnels are required. If you use a proxy, set
 HTTPS_PROXY
 or

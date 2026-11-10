@@ -44,9 +44,9 @@ Model requests → AI Gateway
 Requests → Langfuse Web
 VPC / on-premises
 AI Gateway
-Optional · beta
+Optional (beta)
 langfuse/ai-gateway
-Resolve · traces
+Resolve + traces
 Langfuse Web
 UI & API server
 langfuse/langfuse
@@ -63,9 +63,9 @@ Background processing
 Langfuse Worker
 Async event processing
 langfuse/worker
-Playground · evaluations
+Playground + evaluations
 LLM providers
-Optional · bring your own
+Optional (bring your own)
 Web connections
 Worker connections
 Optional

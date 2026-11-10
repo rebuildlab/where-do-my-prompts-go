@@ -72,6 +72,7 @@ Google models
 Used for:
 Gemini 3.8 Flash
 Gemini 4 Argon
+Gemini 4 Carbon
 GitHub Copilot uses Gemini models hosted on Google Cloud Platform (GCP). When using Gemini models, prompts and metadata are sent to GCP, which makes the
 following data commitment
 :
