@@ -389,13 +389,42 @@ with your AWS account ID. LangChain will add your account to the endpoint servic
 in your AWS account. Attach a security group that allows
 TCP 443 inbound
 from your VPC CIDR (or from the instances that need to reach LangSmith):
-aws ec2 create-vpc-endpoint \
---vpc-id <YOUR_VPC_ID> \
---service-name <SERVICE_NAME_FROM_TABLE_ABOVE> \
---vpc-endpoint-type Interface \
---subnet-ids <YOUR_SUBNET_IDS> \
---security-group-ids <YOUR_SECURITY_GROUP_ID> \
---region <YOUR_REGION>
+aws
+ec2
+create-vpc-endpoint
+\
+--vpc-id
+<
+YOUR_VPC_I
+D
+>
+\
+--service-name
+<
+SERVICE_NAME_FROM_TABLE_ABOV
+E
+>
+\
+--vpc-endpoint-type
+Interface
+\
+--subnet-ids
+<
+YOUR_SUBNET_ID
+S
+>
+\
+--security-group-ids
+<
+YOUR_SECURITY_GROUP_I
+D
+>
+\
+--region
+<
+YOUR_REGIO
+N
+>
 resource
 "aws_vpc_endpoint"
 "langsmith"
@@ -432,22 +461,68 @@ Configure DNS so that
 aws.api.smith.langchain.com
 resolves to your VPC endpoint’s private DNS name within your VPC. You can use any private DNS solution: Route 53 Private Hosted Zones, a corporate DNS resolver, or any DNS server reachable from your VPC.
 First, get your endpoint’s DNS name:
-aws ec2 describe-vpc-endpoints \
---vpc-endpoint-ids <YOUR_ENDPOINT_ID> \
+aws
+ec2
+describe-vpc-endpoints
+\
+--vpc-endpoint-ids
+<
+YOUR_ENDPOINT_I
+D
+>
+\
 --query
 'VpcEndpoints[0].DnsEntries[0].DnsName'
 \
---output text --region <YOUR_REGION>
+--output
+text
+--region
+<
+YOUR_REGIO
+N
+>
 Then, create a CNAME record for
 aws.api.smith.langchain.com
 pointing to that DNS name. Here’s an example using Route 53:
-aws route53 create-hosted-zone \
---name aws.api.smith.langchain.com \
---vpc VPCRegion=<YOUR_REGION>,VPCId=<YOUR_VPC_ID> \
---caller-reference langsmith-privatelink-$(date +%s) \
---hosted-zone-config PrivateZone=true
-aws route53 change-resource-record-sets \
---hosted-zone-id <HOSTED_ZONE_ID> \
+aws
+route53
+create-hosted-zone
+\
+--name
+aws.api.smith.langchain.com
+\
+--vpc
+VPCRegion=
+<
+YOUR_REGIO
+N
+>
+,VPCId=
+<
+YOUR_VPC_I
+D
+>
+\
+--caller-reference
+langsmith-privatelink-
+$(
+date
++%s
+)
+\
+--hosted-zone-config
+PrivateZone=
+true
+aws
+route53
+change-resource-record-sets
+\
+--hosted-zone-id
+<
+HOSTED_ZONE_I
+D
+>
+\
 --change-batch
 '{
 "Changes": [{
@@ -559,18 +634,47 @@ After access is granted, create a PSC endpoint and configure DNS using either th
 Create a PSC endpoint
 Create a forwarding rule in your VPC targeting the service attachment:
 # Create the PSC endpoint
-gcloud compute forwarding-rules create langsmith-psc-endpoint \
---region=<REGION> \
---network=<YOUR_VPC_NETWORK> \
---subnet=<YOUR_SUBNET> \
---target-service-attachment=projects/langchain-prod/regions/<REGION>/serviceAttachments/gateway-psc-publish \
---load-balancing-scheme=
-""
+gcloud
+compute
+forwarding-rules
+create
+langsmith-psc-endpoint
+\
+--region=
+<
+REGION
+>
+\
+--network=
+<
+YOUR_VPC_NETWORK
+>
+\
+--subnet=
+<
+YOUR_SUBNET
+>
+\
+--target-service-attachment=projects/langchain-prod/regions/
+<
+REGION
+>
+/serviceAttachments/gateway-psc-publish
+\
+--load-balancing-scheme=""
 # Get the assigned IP address
-gcloud compute forwarding-rules describe langsmith-psc-endpoint \
---region=<REGION> \
---format=
-"value(IPAddress)"
+gcloud
+compute
+forwarding-rules
+describe
+langsmith-psc-endpoint
+\
+--region=
+<
+REGION
+>
+\
+--format="value(IPAddress)"
 resource
 "google_compute_forwarding_rule"
 "langsmith_psc"
@@ -601,19 +705,35 @@ load_balancing_scheme
 Configure DNS
 Create a private DNS zone in your VPC and add an A record pointing to the PSC endpoint IP:
 # Create a private DNS zone
-gcloud dns managed-zones create langsmith-psc \
---dns-name=
-"<REGION>.p.api.smith.langchain.com."
+gcloud
+dns
+managed-zones
+create
+langsmith-psc
 \
---visibility=private \
---networks=<YOUR_VPC_NETWORK>
+--dns-name="<REGION>.p.api.smith.langchain.com."
+\
+--visibility=private
+\
+--networks=
+<
+YOUR_VPC_NETWORK
+>
 # Add an A record pointing to the PSC endpoint IP
-gcloud dns record-sets create
+gcloud
+dns
+record-sets
+create
 "<REGION>.p.api.smith.langchain.com."
 \
---zone=langsmith-psc \
---type=A \
---rrdatas=<PSC_ENDPOINT_IP>
+--zone=langsmith-psc
+\
+--type=A
+\
+--rrdatas=
+<
+PSC_ENDPOINT_IP
+>
 resource
 "google_dns_managed_zone"
 "langsmith_psc"
@@ -677,7 +797,12 @@ ip_address
 Verify connectivity
 From a VM in your VPC:
 curl
-https://<REGION>.p.api.smith.langchain.com/ok
+https://
+<
+REGIO
+N
+>
+.p.api.smith.langchain.com/ok
 ​
 API rate limits
 LangSmith enforces rate limits on API endpoints to ensure service stability and fair usage. The following table shows the rate limits for different endpoints in the GCP US and GCP EU regions. GCP APAC and AWS US enforce comparable service-specific limits; contact support if you need exact limits for your organization. Note that:

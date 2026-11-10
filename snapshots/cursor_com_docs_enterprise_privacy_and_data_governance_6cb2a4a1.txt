@@ -30,8 +30,10 @@ Models with data retention
 Most models run under Cursor's ZDR agreements, so providers don't store inputs or outputs or train on your data (
 read more
 about our data use policies). A few models require data retention with the provider and fall outside these agreements. For Enterprise customers, Teams with Privacy Mode enabled, and individual customers with Privacy Mode enabled, Cursor requires admin approval before use.
+Claude Fable 5.2
+,
 Claude Fable 5.1
-and
+, and
 Claude Fable 5
 work this way. Anthropic stores their inputs and outputs to run automatic and human harm-prevention reviews. This data is not used for training or product improvement. For Enterprise customers and customers with Privacy Mode enabled, requests to these models fail until the model's data retention policy is approved from the
 dashboard

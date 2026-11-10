@@ -31,4 +31,4 @@ For more information, see
 Set up GitHub Copilot CLI for GitHub Enterprise Server
 .
 Note
-This feature is in technical preview and subject to change.
+This feature is generally available starting with GitHub Enterprise Server 3.22.3. In earlier 3.22 patch releases, it is in technical preview.

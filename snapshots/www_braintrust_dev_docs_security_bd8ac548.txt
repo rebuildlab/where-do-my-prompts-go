@@ -25,7 +25,7 @@ are available in public preview on Braintrust-hosted deployments.
 Project MCP credentials are encrypted and stored on your data plane. Loop and
 prompts using project MCP servers
 can use these credentials to authenticate requests. Calls using saved credentials have the shared account’s or API key’s permissions, rather than each project member’s individual permissions on the external service. Loop’s MCP calls run outside the sandbox.
-Project members can use these connections with the shared credentials’ access. Scheduled Loop runs, including Patterns automations, can invoke all tools those credentials allow without interactive approval. Use an account or key limited to the access you intend to share with the project.
+Project members can use these connections with the shared credentials’ access. Scheduled Loop runs, including pattern rules, can invoke all tools those credentials allow without interactive approval. Use an account or key limited to the access you intend to share with the project.
 Configure and manage shared OAuth connections or API keys in
 Loop’s project MCP settings
 .

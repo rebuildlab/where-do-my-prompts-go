@@ -1,26 +1,28 @@
 Data residency
+Models
+
+All latest models
+
+Limited support for other models; see details
 APIs
 
 Messages API
-Available
 
 Managed Agents
-Available
 Cloud platforms
 
 Claude API
-Available
 
 Claude Platform on AWS
-Available
 
 Claude Models on Google Cloud
 Anthropic managed
-Available
 Data handling
 
+ZDR
 ZDR eligible
 
+HIPAA
 HIPAA eligible
 
 Usage differs by product
@@ -347,109 +349,59 @@ Learn about workspace configuration.
 Usage and Cost Analytics API
 Track usage and costs by inference geo.
 Availability
-Data residency is available on select models and eligible for zero data retention and HIPAA readiness.
-API support
-
+Data residency
+Cloud platform
+Claude API
+APIs
+
 Messages API
-Usage
-Set
-inference_geo
-on each request, or set a default for the workspace.
-Status
-Available
-Cloud platforms
 
-Claude API
-Models
-
-Claude Haiku 4.5
-Not supported
-
-Claude Opus 4.5
-Not supported
-
-Claude Sonnet 4.5
-Not supported
-
-All other models
-Status
-Available
-Cloud platforms
-
-Claude Platform on AWS
-Models
-
-Claude Haiku 4.5
-Not supported
-
-Claude Opus 4.5
-Not supported
-
-Claude Sonnet 4.5
-Not supported
-
-All other models
-Workspace geo is not configurable.
-Status
-Available
-Cloud platforms
-
-Claude Models on Google Cloud
-Anthropic managed
-Models
-
-Claude Haiku 4.5
-Not supported
-
-Claude Opus 4.5
-Not supported
-
-Claude Sonnet 4.5
-Not supported
-
-All other models
-Workspace geo is not configurable.
-
 Managed Agents
-Usage
-Pin
-inference_geo
-in the agent’s model configuration, and override it per session at session creation. An agent with no pin follows the workspace default.
-Status
-Available
-Cloud platforms
-
-Claude API
 Models
-
-Claude Haiku 4.5
-Not supported
-
-Claude Opus 4.5
-Not supported
-
-Claude Sonnet 4.5
-Not supported
 
-All other models
-Status
-Available
-Cloud platforms
+Claude Fable 5.2, Fable 5.1, Fable 5
 
+Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+
+Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+
+Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+
+Claude Haiku 5.5
 Claude Platform on AWS
-Models
-
-Claude Haiku 4.5
-Not supported
-
-Claude Opus 4.5
-Not supported
-
-Claude Sonnet 4.5
-Not supported
+APIs
 
-All other models
+Messages API
+Workspace geo is not configurable.
+
+Managed Agents
 Workspace geo is not configurable; Managed Agents sessions there run with workspace geo “us”.
+Models
+
+Claude Fable 5.2, Fable 5.1, Fable 5
+
+Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+
+Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+
+Claude Haiku 5.5
+Claude Models on Google Cloud (Anthropic managed)
+API
+
+Messages API
+Models
+
+Claude Fable 5.2, Fable 5.1, Fable 5
+
+Claude Mythos 5.2
+
+Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+
+Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+
+Claude Haiku 5.5
+Note
+Workspace geo is not configurable.
 Data handling
 Data handling overview
 
@@ -467,26 +419,28 @@ HIPAA
 Eligible
 Was this page helpful?
 Data residency
+Models
+
+All latest models
+
+Limited support for other models; see details
 APIs
 
 Messages API
-Available
 
 Managed Agents
-Available
 Cloud platforms
 
 Claude API
-Available
 
 Claude Platform on AWS
-Available
 
 Claude Models on Google Cloud
 Anthropic managed
-Available
 Data handling
 
+ZDR
 ZDR eligible
 
+HIPAA
 HIPAA eligible

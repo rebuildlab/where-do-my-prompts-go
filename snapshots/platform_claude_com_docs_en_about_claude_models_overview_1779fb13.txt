@@ -8,10 +8,10 @@ Compare models
 If you’re unsure which model to use, start with
 Claude Opus 5.5
 for most workloads. Use
-Claude Fable 5.1
+Claude Fable 5.2
 for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5.5 at higher effort still fall short. All current models support text and image input, text output, multilingual capabilities, vision, and tool use. Each model’s page lists the platforms it’s available on.
 Feature
-Claude Fable 5.1
+Claude Fable 5.2
 For demanding reasoning and long-horizon agentic work
 Claude Opus 5.5
 For long-running agentic coding and knowledge work
@@ -19,12 +19,12 @@ Claude Sonnet 5.5
 The best combination of speed and intelligence
 Claude Haiku 5.5
 For high-volume, latency-sensitive tasks such as classification, extraction, and routing
-Slower
+Moderate
 Moderate
 Fast
 Fastest
-$10 / input MTok
-$50 / output MTok
+$8 / input MTok
+$40 / output MTok
 $4 / input MTok
 $20 / output MTok
 $2 / input MTok
@@ -57,7 +57,7 @@ Jun 2026
 Jun 2026
 Jun 2026
 Jun 2026
-Not sooner than September 1, 2027
+Not sooner than November 9, 2027
 Not sooner than September 22, 2027
 Not sooner than September 28, 2027
 Not sooner than October 7, 2027
