@@ -34,7 +34,7 @@ The weights are licensed under the
 Grok 2 Community License Agreement
 .
 Downloads last month
-5,978
+6,012
 Inference Providers
 NEW
 This model isn't deployed by any Inference Provider.

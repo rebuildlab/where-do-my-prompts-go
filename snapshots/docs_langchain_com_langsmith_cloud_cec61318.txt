@@ -117,7 +117,7 @@ Data listed here is stored exclusively in the US:
 Payment and billing information with Stripe and Metronome
 ​
 Architecture
-Every region runs the same LangSmith components. The following sections list the cloud services that host them in each region. The Azure US region uses SmithDB where the diagram shows ClickHouse.
+Every region runs the same LangSmith components. The following sections list the cloud services that host them in each region.
 ​
 GCP services
 The following applies to the
@@ -129,6 +129,8 @@ LangSmith Backend: serves the LangSmith API.
 LangSmith Platform Backend: handles authentication and other high-volume tasks. (Internal service)
 LangSmith Playground: handles forwarding requests to various LLM providers for the Playground feature.
 LangSmith Queue: handles processing of asynchronous tasks. (Internal service)
+LangSmith ACE Backend: runs custom code evaluators in an isolated runtime. (Internal service)
+LangSmith Ingest Queue: processes incoming traces. (Internal service)
 LangSmith uses the following GCP storage services:
 Google Cloud Storage (GCS) for runs inputs and outputs.
 Google Cloud SQL PostgreSQL for transactional workloads.
@@ -155,6 +157,8 @@ LangSmith Backend: serves the LangSmith API.
 LangSmith Platform Backend: handles authentication and other high-volume tasks. (Internal service)
 LangSmith Playground: handles forwarding requests to various LLM providers for the Playground feature.
 LangSmith Queue: handles processing of asynchronous tasks. (Internal service)
+LangSmith ACE Backend: runs custom code evaluators in an isolated runtime. (Internal service)
+LangSmith Ingest Queue: processes incoming traces. (Internal service)
 LangSmith uses the following AWS storage and data services:
 Amazon S3 for runs inputs and outputs.
 Amazon RDS for PostgreSQL for transactional workloads.
@@ -189,6 +193,8 @@ LangSmith Backend: serves the LangSmith API.
 LangSmith Platform Backend: handles authentication and other high-volume tasks. (Internal service)
 LangSmith Playground: handles forwarding requests to various LLM providers for the Playground feature.
 LangSmith Queue: handles processing of asynchronous tasks. (Internal service)
+LangSmith ACE Backend: runs custom code evaluators in an isolated runtime. (Internal service)
+LangSmith Ingest Queue: processes incoming traces. (Internal service)
 LangSmith uses the following Azure storage and data services:
 Azure Blob Storage for runs inputs and outputs.
 Azure Database for PostgreSQL flexible server for transactional workloads.

@@ -3410,7 +3410,6 @@ No
 Response formats:
 Text, JSON
 mistral-ocr-4-0
-Preview
 Image-to-Text
 -
 Input:
@@ -3428,6 +3427,44 @@ no
 Response formats:
 Text, JSON, Markdown
 Mistral-Large-3
+Preview
+chat-completion
+-
+Input:
+text, image
+-
+Output:
+text
+-
+Languages:
+en
+,
+fr
+,
+de
+,
+es
+,
+it
+,
+pt
+,
+nl
+,
+zh
+,
+ja
+,
+ko
+, and
+ar
+-
+Tool calling:
+Yes
+-
+Response formats:
+Text, JSON
+mistral-large-4-latest
 Preview
 chat-completion
 -

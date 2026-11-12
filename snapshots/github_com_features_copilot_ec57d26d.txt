@@ -13,8 +13,7 @@ Install in CLI
 Copilot CLI install options
 Install in CLI
 GitHub Copilot in Visual Studio Code
-Open in
-Visual Studio Code
+Open in Visual Studio Code
 Open in IDE
 Open in VS Code
 More ways to get started with GitHub Copilot

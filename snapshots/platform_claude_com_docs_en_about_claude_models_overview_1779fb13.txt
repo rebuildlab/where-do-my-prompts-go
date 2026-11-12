@@ -4,12 +4,12 @@ Choosing a model
 Pricing
 
 Migration guide
-Compare models
+Latest models
 If you’re unsure which model to use, start with
 Claude Opus 5.5
 for most workloads. Use
 Claude Fable 5.2
-for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5.5 at higher effort still fall short. All current models support text and image input, text output, multilingual capabilities, vision, and tool use. Each model’s page lists the platforms it’s available on.
+for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5.5 at higher effort still fall short. All current models support text and image input, text output, multilingual capabilities, vision, and tool use.
 Feature
 Claude Fable 5.2
 For demanding reasoning and long-horizon agentic work
@@ -67,9 +67,172 @@ Once you’ve picked a model,
 learn how to make your first API call
 . To understand how model IDs, aliases, and snapshots work, see
 Model IDs and versioning
-; for the reliable-knowledge and training-data cutoffs behind each model, see Anthropic’s
+. For the reliable-knowledge and training-data cutoffs behind each model, see Anthropic’s
 Transparency Hub
 .
+All models
+Older models might still be available, but where possible, you should default to the
+latest models
+. To move to a newer model, see the
+migration guides
+. For retirement dates, see
+model deprecations
+.
+Model
+Capabilities
+Base tokens
+Name
+Context window
+Max output
+Input
+Output
+Claude Fable 5.2
+tokens
+tokens
+$8
+/
+$40
+/ MTok
+Claude Opus 5.5
+tokens
+tokens
+$4
+/ MTok
+$20
+/ MTok
+Claude Sonnet 5.5
+tokens
+tokens
+$2
+/ MTok
+$10
+/ MTok
+Claude Haiku 5.5
+tokens
+tokens
+From $0.10
+/ MTok
+From $0.50
+/ MTok
+Claude Mythos 5.2
+tokens
+tokens
+$8
+/ MTok
+$40
+/ MTok
+Claude Fable 5.1
+tokens
+tokens
+$10
+/ MTok
+$50
+/ MTok
+Claude Mythos 5.1
+tokens
+tokens
+$10
+/ MTok
+$50
+/ MTok
+Claude Fable 5
+tokens
+tokens
+$10
+/ MTok
+$50
+/ MTok
+Claude Mythos 5
+tokens
+tokens
+$10
+/ MTok
+$50
+/ MTok
+Claude Opus 5
+tokens
+tokens
+$5
+/ MTok
+$25
+/ MTok
+Claude Opus 4.8
+tokens
+tokens
+$5
+/ MTok
+$25
+/ MTok
+Claude Opus 4.7
+tokens
+tokens
+$5
+/ MTok
+$25
+/ MTok
+Claude Opus 4.6
+tokens
+tokens
+$5
+/ MTok
+$25
+/ MTok
+Claude Opus 4.5
+tokens
+tokens
+$5
+/ MTok
+$25
+/ MTok
+Claude Opus 4.1
+tokens
+tokens
+$15
+/ MTok
+$75
+/ MTok
+Claude Opus 4
+tokens
+tokens
+$15
+/ MTok
+$75
+/ MTok
+Claude Sonnet 5
+tokens
+tokens
+$2
+/ MTok
+$10
+/ MTok
+Claude Sonnet 4.6
+tokens
+tokens
+$3
+/ MTok
+$15
+/ MTok
+Claude Sonnet 4.5
+tokens
+tokens
+$3
+/ MTok
+$15
+/ MTok
+Claude Sonnet 4
+tokens
+tokens
+$3
+/ MTok
+$15
+/ MTok
+Claude Haiku 4.5
+tokens
+tokens
+$1
+/ MTok
+$5
+/ MTok
 Using the Models API
 You can query model capabilities and token limits programmatically with the
 Models API

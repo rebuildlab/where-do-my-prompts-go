@@ -523,9 +523,6 @@ Cloud agent internet access controls
 —
 Sites
 —
-GitHub issue and PR delegation with
-@codex
-—
 GitHub code review and automatic PR reviews
 —
 Slack cloud integration
@@ -643,7 +640,6 @@ Cloud chats
 Cloud environments
 Internet controls
 Sites
-GitHub delegation
 GitHub PR reviews
 Slack integration
 Linear integration
