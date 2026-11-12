@@ -113,7 +113,7 @@
     "file": "cloud_google_com_blog_topics_hybrid_cloud_gemini_is_now_available_anywhere_443e856c.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "83238969ef5629518e779245be84da317a3eadbc6518259c26e6b6e3a009a55b",
+    "sha256": "291debfca409e2ba628f5b709987511d7a34be39719536b0cba55cb177d200a2",
     "vendors": [
       "gemini-api"
     ]
@@ -140,7 +140,7 @@
     "file": "cohere_com_blog_hipaa_business_associate_agreements_for_custom_model_development_3c4c6938.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "da8af03f442beb2281b0e4ff94c4366b715e27edd1aeee4daa81a4e97778e761",
+    "sha256": "d24e13523f2a6c5bcaa74a1bb929bd346fc60cfce8a276acec82a1644ec5119b",
     "vendors": [
       "cohere"
     ]
@@ -149,7 +149,7 @@
     "file": "cohere_com_data_usage_policy_1a44d6db.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "7a8b7b87828eb32a87eaca361e8e91dbef4027e584d929a9e13bb07b56df5080",
+    "sha256": "61af199f5b1258bcc87837ba3ebd100dec019f9cc7216895ec032edd296c3b9e",
     "vendors": [
       "cohere"
     ]
@@ -167,7 +167,7 @@
     "file": "cohere_com_security_f89a53ab.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "5eef7867dc75b6220a7ee982f7d88515dc3f66ea36d449e4275e813d2a7c8cc4",
+    "sha256": "0ade9fb88bc36d2b92979c989858942638d03753b845af4ae32867f849fb5dfd",
     "vendors": [
       "cohere"
     ]
@@ -275,7 +275,7 @@
     "file": "developers_openai_com_codex_enterprise_dc57d8da.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "ad30d39c44be8879d283d2a057c4992514a46c6215899b70c204093454a80237",
+    "sha256": "fa7f8d882599b67cb07d1694144fc4faf4c735dacd993b8d50fb27a912d1149c",
     "vendors": [
       "openai-codex"
     ]
@@ -330,7 +330,7 @@
     "file": "docs_anthropic_com_en_docs_build_with_claude_zero_data_retention_fbfaa208.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "a099963c21459ec0a7c13f643d566e448868ebb281e14971dd9dc68497fa9071",
+    "sha256": "933e05902362dfba1825c482ff7c6e946beb74b472ce283e1e434cfe174e11cb",
     "vendors": [
       "anthropic-api"
     ]
@@ -384,7 +384,7 @@
     "file": "docs_fireworks_ai_faq_enterprise_compliance_certifications_1c02fd98.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "724d1282b12c703bff12761de97d49923e0126cbd96a71938970e7f6bbf5102c",
+    "sha256": "e88c2a449f84d9dcfe0e17daa2525dde15814909faa2e014095bc606cc331e52",
     "vendors": [
       "fireworks-ai"
     ]
@@ -393,7 +393,7 @@
     "file": "docs_fireworks_ai_guides_security_compliance_data_handling_c95939fb.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "e41ef92b036d7e20811a83d9d1404f1ce15f032fe868bac21f022442f1bef93e",
+    "sha256": "4ec56041db70c08e5eb90f678d093939b5d786ccfe308117df3ee8c017bde547",
     "vendors": [
       "fireworks-ai"
     ]
@@ -463,7 +463,7 @@
     "file": "docs_langchain_com_langsmith_cloud_cec61318.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "86d70a796bb6ce5d264d5a984436b909e39fb1b3b24fe0dac1c1e297379aaaa3",
+    "sha256": "8f633618588e0dad91d4fc889ec2f1bc413d7bdc83673000d9b651ee8d93fb6a",
     "vendors": [
       "langsmith"
     ]
@@ -481,7 +481,7 @@
     "file": "docs_langchain_com_langsmith_self_hosted_59b90cde.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "3f843c1626686b0150386e59f5c3dfc660a25dec8ad932f62f50616e414bcd8a",
+    "sha256": "8fa41b1baa973c0c7127b205c48935b4f72adbc2208d2f6d984eec97b71f548b",
     "vendors": [
       "langsmith"
     ]
@@ -499,7 +499,7 @@
     "file": "docs_ollama_com_cloud_8ca47722.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "0a2664d32d6033e782f197a106d3301b3190f47435a55d3cd4563753f5b09488",
+    "sha256": "9a47a1cec3e68cae1563c1c5daa7cae9e8439d211aaf070f0aa1acec67ebd969",
     "vendors": [
       "ollama-cloud"
     ]
@@ -508,7 +508,7 @@
     "file": "docs_smith_langchain_com_administration_concepts_3b41c82f.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "2100c74d0d71d49b5c76966fbeb5abdaf9baae5e6c9502405402b73d9f052f7f",
+    "sha256": "b5945d62e62122d7e4d4e2c24a884ef91523a70a61d85e24fdde5afd5d6a849b",
     "vendors": [
       "langsmith"
     ]
@@ -632,7 +632,7 @@
     "file": "huggingface_co_deepseek_ai_a544e39d.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "2605ac64919eee653088331fcecf89fdc734a2bd3af27cf5f80a0c9f9d7cc0ed",
+    "sha256": "510ac4f8c1c8e64b492e177bb534f95d8ece85996572471e28575f74cb7d785f",
     "vendors": [
       "deepseek"
     ]
@@ -641,7 +641,7 @@
     "file": "huggingface_co_xai_org_grok_2_4ebd8248.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "c915879f6ce797b812dca1038d4ad33bb4cf336ceee8421a995811a9608d8530",
+    "sha256": "b5f877324391323d5f536d64abbad766aaa53804592e85d3f2e326b583e1ddca",
     "vendors": [
       "xai"
     ]
@@ -659,7 +659,7 @@
     "file": "langfuse_com_security_89b00596.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "8b6edbbe3a2c5210bc149c0973a4c2fbf6a5b554e995f83c7d25b47956f9ab92",
+    "sha256": "9bf147f77aac853449c56bf7c5666427952086d5a2150fe1ec818571e6c596ae",
     "vendors": [
       "langfuse"
     ]
@@ -866,7 +866,7 @@
     "file": "privacy_anthropic_com_en_articles_10015870_what_certifications_has_anthropic_obt_d5b36be1.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "6aeb1d78f776374e46157053721766417250e8423d7831ed7a139fb68649d69c",
+    "sha256": "2c71687da17a24cd9e974ffd5427080a282197ad099dacbf30929b18bbaaf71d",
     "vendors": [
       "anthropic-api",
       "claude-code"
@@ -896,7 +896,7 @@
     "last_checked": "2026-11-12",
     "last_error": null,
     "method": "rendered",
-    "sha256": "d169321cd5674de326b2c82c0415647f4a1ffa2f69aba7dd9ca52f1a2d8a529c",
+    "sha256": "42e5f0c646c70260bdc458495070713a403dc81510432f404de01ec14d6ef545",
     "vendors": []
   },
   "https://trustcenter.cohere.com/subprocessors": {
@@ -946,7 +946,7 @@
     "file": "www_braintrust_dev_legal_dpa_a555c991.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "9f0f661edf4b4fc76e5b0a92c15020c17f45317b475faf2984613e104155ce9a",
+    "sha256": "01065ef76a9f036edc3700492eb38af458a48f111dbe0aae8385278b26eeba28",
     "vendors": [
       "braintrust"
     ]
@@ -964,7 +964,7 @@
     "file": "www_helicone_ai_pricing_cce4a7fe.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "9c5ed7ed53f34fc87233a028a6ccf621089464043c66a92ebf3ca1b102a5f5d6",
+    "sha256": "39e70ce1933d5842d306c5ac4d867bd6d4e30368bda235862ae254d9d83b9f02",
     "vendors": [
       "helicone"
     ]
@@ -1045,7 +1045,7 @@
     "file": "www_together_ai_gpu_clusters_26ca165b.txt",
     "last_checked": "2026-11-12",
     "last_error": null,
-    "sha256": "84313b6a93312951512690793424dab860dbc3b35c92161e8b6f14ee157dcb05",
+    "sha256": "cd361b3ff9900c657e1606ef30578a847f0bfdc5d81d1dbab4d83ecf9635a192",
     "vendors": [
       "together-ai"
     ]

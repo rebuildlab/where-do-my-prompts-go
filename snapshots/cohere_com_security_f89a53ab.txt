@@ -440,5 +440,5 @@ Enterprise Data Commitments
 Privacy Policy
 Usage Guidelines
 AI Security (eBook)
-Secure AI Frontier Model Framework
 Spotlight on security
+Secure AI Frontier Model Framework

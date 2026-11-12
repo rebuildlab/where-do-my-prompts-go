@@ -49,6 +49,10 @@ Agent approvals and security
 and the
 Codex security white paper
 .
+ChatGPT Enterprise on AWS Marketplace
+Review the
+data residency and inference residency requirements in the Help Center
+for ChatGPT Enterprise purchased through AWS Marketplace. Then use this guide to plan your workspace rollout.
 Step 1: Assign owners and choose a rollout
 Assign an owner for each part of the rollout:
 Workspace access:

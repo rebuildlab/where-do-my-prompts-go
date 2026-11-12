@@ -22,7 +22,7 @@ Fleet
 ,
 LLM Gateway
 , and
-LangSmith Deployment
+Agent Server hosting
 when your use case requires them.
 ​
 Features
@@ -50,13 +50,13 @@ Optional
 Sandboxes, a license with the Engine entitlement, and Helm chart version 0.16.0 or later. Air-gapped installations require Helm chart version 0.17.0 or later.
 Fleet
 Optional
-Fleet services in your cluster. Does not require LangSmith Deployment.
+Fleet services in your cluster. Does not require Agent Server hosting.
 LLM Gateway
 Optional (beta)
 Helm chart version 0.17.1 or later. The
 agent-gateway
 service needs access to PostgreSQL, Redis, and other LangSmith pods.
-LangSmith Deployment
+Agent Server hosting
 Optional
 KEDA, an ingress, and a control plane and data plane. To run Agent Servers without a control plane, see
 standalone servers

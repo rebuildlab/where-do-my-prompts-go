@@ -79,7 +79,7 @@ Region
 Cloud location
 Supabase
 Trace datastore
-LangSmith Deployment
+LangSmith Agent Server
 domain
 GCP US
 GCP us-central1 (Iowa)
@@ -107,7 +107,7 @@ Azure centralus (Iowa)
 AWS us-east-1 (N. Virginia)
 SmithDB, centralus (Iowa)
 *.azure.us.langgraph.app
-Agent Servers on LangSmith Deployment run in the same cloud location as the rest of the region.
+Agent Servers on LangSmith run in the same cloud location as the rest of the region.
 See the
 Regions FAQ
 for more information.
@@ -211,7 +211,7 @@ Internet-bound traffic leaving LangSmith services is routed through a NAT gatewa
 Allow Vertex AI access
 .
 Agents on
-LangSmith Deployment
+LangSmith Agent Server
 egress from a
 separate IP list
 .

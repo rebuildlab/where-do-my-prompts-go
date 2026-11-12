@@ -225,13 +225,13 @@ Known Security Defects Remediation.
 Company will repair any Known Security Defect by implementing malicious code protection at system entry and exit points; monitor and respond to attacks and indicators of potential attacks on the system; validate information inputs; implement secure error handling; securely dispose of Customer Data. Remediation of Known Security Defects must adhere to the following schedule:
 Severity Level Remediation Response Time
 Critical
-Issue as specified in the applicable assessment conducted pursuant to Section 4 of this Annex 3 is remediated within five (5) business days.
+Issue as specified in the applicable assessment conducted pursuant to Section 4 of this Annex 3 is remediated within seven (7) days.
 High
-Issue as specified in the applicable assessment conducted pursuant to Section 4 of this Annex 3 is remediated within fifteen (15) business days.
+Issue as specified in the applicable assessment conducted pursuant to Section 4 of this Annex 3 is remediated within fourteen (14) days.
 Medium
-Issue as specified in the applicable assessment conducted pursuant to Section 4 of this Annex 3 is remediated within sixty (60) days.
+Issue as specified in the applicable assessment conducted pursuant to Section 4 of this Annex 3 is remediated within thirty (30) days.
 Low
-Issue as specified in the applicable assessment conducted pursuant to Section 4 of this Annex 3 is remediated within six (6) months.
+Issue as specified in the applicable assessment conducted pursuant to Section 4 of this Annex 3 is remediated within ninety (90) days.
 Supply Chain Risk Management.
 Company will establish security requirements with subcontractors that are equal to or more restrictive than those in this DPA; establish breach notification requirements with subcontractors that conform to those in this DPA; assess the security of subcontractors before onboarding those subcontractors; and assess the security of subcontractors annually thereafter.
 Authorization.

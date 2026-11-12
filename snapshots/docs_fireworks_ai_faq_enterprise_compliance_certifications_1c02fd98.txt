@@ -4,7 +4,7 @@ Trust Center
 .
 ​
 Zero Data Retention
-Fireworks does not log or store prompt or generation data for open models, without explicit user opt-in. See our
+Fireworks does not log or store prompt or generation data for open models, without explicit user opt-in. Zero Data Retention does not apply to certain services that require data storage, including Batch API and Responses API. See our
 Zero Data Retention Policy
 .
 For US-only inference residency, see

@@ -60,6 +60,9 @@ AI & Machine Learning
 Infrastructure Modernization
 Google Distributed Cloud - GDC
 Related articles
+Networking
+Simplifying last mile cloud connectivity with Lumen and partner Cross-Cloud Interconnect
+By Himanshu Mehra • 3-minute read
 Infrastructure Modernization
 Introducing VMware solution on Google Cloud
 By Sunny Dua • 8-minute read
@@ -69,6 +72,3 @@ By Rohan Grover • 4-minute read
 Hybrid & Multicloud
 Enabling the next era of sovereign AI: The latest Google Distributed Cloud innovations
 By Muninder Sambi • 5-minute read
-Databases
-Spanner Omni, now GA: A distributed, multi-model database that you can deploy anywhere
-By Jagan R. Athreya • 5-minute read
