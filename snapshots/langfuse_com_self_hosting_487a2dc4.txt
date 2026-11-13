@@ -96,7 +96,7 @@ networking
 documentation for more details.
 Optimized for performance, reliability, and uptime
 Langfuse OSS and Enterprise use the same codebase as Langfuse Cloud. Langfuse processes
-90B+
+110B+
 observations per month
 and is trusted by
 21

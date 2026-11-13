@@ -3,7 +3,6 @@ System One
 is also available in the cloud for classification, yes/no questions, and scoring. Supported capabilities vary by model. Cloud models currently do not support
 structured outputs
 .
-​
 Choose how to connect
 Creating an API key
 Call
@@ -18,19 +17,16 @@ Find answers about accounts, authentication, privacy, and requests.
 Both connection methods require an Ollama account. Browse the available models in the
 cloud model library
 .
-​
 Use only local models
 To keep inference on your own hardware, follow
 Run a model locally
 . You can also
 disable cloud features
 .
-​
 Retirements
 Cloud models may be deprecated as newer models become available. See
 Cloud model lifecycle
 for upcoming and past retirements.
-​
 Data handling
 Ollama processes cloud prompts and responses to answer your requests. We do not use them to train models. Read the
 Privacy Policy

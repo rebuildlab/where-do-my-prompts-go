@@ -29,7 +29,6 @@ Cloud deployment quickstart
 or the
 full setup guide
 . This page explains the Cloud managed architecture for reference.
-​
 Cloud architecture and scalability
 This section is only relevant for cloud-managed LangSmith in the
 regions listed below
@@ -37,7 +36,6 @@ regions listed below
 Self-hosted documentation
 .
 LangSmith Cloud runs in five regions on Google Cloud Platform (GCP), Amazon Web Services (AWS), and Microsoft Azure. The platform is designed to be highly scalable. Many customers run production workloads on LangSmith for LLM application observability, evaluation, and agent deployment.
-​
 Regions
 Each region has its own URLs. Your organization’s data is stored in the region where you signed up, with the exceptions listed in
 Regional storage
@@ -60,7 +58,6 @@ https://aws.api.smith.langchain.com
 Azure US
 https://azure.smith.langchain.com
 https://azure.api.smith.langchain.com
-​
 Regional storage
 Cloud-managed LangSmith stores trace and application data in the cloud location of the region where sign-up occurred. Each region uses a regional trace datastore for trace ingestion and analytics. Two kinds of data are stored elsewhere:
 Authentication data
@@ -111,14 +108,11 @@ Agent Servers on LangSmith run in the same cloud location as the rest of the reg
 See the
 Regions FAQ
 for more information.
-​
 Region-independent storage
 Data listed here is stored exclusively in the US:
 Payment and billing information with Stripe and Metronome
-​
 Architecture
 Every region runs the same LangSmith components. The following sections list the cloud services that host them in each region.
-​
 GCP services
 The following applies to the
 US, EU, and APAC
@@ -142,7 +136,6 @@ Google Cloud CDN for caching static assets.
 Google Cloud Armor for security and rate limits. For more information on rate limits we enforce, please refer to
 Rate limits
 .
-​
 AWS services
 The following applies to the
 AWS US
@@ -176,7 +169,6 @@ Amazon CloudFront for caching static assets (including the web UI hostname
 aws.smith.langchain.com
 ).
 AWS WAF on CloudFront for managed rule groups at the edge (for example, AWS Managed Rules common protections and Bot Control).
-​
 Azure services
 The following applies to the
 Azure US
@@ -203,9 +195,7 @@ SmithDB for trace ingestion and analytics, storing its data in Azure Blob Storag
 centralus
 . This region does not use ClickHouse Cloud.
 LangSmith also uses an Istio ingress gateway on AKS to route traffic to the LangSmith services.
-​
 Allowlisting IP addresses
-​
 Egress from LangChain SaaS
 Internet-bound traffic leaving LangSmith services is routed through a NAT gateway and originates from the following IP addresses. Vertex AI requests can use a different path, as described in
 Allow Vertex AI access
@@ -249,7 +239,6 @@ AZURE US
 35.204.48.32
 34.40.198.11
 It may be helpful to allowlist these IP addresses if connecting to your own AzureOpenAI service or other endpoints that may be required by the Playground or Online Evaluation.
-​
 Allow Vertex AI access
 For Vertex AI connections from LangSmith SaaS on GCP, public egress IP allowlisting alone might not satisfy VPC Service Controls. Private Google Access keeps Google API traffic within Google’s network instead of using the NAT gateway’s public IP addresses. See Google’s
 source IP access guidance
@@ -279,7 +268,6 @@ value in the ingress rule, not the project ID. Restrict the rule to the calling 
 ingress rule configuration
 .
 Select the source project by your LangSmith SaaS region, not the Vertex AI model’s region. Pod or node scaling does not change the source project number. Moving the source workload or VPC network to another project can change the required allowlist.
-​
 Egress IP inventory
 Fetch the
 egress IP inventory (JSON)
@@ -314,7 +302,6 @@ cidr
 . Listed addresses may be used now or in the future. Poll periodically and compare
 version
 to detect changes. Review additions and removals before updating firewall rules.
-​
 Ingress into LangChain SaaS
 The LangChain endpoints map to the following static IP addresses. Traffic terminates on the
 GCP load balancers
@@ -386,7 +373,6 @@ GCP US, EU, and APAC are moving to the additional addresses in the last row (
 34.151.160.163
 ). Add those addresses now. The current GCP addresses keep serving these hostnames until February 10, 2027. After that date, the hostnames use only the additional addresses. Remove a current GCP address from your allowlist only after the hostname no longer resolves to it. The AWS US and Azure addresses are not changing.
 This list is only for LangSmith Cloud. A BYOC or self-hosted deployment uses the load balancer in your own environment. If your private network reaches Cloud over the public internet, including through a BYOC control plane connection, allowlist the Cloud addresses for your region. AWS PrivateLink, GCP Private Service Connect, and Azure Private Link do not use these addresses.
-​
 Private connectivity (Enterprise)
 Enterprise only.
 Private connectivity is available exclusively for Enterprise customers. Contact your account representative or
@@ -399,14 +385,12 @@ GCP Private Service Connect (PSC)
 , or
 Azure Private Link
 .
-​
 AWS PrivateLink
 Customers on
 AWS
 can connect to LangSmith via
 AWS PrivateLink
 , providing private connectivity from any VPC. Cross-region connectivity is supported natively.
-​
 Endpoint service name
 Region
 Service Name
@@ -414,7 +398,6 @@ US (
 us-east-2
 )
 com.amazonaws.vpce.us-east-2.vpce-svc-054f37092752bff6b
-​
 Setup
 1. Request access:
 Contact your account representative or
@@ -490,7 +473,6 @@ pendingAcceptance
 to
 available
 . Allow a few minutes after acceptance for the change to fully propagate before testing connectivity.
-​
 Configure DNS
 Configure DNS so that
 aws.api.smith.langchain.com
@@ -618,19 +600,16 @@ dns_entry
 "dns_name"
 ]]
 }
-​
 Verify connectivity
 From an EC2 instance or container in your VPC:
 curl
 https://aws.api.smith.langchain.com/ok
-​
 GCP Private Service Connect
 Enterprise customers on
 GCP
 can connect to LangSmith via
 Private Service Connect (PSC)
 , providing private connectivity without exposing traffic to the public internet.
-​
 Service attachment URIs
 Use the following service attachment URIs to create a PSC endpoint in your VPC:
 Region
@@ -647,7 +626,6 @@ APAC (
 australia-southeast1
 )
 projects/langchain-apac-prod/regions/australia-southeast1/serviceAttachments/gateway-psc-publish
-​
 PSC domains
 After setup, use the following domains to connect to LangSmith over your PSC connection:
 Region
@@ -658,14 +636,12 @@ EU
 europe-west4.p.api.smith.langchain.com
 APAC
 australia-southeast1.p.api.smith.langchain.com
-​
 Setup
 Request access:
 Contact your account representative or
 sales@langchain.dev
 with your GCP project ID. LangChain will add your project to the service attachment’s allowed consumer list.
 After access is granted, create a PSC endpoint and configure DNS using either the gcloud CLI or Terraform.
-​
 Create a PSC endpoint
 Create a forwarding rule in your VPC targeting the service attachment:
 # Create the PSC endpoint
@@ -736,7 +712,6 @@ load_balancing_scheme
 =
 ""
 }
-​
 Configure DNS
 Create a private DNS zone in your VPC and add an A record pointing to the PSC endpoint IP:
 # Create a private DNS zone
@@ -828,7 +803,6 @@ langsmith_psc
 ip_address
 ]
 }
-​
 Verify connectivity
 From a VM in your VPC:
 curl
@@ -838,20 +812,17 @@ REGIO
 N
 >
 .p.api.smith.langchain.com/ok
-​
 Azure Private Link
 Customers on
 Azure
 can connect to the LangSmith Azure SaaS API through
 Azure Private Link
 . A private endpoint in your virtual network (VNet) connects to the LangSmith Private Link service.
-​
 Request access
 Contact your account representative or
 sales@langchain.dev
 with your Azure subscription ID and desired endpoint region. LangChain adds your subscription to the Private Link service auto-approval list. LangChain also provides the service resource ID.
 Wait for LangChain to confirm that subscription access is enabled before creating your private endpoint. New connections from an allowlisted subscription are approved automatically. Connections from other subscriptions require manual approval.
-​
 Create a private endpoint
 Use an existing subnet in your VNet. Set the endpoint location to the subnet’s region. Replace the placeholders with your Azure resource details and the service resource ID provided by LangChain.
 The following Terraform example uses the
@@ -903,7 +874,6 @@ Approved
 before testing connectivity. If the connection remains
 Pending
 , send the private endpoint ID to LangChain to confirm subscription access and resolve the pending request.
-​
 Configure DNS
 Configure private DNS so that
 azure.api.smith.langchain.com
@@ -990,7 +960,6 @@ If you use custom DNS servers, configure them to resolve
 azure.api.smith.langchain.com
 to the private endpoint IP. Linking an Azure private DNS zone alone does not configure your custom resolver.
 This example configures private access to the API hostname only. For private access to the LangSmith UI or other services, contact LangChain for additional hostnames.
-​
 Verify connectivity
 From a VM or container in your VNet, confirm that DNS returns the private endpoint IP and HTTPS succeeds:
 nslookup
@@ -1002,7 +971,6 @@ https://azure.api.smith.langchain.com/ok
 Keep using
 https://azure.api.smith.langchain.com
 as your LangSmith API endpoint. API keys and workspace permissions still apply.
-​
 API rate limits
 LangSmith enforces rate limits on API endpoints to ensure service stability and fair usage. The following table shows the rate limits for different endpoints in the GCP US and GCP EU regions. GCP APAC and AWS US enforce comparable service-specific limits; contact support if you need exact limits for your organization. Note that:
 Rate limits are expressed as
@@ -1194,7 +1162,6 @@ IP
 100 / 60
 100 / 60
 Public (catch-all)
-​
 Rate limit categories
 High throughput
 : General high-volume endpoints for core operations like authentication, metadata, and feedback.

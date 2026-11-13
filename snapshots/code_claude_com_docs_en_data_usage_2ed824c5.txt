@@ -1,6 +1,4 @@
-​
 Data policies
-​
 Data training policy
 Consumer users (Free, Pro, Max, and Ultra plans)
 :
@@ -9,12 +7,10 @@ Commercial users
 : (Team and Enterprise plans, API, 3rd-party platforms, and Claude Gov) maintain existing policies: Anthropic does not train generative models using code or prompts sent to Claude Code under commercial terms, unless the customer has chosen to provide their data to us for model improvement (for example, the
 Developer Partner Program
 ).
-​
 Development Partner Program
 If you explicitly opt in to methods to provide us with materials to train on, such as via the
 Development Partner Program
 , we may use those materials provided to train our models. An organization admin can expressly opt-in to the Development Partner Program for their organization. Note that this program is available only for Anthropic first-party API, and not for Amazon Bedrock or Google Cloud’s Agent Platform users.
-​
 Feedback using the
 /feedback
 command
@@ -32,7 +28,6 @@ Claude-drafted feedback
 , Claude can also draft a feedback report and queue it on your machine for you to review. Claude Code sends nothing until you choose to send the draft, and a sent draft goes through the same submission path and retention as other
 /feedback
 reports.
-​
 Session quality surveys
 When you see the “How is Claude doing this session?” prompt in Claude Code, responding to this survey, including selecting “Dismiss”, records only your rating. We do not collect or store any conversation transcripts, inputs, outputs, or other session data as part of the rating prompt itself. Unlike thumbs up/down feedback or
 /feedback
@@ -74,7 +69,6 @@ in your settings file to a probability between
 and
 1
 .
-​
 Data retention
 Anthropic retains Claude Code data based on your account type and preferences.
 Consumer users (Free, Pro, Max, and Ultra plans)
@@ -112,7 +106,6 @@ Consumer Terms
 (for Free, Pro, Max, and Ultra users) and
 Privacy Policy
 .
-​
 Data access
 For all first party users, you can learn more about what data is logged for
 local Claude Code
@@ -123,7 +116,6 @@ Remote Control
 sessions follow the local data flow since all execution happens on your machine; while connected, the session transcript is also stored on Anthropic servers to sync the conversation across devices, as described in
 Connection and security
 . Note for remote Claude Code, Claude accesses the repository where you initiate your Claude Code session. Claude does not access repositories that you have connected but have not started a session in.
-​
 Local Claude Code: Data flow and dependencies
 The diagram below shows how Claude Code connects to external services during installation and normal operation. Solid lines indicate required connections, while dashed lines represent optional or user-initiated data flows.
 Claude Code runs locally. To interact with the LLM, Claude Code sends data over the network. This data includes all user prompts and model outputs, encrypted in transit via TLS 1.2+. Claude Code is compatible with most popular VPNs and LLM proxies.
@@ -145,7 +137,6 @@ hosting option
 Claude Code is built on Anthropic’s APIs. For details on API security controls, including API logging procedures, see the compliance artifacts in the
 Anthropic Trust Center
 .
-​
 Cloud execution: Data flow and dependencies
 Cloud sessions
 run in Anthropic-managed virtual machines by default instead of locally. Sessions your organization routes to a
@@ -166,7 +157,6 @@ Prompts, code changes, and outputs follow the same data policies as local Claude
 For security details about cloud execution, see
 Security
 .
-​
 Telemetry services
 Claude Code sends two kinds of operational telemetry: usage metrics and error reports. You can turn each off individually with the environment variables below, or disable all non-essential traffic at once by setting
 CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC
@@ -210,7 +200,6 @@ When you use a third-party provider such as Amazon Bedrock or Google Cloud’s A
 writes the report to a local archive under
 ~/.claude/feedback-bundles/
 instead of sending it to Anthropic. Known API key and token patterns are redacted before the archive is written. Nothing leaves your machine until you send that file to your Anthropic account representative or attach it to a support request.
-​
 Default behaviors by API provider
 By default, error reporting, telemetry, and bug reporting are disabled when using Amazon Bedrock, Google Cloud’s Agent Platform, Microsoft Foundry, or Claude Platform on AWS. Session quality surveys and the WebFetch domain safety check are exceptions and run regardless of provider. On a signed-in
 Claude apps gateway
@@ -333,7 +322,6 @@ DISABLE_TELEMETRY
 opt-out. Error reporting and
 /feedback
 reports remain off by default on those providers.
-​
 WebFetch domain safety check
 Before fetching a URL, the WebFetch tool sends the requested hostname to
 api.anthropic.com

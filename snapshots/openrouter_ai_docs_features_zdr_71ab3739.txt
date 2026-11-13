@@ -3,7 +3,6 @@ OpenRouter will screen all inference requests, including ZDR traffic, for child 
 Read the announcement
 . We’re updating this page and our related terms.
 Zero Data Retention (ZDR) means no routine storage of prompts or responses after processing, apart from the CSAM exception described on this page.
-​
 Data policy tiers
 OpenRouter describes every endpoint’s data policy with three tiers:
 Tier
@@ -19,7 +18,6 @@ Retention and Training
 Data may be stored and used for training under the applicable provider policy.
 May be, under the provider’s policy
 Safety Retention limits why data can be kept. It does not require a request to be flagged before it can be stored.
-​
 Allowing or excluding Safety Retention
 When ZDR is enforced in your privacy settings or a guardrail, you choose whether Safety Retention endpoints are also allowed. The choice is separate for
 Google
@@ -57,7 +55,6 @@ web search
 One tool-level rule applies: when ZDR is enforced in your account privacy settings or a guardrail, the Web Search and Web Fetch server tools and the Web Search plugin reject the Firecrawl engine. See
 Privacy and regional availability
 for each server tool’s execution path and backend policy.
-​
 How OpenRouter Manages Data Policies
 OpenRouter works with providers to understand each of their data policies and structures the policy data in a way that gives you control over which providers you want to route to.
 Note that a provider’s general policy may differ from the specific policy for a given endpoint. OpenRouter keeps track of the specific policy for each endpoint, works with providers to keep these policies up to date, and in some cases creates special agreements with providers to ensure data retention or training policies that are more privacy-focused than their default policies.
@@ -65,7 +62,6 @@ If OpenRouter is not able to establish or ascertain a clear policy for a provide
 A full list of providers and their data policies can be found
 here
 . Note that this list shows the default policy for each provider; if there is a particular endpoint that has a policy that differs from the provider default, it may not be available if “ZDR Only” is enabled.
-​
 Per-Model-Group ZDR Enforcement
 Rather than a single global toggle, OpenRouter lets you enforce ZDR independently for different model groups. This is available in both your
 account-level privacy settings
@@ -89,12 +85,10 @@ All other models
 Removes all other non-ZDR endpoints
 When to use per-model-group ZDR
 Per-model-group ZDR is useful when you only need ZDR enforcement for certain model groups. For example, you may want to enforce ZDR for all other models while keeping first-party Anthropic, OpenAI, and Google endpoints available without the ZDR restriction.
-​
 Account-level settings
 In your
 privacy settings
 , each model group has its own toggle. Enabling a scope restricts all your requests to ZDR endpoints for that model group.
-​
 Guardrail-level settings
 When creating or editing a
 guardrail
@@ -115,7 +109,6 @@ Enforce ZDR for all other model endpoints
 The legacy
 enforce_zdr
 field is deprecated. When provided, its value is copied into any per-model-group fields that are not explicitly set on the request. Use the per-model-group fields directly for new integrations.
-​
 Google Safety Retention
 Starting October 18, 2026, Google requires Safety Retention for Google models served through Vertex. With Safety Retention, Google doesn’t retain prompts by default, but it may retain prompts that its safety classifiers flag, for up to 90 days, for abuse monitoring. Google doesn’t use retained prompts for training. These endpoints don’t meet a strict Zero Data Retention requirement.
 When you enforce ZDR for Google models, you choose how OpenRouter treats these endpoints in your
@@ -148,7 +141,6 @@ BYOK
 key. Requests through that key are treated as ZDR. See
 Declaring ZDR on a Key
 .
-​
 Per-Request ZDR Enforcement
 In addition to account-level and guardrail-level settings, you can enforce Zero Data Retention on a per-request basis using the
 zdr
@@ -157,7 +149,6 @@ The request-level
 zdr
 parameter operates as an “OR” with your account-wide and guardrail ZDR settings. If any is enabled, ZDR enforcement will be applied. This means the per-request parameter can only be used to ensure ZDR is enabled for a specific request, not to override or disable account-wide or guardrail enforcement.
 This is useful for customers who don’t want to globally enforce ZDR but need to ensure specific requests only route to ZDR endpoints.
-​
 Usage
 Include the
 zdr
@@ -189,27 +180,23 @@ zdr
 is
 false
 or not provided, ZDR enforcement still applies if enabled in your account or guardrail settings.
-​
 ZDR with BYOK Keys
 By default, a
 BYOK
 key follows the same ZDR rules as OpenRouter credits. If your own provider agreement includes zero data retention, you can declare that on the key. ZDR enforcement then allows requests through that key even when the shared endpoint retains prompts. The declaration does not cover video generation. See
 Declaring ZDR on a Key
 .
-​
 Caching
 Some endpoints/models provide implicit caching of prompts. This keeps repeated prompt data in an in-memory cache in the provider’s datacenter, so that the repeated part of the prompt does not need to be re-processed. This can lead to considerable cost savings.
 OpenRouter has taken the stance that in-memory caching of prompts is
 not
 considered “retaining” data, and we therefore allow endpoints/models with implicit caching to be hit when a ZDR routing policy is in effect.
-​
 ZDR for Private Endpoints
 A
 private endpoint
 connects a catalog model to a deployment you operate in your own provider account, authenticated with your
 BYOK
 key. Only organizations granted private access can route to it. OpenRouter has no view into your agreement with that upstream, so the retention classification comes from a declaration you make when you create or edit the private endpoint.
-​
 Declaration states
 Declaration
 What it records
@@ -226,15 +213,12 @@ Treated as retaining. The private endpoint is not eligible.
 “ZDR is required” means any enforcement path described above: the account-level privacy setting, a model-group or guardrail ZDR setting, or
 provider.zdr
 on the request.
-​
 Not declared
 A private endpoint does not inherit the data policy of any public endpoint or provider, even when it connects to the same upstream service. A new private endpoint with no declaration uses the conservative unverified fallback described in
 How OpenRouter Manages Data Policies
 : OpenRouter treats it as retaining, so it is not eligible for any request that requires ZDR.
-​
 Declared ZDR
 Declaring ZDR keeps the private endpoint in your organization’s ZDR routing pool. Every other routing constraint still applies: the requesting organization must hold private access to the endpoint, the endpoint must be available for the requested model, and provider preferences, guardrails, and other data-policy settings are evaluated as usual. The declaration only changes the retention classification. It does not add the private endpoint to the ZDR routing pool of any organization without private access, and it does not affect the ZDR eligibility of the public endpoints for the same model.
-​
 Declared non-ZDR
 Declaring non-ZDR records an explicit attestation that the upstream retains data. Under a ZDR requirement it routes the same way as
 Not declared
@@ -243,18 +227,15 @@ Declared non-ZDR
 is known and attested,
 Not declared
 is unknown.
-​
 Existing private endpoints
 A private endpoint created before this setting existed keeps its current classification and behaves as it did. Editing its declaration applies the rules above, subject to the override precedence below.
 Overrides and attestations
 An explicit OpenRouter data-policy override set by our team remains authoritative over your declaration. If OpenRouter has assigned a specific data policy to your private endpoint, that policy decides eligibility regardless of what you declared.
 A declaration is your attestation about your agreement with the upstream. OpenRouter records it and routes on it, and does not independently verify the upstream’s contractual behavior.
-​
 OpenRouter’s Retention Policy
 For inference content covered by OpenRouter’s ZDR policy, we do not retain prompts or responses after processing, except when you explicitly choose to have us store them or when retention is needed for CSAM review, reporting, and related legal preservation. CSAM screening will also apply to requests covered by OpenRouter’s ZDR policy. See
 CSAM Screening Across OpenRouter
 .
-​
 Zero Retention Endpoints
 The following endpoints are eligible when ZDR is enforced. Note that this list is also available programmatically via
 https://openrouter.ai/api/v1/endpoints/zdr

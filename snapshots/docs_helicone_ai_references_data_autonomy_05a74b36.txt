@@ -1,4 +1,3 @@
-​
 Robust Cloud Security
 At Helicone, we prioritize the security and privacy of your data with our comprehensive cloud solution:
 SOC2 Compliant
@@ -11,16 +10,12 @@ Secure Key Encryption
 : Provider keys are encrypted using industry-leading methods. Learn more about our encryption practices
 here
 .
-​
 Embrace Data Ownership
 Helicone’s open-source solution empowers you with full control over your data, ensuring security and complete ownership.
-​
 Why Data Ownership Matters
 Managing sensitive or confidential information requires complete control. For example, healthcare providers safeguarding patient data cannot afford vulnerabilities from third-party servers. With Helicone, you maintain secure handling and ownership of your data.
-​
 Achieve Data Autonomy with Helicone
 Every organization has unique needs requiring tailored solutions. Helicone is dedicated to guiding you toward data autonomy.
-​
 FAQ
 Have stringent compliance requirements?
 Need SOC2 Compliance Reports?

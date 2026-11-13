@@ -10,7 +10,6 @@ can change data residency. Other roles can view the current setting but cannot c
 Residency applies
 account-wide
 : every API key on the account is restricted to the selected region.
-​
 Available regional restrictions
 Regional restrictions
 API endpoint
@@ -31,10 +30,8 @@ None
 is the default. For a region that is not listed, contact
 sales
 .
-​
 Before you switch it on
 A residency change takes effect as soon as you save it, and anything that does not match the region is rejected.
-​
 Serverless
 Point your clients at the region’s API endpoint and change every request to use a model from that region. See
 US-only Serverless
@@ -46,7 +43,6 @@ inference_geo
 field from your request bodies and the
 Fireworks-Inference-Geo
 header from your requests.
-​
 Dedicated deployments
 Every dedicated deployment must run in the selected region. Create it with
 --region
@@ -62,7 +58,6 @@ when you create them.
 Existing deployments are not checked, moved, or stopped
 when you switch the setting on. One outside the region keeps running and keeps costing you money, but requests to it are rejected. Replace it first.
 You can move a deployment to another region inside your residency region, but not out of it.
-​
 Dedicated training
 Supervised fine-tuning, DPO, reinforcement fine-tuning, and RLOR trainer jobs must set an explicit training region inside the selected region, for example with firectl’s
 --region US_IOWA_1
@@ -75,7 +70,6 @@ Jobs with a region outside the selected region are rejected
 , both when you create them and when you resume them.
 Only where the job runs is enforced.
 Where its checkpoints and outputs are stored is not.
-​
 Configure in the console
 Account admins can set data residency in the Fireworks console at
 Settings → Governances → Data Residency
@@ -83,7 +77,6 @@ Settings → Governances → Data Residency
 open in console
 ).
 Select the region and save. The console asks you to confirm that your clients already use the endpoint and models shown for that region.
-​
 Configure with firectl
 Set the region:
 firectl
@@ -101,7 +94,6 @@ firectl
 policy
 residency
 clear
-​
 Configure with the API
 Set the region with
 Update Policy Settings
@@ -135,12 +127,10 @@ Get Policy Settings
 returns the current setting. An absent
 residency
 means serving is unrestricted.
-​
 Pricing
 Regional models are priced at a premium over the base serverless price for the same model. See
 Serverless pricing
 .
-​
 Limitations
 The following are not supported while a region is set: calls are rejected, and stay rejected until you clear the setting.
 Serverless training.
@@ -159,7 +149,6 @@ Enterprise Controls
 BYOC.
 BYOC
 deployments run in your own cloud account, so Fireworks cannot enforce where they run.
-​
 Related
 US-only Serverless
 — endpoint and model IDs for the US region

@@ -2,7 +2,6 @@ These guides support organizations that already operate a self-hosted data plane
 Bring your own cloud (BYOC)
 .
 A self-hosted deployment separates data storage from platform management. Your team deploys and operates the data plane that stores your sensitive AI data, while Braintrust provides the managed UI, authentication, and platform updates.
-​
 Self-hosting guides
 Releases and availability
 Self-hosting releases
@@ -40,7 +39,6 @@ Upgrade to Terraform module v6
 : Move AWS API traffic from Lambda to ECS.
 Upgrade to Terraform module v7
 : Route AWS API traffic to ECS and deploy the Gateway by default.
-​
 How it works
 Braintrust’s architecture has two main components:
 The
@@ -91,7 +89,6 @@ organization settings
 , Braintrust automatically provisions a service token with the necessary permissions. This streamlines setup and enables features like
 data retention
 without manual configuration steps.
-​
 Cloud providers
 Braintrust provides official Terraform modules for self-hosting on AWS, Google Cloud Platform (GCP), and Azure:
 AWS
@@ -111,7 +108,6 @@ Legacy customers
 : If you previously deployed using AWS CloudFormation, the
 CloudFormation guide
 remains available. This deployment method is not supported for new customers.
-​
 Non-standard self-hosted
 Non-standard self-hosted deployments are customer-operated deployments that cannot use Braintrust’s standard Terraform module and Helm chart pattern as intended, or that require material deviations from the reference architecture. Review it with Braintrust before adopting it.
 Examples include:
@@ -122,17 +118,14 @@ Running with configuration choices that prevent straightforward adoption of futu
 Choosing this path means more manual upgrade planning, more validation work, and higher support complexity. Braintrust support may need additional environment context before diagnosing issues, because the deployment differs from the standard reference architecture. If you anticipate any of these deviations,
 contact Braintrust
 first to confirm the approach is viable.
-​
 Shared responsibility
 When you self-host, uptime becomes a shared responsibility between your team and Braintrust:
 Braintrust
 is responsible for responding quickly when you have issues, collaboratively resolving them with you, and fixing bugs to improve quality.
 Your team
 is responsible for following the documentation, assigning infrastructure resources on your team, and ensuring that in the event of an incident, you have staff who are familiar with Braintrust and can work with the Braintrust team to share context and resolve issues.
-​
 Monitoring
 Braintrust monitors your self-hosted deployment through automatic telemetry and an in-app infra dashboard.
-​
 Telemetry
 By default, your self-hosted data plane automatically sends the following telemetry back to the Braintrust-managed control plane:
 Health check information
@@ -143,7 +136,6 @@ In some cases, Braintrust may ask you to enable additional telemetry to help wit
 Enable or disable telemetry
 .
 If you disable telemetry, Braintrust’s ability to proactively monitor your deployment and diagnose issues will be significantly limited. Before disabling, consider the impact on support response times.
-​
 Infra dashboard
 Only
 organization owners
@@ -170,7 +162,6 @@ Infra dashboard
 option is available once Braintrust has enabled infrastructure monitoring for your organization. Contact
 Braintrust support
 to get started.
-​
 Upgrades
 Braintrust ships new data plane versions 1-2 times per month. You can find the details of each release on the
 Self-hosting releases
@@ -197,7 +188,6 @@ Data plane
 For upgrade instructions, see
 Upgrade your deployment
 .
-​
 Remote access
 There are occasionally issues that require ad-hoc debugging or running manual commands against containers, the Postgres database, or storage buckets to repair the state of the system. Customers who provide Braintrust with remote access (as needed) have experienced much faster resolutions when such issues occur, because the Braintrust team can connect directly and resolve issues. If this is not possible, factor this into your uptime calculations. If uptime of Braintrust is a key metric for you, strongly consider making remote access available to the Braintrust team as needed.
 If you cannot set up remote access, ensure that you can swiftly access:
@@ -206,10 +196,8 @@ Postgres to run SQL queries
 Redis to run commands
 Storage buckets to run read, write, and list commands
 Your on-call staff should have basic familiarity with Braintrust and the ability to perform all of these operations.
-​
 Hardware requirements
 When deploying Braintrust in production, consider these hardware requirements for reliable performance and uptime. These requirements assume typical production usage patterns. For high-utilization deployments, you may need to scale these resources up significantly. Monitor your resource utilization and adjust accordingly.
-​
 API service
 The API service handles all SDK and browser requests to the data plane.
 This section primarily applies to GCP and Azure with Kubernetes. AWS deployments on ECS are pre-sized appropriately and scale automatically through Application Auto Scaling, but expose optional Terraform variables to tune per-task size and task counts. The defaults are suitable for most deployments. See
@@ -239,7 +227,6 @@ TS_API_KEEP_ALIVE_TIMEOUT_SECONDS
 : Configure the HTTP keep-alive timeout when running behind a load balancer. See
 Set the HTTP keep-alive timeout
 for details.
-​
 PostgreSQL
 PostgreSQL stores metadata required to operate the platform, including pointers to raw data in object storage and aggregate statistics about the data. It is not the primary store for your AI data — traces, spans, and logs live in Brainstore and object storage.
 Resource
@@ -260,7 +247,6 @@ Storage IOPS
 Version
 15+
 17+
-​
 Redis cache
 Redis provides caching and coordination for session management, rate limiting, and Brainstore write ordering.
 Resource
@@ -286,13 +272,11 @@ cache.r6g.medium
 , or
 cache.r5.large
 for predictable performance. Even if these instances seem oversized initially, they provide consistent performance without the risk of CPU credit exhaustion.
-​
 Brainstore
 Brainstore is Braintrust’s high-performance database for ingesting and querying AI data. It uses object storage and a streaming Rust engine to load spans in real time, cutting down on latency and enabling fast full-text search over large volumes of trace data. Brainstore runs as separate reader and writer node types, each with distinct resource requirements.
 Important
 Brainstore requires high-performance storage with at least 150,000 IOPS for both reads and writes. Use NVMe-based ephemeral storage (the storage does not need to be persistent). Do not use EBS volumes or other slower storage options like Azure’s standard local disks, as these will significantly degrade performance.
 For Kubernetes deployments (GCP and Azure), each Brainstore pod must run on its own dedicated node to ensure optimal performance and resource isolation.
-​
 Readers
 Readers serve ad-hoc queries, including those from the API and user-defined BTQL queries. Plan for a minimum of 2 reader nodes in production to ensure high availability.
 A specialized reader variant,
@@ -336,7 +320,6 @@ Instance count
 1
 2+
 2+
-​
 Writers
 Writers ingest incoming spans and traces and write them to object storage. Writers don’t serve interactive requests, so a single writer node is sufficient for production.
 Resource

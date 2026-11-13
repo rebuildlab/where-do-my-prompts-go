@@ -1,4 +1,3 @@
-​
 Security
 Secure Transmission and Encryption
 All data transmission is encrypted in transit and at rest. Production software is also routinely monitored via logging, error handling and monitoring dashboards of live metrics. Unusual application states (i.e. unusually high error rates, slowness, failures) trigger alerts which are quickly investigated by our team.
@@ -14,7 +13,6 @@ Vulnerability Disclosure Program
 If you have identified a potential security issue, we encourage you to share your findings with us. Please send your vulnerability reports to our security team at
 security@cognition.ai
 .
-​
 Privacy & Intellectual Property
 How does Cognition use and process data run through and/or accessed by Devin?
 Cognition processes data based on the application Customers use to interact with Devin. Devin can be accessed via web application, integration with GitHub, or integration with Slack. For the web application, Cognition only processes data actively provided by the authorized user prompting Devin; for the GitHub and Slack integrations, the administrator installing the integration can review and manage all permissions granted to Devin.
@@ -41,7 +39,6 @@ In Slack, Devin doesn’t read, process or store any data in your Slack instance
 For more details on the requested permissions and security considerations go to
 Integration with Slack Guide
 .
-​
 User Best Practices
 Devin Limitations
 While Devin’s performance is improving daily, it can still experience hallucinations, introduce bugs into code, or suggest insecure code or procedures. Like with any coding best practices, we recommend taking the appropriate precautions with the code written by Devin such as code reviews, enabling branch protections to ensure checks are enforced before Devin can merge any changes, and any practices currently adopted in your organization to review engineers’ work.

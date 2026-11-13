@@ -1,5 +1,4 @@
 This overview covers topics related to managing users, organizations, workspaces, and agents within LangSmith.
-​
 Resource hierarchy
 LangSmith organizes access and data in four levels. An
 organization
@@ -14,7 +13,6 @@ Self-hosted LangSmith groups resources by application instead of agent. For deta
 Self-hosted workspaces
 .
 The following diagram shows the relationship between organizations, workspaces, agents, environments, and resources:
-​
 Organizations
 An organization is a logical grouping of users within LangSmith that defines shared settings applying across all of its workspaces. These settings govern organization-wide concerns rather than the agents and resources within a workspace. Common organization-level configurations include user management, single sign-on (SSO), OAuth provider configuration, custom role creation, billing, and usage tracking.
 Typically, there is one organization per company. An organization can have multiple workspaces. For configuration details, see
@@ -35,7 +33,6 @@ Can invite users
 Billing: paid plans
 Developer plan only
 All other plans available
-​
 Workspaces
 Workspaces were formerly called Tenants. Some code and APIs may still reference the old name for a period of time during the transition.
 A workspace is a logical grouping of users, agents, and
@@ -52,7 +49,6 @@ agent
 For guidance on different workspace organization models based on your team’s isolation requirements, refer to
 Workload isolation
 .
-​
 Agents
 An
 agent
@@ -71,7 +67,6 @@ key.
 Tracing pages require you to select an agent. Datasets, prompts, annotation queues, and deployments can exist without an agent. Selecting
 All agents
 shows these unlinked resources along with every agent’s resources. Selecting a specific agent shows only that agent’s resources.
-​
 Resources
 Resources are the concrete entities used to build, run, and observe agents. Examples include
 prompts
@@ -82,7 +77,6 @@ annotation queues
 , and
 deployments
 . Resources can be scoped to a specific agent.
-​
 Where settings live
 See the table below for details on which features are available in which scope(s):
 Resource/Setting
@@ -123,7 +117,6 @@ Organization
 ** Self-hosted installations may enable workspace-level invites of users to the organization via a feature flag. For details, refer to the
 self-hosted user management docs
 .
-​
 Resource tags
 Resource tags allow you to further segregate resources within a workspace for use with
 ABAC
@@ -138,7 +131,6 @@ LangSmith UI
 to select the
 Resource tags
 page in the sidebar.
-​
 Separate environments
 An environment is a stage in your release process, such as development, staging, or production. Agents have environments built in, drawn from a fixed set of four. An
 agent
@@ -180,7 +172,6 @@ which resources
 belong to an environment. Commit tags let you control
 which version
 of a prompt your code references without changing the code itself.
-​
 Self-hosted workspaces
 Self-hosted LangSmith uses project-based workspaces, which group resources by application rather than agent. An application can group any project within a team. Select one from the
 Application
@@ -201,10 +192,8 @@ prod
 To check which type of workspace you have, see
 How agent-based workspaces differ
 .
-​
 Users and roles
 This section covers who can access LangSmith and what they can do: users, the three types of API keys, and the roles that grant permissions.
-​
 Users
 A user is a person who has access to LangSmith. Users can be members of one or more organizations and workspaces within those organizations.
 Manage members from the
@@ -218,7 +207,6 @@ Workspace
 >
 Members
 : Manage members of the current workspace.
-​
 API keys
 LangSmith API keys authenticate requests to LangSmith. They are separate from the model provider keys, such as OpenAI or Anthropic keys, that your application uses to call models.
 We ended support for legacy API keys prefixed with
@@ -226,11 +214,9 @@ ls__
 on October 22, 2024 in favor of personal access tokens (PATs) and service keys. We require using PATs and service keys for all new integrations. API keys prefixed with
 ls__
 will no longer work as of October 22, 2024.
-​
 Expiration dates
 When you create an API key, you have the option to set an expiration date. Adding an expiration date to keys enhances security and minimizes the risk of unauthorized access. For example, you may set expiration dates on keys for temporary tasks that require elevated access.
 Once expired, an API key is no longer valid and cannot be reactivated or have its expiration modified.
-​
 Personal access tokens (PATs)
 Personal Access Tokens (PATs) are used to authenticate requests to the LangSmith API. They are created by users and scoped to a user. The PAT will have the same permissions as the user that created it.
 PATs are prefixed with
@@ -247,7 +233,6 @@ For the steps and authentication-cache timing, refer to
 Deactivate or delete a personal access token
 .
 Avoid using PATs to authenticate requests from your application. Instead, use them for personal scripts or tools that interact with the LangSmith API. If the user associated with the PAT is removed from the organization, the PAT will no longer work.
-​
 Service keys
 Service keys are similar to PATs, but are used to authenticate requests to the LangSmith API on behalf of a service account. Organization Admins can create any service key. Organization Operators and Organization Users can create workspace-scoped service keys in workspaces where their role grants
 workspaces:manage-keys
@@ -273,7 +258,6 @@ error.
 To create any type of API key, see
 Create an account and API key
 .
-​
 Tracing keys
 Tracing keys are organization-owned credentials with fixed permissions to submit traces and create projects in selected workspaces. They do not grant access to stored traces, experiments, saved views, or administration.
 Tracing keys use the
@@ -281,7 +265,6 @@ lsv2_tr_
 prefix. Their scope is fixed at creation, and they remain valid when the creator leaves the organization. They follow service-key expiry limits. For creation permissions, scope limits, and deletion rules, refer to
 Tracing keys
 .
-​
 Roles
 Each user has one organization role, which applies across the organization. On Enterprise plans, each user also has one workspace role in every workspace they belong to. Manage both in
 Settings
@@ -290,7 +273,6 @@ Roles
 . For more information, see
 Role-based access control
 .
-​
 Organization roles
 Your organization role determines your
 organization-level permissions
@@ -437,7 +419,6 @@ Update usage limits
 For a comprehensive list of required permissions along with the operations and roles that can perform them, refer to the
 Organization and workspace reference
 .
-​
 Workspace roles
 RBAC (Role-Based Access Control) is only available to Enterprise customers. If you are interested in this feature,
 contact our sales team
@@ -454,12 +435,9 @@ can also create and edit custom roles with specific permissions for different re
 To give a group of users a role in several workspaces at once, use
 teams
 .
-​
 Usage and billing
-​
 Data retention
 This section covers how data retention works and how it’s priced in LangSmith.
-​
 Why retention matters
 Privacy
 : Many data privacy regulations, such as GDPR in Europe or CCPA in California, require organizations to delete personal data once it’s no longer necessary for the purposes for which it was collected. Setting retention periods aids in compliance with such regulations.
@@ -470,7 +448,6 @@ enforce spend limits
 Plan your retention tiers before you start sending traces. Changes apply to new traces only—existing traces keep their original tier. See
 Change project-level default retention
 .
-​
 How it works
 LangSmith has two tiers of traces based on Data Retention with the following characteristics:
 Base
@@ -486,7 +463,6 @@ Customize extended retention policy
 .
 Data deletion after retention ends
 After the specified retention period, traces are no longer accessible in the tracing project UI or via the API. All user data associated with the trace (e.g. inputs and outputs) is deleted from our internal systems within a day thereafter. Some metadata associated with each trace may be retained indefinitely for analytics and billing purposes.
-​
 Data retention auto-upgrades
 Auto upgrades can have an impact on your bill. Please read this section carefully to fully understand your estimated LangSmith tracing costs.
 Most traces use base retention. Some actions, such as online evaluators and automation rules, can extend a trace to a longer retention period at a higher cost. You control which actions extend retention.
@@ -545,7 +521,6 @@ base
 tier traces.
 Datasets
 : Datasets have an indefinite data retention period. Restated differently, if you add a trace’s inputs and outputs to a dataset, they will never be deleted. We suggest that if you are using LangSmith for data collection, you take advantage of the datasets feature.
-​
 Billing model
 Billable metrics
 On your LangSmith invoice, you will see two metrics that we charge for:
@@ -570,11 +545,9 @@ base
 and
 extended
 metrics will both be recorded with the same timestamp.
-​
 Rate limits
 LangSmith has rate limits which are designed to ensure the stability of the service for all users.
 To ensure access and stability, LangSmith will respond with HTTP Status Code 429 indicating that rate or usage limits have been exceeded under the following circumstances:
-​
 Temporary throughput limit over a 1 minute period at our application load balancer
 This 429 is the result of exceeding a fixed number of API calls over a 1 minute window on a per service key or PAT basis. The start of the window will vary slightly—it is not guaranteed to start at the start of a clock minute—and may change depending on application deployment events.
 After the max events are received we will respond with a 429 until 60 seconds from the start of the evaluation window has been reached and then the process repeats.
@@ -606,7 +579,6 @@ POST
 2000
 1 minute
 The LangSmith SDK takes steps to minimize the likelihood of reaching these limits on run-related endpoints by batching up to 100 runs from a single session ID into a single API call.
-​
 Plan-level hourly trace event limit
 This 429 is the result of reaching your maximum hourly events ingested and is evaluated in a fixed window starting at the beginning of each clock hour in UTC and resets at the top of each new hour.
 An event in this context is the creation or update of a run. If a run is created and then subsequently updated in the same hourly window, that counts as 2 events against this limit.
@@ -626,7 +598,6 @@ Startup/Plus
 Enterprise
 Custom
 Custom
-​
 Plan-level hourly trace data ingest limit
 This 429 is the result of reaching the maximum amount of data ingested across your trace inputs, outputs, and metadata and is evaluated in a fixed window starting at the beginning of each clock hour in UTC and resets at the top of each new hour.
 Typically, inputs, outputs, and metadata are sent on both run creation and update events. If a run is created at 2.0MB and updated to 3.0MB in the same hourly window, that counts as 5.0MB of storage against this limit.
@@ -646,7 +617,6 @@ Startup/Plus
 Enterprise
 Custom
 Custom
-​
 Plan-level monthly unique traces limit
 This 429 is the result of reaching your maximum monthly traces ingested and is evaluated in a fixed window starting at the beginning of each calendar month in UTC and resets at the beginning of each new month.
 This is thrown by our application and applies only to the Developer Plan Tier when there is no payment method on file.
@@ -656,21 +626,17 @@ Window
 Developer (no payment on file)
 5,000 traces
 1 month
-​
 Self-configured monthly usage limits
 This 429 is the result of reaching your usage limit as configured by your organization admin and is evaluated in a fixed window starting at the beginning of each calendar month in UTC and resets at the beginning of each new month.
 This is thrown by our application and varies by organization based on their configured settings.
-​
 Maximum runs per trace
 Each trace is limited to a maximum of 25,000 runs. Once the trace reaches this limit, LangSmith will reject any additional runs that you send for that trace.
-​
 Run query endpoint
 The
 POST /runs/query
 endpoint has additional per-tenant rate limits based on query parameters. See
 Query traces using the SDK
 for details.
-​
 Handle 429 responses in your application
 Since some 429 responses are temporary and may succeed on a successive call, if you are directly calling the LangSmith API in your application we recommend implementing retry logic with exponential backoff and jitter.
 For convenience, LangChain applications built with the LangSmith SDK has this capability built-in.
@@ -678,7 +644,6 @@ It is important to note that if you are saturating the endpoints for extended pe
 If that is the case, we would like to discuss your needs more specifically. Please contact support via
 LangSmith Support
 with details about your applications throughput needs and sample code and we can work with you to better understand whether the best approach is fixing a bug, changes to your application code, or a different LangSmith plan.
-​
 Usage limits
 LangSmith lets you configure usage limits on tracing. Note that these are
 usage
@@ -694,24 +659,20 @@ spend
 limits on evaluator runs specifically, refer to
 Track and limit evaluator spend
 .
-​
 Properties of usage limiting
 Usage limiting is approximate, meaning that we do not guarantee the exactness of the limit. In rare cases, there may be a small period of time where additional traces are processed above the limit threshold before usage limiting begins to apply.
-​
 Side effects of extended data retention traces limit
 The extended data retention traces limit has side effects. If the limit is already reached, any feature that could cause an auto-upgrade of tracing tiers becomes inaccessible. This is because an auto-upgrade of a trace would cause another extended retention trace to be created, which in turn should not be allowed by the limit. Therefore, you can no longer:
 match run rules
 add feedback to traces
 add runs to annotation queues
 Each of these features may cause an auto upgrade, so we shut them off when the limit is reached.
-​
 Update usage limits
 Usage limits can be updated from the
 Settings
 page under
 Usage and Billing
 . Limit values are cached, so it may take a minute or two before the new limits apply.
-​
 Per-project and per-user trace limits
 In addition to the
 workspace-wide limits
@@ -757,7 +718,6 @@ additional
 to your workspace-wide and plan limits. A trace must be within every applicable limit to be ingested.
 Per-user limits count only traces attributed to a specific workspace member. Traces sent with an API key or service key that isn’t tied to a member are not counted toward a per-user limit.
 Limit values are cached, so it may take a minute or two before a new or changed limit applies.
-​
 See also
 Release policy
 : Learn about the self-hosted release channels, cadence, and version numbering.

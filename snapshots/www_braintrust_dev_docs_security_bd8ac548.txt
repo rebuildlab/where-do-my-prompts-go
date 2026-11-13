@@ -2,14 +2,12 @@ Braintrust implements industry-leading security practices and maintains complian
 The
 Trust center
 is the central resource for information about Braintrust’s security practices, certifications, and policies. It provides up-to-date details for customers and partners.
-​
 Deployment options
 Braintrust offers two deployment options. With SaaS, Braintrust operates both the control plane and the data plane in Braintrust-managed infrastructure. With
 BYOC
 , Braintrust operates the data plane in your own cloud account, so your sensitive AI data stays there while you continue to use Braintrust’s managed UI and platform features. See
 Deployment options
 for a comparison.
-​
 Authentication
 The Braintrust UI supports end-user authentication through enterprise identity providers (Google, Okta, Microsoft), SSO/SAML integration with major providers (Okta Workforce, Microsoft Entra ID, Google Workspace), and OpenID Connect (OIDC) for custom providers. Users receive credentials directly in their browser that securely communicate with your data plane.
 For programmatic access, API keys are displayed only once upon creation and stored as one-way cryptographic hashes, never in plaintext. Each key inherits the user’s permissions and can be scoped to specific projects. Best practices: rotate keys periodically, revoke compromised keys immediately, store keys in environment variables or secret management systems (never in code), apply principle of least privilege, and monitor API key usage through activity logs. See
@@ -18,7 +16,6 @@ to create and manage keys.
 For clients connecting to the
 Braintrust MCP server
 , OAuth 2.0 uses PKCE (Proof Key for Code Exchange). MCP clients authenticate via standard OAuth flow and receive access tokens with refresh capabilities for secure, long-lived sessions. Tokens inherit your user account permissions, providing access only to resources you can normally access.
-​
 External MCP connections in Loop
 External MCP connections
 are available in public preview on Braintrust-hosted deployments.
@@ -29,7 +26,6 @@ Project members can use these connections with the shared credentials’ access.
 Configure and manage shared OAuth connections or API keys in
 Loop’s project MCP settings
 .
-​
 GitHub repositories in Loop
 The
 GitHub integration
@@ -53,12 +49,10 @@ An egress proxy supplies short-lived GitHub tokens without exposing them to the 
 You need the organization’s
 Manage settings
 permission to connect installations or set the organization’s default connection.
-​
 Authorization
 Braintrust uses role-based access control (RBAC) with built-in permission groups (Owners, Engineers, Viewers, and All AI Provider Access) and support for custom groups with fine-grained permissions. Permissions can be set at organization, project, organization AI provider, or individual object (experiment, dataset, prompt) levels, enabling project-level isolation and object-level access control for sensitive resources. See
 Access control
 for configuration details.
-​
 Control sensitive trace data
 Use
 SDK masking functions or span customizers
@@ -71,7 +65,6 @@ access control
 to limit who can read stored data. Use
 retention policies
 to control how long records are kept.
-​
 Data encryption
 All data is encrypted at rest and in transit. LLM provider API keys and secrets are encrypted using AES-256 with unique 256-bit keys and nonces. For
 BYOC deployments
@@ -79,14 +72,12 @@ BYOC deployments
 For supported providers, you can avoid storing a long-lived provider credential altogether with
 workload identity federation
 , where Braintrust exchanges a short-lived OIDC token for a provider access token at request time.
-​
 Network security
 The data plane runs in an isolated VPC with no access to internal infrastructure (SaaS) or in your own cloud account (BYOC).
 Custom code functions
 can execute in quarantined VPCs on AWS deployments. SDKs and browser UI communicate directly with your data plane via CORS — no customer data flows through Braintrust’s control plane. See
 Architecture
 for details.
-​
 Image rendering controls
 Braintrust provides configurable image rendering modes to prevent sensitive data leaks from malicious image URLs in logs. When your browser automatically loads images in logs, any data embedded in the URL is sent to the image server, which could be controlled by an attacker.
 Organizations can configure image rendering with three modes:
@@ -121,7 +112,6 @@ images are unaffected, because they never leave the browser.
 Configure image rendering in
 organization settings
 . This protection applies organization-wide to all logs, experiments, and playgrounds.
-​
 Code execution
 Braintrust provides several
 function types
@@ -144,7 +134,6 @@ Prompts, HTTP endpoints, and global functions have straightforward security mode
 For inline and bundled code, the security model varies by deployment type:
 For Braintrust-hosted deployments and BYOC deployments on AWS, inline and bundled code functions run in an isolated VPC specifically for function execution. This environment has no access to your internal infrastructure (databases, application servers), can make outbound internet requests (for API calls, package downloads), provides organization-level separation when multiple orgs share the same stack, and runs functions in ephemeral AWS Lambda environments.
 For BYOC deployments on Google Cloud, custom code runs in the same process as the data plane without isolation.
-​
 Data residency and retention
 BYOC
 deployments keep all sensitive data (experiment logs, traces, datasets, prompts) within your cloud account and region for regulatory compliance. Configure
@@ -159,20 +148,16 @@ Baseten
 endpoints for inference. These endpoints run with Zero Data Retention (ZDR) for every organization, whether Braintrust-hosted (SaaS) or BYOC. ZDR is on by default and requires no configuration, so inference inputs and outputs are not stored by the model host. See
 Manage built-in models
 .
-​
 Compliance
-​
 SOC 2 Type II
 Braintrust is SOC 2 Type II compliant. This independent audit confirms that our controls related to security are operating effectively over time. Associated documentation and reports are available on the
 Trust Center
 after signing a mutual NDA.
-​
 HIPAA
 Braintrust supports HIPAA compliance requirements and maintains the necessary administrative, physical, and technical safeguards for handling protected health information (PHI). For organizations subject to HIPAA regulations, Braintrust can execute Business Associate Agreements (BAAs).
 To discuss your specific HIPAA compliance needs,
 contact Braintrust
 .
-​
 GDPR
 For GDPR compliance requirements, Braintrust can execute Data Processing Agreements (DPAs) to satisfy certain data processing obligations. However, for full GDPR compliance, organizations should use a
 BYOC deployment

@@ -26,7 +26,6 @@ No
 “Windsurf” and “Devin Desktop” refer to the same product. Legacy Windsurf Enterprise customers manage team settings at
 windsurf.com/team/settings
 ; Devin Enterprise customers manage the same settings in the Devin app. Both write the same team configuration, so a setting changed in one place appears in the other.
-​
 Team settings
 Team settings are stored on the server and delivered to Devin Desktop with the user’s account status, so they follow members to every device they sign in on. Changing a team setting requires the Devin Desktop admin permission (
 account.windsurf.admin
@@ -38,14 +37,12 @@ for granting it.
 Unless noted, a team setting takes effect the next time Devin Desktop refreshes the user’s account status (at sign-in and periodically while running). Settings marked
 restart
 need Devin Desktop to be relaunched before they fully apply.
-​
 Organization overrides
 Enterprises with several organizations set defaults once at the enterprise level. Where organization-level overrides are enabled, an admin viewing a child organization’s
 Devin Desktop
 settings page can override individual settings for that organization only; anything not overridden is inherited from the enterprise defaults. The enterprise page shows an
 Overridden in N orgs
 badge on each setting that has at least one override, and overrides can be reset back to the enterprise value from the organization’s page.
-​
 Features
 Setting
 What it controls
@@ -77,7 +74,6 @@ Quick review
 Allow members to use quick review models. Enabled by default; can be disabled and re-enabled.
 Teams & Enterprise
 Quick Review
-​
 Permissions & security
 Setting
 What it controls
@@ -155,7 +151,6 @@ lifecycle hooks
 format.
 Enterprise
 Hooks
-​
 MCP & ACP
 Setting
 What it controls
@@ -181,7 +176,6 @@ ACP registry configuration
 A static registry of approved ACP agents, pushed to every member so they don’t configure agents individually.
 Teams & Enterprise
 ACP team registry
-​
 Codebase intelligence
 Setting
 What it controls
@@ -199,7 +193,6 @@ DeepWiki
 Allow members to use DeepWiki to generate documentation.
 Teams & Enterprise
 DeepWiki
-​
 Models
 These settings live on the
 Models
@@ -228,7 +221,6 @@ Adaptive
 Allow the adaptive model router, which picks a model per task and adjusts pricing dynamically.
 Enterprise
 Adaptive
-​
 Data retention
 Setting
 What it controls
@@ -242,7 +234,6 @@ Enable access to OpenAI models with data retention
 Unlocks additional OpenAI models that require data retention for trust and safety verification. OpenAI stores this data for up to 30 days and does not train on it. Shown where available.
 Teams & Enterprise
 —
-​
 Sharing
 These settings live on the
 Sharing
@@ -259,7 +250,6 @@ Share codemaps
 Who can view Codemaps that members share: team or public, team only, or no sharing. Sharing requires opt-in because shared Codemaps are stored on Devin Desktop servers.
 Teams & Enterprise
 Codemaps
-​
 Analytics & compliance
 Setting
 What it controls
@@ -273,7 +263,6 @@ Attribution
 Attribution tracking for code suggestions: generated code is checked against public code and matches are reverted or flagged. No self-serve toggle; contact your account team to enable.
 Enterprise
 Attribution filtering
-​
 Legacy Cascade
 These controls only affect the legacy Cascade agent.
 Setting
@@ -300,7 +289,6 @@ App deploys
 Allow members to connect Netlify and deploy from Cascade. Windsurf dashboard only.
 Teams & Enterprise
 —
-​
 Account administration
 The Windsurf dashboard also hosts account-level controls that are not Devin Desktop settings but affect who can sign in and what they can do:
 SSO & SCIM
@@ -313,7 +301,6 @@ analytics API
 . In the Devin app these live under
 Settings → Administration
 .
-​
 Device policies (MDM)
 Device policies are enforced by the operating system before Devin Desktop starts, so they apply whether or not the user signs in and cannot be changed from inside the editor. Deploy them with Windows Group Policy (registry path
 Software\Policies\Windsurf\Devin
@@ -378,7 +365,6 @@ policy.json
 , and ADMX files shipped in each release’s
 policies
 folder list every policy the installed version supports, including upstream VS Code policies not covered above.
-​
 How device policies and team settings combine
 Where the same control exists on both surfaces:
 Extension allowlist
@@ -396,7 +382,6 @@ team setting when both are set, and the team setting wins over the member’s ow
 devin.marketplaceExtensionGalleryServiceURL
 setting. The Extensions view always names the marketplace actually in use.
 Everything else is only configurable on one surface.
-​
 System-level files
 Administrators can also deploy content files to a system directory that members cannot write to. For rules, workflows, skills, and
 hooks.json
@@ -446,7 +431,6 @@ Devin CLI system configuration
 If your endpoint security or DLP tooling restricts file access, make sure these paths are permitted; see the
 directory reference in the FAQ
 .
-​
 What members see
 When a control is enforced, Devin Desktop tells the member rather than failing silently:
 Settings locked by a device policy show as managed by your organization in the Settings editor and cannot be edited.

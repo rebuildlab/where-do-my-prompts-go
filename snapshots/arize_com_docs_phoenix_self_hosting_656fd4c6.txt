@@ -7,7 +7,6 @@ Complete Privacy
 Your traces, prompts, and data never leave your infrastructure
 Full Featured
 Tracing, evals, datasets, experiments, prompt management
-​
 Choose Your Deployment
 Terminal
 Run via CLI
@@ -30,7 +29,6 @@ One-click ARM template
 For an on-premise or self-hosted enterprise option with Arize support, see
 Arize AX
 .
-​
 Configure Your Instance
 Environment Variables
 Ports, storage, database connections
@@ -46,9 +44,7 @@ Network Security
 Outbound access, SSRF protection, CSRF
 Privacy
 Telemetry, air-gapped deployments
-​
 Images
-​
 Docker
 Available on
 Docker Hub
@@ -71,7 +67,6 @@ Pinned release version using a debug base image.
 Pin to a specific version (e.g.,
 arizephoenix/phoenix:version-8.0.0
 ) for production deployments.
-​
 Helm
 Available on
 Docker Hub
@@ -83,7 +78,6 @@ Helm chart for Kubernetes deployments. New patch versions defaulting to the late
 See the
 Helm deployment guide
 for installation instructions.
-​
 Learn More
 Architecture
 Storage options, scaling patterns, tenancy

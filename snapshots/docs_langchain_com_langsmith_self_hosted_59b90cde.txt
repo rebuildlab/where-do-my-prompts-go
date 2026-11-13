@@ -24,7 +24,6 @@ LLM Gateway
 , and
 Agent Server hosting
 when your use case requires them.
-​
 Features
 Feature
 Availability
@@ -61,7 +60,6 @@ Optional
 KEDA, an ingress, and a control plane and data plane. To run Agent Servers without a control plane, see
 standalone servers
 .
-​
 Architecture
 A self-hosted LangSmith instance runs a set of application services backed by several storage services. When you enable
 SmithDB
@@ -79,7 +77,6 @@ GCP
 , and
 Azure
 guides.
-​
 Services
 Service
 Description
@@ -105,7 +102,6 @@ Chat
 agents run as separate deployments, each with its own bundled PostgreSQL and Redis. Both are enabled by default. See
 Configure Insights and Chat
 .
-​
 Storage services
 LangSmith bundles all storage services by default. You can configure it to use external versions of all storage services. For production, use external storage services.
 Service
@@ -153,7 +149,6 @@ LangSmith uses blob storage to store large files, such as trace artifacts, feedb
 💡
 Enable blob storage
 - AWS S3, GCP GCS, Azure Blob
-​
 Installation procedures
 This page is an overview. The installation itself happens in the
 Kubernetes installation guide

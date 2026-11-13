@@ -1,4 +1,3 @@
-​
 Zero data retention
 Fireworks does not log or store prompt or generation data for open models, without explicit user opt-in. Zero Data Retention does not apply to certain services that require data storage, including Batch API and Responses API. Specifically, this means
 Fireworks does not log or store prompt or generation data for any open models, without explicit user opt-in.
@@ -13,7 +12,6 @@ store=True
 Enterprise account admins can additionally turn on the
 Zero Data Retention policy
 to reject requests and jobs that would persist or log customer content.
-​
 Response API data retention
 For the Response API specifically, Fireworks retains conversation data with the following policy when the API request has
 store=True

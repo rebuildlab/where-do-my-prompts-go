@@ -1,7 +1,7 @@
 {
   "https://ai.google.dev/gemini-api/docs/zdr": {
     "file": "ai_google_dev_gemini_api_docs_zdr_7982a489.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "method": "rendered",
     "sha256": "b3dc3d27bbc6551fcbb32844ff92f1badc12726fb5299e9d3417f20aa71453c2",
@@ -11,7 +11,7 @@
   },
   "https://ai.google.dev/gemini-api/terms": {
     "file": "ai_google_dev_gemini_api_terms_11700bdb.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "method": "rendered",
     "sha256": "a63946e8e7886846f0336358ae5b8589f41a6a5f491d2bdb40270cc302cb2c3f",
@@ -21,7 +21,7 @@
   },
   "https://api-docs.deepseek.com/guides/kv_cache": {
     "file": "api_docs_deepseek_com_guides_kv_cache_b8361014.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "fe8d0fca5e69c250438650c22b0751659194d8cd965584db51d618a2e881860f",
     "vendors": [
@@ -30,16 +30,16 @@
   },
   "https://arize.com/docs/phoenix/self-hosting": {
     "file": "arize_com_docs_phoenix_self_hosting_656fd4c6.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "34b72c80279d62be0d925530a7b10c1d9cc2babe6fcc54a63dd81927eaedc638",
+    "sha256": "4db563415cf6ac6aeaaea1d73220610c65862d3e8a55880f6c77ba8ab1a2033a",
     "vendors": [
       "arize"
     ]
   },
   "https://arize.com/pricing/": {
     "file": "arize_com_pricing_66dab6e2.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "d76b34a2218142df3b1f9120ceaab5f1b046e24ac3e01d5d1f0b2a2ec1d7fe4f",
     "vendors": [
@@ -48,7 +48,7 @@
   },
   "https://arize.com/privacy-policy/": {
     "file": "arize_com_privacy_policy_305199dc.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "8163c5929dd1e344def9e3669a9d74b4d88959e3496631e0586ba72bb353b723",
     "vendors": [
@@ -57,7 +57,7 @@
   },
   "https://arize.com/trust-center/": {
     "file": "arize_com_trust_center_9768e540.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "71da6f1f310eec39495141b1670cab353abc43915bb2447e1cc8c264de8eb54b",
     "vendors": [
@@ -66,7 +66,7 @@
   },
   "https://assets.ctfassets.net/8aevphvgewt8/9rRh60u9m8AJGCKPHSnkI/f665de2992d6aa66bab425d19a559dd1/TPL-202510-GitHubDataProtectionAgreement.pdf": {
     "file": "assets_ctfassets_net_8aevphvgewt8_9rrh60u9m8ajgckphsnki_f665de2992d6aa66bab425d1_98c44479.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "265b40a6f4461c4c0611a3a89adeff6e4bb252391c315fce1bd5629a325a52ca",
     "vendors": [
@@ -75,7 +75,7 @@
   },
   "https://aws.amazon.com/bedrock/faqs/": {
     "file": "aws_amazon_com_bedrock_faqs_f536e07b.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "e5c4571a51c0944e85a464bd8892c74ed53767b619c1b1ac77d35bec00be47f6",
     "vendors": [
@@ -84,7 +84,7 @@
   },
   "https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html": {
     "file": "cdn_deepseek_com_policies_en_us_deepseek_open_platform_terms_of_service_html_537bbfde.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "f48bd9185b43027d5f5842710767dcd1c1423d0eafaf624cccc58d5cf5f90885",
     "vendors": [
@@ -93,7 +93,7 @@
   },
   "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html": {
     "file": "cdn_deepseek_com_policies_en_us_deepseek_privacy_policy_html_6591ef74.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "cf2faa3a9f3d4612cd2b241872382438f1032b2cf42dfa3731251e0dcbf3c435",
     "vendors": [
@@ -102,7 +102,7 @@
   },
   "https://cdn.deepseek.com/policies/en-US/model-algorithm-disclosure.html": {
     "file": "cdn_deepseek_com_policies_en_us_model_algorithm_disclosure_html_165698a5.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "638425c7db26e92a7231b081de3a9f8a1c279e7eaf18bfef4036bb0118bc9e03",
     "vendors": [
@@ -111,7 +111,7 @@
   },
   "https://cloud.google.com/blog/topics/hybrid-cloud/gemini-is-now-available-anywhere": {
     "file": "cloud_google_com_blog_topics_hybrid_cloud_gemini_is_now_available_anywhere_443e856c.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "291debfca409e2ba628f5b709987511d7a34be39719536b0cba55cb177d200a2",
     "vendors": [
@@ -120,61 +120,61 @@
   },
   "https://code.claude.com/docs/en/data-usage": {
     "file": "code_claude_com_docs_en_data_usage_2ed824c5.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "1b71d09b3d0f462639bcafc4028522d67cb955ab30dea2388c5a3d7007496427",
+    "sha256": "47c4357e462e4d2f2ce7dc6f104db443bcc347f6ef608f1ac0687299c3e06f3e",
     "vendors": [
       "claude-code"
     ]
   },
   "https://code.claude.com/docs/en/self-hosted-environments": {
     "file": "code_claude_com_docs_en_self_hosted_environments_cf76048a.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "2b6e7a329469bc23641695cd5c8379ff0807cb90c9d12bc4cf97b917bcdf350e",
+    "sha256": "1dc05a981712f85eac6af11e0ea18add2b978ecd48456e1242fd13ba04c7b71b",
     "vendors": [
       "claude-code"
     ]
   },
   "https://cohere.com/blog/hipaa-business-associate-agreements-for-custom-model-development": {
     "file": "cohere_com_blog_hipaa_business_associate_agreements_for_custom_model_development_3c4c6938.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "d24e13523f2a6c5bcaa74a1bb929bd346fc60cfce8a276acec82a1644ec5119b",
+    "sha256": "d01dc83db365e196017d29f983c288e26773d19d95f2ab39282b576e1c0f7a19",
     "vendors": [
       "cohere"
     ]
   },
   "https://cohere.com/data-usage-policy": {
     "file": "cohere_com_data_usage_policy_1a44d6db.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "61af199f5b1258bcc87837ba3ebd100dec019f9cc7216895ec032edd296c3b9e",
+    "sha256": "c001edb3c754fa441603a2e6cfa1d914169c0451c1c192cb92e61ea92d3139c9",
     "vendors": [
       "cohere"
     ]
   },
   "https://cohere.com/privacy": {
     "file": "cohere_com_privacy_5b30cd55.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "72186283c4b6d66fb9fe88e0d26ecef5061ea7f94802862c73f11c02a68e4bfd",
+    "sha256": "328233ae92b4f621489b60ed367fa57ae5f2bab9b51aa87c2b734b4d114d05d8",
     "vendors": [
       "cohere"
     ]
   },
   "https://cohere.com/security": {
     "file": "cohere_com_security_f89a53ab.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "0ade9fb88bc36d2b92979c989858942638d03753b845af4ae32867f849fb5dfd",
+    "sha256": "a1d70fb6ca75c2d35be10ab33bb5b55776b36ca6d2da54f90f7b6afdb0290bdb",
     "vendors": [
       "cohere"
     ]
   },
   "https://console.groq.com/docs/legal/customer-business-associate-addendum": {
     "file": "console_groq_com_docs_legal_customer_business_associate_addendum_34bb7754.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "7638b489376077e7854e8197b8669e19896f2d63fddbe8f71716598ef46b0829",
     "vendors": [
@@ -183,7 +183,7 @@
   },
   "https://console.groq.com/docs/legal/customer-data-processing-addendum": {
     "file": "console_groq_com_docs_legal_customer_data_processing_addendum_8e18dc52.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "fef1afb2ac1cc4b50c66220bb53ef9c6e325b4fc3d2fcf7c03adc65d26b5f4fa",
     "vendors": [
@@ -192,7 +192,7 @@
   },
   "https://console.groq.com/docs/legal/services-agreement": {
     "file": "console_groq_com_docs_legal_services_agreement_27d36aaf.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "1596f5e52ab593e23e647345027b9d59d77efc3014c57b66a3148cd103e6a41e",
     "vendors": [
@@ -201,7 +201,7 @@
   },
   "https://console.groq.com/docs/your-data": {
     "file": "console_groq_com_docs_your_data_371f4297.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "8168f88ca83aa29a8f08ee3ab42defac07a552ea2d845d19116ebedb063595a4",
     "vendors": [
@@ -210,7 +210,7 @@
   },
   "https://cursor.com/data-use": {
     "file": "cursor_com_data_use_01bf409f.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "e95ae21fe52168d589bceac3deb95ddeb7d7dca23447c12a4b275fb510a19a02",
     "vendors": [
@@ -219,7 +219,7 @@
   },
   "https://cursor.com/docs/cloud-agent/self-hosted": {
     "file": "cursor_com_docs_cloud_agent_self_hosted_bb27e8b8.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "a8d8a1bc9189f30acc911305cf1e4b07e9f5b1816c8de4976bf580080b785e46",
     "vendors": [
@@ -228,7 +228,7 @@
   },
   "https://cursor.com/docs/enterprise/baa": {
     "file": "cursor_com_docs_enterprise_baa_aff0be55.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "2a87f71ba683a3e24bcc6d5d8a549702caa05820e8a39148a99987de0ad16c69",
     "vendors": [
@@ -237,7 +237,7 @@
   },
   "https://cursor.com/docs/enterprise/privacy-and-data-governance": {
     "file": "cursor_com_docs_enterprise_privacy_and_data_governance_6cb2a4a1.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "8d25fa5fe64b839246ba674e2370577d6900f82890f141c309a500e6220c8fb3",
     "vendors": [
@@ -246,7 +246,7 @@
   },
   "https://cursor.com/security": {
     "file": "cursor_com_security_ab8a998f.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "1c7dbd4c8806732bd57a645065a4f96b75ea533b357e7ff34f7fc3eefb1c2f8e",
     "vendors": [
@@ -255,7 +255,7 @@
   },
   "https://developers.google.com/terms": {
     "file": "developers_google_com_terms_e0804db7.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "d87438cb0227cbb24d56ca3f646f9d16428ef15c4e5e937215f92e6dc40cdcb3",
     "vendors": [
@@ -264,7 +264,7 @@
   },
   "https://developers.openai.com/codex/cli/reference": {
     "file": "developers_openai_com_codex_cli_reference_ebe826bc.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "a6d91a44e0207e854c42c517c9988476b57b52bc5f4a34f3b18cdae97a94f4dd",
     "vendors": [
@@ -273,7 +273,7 @@
   },
   "https://developers.openai.com/codex/enterprise": {
     "file": "developers_openai_com_codex_enterprise_dc57d8da.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "fa7f8d882599b67cb07d1694144fc4faf4c735dacd993b8d50fb27a912d1149c",
     "vendors": [
@@ -282,7 +282,7 @@
   },
   "https://developers.openai.com/codex/pricing": {
     "file": "developers_openai_com_codex_pricing_91566121.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "ea4193665299121647c5b50727ed88fbd41f9da7b4c8f4b01612750080442320",
     "vendors": [
@@ -291,7 +291,7 @@
   },
   "https://devin.ai/blog/self-hosted-deployment-maintenance-mode": {
     "file": "devin_ai_blog_self_hosted_deployment_maintenance_mode_08759fe9.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "38614e31679817aab5b477e86d2d608304087f590588b139688d8286b5a2efb6",
     "vendors": [
@@ -300,7 +300,7 @@
   },
   "https://devin.ai/blog/windsurf-wave-10-ux-enterprise": {
     "file": "devin_ai_blog_windsurf_wave_10_ux_enterprise_134ff5d0.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "cf03967ef05b7f3f48e007e30bd0308a581837e1f44e35f46885b7bda8953765",
     "vendors": [
@@ -309,7 +309,7 @@
   },
   "https://devin.ai/windsurf/msa": {
     "file": "devin_ai_windsurf_msa_1898d338.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "3a68b0d9500449a3b01c05a320573ab708337b9144ffbd92d38639dd74dc94ac",
     "vendors": [
@@ -318,7 +318,7 @@
   },
   "https://docs.anthropic.com/en/docs/build-with-claude/data-residency": {
     "file": "docs_anthropic_com_en_docs_build_with_claude_data_residency_24ca6933.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "a9f11fb9c58e0f3d7b366e2c31428148948aadb7a23ea483c0fafb9469b7c996",
     "vendors": [
@@ -328,7 +328,7 @@
   },
   "https://docs.anthropic.com/en/docs/build-with-claude/zero-data-retention": {
     "file": "docs_anthropic_com_en_docs_build_with_claude_zero_data_retention_fbfaa208.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "933e05902362dfba1825c482ff7c6e946beb74b472ce283e1e434cfe174e11cb",
     "vendors": [
@@ -337,7 +337,7 @@
   },
   "https://docs.aws.amazon.com/bedrock/latest/userguide/abuse-detection.html": {
     "file": "docs_aws_amazon_com_bedrock_latest_userguide_abuse_detection_html_f67aed20.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "2873f2e3c729b2e45141f7f5d9236d5ba7f6bec86db009c1ef17bbfe65ae3e79",
     "vendors": [
@@ -346,7 +346,7 @@
   },
   "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html": {
     "file": "docs_aws_amazon_com_bedrock_latest_userguide_what_is_bedrock_html_f43337c9.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "562c5387d67e6e9d3bbb9eefd65d692a6ee50bbd07b7b8ea6d7395dbfebf6bba",
     "vendors": [
@@ -355,68 +355,68 @@
   },
   "https://docs.devin.ai/desktop/controls": {
     "file": "docs_devin_ai_desktop_controls_534dff9b.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "adc8a2a1d5723340c0f748574b9f233a4cdb1b5383e1ace47c5970482a5335cc",
+    "sha256": "83bcd23215e2db67bcb29dd013195b08f6955d7d5a0edaa80f30299afb000aab",
     "vendors": [
       "windsurf"
     ]
   },
   "https://docs.fireworks.ai/accounts/data-residency": {
     "file": "docs_fireworks_ai_accounts_data_residency_1134fe79.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "b35e69db74b8069001f8f6d0daaf93884e8a3b4c62229c8bd9429e1224e3b38b",
+    "sha256": "205802589611de0d88363b2f080c57a1b61f50ba546635787b60c74915adef06",
     "vendors": [
       "fireworks-ai"
     ]
   },
   "https://docs.fireworks.ai/ecosystem/integrations/byoc/overview": {
     "file": "docs_fireworks_ai_ecosystem_integrations_byoc_overview_fcd1f8e4.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "31bce1b9501cb03133894e943f10639df4b26a66dede4c4173314b31bb6ebeb2",
+    "sha256": "52e93fcde219256945939ff6ced130417455062fbc5714868b48035c6646c2fc",
     "vendors": [
       "fireworks-ai"
     ]
   },
   "https://docs.fireworks.ai/faq/enterprise/compliance/certifications": {
     "file": "docs_fireworks_ai_faq_enterprise_compliance_certifications_1c02fd98.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "e88c2a449f84d9dcfe0e17daa2525dde15814909faa2e014095bc606cc331e52",
+    "sha256": "cee2a908b18bd2402bb50bae089614f035dbef36c25a85fdee265ebc82d310ca",
     "vendors": [
       "fireworks-ai"
     ]
   },
   "https://docs.fireworks.ai/guides/security_compliance/data_handling": {
     "file": "docs_fireworks_ai_guides_security_compliance_data_handling_c95939fb.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "4ec56041db70c08e5eb90f678d093939b5d786ccfe308117df3ee8c017bde547",
+    "sha256": "63ddc7e2e4cb9ff5235e98b5c48d0e3aadf14141f38825f8dcf759948b4ce632",
     "vendors": [
       "fireworks-ai"
     ]
   },
   "https://docs.github.com/en/copilot/reference/ai-models/model-hosting": {
     "file": "docs_github_com_en_copilot_reference_ai_models_model_hosting_f2c245aa.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "ffcf161c64269e5acca9e7b27389a4f0e7ffdaa3a114a331bc09d8e00279e1c3",
+    "sha256": "815887287574f471daf5a7b7d79c80daf507c745ec897da3be9594afe81aa605",
     "vendors": [
       "github-copilot"
     ]
   },
   "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/govern-at-scale/resources-for-approval": {
     "file": "docs_github_com_en_copilot_tutorials_roll_out_at_scale_govern_at_scale_resources_5350d252.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "a1f12ead3d19d809e6f18b6973ff2af96f2b1554525b99f13b6a017fbd3dc268",
     "vendors": []
   },
   "https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/about-github-enterprise-cloud-with-data-residency": {
     "file": "docs_github_com_en_enterprise_cloud_latest_admin_data_residency_about_github_ent_68c25729.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "9f033c27f265ce05d5d8ea6da9e9844d66b6285b43c44f945854af9819556063",
     "vendors": [
@@ -425,7 +425,7 @@
   },
   "https://docs.github.com/en/enterprise-server@3.22/copilot/copilot-on-ghes/about-copilot-on-ghes": {
     "file": "docs_github_com_en_enterprise_server_3_22_copilot_copilot_on_ghes_about_copilot__4e2a1dd0.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "98eccd97bbfb6c7e10f1cc501a68ba072042287c88d8fc82e4a1c5fe20321fe8",
     "vendors": [
@@ -434,61 +434,61 @@
   },
   "https://docs.helicone.ai/faq/compliance": {
     "file": "docs_helicone_ai_faq_compliance_53a8b153.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "ae6ad628f06cbb290a7b2e053e1f4f1023baa6897c68acf8aa5d4b4ab9a5d3fe",
+    "sha256": "de1472764c05b6a927c79a31e35b5d76db433a12c16de63730c55571e18ab889",
     "vendors": [
       "helicone"
     ]
   },
   "https://docs.helicone.ai/getting-started/self-host/overview": {
     "file": "docs_helicone_ai_getting_started_self_host_overview_c5223511.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "d3b2f6929ff8b45c09ba6feb445e5e599fe6113854481925584dcc234aa11d32",
+    "sha256": "045a2c9a26313e6db3e2a519f1f6b4ca260247b1b6ad36c83a8ad599ef2331f5",
     "vendors": [
       "helicone"
     ]
   },
   "https://docs.helicone.ai/references/data-autonomy": {
     "file": "docs_helicone_ai_references_data_autonomy_05a74b36.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "d944c0ef2eb1fc29fe05b94a7cab62b3bde0db4821f6156b296a605ff6530634",
+    "sha256": "28b6d62a1b8bb35763a3aec58428d0b1ed24ecca4548be910926cd9fe4f55544",
     "vendors": [
       "helicone"
     ]
   },
   "https://docs.langchain.com/langsmith/cloud": {
     "file": "docs_langchain_com_langsmith_cloud_cec61318.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "8f633618588e0dad91d4fc889ec2f1bc413d7bdc83673000d9b651ee8d93fb6a",
+    "sha256": "ff7166289252e2d473e6c3f0c8453e7cdb12df53c5d527849d7319288591753d",
     "vendors": [
       "langsmith"
     ]
   },
   "https://docs.langchain.com/langsmith/regions-faq": {
     "file": "docs_langchain_com_langsmith_regions_faq_b91f9c70.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "f1bb9edf8cb74585d9770132aeb915d0f2a2cc193c64ba1beba79aaf112cd7c6",
+    "sha256": "bebaf76757fb91a3cc526767f6e9221e111e4aeedb92a9169cb5897a3cadf7ab",
     "vendors": [
       "langsmith"
     ]
   },
   "https://docs.langchain.com/langsmith/self-hosted": {
     "file": "docs_langchain_com_langsmith_self_hosted_59b90cde.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "8fa41b1baa973c0c7127b205c48935b4f72adbc2208d2f6d984eec97b71f548b",
+    "sha256": "90189cc9c483f8beb0c8a220bfdd1317a50614e243022b0ca1185d1f82ee1b2b",
     "vendors": [
       "langsmith"
     ]
   },
   "https://docs.mistral.ai/deployment/self-deployment": {
     "file": "docs_mistral_ai_deployment_self_deployment_82078148.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "d9baf9ad32279fd393a6e999c58d7bcc2603c81cda14ac7cd498d44a8fb07d25",
     "vendors": [
@@ -497,43 +497,43 @@
   },
   "https://docs.ollama.com/cloud": {
     "file": "docs_ollama_com_cloud_8ca47722.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "9a47a1cec3e68cae1563c1c5daa7cae9e8439d211aaf070f0aa1acec67ebd969",
+    "sha256": "6abe51da0995044cb3eedb797ea098d6aa446d5a072f958035ec64b9f7c42f91",
     "vendors": [
       "ollama-cloud"
     ]
   },
   "https://docs.smith.langchain.com/administration/concepts": {
     "file": "docs_smith_langchain_com_administration_concepts_3b41c82f.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "b5945d62e62122d7e4d4e2c24a884ef91523a70a61d85e24fdde5afd5d6a849b",
+    "sha256": "ee69a40f7f3468bf4fbe35e1afb9ea7d598589fcbf73af9a1e6935f5c72a593c",
     "vendors": [
       "langsmith"
     ]
   },
   "https://docs.together.ai/docs/zero-data-retention": {
     "file": "docs_together_ai_docs_zero_data_retention_27e724e1.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "84873a52f0aa1ec77730f41cbe639048e646b27603ef9aca22bbc9169f09e802",
+    "sha256": "0ccb6d7e4711150a36cf0c1d5307f09e92e0cb450e944f3e8162a461cab531e8",
     "vendors": [
       "together-ai"
     ]
   },
   "https://docs.windsurf.com/windsurf/security": {
     "file": "docs_windsurf_com_windsurf_security_a6231a2f.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "7f547a7db7acd6624fdb88932726777c1cd1d3c12332c518709d98dc7fb1464a",
+    "sha256": "3c3e3816d1c0c9e89d6b185767e748612859b5b15b1c5fd19a3a50bd76002548",
     "vendors": [
       "windsurf"
     ]
   },
   "https://docs.x.ai/console/faq/security": {
     "file": "docs_x_ai_console_faq_security_9e7f01be.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "a09cfb778b179b3b25d35593fd9016bd52192bdd7e0a6fa38b1f52797c866253",
     "vendors": [
@@ -542,7 +542,7 @@
   },
   "https://docs.x.ai/docs/key-information/regions": {
     "file": "docs_x_ai_docs_key_information_regions_eb5faf67.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "5dd2c80284694d1b203f879091dfbd77337b8db1089e06696c20e5d6d69593a2",
     "vendors": [
@@ -551,23 +551,23 @@
   },
   "https://fireworks.ai/privacy-policy": {
     "file": "fireworks_ai_privacy_policy_24cba4dd.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "28bc311acacfcea6d739facf372de8991f8ef1f7f9fece7a86fd3c5dba77f4f0",
+    "sha256": "3038f0e487dca69580bbc913abee5a401de9704d58d601f25e9fb8c729869b77",
     "vendors": [
       "fireworks-ai"
     ]
   },
   "https://fireworks.ai/security/bulletins/october-2026-security-incident": {
     "file": "fireworks_ai_security_bulletins_october_2026_security_incident_56aecd74.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "8d586de3dd9e91b6b0227f0caa7b5fa36db12d0a7550a7fc51a86429001412b1",
     "vendors": []
   },
   "https://github.blog/changelog/2024-12-06-the-latest-github-and-github-copilot-soc-reports-are-now-available/": {
     "file": "github_blog_changelog_2024_12_06_the_latest_github_and_github_copilot_soc_report_b0fff6b4.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "1e0e2683f1badece7469e47e6482edd79d936039ae38f2dca95072b4886f206f",
     "vendors": [
@@ -576,16 +576,16 @@
   },
   "https://github.com/features/copilot": {
     "file": "github_com_features_copilot_ec57d26d.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "c5e429ba4e80f5be4819be2d19725d7d7ce0c4da949580225cf52f6e02769b01",
+    "sha256": "9acb96c019d536652c2c8b4ea43118f1cd278ce9d07bacde67dba9e95ac74fcb",
     "vendors": [
       "github-copilot"
     ]
   },
   "https://groq.com/security": {
     "file": "groq_com_security_e7aafd4a.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "f156e22b288068405945bca4a413460d4f0aa6b3d4fb9d6cf23a6131ac1a6550",
     "vendors": [
@@ -594,7 +594,7 @@
   },
   "https://help.mistral.ai/en/articles/347612-can-i-activate-zero-data-retention-zdr": {
     "file": "help_mistral_ai_en_articles_347612_can_i_activate_zero_data_retention_zdr_1a3e324e.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "d24c8a7b99ba44f4ac34cef64a174c50c6c9847a93d5d22945a50d5936b20e53",
     "vendors": [
@@ -603,7 +603,7 @@
   },
   "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models": {
     "file": "help_mistral_ai_en_articles_347617_do_you_use_my_user_data_to_train_your_artific_13048cf7.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "c880523cac6450ec13c81e85d43a1efd3cdaadc2d04b6c03356ab1533a771a78",
     "vendors": [
@@ -612,7 +612,7 @@
   },
   "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data": {
     "file": "help_mistral_ai_en_articles_347629_where_do_you_store_my_data_or_my_organization_2f805101.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "28dc2691a0491bed54edd81e8c0211e1721f116ab6e6307a63096191053715d6",
     "vendors": [
@@ -621,7 +621,7 @@
   },
   "https://help.mistral.ai/en/articles/347638-do-you-have-soc-2-or-iso-27001-certification": {
     "file": "help_mistral_ai_en_articles_347638_do_you_have_soc_2_or_iso_27001_certification_ffa1613e.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "6c3a342989df4089abb9e64e499742f34bc07bf7d7e873e01a27e1dc8e4eb2dd",
     "vendors": [
@@ -630,25 +630,25 @@
   },
   "https://huggingface.co/deepseek-ai": {
     "file": "huggingface_co_deepseek_ai_a544e39d.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "510ac4f8c1c8e64b492e177bb534f95d8ece85996572471e28575f74cb7d785f",
+    "sha256": "f4ae407d295e22716cb909be94996fb7c4b22c8f3e011b3f45570b738d14b0ec",
     "vendors": [
       "deepseek"
     ]
   },
   "https://huggingface.co/xai-org/grok-2": {
     "file": "huggingface_co_xai_org_grok_2_4ebd8248.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "b5f877324391323d5f536d64abbad766aaa53804592e85d3f2e326b583e1ddca",
+    "sha256": "51d4595ccee3abbe0c4b253f8c574184037daaaa33d8631df46a0b48503a701f",
     "vendors": [
       "xai"
     ]
   },
   "https://langfuse.com/docs/data-retention": {
     "file": "langfuse_com_docs_data_retention_be5e9d24.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "3abb85cf66f71d23de5710a34fdd53336411da87e08bf0bbbbb4f95281e3e10e",
     "vendors": [
@@ -657,16 +657,16 @@
   },
   "https://langfuse.com/security": {
     "file": "langfuse_com_security_89b00596.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "9bf147f77aac853449c56bf7c5666427952086d5a2150fe1ec818571e6c596ae",
+    "sha256": "2ff271dd07e8a1d10830c0639b8f0c8cfe451a7c9c1638ba668f95b74b78bb98",
     "vendors": [
       "langfuse"
     ]
   },
   "https://langfuse.com/security/data-regions": {
     "file": "langfuse_com_security_data_regions_eb737ac9.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "176530d3049f25962c048b7b4c73b99969204f590cb1b59c203cde64ec156d29",
     "vendors": [
@@ -675,7 +675,7 @@
   },
   "https://langfuse.com/security/hipaa": {
     "file": "langfuse_com_security_hipaa_6189f807.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "d1ee0232a0a31f6dffffbe2d072e2ee7ac0755e67647f958426c9811b05224a3",
     "vendors": [
@@ -684,7 +684,7 @@
   },
   "https://langfuse.com/security/privacy-faq": {
     "file": "langfuse_com_security_privacy_faq_c139a89f.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "c94309b0527fd732a2383f5c8f2912f5d75b19e3b59072edee9979ad054429d7",
     "vendors": [
@@ -693,16 +693,16 @@
   },
   "https://langfuse.com/self-hosting": {
     "file": "langfuse_com_self_hosting_487a2dc4.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "392757af56c111017fe7c5acdc34ff10bf557683b27ddee159c8b6101f1c002d",
+    "sha256": "417499def2c70b953612552a05077b2299663c653864fe25cf2d6bccd5bf4292",
     "vendors": [
       "langfuse"
     ]
   },
   "https://learn.chatgpt.com/docs/hipaa-configuration": {
     "file": "learn_chatgpt_com_docs_hipaa_configuration_1fe7d55e.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "b350c69b2a1fe3de6dea3a47ca5339a6e7fbb4364e74e3fcc36eb0f742cd2ed8",
     "vendors": [
@@ -711,7 +711,7 @@
   },
   "https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/openai/data-privacy": {
     "file": "learn_microsoft_com_en_us_azure_ai_foundry_responsible_ai_openai_data_privacy_08f95072.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "10a30b614597d7056ae337454993169d695fad6ec188d2f56613a32e8c6d167f",
     "vendors": [
@@ -720,7 +720,7 @@
   },
   "https://learn.microsoft.com/en-us/azure/compliance/offerings/cloud-services-in-audit-scope": {
     "file": "learn_microsoft_com_en_us_azure_compliance_offerings_cloud_services_in_audit_sco_ac9518f3.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "c9c8b4c120bc9278d073de5de8490698305dc560df6c09cd8f9c83066e0b8f25",
     "vendors": [
@@ -729,7 +729,7 @@
   },
   "https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-hipaa-us": {
     "file": "learn_microsoft_com_en_us_azure_compliance_offerings_offering_hipaa_us_1b36b146.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "fe05e37fdec5caee57019cd4a6e0967163a4a62f028b10f2ac88ac2c08b34577",
     "vendors": [
@@ -738,7 +738,7 @@
   },
   "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?pivots=azure-openai": {
     "file": "learn_microsoft_com_en_us_azure_foundry_foundry_models_concepts_models_sold_dire_ae02181d.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "65ed72142290cd7521141f3196bfaecda066fa65e6e9b4b593a5ef8b6149a2ef",
     "vendors": [
@@ -747,7 +747,7 @@
   },
   "https://legal.mistral.ai/terms/data-processing-addendum/": {
     "file": "legal_mistral_ai_terms_data_processing_addendum_f4796a7f.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "9d1677ba69dce0c01fa8897bf8e22cfd5779b7d352fbb5a308c8d2162fc086e3",
     "vendors": [
@@ -756,7 +756,7 @@
   },
   "https://legal.mistral.ai/terms/privacy-policy/?lang=en": {
     "file": "legal_mistral_ai_terms_privacy_policy_lang_en_2aa1418f.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "df0a19c5e11735af47d26a436d2e91aaa04b8ba753256e2cea71317255e06d9d",
     "vendors": [
@@ -765,7 +765,7 @@
   },
   "https://lp.jetbrains.com/ai-ides-faq/": {
     "file": "lp_jetbrains_com_ai_ides_faq_3f79e33f.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "9b76064603d26237fddfd486d6ec85cc31d52031e590daa60433caa85f5120a9",
     "vendors": [
@@ -774,16 +774,16 @@
   },
   "https://ollama.com/cloud": {
     "file": "ollama_com_cloud_57b7bd75.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "2c75547916bfa8f264edb2a0f759ed3bbd9877666ae9af903cb6b0dab915f82a",
+    "sha256": "ba2fa3070cc96b9b1b237dea4fa345ecb0704fa6edbb7e255b6baa44211d874a",
     "vendors": [
       "ollama-cloud"
     ]
   },
   "https://ollama.com/privacy": {
     "file": "ollama_com_privacy_a17cead2.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "ad0477532e8401a561ef5d64da4921abd708ae5d4ccffcdbaeabadad31242382",
     "vendors": [
@@ -792,7 +792,7 @@
   },
   "https://openai.com/enterprise-privacy/": {
     "file": "openai_com_enterprise_privacy_8dd13697.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "993cbb199d7b3cb3dc47c98e01e7c916512f1ff5ffb2b164b8fc3bd2fc12e385",
     "vendors": [
@@ -801,7 +801,7 @@
   },
   "https://openai.com/open-models/": {
     "file": "openai_com_open_models_1e4f1d84.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "cf12c756d1d54bce2f49ade14a4c90b2c8e95aca6818556c9ae6fdbecd35cc27",
     "vendors": [
@@ -810,25 +810,25 @@
   },
   "https://openrouter.ai/docs/features/privacy-and-logging": {
     "file": "openrouter_ai_docs_features_privacy_and_logging_a7e3e9a3.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "ff6c0ed2c1469dc93364af27b7f16751ecbd418bf1161d3e9fa72e27a787fb2c",
+    "sha256": "c6fc39a5b93dd2d57a7f68867608971ee8fc5634cb86f1ba2345fd6ab840410e",
     "vendors": [
       "openrouter"
     ]
   },
   "https://openrouter.ai/docs/features/zdr": {
     "file": "openrouter_ai_docs_features_zdr_71ab3739.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "3dd0419a1ff8ef0d0fd671d554ea2020232d0f5930baa79f18f9ff33f4729c7d",
+    "sha256": "75aec318f31b738bdd7c21c0c0ff1b552fbd5eeba588742da1486277dd1e5169",
     "vendors": [
       "openrouter"
     ]
   },
   "https://openrouter.ai/enterprise": {
     "file": "openrouter_ai_enterprise_1425707a.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "357b6ff075d7331ccccd98b408efb2db2b808bceda7318ca19319aaf823d066b",
     "vendors": [
@@ -837,7 +837,7 @@
   },
   "https://openrouter.ai/privacy": {
     "file": "openrouter_ai_privacy_2e6609e5.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "f1b9b5cc4571d3f74857148a7f4063c07cddbe6b6a65c51cbbd452425741de6b",
     "vendors": [
@@ -846,27 +846,27 @@
   },
   "https://platform.claude.com/docs/en/about-claude/models/overview": {
     "file": "platform_claude_com_docs_en_about_claude_models_overview_1779fb13.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "8775366f61982af1c4e0ae0f982ddcdae17cc8ace9c5622886be156ca2bc8c7f",
+    "sha256": "7d51431cb8c3b8a388fa6d4cbda5fa1cd6f26a0c243e7c1e8bf1c84b8897bdf4",
     "vendors": [
       "anthropic-api"
     ]
   },
   "https://platform.openai.com/docs/guides/your-data": {
     "file": "platform_openai_com_docs_guides_your_data_31bebb73.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "6e0d253355187972023481ac566ade78aef6ef2a1f19c0bd5b0a670bd223f1e8",
+    "sha256": "e8fcddc0d8148b0bfc6ca63404e4593eb71c38af6d97661fe67d714e6e62f51a",
     "vendors": [
       "openai-api"
     ]
   },
   "https://privacy.anthropic.com/en/articles/10015870-what-certifications-has-anthropic-obtained": {
     "file": "privacy_anthropic_com_en_articles_10015870_what_certifications_has_anthropic_obt_d5b36be1.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "2c71687da17a24cd9e974ffd5427080a282197ad099dacbf30929b18bbaaf71d",
+    "sha256": "87da7ca8409abd327a4835fa547bb2b8fe1f7f92a6280ab4ca6138ee4e22536d",
     "vendors": [
       "anthropic-api",
       "claude-code"
@@ -874,7 +874,7 @@
   },
   "https://privacy.anthropic.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data": {
     "file": "privacy_anthropic_com_en_articles_7996866_how_long_do_you_store_my_organization__d41bf307.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "a78fa87cb4c9d5d127cd377bb86dfc0856d99be1b5041437cfe7f7a63fac090c",
     "vendors": [
@@ -884,7 +884,7 @@
   },
   "https://privacy.anthropic.com/en/articles/7996868-is-my-data-used-for-model-training": {
     "file": "privacy_anthropic_com_en_articles_7996868_is_my_data_used_for_model_training_39be2864.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "9b9ce8e2b4c50937b6752abb10afe3f48b4824f94ee38912340f32f1cf7430b9",
     "vendors": [
@@ -893,15 +893,15 @@
   },
   "https://trust.mistral.ai/": {
     "file": "trust_mistral_ai_460b0243.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "method": "rendered",
-    "sha256": "42e5f0c646c70260bdc458495070713a403dc81510432f404de01ec14d6ef545",
+    "sha256": "b8d52613451258a22604ebd689f3994cd5d10a5648798597a155df590d5fb55d",
     "vendors": []
   },
   "https://trustcenter.cohere.com/subprocessors": {
     "file": "trustcenter_cohere_com_subprocessors_1e299b3b.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "1a65b3a255ba56aafe828f7760489ab713fdeb39cc932aec7309284b46cfee9e",
     "vendors": [
@@ -910,41 +910,41 @@
   },
   "https://windsurf.com/security": {
     "file": "windsurf_com_security_49862162.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "0ba353bfde47bb0ee2719402fa776ae7f999f6be81df4eff9d7318c885fda9d5",
+    "sha256": "81254bc5f5f4667f732432c0d715c0bfb1733051e366dcd446c2dd15b6eaa5b2",
     "vendors": [
       "windsurf"
     ]
   },
   "https://www.braintrust.dev/blog/security-data-control": {
     "file": "www_braintrust_dev_blog_security_data_control_66b94a49.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "711c891a8b120248c3a151ac89110cae9450dd293fdc163b95d4107bd028002c",
     "vendors": []
   },
   "https://www.braintrust.dev/docs/guides/self-hosting": {
     "file": "www_braintrust_dev_docs_guides_self_hosting_51b6a980.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "51cf5f12c28423099c9c584b59102fd3e0f594c4f67d57d73dcb17ededcdf65e",
+    "sha256": "b7fac1149254e6f4dd71544be52c4e6644b2b361899d0df424581ca0e3bc683a",
     "vendors": [
       "braintrust"
     ]
   },
   "https://www.braintrust.dev/docs/security": {
     "file": "www_braintrust_dev_docs_security_bd8ac548.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
-    "sha256": "1f99c9befad1a54759903736b19d52adf32761720f7df399a593f3c9e7011e7c",
+    "sha256": "63f152a880b874829f12b17bed41fcb2c210dae43d268eb3f6b91d03c2df17dc",
     "vendors": [
       "braintrust"
     ]
   },
   "https://www.braintrust.dev/legal/dpa": {
     "file": "www_braintrust_dev_legal_dpa_a555c991.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "01065ef76a9f036edc3700492eb38af458a48f111dbe0aae8385278b26eeba28",
     "vendors": [
@@ -953,7 +953,7 @@
   },
   "https://www.braintrust.dev/legal/msa": {
     "file": "www_braintrust_dev_legal_msa_01d4272f.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "68a2b423917a58d14a4bd84e09f142261fb4705b2e95507728935ac85a4fdcde",
     "vendors": [
@@ -962,7 +962,7 @@
   },
   "https://www.helicone.ai/pricing": {
     "file": "www_helicone_ai_pricing_cce4a7fe.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "39e70ce1933d5842d306c5ac4d867bd6d4e30368bda235862ae254d9d83b9f02",
     "vendors": [
@@ -971,7 +971,7 @@
   },
   "https://www.jetbrains.com/help/ai/data-collection-and-use-policy.html": {
     "file": "www_jetbrains_com_help_ai_data_collection_and_use_policy_html_ccbf3ebc.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "fe20063aa7008296c1766fbc50ac2cd205fda8f4d0a0ccde147f0abac3ba1940",
     "vendors": [
@@ -980,7 +980,7 @@
   },
   "https://www.jetbrains.com/help/ide-services/aie-on-premises.html": {
     "file": "www_jetbrains_com_help_ide_services_aie_on_premises_html_fd80baa2.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "cf8a5d7a974103779ba1e47914a43878a57e4b36c6fbb1ec3ac94a83023f0bf9",
     "vendors": [
@@ -989,7 +989,7 @@
   },
   "https://www.jetbrains.com/legal/docs/privacy/third-parties/": {
     "file": "www_jetbrains_com_legal_docs_privacy_third_parties_0e5bfcd0.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "9658a9d25b2d660c2c8f354f74e2a91e6c88885fa532468044121f1738cb4ddd",
     "vendors": [
@@ -998,7 +998,7 @@
   },
   "https://www.jetbrains.com/legal/docs/privacy/trust-center/": {
     "file": "www_jetbrains_com_legal_docs_privacy_trust_center_9b92a0b7.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "90ab539ec3f53b13c6f3b525132f5a7cefb01d04ddc9b99b3ecbbae1a678ac38",
     "vendors": [
@@ -1007,7 +1007,7 @@
   },
   "https://www.jetbrains.com/legal/docs/terms/jetbrains-ai-platform/": {
     "file": "www_jetbrains_com_legal_docs_terms_jetbrains_ai_platform_509fa218.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "0b2b132921442067c3a248594c995ee4ab95621299f9f2b85a7c7dc53d3061f3",
     "vendors": [
@@ -1016,7 +1016,7 @@
   },
   "https://www.langchain.com/langsmith/observability": {
     "file": "www_langchain_com_langsmith_observability_5dafe46a.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "aa9c740196189cdf9192845abfe3f11ef7cda93ddf49ee3f8c43675964540827",
     "vendors": [
@@ -1025,7 +1025,7 @@
   },
   "https://www.together.ai/blog/introducing-the-together-enterprise-platform": {
     "file": "www_together_ai_blog_introducing_the_together_enterprise_platform_fa956cce.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "9cc42419ff00bd4535542a32559839957035eca7731fb4ed44a22a84e73db074",
     "vendors": [
@@ -1034,7 +1034,7 @@
   },
   "https://www.together.ai/blog/soc-2-compliance": {
     "file": "www_together_ai_blog_soc_2_compliance_516c62e6.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "08734c6c6bf074a5d1c247f60735ffabf812f55ef92988678416f8e5da635945",
     "vendors": [
@@ -1043,7 +1043,7 @@
   },
   "https://www.together.ai/gpu-clusters": {
     "file": "www_together_ai_gpu_clusters_26ca165b.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "cd361b3ff9900c657e1606ef30578a847f0bfdc5d81d1dbab4d83ecf9635a192",
     "vendors": [
@@ -1052,7 +1052,7 @@
   },
   "https://www.together.ai/privacy": {
     "file": "www_together_ai_privacy_c848f318.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "5612e94f1fe109ec313671e5796f0c973de361a68afe306c7e183145142ad4ed",
     "vendors": [
@@ -1061,7 +1061,7 @@
   },
   "https://www.together.ai/terms-of-service": {
     "file": "www_together_ai_terms_of_service_8b4ef833.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "0e0a04cb22fc35e3b0a6e52554e7b3d22b72b7fd0c4e51f0e8eb41dabf82c9ac",
     "vendors": [
@@ -1070,7 +1070,7 @@
   },
   "https://x.ai/legal/terms-of-service-enterprise": {
     "file": "x_ai_legal_terms_of_service_enterprise_ff1a49a2.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "30cd79965a196129157a714b5747415c58b42c244dca087f3bd92c12a4f00d37",
     "vendors": [
@@ -1079,7 +1079,7 @@
   },
   "https://x.ai/security": {
     "file": "x_ai_security_81fbd7f5.txt",
-    "last_checked": "2026-11-12",
+    "last_checked": "2026-11-13",
     "last_error": null,
     "sha256": "53ddf5ca14d6fdcf49e2b55a2354627f5a4ec020cfb252a8c48e57c35e7360f9",
     "vendors": [
