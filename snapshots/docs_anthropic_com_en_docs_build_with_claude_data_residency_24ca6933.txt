@@ -178,19 +178,49 @@ allowed_inference_geos
 :
 Restricts which geos a workspace can use. If a request specifies an
 inference_geo
-not in this list, the API returns an error.
+not in this list, the API returns a 400 error.
 default_inference_geo
 :
 Sets the fallback geo when
 inference_geo
-is omitted from a request. Individual requests can override this by setting
-inference_geo
-explicitly.
-These settings can be configured through the Console or the
+is omitted from a request. It must be one of the allowed geos. A request can override it with any other allowed geo.
+To change these settings in the Claude Console:
+Go to the
+Data residency
+page (
+platform.claude.com/settings/data-residency
+). If the
+Data controls
+page opens instead, find its
+Data residency
+section.
+Select the workspace from the dropdown menu beside the
+Data residency
+heading.
+Under
+Inference geo
+, select the allowed geos from the
+Allowed
+dropdown menu and the fallback geo from the
+Default
+dropdown menu.
+Click
+Save
+, then click
+Confirm
+.
+If these menus are missing or disabled, your role might not allow the change. Ask an organization admin to make it.
+To set them with the
 Admin API
-under the
+, put both fields inside the
 data_residency
-field.
+object of a
+Create Workspace
+Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.
+or
+Update Workspace
+Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.
+request. In an update, a field that you leave out keeps its value.
 
 Claude Models on Google Cloud (Anthropic managed):
 Every workspace allows all inference geos and uses

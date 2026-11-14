@@ -44,7 +44,7 @@ You want a fallback path while customer-owned GPU capacity is being expanded or 
 Some workloads can run outside the BYOC environment while others must remain within your network boundary
 Your team wants a consistent Fireworks API surface across BYOC and Fireworks-managed deployments
 Hybrid BYOC is optional and must be reviewed during onboarding. Fireworks works with your team to confirm routing behavior, workload eligibility, data handling expectations, and any compliance constraints before enabling overflow onto Fireworks-managed capacity.
-Known gaps during Private Preview
+Known gaps during private preview
 Training is not supported in BYOC during Private Preview. If you need training and BYOC together,
 contact us
 so the team can review your requirements and roadmap fit.

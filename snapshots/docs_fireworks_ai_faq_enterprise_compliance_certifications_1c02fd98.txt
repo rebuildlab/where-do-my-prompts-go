@@ -9,7 +9,7 @@ Zero Data Retention Policy
 For US-only inference residency, see
 US-only Serverless
 .
-Secure Data Handling
+Secure data handling
 Data Ownership & Control:
 Customers maintain ownership of their data. Customer data stored as part of an active workflow can be permanently deleted with auditable confirmation, and secure wipe processes ensure deleted assets cannot be reconstructed.
 Encryption
@@ -31,7 +31,7 @@ Access Logging:
 All customer data access is logged, monitored, and protected against tampering. See
 Audit & Access Logs
 .
-Workload Isolation
+Workload isolation
 Dedicated workloads run in logically isolated environments, preventing cross-customer access or data leakage.
 Secure Training
 Fireworks enables secure model training, including fine-tuning and reinforcement learning, while maintaining customer control over sensitive components and data. Training workflows can persist datasets, checkpoints, traces, and trained model artifacts. Enterprise account admins can turn on the
@@ -49,7 +49,7 @@ Customers leverage Fireworks’ training APIs while maintaining full control ove
 For detailed guidance on secure reinforcement fine-tuning and using your own cloud storage, see
 Training security
 .
-Technical Safeguards
+Technical safeguards
 Device Trust
 : Only approved, secured devices with strong authentication can access sensitive Fireworks systems.
 Identity & Access Management
@@ -62,7 +62,7 @@ Monitoring & Detection
 : Real-time monitoring and anomaly detection systems alert on suspicious activity
 Vulnerability Management
 : Continuous scanning and patching processes keep infrastructure up to date against known threats.
-Operational Security
+Operational security
 Security Reviews & Testing
 : Regular penetration testing validates controls.
 Incident Response
@@ -71,9 +71,9 @@ Employee Access
 : Only a minimal subset of Fireworks personnel have access to production systems, and all access is logged and periodically reviewed.
 Third-Party Risk Management
 : Vendors and subprocessors undergo rigorous due diligence and contractual security obligations.
-Compliance & Certifications
+Compliance & certifications
 Fireworks aligns with leading industry standards to support customer compliance obligations.
-ISO Certifications
+ISO certifications
 Fireworks has achieved all three ISO certifications covering security, privacy, and AI management:
 Certification
 Scope
