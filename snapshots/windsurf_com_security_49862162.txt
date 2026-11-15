@@ -23,7 +23,13 @@ What data retention policy does Cognition maintain?
 Cognition only retains data processed through Devin for the duration of the relationship with a given Customer, unless otherwise specified by the Customers.
 Any Feedback Data and User Interaction Data are retained as long as needed and as determined by Cognition.
 How is your data used to improve Devin?
-By default, we may use your data for model training purposes to improve and enhance the Services. If you’re on a paid plan, you can opt out at any time on the Data Controls settings page. After you opt out, your data will not be used for training and Zero Data Retention will be enabled with our model providers. On the Teams plan, only an administrator can exercise the opt-out. Devin can still learn to fit into your unique workflow via the
+By default, we may use your data for model training purposes to improve and enhance the Services. If you’re on a paid plan, you can opt out at any time by turning on
+Disable training
+under
+Data controls & privacy
+in
+Settings > General
+. After you opt out, your data will not be used for training and Zero Data Retention will be enabled with our model providers. On the Teams plan, only an administrator can exercise the opt-out. Devin can still learn to fit into your unique workflow via the
 Skills
 feature. When you share Skills, Devin can become more reliable at working on your specific projects over time.
 If you are an Enterprise customer, we will never train on your data without your express prior written consent. Please refer to the terms in your agreement with Cognition for details.

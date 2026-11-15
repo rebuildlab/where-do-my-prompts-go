@@ -16,9 +16,11 @@ Encryption
 : Data is encrypted in transit (TLS 1.2+) and at rest (AES-256).
 Bring Your Own Bucket:
 Customers may integrate their own cloud storage to retain governance and apply their own compliance frameworks.
-Datasets:
-Bring your own bucket (BYOB)
-(GCS, AWS S3, Azure)
+Training data: Load directly from your local environment or cloud bucket via the
+Training API
+(legacy
+BYOB dataset registration
+is retired)
 Models:
 External AWS S3 Bucket Integration
 Bring Your Own Key:

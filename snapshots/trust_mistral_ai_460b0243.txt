@@ -20,7 +20,7 @@ Incident Reports
 MAI-2026-002 - Mini Shai-Hulud security incident
 Opens in new tab
 Controls
-Updated 1 minute ago
+Updated 4 minutes ago
 View all
 Infrastructure security
 Access control procedures established
@@ -38,7 +38,7 @@ Internal security procedures
 Continuity and Disaster Recovery plans established
 Continuity and Disaster Recovery plans tested
 Cybersecurity insurance maintained
-View 21 more Internal security procedures controls
+View 20 more Internal security procedures controls
 Data and privacy
 Data retention procedures established
 Customer data deleted upon leaving
