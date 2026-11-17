@@ -48,8 +48,8 @@ Minimal Data Sharing:
 Training data is shared via controlled bucket access with minimal sharing and step-wise retention, limiting data exposure while enabling effective training workflows.
 API-Based Integration:
 Customers leverage Fireworks’ training APIs while maintaining full control over sensitive components, ensuring no cross-component data leakage.
-For detailed guidance on secure reinforcement fine-tuning and using your own cloud storage, see
-Training security
+For guidance on secure training and using your own cloud storage, see
+Secure Training
 .
 Technical safeguards
 Device Trust

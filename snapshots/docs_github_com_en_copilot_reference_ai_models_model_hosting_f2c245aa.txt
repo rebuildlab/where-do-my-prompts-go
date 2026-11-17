@@ -8,7 +8,6 @@ GPT-5.3-Codex
 GPT-5.4 nano
 GPT-5.6 Luna
 GPT-5.6 Sol
-GPT-5.6 Terra
 GPT-6 Astra
 GPT-6 Luna
 GPT-6 Sol
@@ -33,7 +32,6 @@ Claude Sonnet 5
 Claude Sonnet 5.5
 Claude Opus 4.8
 Claude Opus 4.8 (fast mode) (preview)
-Claude Opus 5
 Claude Opus 5.5
 Claude Fable 5
 Claude Fable 5.1

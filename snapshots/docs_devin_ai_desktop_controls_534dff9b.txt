@@ -358,6 +358,14 @@ EnableFeedback
 telemetry.feedback.enabled
 boolean
 Whether the issue reporter, surveys, and other feedback entry points are shown.
+OnboardingDefaultImportSource
+devin.onboarding.defaultImportSource
+none
+/
+vscode
+Which application onboarding selects for the import of settings and extensions. See
+Onboarding policies
+.
 The sample
 policy.json
 ,

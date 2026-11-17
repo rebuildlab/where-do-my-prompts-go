@@ -106,7 +106,9 @@ which handlers run with cloud orchestration
 . Test the events and failure cases you rely on before enabling access. Review
 audit coverage
 separately.
-Data requirements. Local computer access with Work Cloud does not provide strict zero data retention. Data residency and inference residency cover only eligible content and supported workloads, regions, and configurations. Enterprise Key Management (EKM) covers supported stored content in eligible workspaces. Work is not supported with UAE inference residency. If
+Data requirements. Local computer access with Work Cloud does not provide strict zero data retention. For current regional availability and coverage requirements, consult the Help Center’s
+Data residency and inference residency for ChatGPT
+. If
 enforce_residency
 is enabled in any cloud policy,
 Allow local computer access

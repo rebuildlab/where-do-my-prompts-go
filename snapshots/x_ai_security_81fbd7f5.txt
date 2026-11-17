@@ -83,5 +83,3 @@ SpaceXSI
 security team through our HackerOne program or email vulnerabilities@x.ai with the subject line “Responsible Disclosure.”
 HackerOne
 vulnerabilities@x.ai
-Copy black SVG
-Copy white SVG

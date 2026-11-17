@@ -1142,6 +1142,9 @@ string
 Set the commit title shown in the review summary. Requires
 --commit
 .
+--trust
+boolean
+Trust this project for this review and future chats, including its configured MCP servers. Codex refuses an explicitly untrusted project.
 --uncommitted
 boolean
 Review staged, unstaged, and untracked changes.
@@ -1178,6 +1181,12 @@ Details
 Set the commit title shown in the review summary. Requires
 --commit
 .
+Key
+--trust
+Type / Values
+boolean
+Details
+Trust this project for this review and future chats, including its configured MCP servers. Codex refuses an explicitly untrusted project.
 Key
 --uncommitted
 Type / Values
@@ -1655,6 +1664,13 @@ Allow running outside a Git repository (useful for one-off directories).
 --thread-source
 SOURCE
 Set the source label for a new or forked thread. Resuming a thread keeps its original label.
+--trust
+boolean
+Save project trust for this run and future chats, even with
+--ephemeral
+. Conflicts with
+--ignore-user-config
+.
 --worktree
 boolean
 Run a new or forked session in a managed Git worktree. Requires local execution; can't be combined with
@@ -1827,6 +1843,16 @@ Type / Values
 SOURCE
 Details
 Set the source label for a new or forked thread. Resuming a thread keeps its original label.
+Key
+--trust
+Type / Values
+boolean
+Details
+Save project trust for this run and future chats, even with
+--ephemeral
+. Conflicts with
+--ignore-user-config
+.
 Key
 --worktree
 Type / Values
@@ -3016,7 +3042,7 @@ Improve task-specific behavior by selecting a relevant local skill.
 Import Claude Code or Cursor setup, projects, and chats.
 Migrate supported external-agent artifacts into Codex configuration and local files.
 /feedback
-Send logs to the Codex maintainers.
+Send feedback or save a diagnostic ZIP.
 Report issues or share diagnostics with support.
 /init
 Generate an
@@ -3074,7 +3100,7 @@ Move from the TUI to the desktop app on macOS or Windows.
 /side
 ,
 /btw
-Start an ephemeral side chat.
+Open a side chat.
 Ask a focused follow-up without disrupting the main chat’s transcript.
 /raw
 Toggle raw scrollback mode.
@@ -3332,6 +3358,10 @@ You can paste content or attach images while using inline
 /plan
 arguments.
 Expected: Codex enters plan mode and uses your optional inline prompt as the first planning request.
+Choose
+Yes, clear context and implement
+to start a fresh chat with the
+complete plan. If Codex can’t transfer the plan, it keeps the current chat open.
 While Codex is already working,
 /plan
 is temporarily unavailable.
@@ -3452,7 +3482,7 @@ Type
 /delete
 and press Enter.
 Confirm that you want to delete the current session.
-Expected: Codex permanently deletes the transcript and spawned descendant
+Expected: Codex permanently deletes the transcript, its saved side chats, and spawned descendant
 sessions. When connected to a local background server or remote server, Codex
 returns to the command center. Without a shared server, Codex exits.
 /delete
@@ -3791,7 +3821,7 @@ Start a side chat with
 /side
 Use
 /side
-to start an ephemeral fork from the current chat without switching away from the main chat.
+to ask a follow-up in a separate chat while the main chat continues.
 Type
 /side
 to open a side chat.
@@ -3802,6 +3832,15 @@ Return to the parent chat after the focused detour finishes.
 Expected: Codex opens a side chat whose transcript is separate from
 the parent chat. While you are in side mode, the TUI continues to show the
 parent chat’s status so you can see whether the main chat is still running.
+Side chats are temporary by default. In a local full-screen session with
+features.tui_workspace
+enabled and saved history available,
+/side
+reopens
+an existing side chat and
+/side <prompt>
+starts a new one. You can reopen
+saved side chats from the sidebar after restarting Codex.
 /side
 is unavailable inside another side chat and during review mode.
 Generate
@@ -3880,14 +3919,22 @@ Manage chats with
 /agents
 Type
 /agents
-and press Enter.
-Select a chat from the command center to open it.
-Expected: Codex shows an overview of chats on the connected server. You can
-inspect their status and switch between them. To open the command center
-directly from your terminal, run
+and press Enter, or run
 codex agents
-. The command center requires a
-shared local or remote server.
+from your terminal.
+To find an older chat, press
+F3
+or
+/
+and type part of its name, prompt preview, or working directory. Search ignores case.
+Select a chat to open it.
+On macOS and Linux, eligible local sessions signed in with ChatGPT can use an
+experimental Cloud connection. Enable
+features.tui_multi_backend
+, then use the
+host shortcut shown in a new chat’s composer to switch from Local to Cloud before
+sending your first prompt. In Cloud chats, you can send images, select a model
+and reasoning effort for the next turn, and archive or restore chats.
 Switch agent threads with
 /subagents
 Type
@@ -3901,9 +3948,15 @@ Send feedback with
 Type
 /feedback
 and press Enter.
-Follow the prompts to include logs or diagnostics.
-Expected: Codex collects the requested diagnostics and submits them to the
-maintainers.
+Choose a feedback category and whether to include logs.
+In the note editor, press
+Enter
+to submit feedback. On a local connection, press
+Ctrl
++
+S
+to save a diagnostic ZIP instead.
+Codex shows the path to the ZIP. You can save it even if your settings block uploads.
 Sign out with
 /logout
 Type

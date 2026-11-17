@@ -39,7 +39,7 @@ most widely adopted open-source LLM engineering platform
 50,000+
 companies
 , with
-37,453
+37,505
 GitHub stars
 ,
 65M+

@@ -207,10 +207,12 @@ On macOS and Windows, the worker logs
 and starts without the live workspace. Those workers behave as they do today.
 Cursor 3.25 or later.
 The worker installs only server builds whose published signature verifies. Older Cursor versions show "Update Cursor to 3.25 or later to open this workspace."
-One more outbound host.
+Server download.
 When the desktop app opens one of its agents, the worker downloads the server build for that Cursor version from
+downloads.cursor.com
+, falling back to
 cursor.blob.core.windows.net
-into
+, into
 ~/.cursor-server/bin/<commit>/
 , once per version, and runs it on
 127.0.0.1
@@ -244,6 +246,8 @@ another agent or worker process on the machine is still running a copy of
 that build, end that session or stop that worker, then retry. A download
 whose bytes don't match fails again on retry. If the log shows the download
 itself failed, allow outbound HTTPS to
+downloads.cursor.com
+and
 cursor.blob.core.windows.net
 .
 Cursor provides no mirror.

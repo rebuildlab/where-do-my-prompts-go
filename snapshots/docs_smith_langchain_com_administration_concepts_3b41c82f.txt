@@ -432,8 +432,8 @@ Workspace Viewer
 has read-only access to all resources within the workspace.
 Organization Admins
 can also create and edit custom roles with specific permissions for different resources.
-To give a group of users a role in several workspaces at once, use
-teams
+To give a team a role in several workspaces at once, create a
+user group
 .
 Usage and billing
 Data retention
