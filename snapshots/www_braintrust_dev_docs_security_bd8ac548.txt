@@ -18,7 +18,7 @@ Braintrust MCP server
 , OAuth 2.0 uses PKCE (Proof Key for Code Exchange). MCP clients authenticate via standard OAuth flow and receive access tokens with refresh capabilities for secure, long-lived sessions. Tokens inherit your user account permissions, providing access only to resources you can normally access.
 External MCP connections in Loop
 External MCP connections
-are available in public preview on Braintrust-hosted deployments.
+are available in public preview.
 Project MCP credentials are encrypted and stored on your data plane. Loop and
 prompts using project MCP servers
 can use these credentials to authenticate requests. Calls using saved credentials have the shared account’s or API key’s permissions, rather than each project member’s individual permissions on the external service. Loop’s MCP calls run outside the sandbox.
@@ -29,23 +29,22 @@ Loop’s project MCP settings
 GitHub repositories in Loop
 The
 GitHub integration
-is available in public preview on Braintrust-hosted deployments.
-Loop uses your connected GitHub account for reads and writes in your conversations. It can access a repository only when all of these allow it:
-Your GitHub permissions
+is available in public preview.
+Loop uses your connected GitHub account for reads and writes in conversations. Repository access must be allowed by all three:
+Your GitHub account
 The GitHub App installation
-The project’s GitHub connection, or the organization’s default installation in organization-level threads
-Pushes and pull requests also require
-write access
-to be enabled, plus the Braintrust permission for the thread:
-Project threads:
-Update
-permission on the project.
-Organization-level threads:
-Organization-level
+The project’s GitHub connection, or the organization’s default installation for organization-level threads
+In Braintrust, you need
 Read
-permission.
-Background repository checkouts can use the GitHub App installation’s credentials. Your personal GitHub permissions do not restrict Loop’s access to files already cloned into a sandbox.
-An egress proxy supplies short-lived GitHub tokens without exposing them to the model or sandbox. The sandbox receives only ephemeral proxy credentials and retains cloned source files for Loop to inspect.
+permission for project threads or organization membership for organization-level threads. The PR creation settings do not restrict writes through your connected account. See
+how write access works
+.
+Credentials:
+GitHub tokens are not exposed to the model or sandbox.
+Downloads:
+Actions log and artifact downloads recheck your repository read access. Requests to GitHub’s storage hosts do not include your GitHub credentials.
+Cloned files:
+Background checkouts can use the GitHub App installation’s credentials. Your personal GitHub permissions do not restrict access to files already cloned into a sandbox.
 You need the organization’s
 Manage settings
 permission to connect installations or set the organization’s default connection.

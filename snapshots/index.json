@@ -167,7 +167,7 @@
     "file": "cohere_com_security_f89a53ab.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "40193d751a2602772419b844b6892d8c045882cf0fe6418bd121909af381e445",
+    "sha256": "817ca81f1af103c5e138b35870badff37ed97f741527578a7c33db6a6c745f5d",
     "vendors": [
       "cohere"
     ]
@@ -221,7 +221,7 @@
     "file": "cursor_com_docs_cloud_agent_self_hosted_bb27e8b8.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "d5aabeeb8a0bbb2406cd286d87914b87d8de36cb42c7cb859d87a1bb023edc7f",
+    "sha256": "9dd0311da6a7eb9278adaa05ea6340eaa0224f93baa58c84fe147ccb367cdb98",
     "vendors": [
       "cursor"
     ]
@@ -320,7 +320,7 @@
     "file": "docs_anthropic_com_en_docs_build_with_claude_data_residency_24ca6933.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "fc01599f41dcd911b0d8e50e4de8e1e0d90ee1c2d93b67365696b964cbac9992",
+    "sha256": "9d2639898f2f07ad5a4469f3dac1db144fe175cb56201166dc683d201bbbb0c2",
     "vendors": [
       "anthropic-api",
       "claude-code"
@@ -357,7 +357,7 @@
     "file": "docs_devin_ai_desktop_controls_534dff9b.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "8ec0eb1679619a8dbd5dd7beb7e40211bbc85a4ccb29072be1ea839a26a611a4",
+    "sha256": "a5cd2a59b2ea4037bf54a270f3617a866d8fbbff1d44849d17b7e745829953fa",
     "vendors": [
       "windsurf"
     ]
@@ -402,7 +402,7 @@
     "file": "docs_github_com_en_copilot_reference_ai_models_model_hosting_f2c245aa.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "95682716785ff48084aa31fcc942071c567de9215f9fa561b68787fa127ae50e",
+    "sha256": "d618db2cbc5cb3d4cfb25e33f96e130d3c507f878784dbe33520db9f91f89c39",
     "vendors": [
       "github-copilot"
     ]
@@ -596,7 +596,7 @@
     "file": "help_mistral_ai_en_articles_347612_can_i_activate_zero_data_retention_zdr_1a3e324e.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "d24c8a7b99ba44f4ac34cef64a174c50c6c9847a93d5d22945a50d5936b20e53",
+    "sha256": "3e901b3949e0ce0816e2e6afab43dbe2a061750aa6327727815cafdc6de23a31",
     "vendors": [
       "mistral"
     ]
@@ -605,7 +605,7 @@
     "file": "help_mistral_ai_en_articles_347617_do_you_use_my_user_data_to_train_your_artific_13048cf7.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "c880523cac6450ec13c81e85d43a1efd3cdaadc2d04b6c03356ab1533a771a78",
+    "sha256": "35c64c20896cf7aac3a746217c056380bf8966c40537d6848fb200c5e98b2a87",
     "vendors": [
       "mistral"
     ]
@@ -614,7 +614,7 @@
     "file": "help_mistral_ai_en_articles_347629_where_do_you_store_my_data_or_my_organization_2f805101.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "28dc2691a0491bed54edd81e8c0211e1721f116ab6e6307a63096191053715d6",
+    "sha256": "4caeb043864945053d15e685e97c80cd6226f2c2be1847d5492375031057e66d",
     "vendors": [
       "mistral"
     ]
@@ -632,7 +632,7 @@
     "file": "huggingface_co_deepseek_ai_a544e39d.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "d4b1eae92f68da26b2b57d29c8779b097068147a96b56d2bba1a40fa059360e7",
+    "sha256": "59bf678d481a29d7cd8d9d3a50b4ced4accec8bae60fd91cf257c0a7d42d68d7",
     "vendors": [
       "deepseek"
     ]
@@ -641,7 +641,7 @@
     "file": "huggingface_co_xai_org_grok_2_4ebd8248.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "e46839e2d02ae342c7b77e2865ecce469cd8abbe70d735e7284d0f45e2bffd34",
+    "sha256": "06cb2cfcb3f59ccaa3eaca4309f0740a1b27061bf1d367e728d60887c14ac4d5",
     "vendors": [
       "xai"
     ]
@@ -659,7 +659,7 @@
     "file": "langfuse_com_security_89b00596.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "bc3dc22af79bb43e772de8a604dabc143c52feb2d51ff40f6c76c2cadb9f1660",
+    "sha256": "2c02b8f549c36f411510638a2aa55b4dede05b5f2bb6936d2020d99780a8113c",
     "vendors": [
       "langfuse"
     ]
@@ -713,7 +713,7 @@
     "file": "learn_microsoft_com_en_us_azure_ai_foundry_responsible_ai_openai_data_privacy_08f95072.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "9c3238ef051c19aee7bea07c191baf9798c504f235dc02ddae7bd6a892fd8f0f",
+    "sha256": "0a5a183ff4f95e5b5a5cec23eba11b22b7b9da11a8714898c6a6effc43b8dbb1",
     "vendors": [
       "azure-openai"
     ]
@@ -848,7 +848,7 @@
     "file": "platform_claude_com_docs_en_about_claude_models_overview_1779fb13.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "7d51431cb8c3b8a388fa6d4cbda5fa1cd6f26a0c243e7c1e8bf1c84b8897bdf4",
+    "sha256": "50c9a68eeb4ef5b67b06740eab1dfe361701db21576b0005b03d06b2c5d3f745",
     "vendors": [
       "anthropic-api"
     ]
@@ -866,7 +866,7 @@
     "file": "privacy_anthropic_com_en_articles_10015870_what_certifications_has_anthropic_obt_d5b36be1.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "87da7ca8409abd327a4835fa547bb2b8fe1f7f92a6280ab4ca6138ee4e22536d",
+    "sha256": "601ba8a075745c95fdaac54566980250fa499ab19005d0cfcca835e7ba23a9d1",
     "vendors": [
       "anthropic-api",
       "claude-code"
@@ -896,7 +896,7 @@
     "last_checked": "2026-11-18",
     "last_error": null,
     "method": "rendered",
-    "sha256": "4d409b34c597e140e8d351f9dabcac293539e11cee44c286e03fc3632221393f",
+    "sha256": "c82e8939c9f842275bfa122b6e4228287478e6ec98716431d1ed7eefd677948f",
     "vendors": []
   },
   "https://trustcenter.cohere.com/subprocessors": {
@@ -937,7 +937,7 @@
     "file": "www_braintrust_dev_docs_security_bd8ac548.txt",
     "last_checked": "2026-11-18",
     "last_error": null,
-    "sha256": "63f152a880b874829f12b17bed41fcb2c210dae43d268eb3f6b91d03c2df17dc",
+    "sha256": "68d60b38014133058edcef2c3fb0197f4cef68f1a652ddbb893426633067973f",
     "vendors": [
       "braintrust"
     ]

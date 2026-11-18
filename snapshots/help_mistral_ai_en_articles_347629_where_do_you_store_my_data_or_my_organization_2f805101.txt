@@ -1,10 +1,10 @@
 By default,
-your data is hosted in the European Union
+your data is hosted in the European Economic Area (EEA)
 .
 You may, however,
-explicitely use our US API endpoint
-and in such a case
-your data is hosted in the United States
+explicitly use our US API endpoint
+, in which case
+your inference requests are processed in the United States
 .
 📌 Depending on the feature you use,
 your data can be temporarily transferred outside of the European Union

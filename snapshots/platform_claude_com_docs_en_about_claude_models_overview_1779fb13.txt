@@ -31,6 +31,10 @@ $2 / input MTok
 $10 / output MTok
 From $0.10 / input MTok
 From $0.50 / output MTok
+claude-fable-5-2
+claude-opus-5-5
+claude-sonnet-5-5
+claude-haiku-5-5
 Capabilities
 Adaptive (always on)
 Adaptive (always on)
@@ -62,7 +66,31 @@ Not sooner than September 22, 2027
 Not sooner than September 28, 2027
 Not sooner than October 7, 2027
 Model IDs
+claude-fable-5-2
+claude-opus-5-5
+claude-sonnet-5-5
+claude-haiku-5-5
+global.anthropic.claude-fable-5-2
+anthropic.claude-opus-5-5
+anthropic.claude-sonnet-5-5
+anthropic.claude-haiku-5-5
+claude-fable-5-2
+claude-opus-5-5
+claude-sonnet-5-5
+claude-haiku-5-5
+claude-fable-5-2
+claude-opus-5-5
+claude-sonnet-5-5
+claude-haiku-5-5
+claude-fable-5-2
+claude-opus-5-5
+claude-sonnet-5-5
+claude-haiku-5-5
 Claude Models on Google Cloud (Anthropic managed) ID
+claude-fable-5-2
+claude-opus-5-5
+claude-sonnet-5-5
+claude-haiku-5-5
 Once you’ve picked a model,
 learn how to make your first API call
 . To understand how model IDs, aliases, and snapshots work, see

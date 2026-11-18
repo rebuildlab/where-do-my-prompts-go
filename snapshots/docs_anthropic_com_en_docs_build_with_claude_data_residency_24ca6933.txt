@@ -431,7 +431,7 @@ Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
 
 Claude Haiku 5.5
 Note
-Workspace geo is not configurable.
+Workspace geo and the workspace’s inference geo settings are not configurable.
 Data handling
 Data handling overview
 

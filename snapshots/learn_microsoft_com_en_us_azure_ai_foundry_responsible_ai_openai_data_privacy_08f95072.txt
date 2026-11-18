@@ -186,6 +186,8 @@ Microsoft Trust Center
 Change log
 Date
 Changes
+17 November 2026
+Updated Modified Abuse Monitoring program.
 3 October 2025
 Expanded document to Models sold by Azure; separated Guardrails (previously content filters) and abuse monitoring sections; added clarifications on abuse monitoring and severe or recurring abuse.
 17 December 2024

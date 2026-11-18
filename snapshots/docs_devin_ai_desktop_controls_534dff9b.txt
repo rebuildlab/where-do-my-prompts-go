@@ -366,6 +366,12 @@ vscode
 Which application onboarding selects for the import of settings and extensions. See
 Onboarding policies
 .
+DetectProxy
+devin.network.detectProxy
+boolean
+Turns on automatic proxy detection from the operating system settings, including a PAC file. Users cannot turn detection off. See
+Network policies
+.
 The sample
 policy.json
 ,

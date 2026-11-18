@@ -304,7 +304,11 @@ turned on by a team admin in the
 Cloud Agents dashboard
 .
 Allow Personal Machines
-is the team's Remote Control setting. While both are off, Cloud Agents can't run on members' machines.
+is the team's Remote Control setting. While both are off, Cloud Agents can't run on members' machines. When an admin turns
+Allow Personal Machines
+off, no run, including an
+automation
+run, can use a machine registered with a personal login. Workers registered with a service account aren't affected.
 Team Pools
 A
 Cursor Enterprise plan

@@ -11,11 +11,12 @@ used for training purposes
 . That’s why
 we offer various controls
 listed below for managing your user data.
+Exception for Labs and Public Preview models: the training opt-out does not apply to Labs and Public Preview models, whichever subscription plan you adhere to. When using these models, your data may be used for training, and cannot be excluded via the opt-out controls.
 Controls on Vibe
 Controls may vary
 depending on your Vibe plan
 :
-Vibe
+Vibe (Free, Pro, Teams, Student)
 Input and output data are
 used by default
 to train our artificial intelligence models,
@@ -51,10 +52,12 @@ the right to opt out of this program at any time
 Can I opt out of my input or output data being used for training?
 Pay-as-you-go
 Customers retain full control over this processing and have the right to opt out at any time.
+🔎 Fine-tuning models? You may want to check the following article:
+How does Mistral use models fine-tuned with Mistral Studio?
 Did this answer your question?
 Related Articles
 Can I activate Zero Data Retention (ZDR)?
 How do you use submitted feedback?
 Can other people view my conversations?
-How do you handle my data when using the Memories feature?
+How can I exercise my GDPR rights?
 Can I opt out of my input or output data being used for training?
