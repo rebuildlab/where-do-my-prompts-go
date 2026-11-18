@@ -15,5 +15,4 @@ Related Articles
 Business Associate Agreements (BAA) for Commercial Customers
 I have a zero data retention agreement with Anthropic. What products does it apply to?
 Does Anthropic Act as a Data Processor or Controller?
-What is Anthropic’s policy for handling governmental requests for user information?
 Did this answer your question?

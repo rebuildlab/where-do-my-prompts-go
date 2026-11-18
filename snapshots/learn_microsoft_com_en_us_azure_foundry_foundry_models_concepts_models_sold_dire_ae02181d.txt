@@ -51,14 +51,18 @@ Azure OpenAI in Azure Government
 Model highlights
 Models
 Description
-GPT-6.1 series
+GPT-6.2 series
 NEW
+gpt-6.2-astra
+,
+NEW
+gpt-6.2-sol
+GPT-6.1 series
 gpt-6.1-sol
 ,
 NEW
 gpt-6.1-terra
 GPT-6 series
-NEW
 gpt-6-astra
 ,
 NEW
@@ -151,7 +155,7 @@ doesn't reserve tokens when the request has less context budget available.
 Short context and long context
 For Azure OpenAI models with short-context and long-context pricing categories,
 context
-refers to the number of input tokens in an individual request. It doesn't refer to the model's maximum context window or the combined number of input and output tokens.
+refers to the number of input tokens in an individual request. It doesn't refer to the model's maximum context window or the combined number of input and output tokens. For each model, Azure OpenAI uses the same input-token threshold between short-context and long-context pricing as OpenAI.
 These categories describe the request's input length, not different model context-window sizes. A model with a large context window can still receive a short-context request.
 Generated output tokens don't determine whether a request is classified as short context or long context. Output tokens are still subject to the model's applicable pricing.
 For model-specific thresholds, rates, and billing details, see
@@ -264,6 +268,70 @@ Preview lifecycle
 and standard notice periods. The team is also evaluating ways to simplify how customers access continuously updated models over time, but current behavior remains unchanged as that work continues.
 Caution
 Microsoft doesn't recommend using preview models in production. Preview model deployments are upgraded to either future preview versions or to the latest stable, generally available version. Models that are designated preview don't follow the standard Azure OpenAI model lifecycle.
+GPT-6.2
+For model availability across all regions, grouped by deployment category, see
+Region availability for Foundry Models sold by Azure
+.
+Capabilities
+Model ID
+Description
+Context Window
+Max Output Tokens
+Training Data (up to)
+gpt-6.2-astra
+(2026-11-17)
+-
+Reasoning
+-
+Responses API
+.
+-
+Multi-agent orchestration
+(preview).
+- Chat Completions API.
+- Structured outputs.
+- Text and image input with text output.
+- Functions, tools, and parallel tool calling (Responses API only).
+- Reasoning effort and verbosity.
+-
+Computer use
+-
+Full summary of capabilities
+.
+1,050,000
+Input: 922,000
+Output: 128,000
+128,000
+May 2026
+gpt-6.2-sol
+(2026-11-17)
+-
+Reasoning
+-
+Responses API
+.
+-
+Multi-agent orchestration
+(preview).
+- Chat Completions API.
+- Structured outputs.
+- Text and image input with text output.
+- Functions, tools, and parallel tool calling (Responses API only).
+- Reasoning effort and verbosity.
+-
+Computer use
+-
+Full summary of capabilities
+.
+1,050,000
+Input: 922,000
+Output: 128,000
+128,000
+July 2026
+Note
+Enabling watermarking might affect performance. We expect the impact to be minimal, but recommend testing with your workloads to assess any impact. For more information about watermarking, see
+Invisible watermarks
+.
 GPT-6.1
 For model availability across all regions, grouped by deployment category, see
 Region availability for Foundry Models sold by Azure
@@ -1774,9 +1842,8 @@ Data zone: â
 Global: â
 Developer: â
 Serverless: â
-2
+1
 Managed compute: â
-Fireworks: â
 Muse-Glimmer-30B
 (preview)
 Managed Training: â (SFT, RFT)
@@ -1787,8 +1854,6 @@ Global: â
 Developer: â
 Serverless: â
 Managed compute: â
-Fireworks: â
-1
 Llama-3.3-70B-Instruct
 Managed Training: â (SFT)
 Programmed Training: â
@@ -1797,9 +1862,8 @@ Data zone: â
 Global: â
 Developer: â
 Serverless: â
-2
+1
 Managed compute: â
-Fireworks: â
 Qwen3-32B
 Managed Training: â (SFT)
 Programmed Training: â
@@ -1808,9 +1872,8 @@ Data zone: â
 Global: â
 Developer: â
 Serverless: â
-2
+1
 Managed compute: â
-Fireworks: â
 Qwen3.6-35B-A3B
 (preview)
 Managed Training: â (SFT, RFT)
@@ -1821,8 +1884,6 @@ Global: â
 Developer: â
 Serverless: â
 Managed compute: â
-Fireworks: â
-1
 Qwen3.8-27B
 (preview)
 Managed Training: â (SFT, RFT)
@@ -1833,8 +1894,6 @@ Global: â
 Developer: â
 Serverless: â
 Managed compute: â
-Fireworks: â
-1
 gpt-oss-20b
 Managed Training: â (SFT)
 Programmed Training: â
@@ -1843,9 +1902,8 @@ Data zone: â
 Global: â
 Developer: â
 Serverless: â
-2
+1
 Managed compute: â
-Fireworks: â
 gpt-oss-120b
 (preview)
 Managed Training: â (SFT, RFT)
@@ -1856,8 +1914,6 @@ Global: â
 Developer: â
 Serverless: â
 Managed compute: â
-Fireworks: â
-1
 Ministral-3B
 (2411)
 Managed Training: â (SFT)
@@ -1867,9 +1923,8 @@ Data zone: â
 Global: â
 Developer: â
 Serverless: â
-2
+1
 Managed compute: â
-Fireworks: â
 gpt-4o-mini
 (2024-07-18)
 Managed Training: â (SFT)
@@ -1879,9 +1934,8 @@ Data zone: â
 Global: â
 Developer: â
 Serverless: â
-5
+4
 Managed compute: â
-Fireworks: â
 gpt-4o
 (2024-08-06)
 Managed Training: â (SFT, DPO)
@@ -1891,9 +1945,8 @@ Data zone: â
 Global: â
 Developer: â
 Serverless: â
-5
+4
 Managed compute: â
-Fireworks: â
 gpt-4.1
 (2025-04-14)
 Managed Training: â (SFT, DPO)
@@ -1904,7 +1957,6 @@ Global: â
 Developer: â
 Serverless: â
 Managed compute: â
-Fireworks: â
 gpt-4.1-mini
 (2025-04-14)
 Managed Training: â (SFT, DPO)
@@ -1915,7 +1967,6 @@ Global: â
 Developer: â
 Serverless: â
 Managed compute: â
-Fireworks: â
 gpt-4.1-nano
 (2025-04-14)
 Managed Training: â (SFT, DPO)
@@ -1926,7 +1977,6 @@ Global: â
 Developer: â
 Serverless: â
 Managed compute: â
-Fireworks: â
 o4-mini
 (2025-04-16)
 Managed Training: â (RFT)
@@ -1937,10 +1987,9 @@ Global: â
 Developer: â
 Serverless: â
 Managed compute: â
-Fireworks: â
 gpt-5
 (2025-08-07)
-3
+2
 Managed Training: â (RFT)
 Programmed Training: â
 Standard: â
@@ -1948,39 +1997,34 @@ Data zone: â
 Global: â
 Developer: â
 Serverless: â
-4
+3
 Managed compute: â
-Fireworks: â
 MedImageInsight-Premium
 (preview)
 Managed Training: â (SFT)
 Programmed Training: â
 Global
 Serverless: â
-2
+1
 Managed compute: â
-Fireworks: â
 CXRReportgen-Premium
 (preview)
 Managed Training: â (SFT)
 Programmed Training: â
 Global
 Serverless: â
-2
+1
 Managed compute: â
-Fireworks: â
 Legend
 1
-Only Provisioned Throughput deployment type is supported.
-2
 Only Global Standard deployment type is supported.
-3
+2
 GPT-5 reinforcement fine-tuning requires an invitation. Contact your Microsoft account team for enrollment.
-4
+3
 Only Standard deployment type is supported. See
 Standard deployment regions
 .
-5
+4
 Developer deployment type is not supported.
 Supported regions
 Note
@@ -2547,94 +2591,6 @@ No
 -
 Response formats:
 Markdown
-Cohere-rerank-v5-pro
-Preview
-text classification (rerank)
--
-Input:
-text
--
-Output:
-text
--
-Languages:
-en
-,
-fr
-,
-es
-,
-it
-,
-de
-,
-pt-br
-,
-ja
-,
-zh-cn
-,
-ar
-,
-vi
-,
-hi
-,
-ru
-,
-id
-, and
-nl
--
-Tool calling:
-No
--
-Response formats:
-JSON
-Cohere-rerank-v5-fast
-Preview
-text classification (rerank)
--
-Input:
-text
--
-Output:
-text
--
-Languages:
-en
-,
-fr
-,
-es
-,
-it
-,
-de
-,
-pt-br
-,
-ja
-,
-zh-cn
-,
-ar
-,
-vi
-,
-hi
-,
-ru
-,
-id
-, and
-nl
--
-Tool calling:
-No
--
-Response formats:
-JSON
 Cohere-rerank-v4.0-pro
 text classification (rerank)
 -
@@ -2822,65 +2778,6 @@ ko
 zh-cn
 , and
 ar
-Cohere-embed-v5-Fast
-embeddings
--
-Input:
-text, images, fused text + image
--
-Output:
-Vector (2048, 1536, 1024, 768, 512, 256 dim.)
--
-Languages:
-en
-,
-fr
-,
-es
-,
-it
-,
-de
-,
-pt-br
-,
-ja
-,
-ko
-,
-zh-cn
-, and
-ar
-Cohere-embed-v5-Pro
-Preview
-embeddings
--
-Input:
-text, images, fused text + image
--
-Output:
-Vector (2048, 1536, 1024, 768, 512, 256 dim.)
--
-Languages:
-en
-,
-fr
-,
-es
-,
-it
-,
-de
-,
-pt-br
-,
-ja
-,
-ko
-,
-zh-cn
-, and
-ar
 DeepSeek models sold by Azure
 The DeepSeek family of models includes several reasoning models, which excel at reasoning tasks by using a step-by-step training process, such as language, scientific reasoning, and coding tasks.
 For model availability across all regions, grouped by deployment category, see
@@ -2890,26 +2787,6 @@ Model
 Type
 Capabilities
 DeepSeek-V4-Pro
-chat-completion
-(with reasoning content)
--
-Input:
-text (1,000,000 tokens)
--
-Output:
-text (384,000 tokens)
--
-Languages:
-en
-and
-zh
--
-Tool calling:
-Yes
--
-Response formats:
-Text, JSON
-DeepSeek-V4.1-Flash
 chat-completion
 (with reasoning content)
 -
@@ -3115,7 +2992,8 @@ Region availability for Foundry Models sold by Azure
 Model
 Type
 Capabilities
-Microsoft-Decision-1
+Microsoft-Decision-1.1
+Generally available
 decision, text classification, zero shot classification
 -
 Calibrated decision scoring:
@@ -3126,7 +3004,7 @@ Supports yes/no, multiple-choice, rating, classification, and rubric-based quest
 -
 Single-pass scoring:
 Produces structured decision scores in a single model invocation over inputs of up to 32K tokens.
-- The model is text-only and doesn't accept or produce image, audio, or video content. It doesn't generate explanations or rationales.
+- The model accepts text, JSON, or images. It doesn't accept audio or video input or produce image, audio, or video content. It doesn't generate explanations or rationales.
 MAI-Thinking-1
 Preview
 chat-completion
@@ -3506,7 +3384,7 @@ Several Mistral models are also available
 from partners and community
 .
 Moonshot AI models sold by Azure
-Moonshot AI models are multimodal reasoning models that accept text and image input.
+Moonshot AI models include Kimi K2.6 (Preview) and Kimi K2.5 (Preview), multimodal reasoning models that accept text and image input.
 For model availability across all regions, grouped by deployment category, see
 Region availability for Foundry Models sold by Azure
 .
@@ -3520,26 +3398,6 @@ chat-completion
 -
 Input:
 text and image (262,144 tokens)
--
-Output:
-text (262,144 tokens)
--
-Languages:
-en
-and
-zh
--
-Tool calling:
-Yes
--
-Response formats:
-Text
-Kimi-K3.1-Pro
-chat-completion
-(with reasoning content)
--
-Input:
-text and image (1,000,000 tokens)
 -
 Output:
 text (262,144 tokens)

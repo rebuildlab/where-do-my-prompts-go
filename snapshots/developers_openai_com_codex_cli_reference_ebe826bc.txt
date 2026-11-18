@@ -3062,11 +3062,7 @@ Attach a file to the chat.
 Point Codex at specific files or folders you want it to inspect next.
 /model
 Choose the active model (and reasoning effort, when available).
-Use
-gpt-6-luna
-or
-gpt-6.1-sol
-if shown.
+Select GPT-6.2 Sol for everyday coding if your workspace has access.
 /presets
 Save and run prompts or slash commands.
 Recall a command or prompt you use frequently.
@@ -3271,19 +3267,14 @@ Type
 Expected: Codex shows retained warnings and their diagnostic details.
 Set the active model with
 /model
-The picker only shows models available to your account and workspace. If GPT-6.1
-Sol isn’t listed, choose another model. See
-GPT-6.1 Sol availability by plan
+The picker shows the models available to your account and workspace. See
+model availability by plan
 .
 Start Codex and open the composer.
 Type
 /model
 and press Enter.
-Choose a model such as
-gpt-6-luna
-or
-gpt-6.1-sol
-from the popup.
+Choose a model from the list. For a complex debugging task, select GPT-6.2 Astra. For everyday coding, select GPT-6.2 Sol.
 Expected: Codex confirms the new model in the transcript. Run
 /status
 to verify the change.

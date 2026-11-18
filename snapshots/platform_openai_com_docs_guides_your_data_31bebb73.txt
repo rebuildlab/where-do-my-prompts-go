@@ -282,19 +282,31 @@ false
 , even if the request attempts to set the value to
 true
 .
-Background mode stores response data to disk for roughly 10 minutes to enable polling. For projects using
+Background mode with the default completion window stores response data to disk for roughly 10 minutes to run the request and make the response available for retrieval. For projects using
 Modified Abuse Monitoring
 , including enhanced Modified Abuse Monitoring, foreground requests follow standard retention when
 store
 is omitted or set to
 true
-. Background responses follow the standard retention period only when the request explicitly sets
+. With the default completion window, background responses follow the standard retention period only if you explicitly set
 store=true
-. If
+. If you omit
 store
-is omitted or set to
+or set it to
 false
-for a background request, the response is deleted after the temporary polling period.
+, the response is deleted after the temporary retention period.
+Projects with
+Zero Data Retention
+can use the
+2h
+and
+8h
+background completion windows
+. The API treats
+store
+as
+false
+and temporarily stores application state to process the request and make the response available for retrieval.
 Audio outputs application state is stored for 1 hour to enable
 multi-turn conversations
 .

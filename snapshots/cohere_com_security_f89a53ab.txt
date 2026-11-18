@@ -104,8 +104,6 @@ Aya Models
 Multilingual AI at scale
 All Papers
 Initiatives
-Research Scholars
-Finding the new generation of ML talent
 Open Science Community
 Championing global, open science
 Catalyst Grants
@@ -217,8 +215,6 @@ Aya Models
 Multilingual AI at scale
 All Papers
 Initiatives
-Research Scholars
-Finding the new generation of ML talent
 Open Science Community
 Championing global, open science
 Catalyst Grants
@@ -440,5 +436,5 @@ Enterprise Data Commitments
 Privacy Policy
 Usage Guidelines
 AI Security (eBook)
-Spotlight on security
 Secure AI Frontier Model Framework
+Spotlight on security

@@ -133,7 +133,9 @@ Google-managed encryption keys. CMEK available.
 Microsoft Foundry
 Depends on the deployment’s
 hosting option
-. For Hosted on Azure deployments, prompts and completions remain within Azure; only usage metadata and content flagged by Anthropic’s safety systems egress to Anthropic. For Hosted on Anthropic deployments, requests route to Anthropic infrastructure with AES-256 disk encryption.
+. For Hosted on Azure deployments, see
+where data is processed and stored
+. For Hosted on Anthropic deployments, requests route to Anthropic infrastructure with AES-256 disk encryption.
 Claude Code is built on Anthropic’s APIs. For details on API security controls, including API logging procedures, see the compliance artifacts in the
 Anthropic Trust Center
 .

@@ -141,6 +141,9 @@ For automated review, customer's prompts and completions are not stored by the s
 If the customer has been approved for modified abuse monitoring (learn more at
 Abuse Monitoring
 )), the data storage and human review process described above is not performed. However, automated review may still be conducted, leveraging algorithms including AI models that review prompts and completions at the time provided or generated, as applicable. If such automated review detects content potentially indicating severe or recurring abuse in the customer's subscription, the customer may be subject to limitations on access, as provided in the Product Terms for Responsible Use of Microsoft AI Services. The customer may also be asked to agree to have abuse monitoring with human review turned on to reduce the risk of future limitations on access (e.g., throttling and/or suspension of the account or subscription where abuse has been detected).
+Whatâs changing with Modified Abuse Monitoring
+Modified Abuse Monitoring will continue to apply to models made available before November 1, 2026 for customers with an existing approval, with no change to the functionality provided under that approval.
+For models made available on or after November 1, 2026, Modified Abuse Monitoring will no longer be available, beginning on a future date to be announced. From that date, these models will be subject to Microsoftâs updated approach to data retention, access, and safety monitoring, including for customers with an existing Modified Abuse Monitoring approval. Customers will receive at least 30 daysâ notice before Modified Abuse Monitoring becomes unavailable for a given model.
 Note
 Azure Preview features, including Models sold by Azure in preview, may employ different privacy practices, including with respect to abuse monitoring. Previews may be subject to supplemental terms at:
 Supplemental Terms of use for Microsoft Azure Previews
