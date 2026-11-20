@@ -79,8 +79,8 @@ Google
 Removes AI Studio endpoints. Vertex endpoints that use Safety Retention remain available only if Safety Retention is allowed (see
 Google Safety Retention
 )
-SpaceXAI
-Removes non-ZDR SpaceXAI endpoints (the ZDR SpaceXAI endpoint remains available)
+SpaceXSI
+Removes non-ZDR SpaceXSI endpoints (the ZDR SpaceXSI endpoint remains available)
 All other models
 Removes all other non-ZDR endpoints
 When to use per-model-group ZDR
@@ -103,7 +103,7 @@ Enforce ZDR for OpenAI endpoints
 enforce_zdr_google
 Enforce ZDR for Google endpoints
 enforce_zdr_xai
-Enforce ZDR for SpaceXAI endpoints
+Enforce ZDR for SpaceXSI endpoints
 enforce_zdr_other
 Enforce ZDR for all other model endpoints
 The legacy

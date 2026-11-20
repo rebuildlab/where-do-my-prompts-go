@@ -167,7 +167,7 @@
     "file": "cohere_com_security_f89a53ab.txt",
     "last_checked": "2026-11-20",
     "last_error": null,
-    "sha256": "817ca81f1af103c5e138b35870badff37ed97f741527578a7c33db6a6c745f5d",
+    "sha256": "06a7914c3aa2eaba0607f60c3c07c0476f2dd09ea9880aa878e5a3b20a9764ff",
     "vendors": [
       "cohere"
     ]
@@ -481,7 +481,7 @@
     "file": "docs_langchain_com_langsmith_self_hosted_59b90cde.txt",
     "last_checked": "2026-11-20",
     "last_error": null,
-    "sha256": "90189cc9c483f8beb0c8a220bfdd1317a50614e243022b0ca1185d1f82ee1b2b",
+    "sha256": "c27751ac1ee5f0459ecc8d31074d6f2af9182964080c4407d87945bbdb925bc7",
     "vendors": [
       "langsmith"
     ]
@@ -542,8 +542,9 @@
   },
   "https://docs.x.ai/docs/key-information/regions": {
     "file": "docs_x_ai_docs_key_information_regions_eb5faf67.txt",
+    "last_attempt": "2026-11-20",
     "last_checked": "2026-11-20",
-    "last_error": null,
+    "last_error": "request error: ReadTimeout",
     "sha256": "5dd2c80284694d1b203f879091dfbd77337b8db1089e06696c20e5d6d69593a2",
     "vendors": [
       "xai"
@@ -632,7 +633,7 @@
     "file": "huggingface_co_deepseek_ai_a544e39d.txt",
     "last_checked": "2026-11-20",
     "last_error": null,
-    "sha256": "4c563113c6a066318cec74a3624b1bccf6d7b814efb50829593f378908e90e3d",
+    "sha256": "41d25b27bf60abfcc846ba327a27819a74634fa5ab666f80662fcb1b99d534c2",
     "vendors": [
       "deepseek"
     ]
@@ -641,7 +642,7 @@
     "file": "huggingface_co_xai_org_grok_2_4ebd8248.txt",
     "last_checked": "2026-11-20",
     "last_error": null,
-    "sha256": "806d1a9eeccbb78cf66cd57cdd53c3e5b9d03e446caba8e976304981d85b5467",
+    "sha256": "1a2d1ba5470bee95e9f76b4b1a62f87a2d96b98a9de95bf779f8ad6ff35cd369",
     "vendors": [
       "xai"
     ]
@@ -659,7 +660,7 @@
     "file": "langfuse_com_security_89b00596.txt",
     "last_checked": "2026-11-20",
     "last_error": null,
-    "sha256": "69381dbea92f1076cd26e4813f7640a86a1d96c4420d6283e13cd99cb29e081b",
+    "sha256": "21bd7d0855b2401183426a053a7fea5a8286ddf1ecd6517ccb295692ed1716d0",
     "vendors": [
       "langfuse"
     ]
@@ -686,7 +687,7 @@
     "file": "langfuse_com_security_privacy_faq_c139a89f.txt",
     "last_checked": "2026-11-20",
     "last_error": null,
-    "sha256": "c94309b0527fd732a2383f5c8f2912f5d75b19e3b59072edee9979ad054429d7",
+    "sha256": "7e238544a5f791dacbca7a5a231bb74e269edb23b1cb885194f8b62c13fbbf7b",
     "vendors": [
       "langfuse"
     ]
@@ -794,8 +795,7 @@
     "file": "openai_com_enterprise_privacy_8dd13697.txt",
     "last_checked": "2026-11-20",
     "last_error": null,
-    "method": "rendered",
-    "sha256": "fed08907776f9f739dc2e04240e2a7b64456cfd86c87f370632ad4bf203a013d",
+    "sha256": "993cbb199d7b3cb3dc47c98e01e7c916512f1ff5ffb2b164b8fc3bd2fc12e385",
     "vendors": [
       "openai-api"
     ]
@@ -804,8 +804,7 @@
     "file": "openai_com_open_models_1e4f1d84.txt",
     "last_checked": "2026-11-20",
     "last_error": null,
-    "method": "rendered",
-    "sha256": "45f269f37232ad3f7ae56fe9947df92e3e802ba9bb85e711f3488be82db9367b",
+    "sha256": "cf12c756d1d54bce2f49ade14a4c90b2c8e95aca6818556c9ae6fdbecd35cc27",
     "vendors": [
       "openai-api"
     ]
@@ -823,7 +822,7 @@
     "file": "openrouter_ai_docs_features_zdr_71ab3739.txt",
     "last_checked": "2026-11-20",
     "last_error": null,
-    "sha256": "75aec318f31b738bdd7c21c0c0ff1b552fbd5eeba588742da1486277dd1e5169",
+    "sha256": "9bb08916314e6704fc659b350ad2b8311e8d04f500d3f768669f2574e9d2c514",
     "vendors": [
       "openrouter"
     ]
@@ -898,7 +897,7 @@
     "last_checked": "2026-11-20",
     "last_error": null,
     "method": "rendered",
-    "sha256": "b326398bd9aa751aa24b71de20d544806787486733f8bdd688ded6a0f70f2748",
+    "sha256": "ac846de3f752e0fdf1b38573ed0e600043f501ca5bdcd6bcfa5d26d22ac374a1",
     "vendors": []
   },
   "https://trustcenter.cohere.com/subprocessors": {

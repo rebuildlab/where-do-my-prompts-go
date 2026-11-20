@@ -430,11 +430,11 @@ The Cohere Bug Bounty program is designed to recognize the community’s support
 To learn more about the program,
 download our Responsible Disclosure Policy
 .
-Spotlight on security
 Helpful resources
 Trust Center
 Enterprise Data Commitments
 Privacy Policy
 Usage Guidelines
 AI Security (eBook)
+Spotlight on security
 Secure AI Frontier Model Framework

@@ -80,6 +80,15 @@ Langfuse Cloud runs on AWS and ClickHouse Cloud in isolated regional environment
 self-hosted Langfuse
 or contact us about Enterprise options.
 Compliance
+The
+Information Security Addendum
+and
+DPA
+describe the security and data protection commitments for Langfuse Cloud under the applicable agreement. See
+incident and breach response
+and
+vulnerability management
+for the corresponding processes and timelines.
 We adhere to several industry-standard compliance frameworks. See the
 Security FAQ
 for more details.

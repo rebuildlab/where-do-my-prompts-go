@@ -145,9 +145,9 @@ Azure Blob Storage
 , and
 Google Cloud Storage
 .
-LangSmith uses blob storage to store large files, such as trace artifacts, feedback attachments, and other large data objects. Blob storage is optional, but highly recommended for production deployments.
+LangSmith uses blob storage to store large files, such as trace artifacts, feedback attachments, and other large data objects. Blob storage is required as of LangSmith v0.18. When you do not configure your own, the Helm chart deploys RustFS in your cluster. For production, use external blob storage.
 💡
-Enable blob storage
+Configure blob storage
 - AWS S3, GCP GCS, Azure Blob
 Installation procedures
 This page is an overview. The installation itself happens in the
