@@ -66,31 +66,31 @@ EEA
 Products: All SaaS
 Updates
 View all
-General
 Mistral Vibe security update
-Published September 14, 2026
+General
+· Published Mon, Sep 14, 2026
 We released Mistral Vibe 2.25.4 on 12 September 2026, the same day we became aware of the published CVE advisories. This version includes fixes for six reported shell permission vulnerabilities (CVE-2026-87983 through CVE-2026-87988). We recommend upgrading to 2.25.4 or later and restarting Vibe.
 Read the full advisory:
 https://docs.mistral.ai/resources/security-advisories/MAI-2026-003
 Opens in new tab
-Incident
 Mistral AI’s response to Mini Shai-Hulud security incident
-Published May 14, 2026
+Incident
+· Published Thu, May 14, 2026
 A group of attackers temporarily compromised one of our codebase management systems on Tuesday, 26/05/12, through a third-party software supply chain attack described as Mini Shai-Hulud. Go to
 https://docs.mistral.ai/resources/security-advisories
 Opens in new tab
 for more information.
 We rapidly neutralized the attack and mitigated its effects. We took the necessary actions to fully secure our infrastructure and support our customers with guidelines. The investigation is now closed. The attackers were not able to access anything other than certain non-core code repositories. Neither our hosted services, managed user data, nor any of our research and testing environments were compromised.
-Privacy
 Addition of a new subprocessor for Le Chat
-Published May 7, 2025
+Privacy
+· Published Wed, May 7, 2025
 We are writing to inform you of a recent addition to Mistral AI's subprocessor list for Le Chat, effective as of May 7th 2025:
 Merge.
 We use Merge to provide our new "Connector" feature on Le Chat. Merge allows us to retrieve the ACL (Access Control List) from the third-party service you connect to our Mistral AI Products, as applicable. The data retrieved by Merge is transferred to the United States. Merge will not process your personal data unless you activate this new feature in your workspace.
 If you would like to receive email notifications of changes to our subprocessors list, you can subscribe by clicking on the bell icon and adding your email address.
-General
 Addition of a subscription button
-Published April 24, 2025
+General
+· Published Thu, Apr 24, 2025
 Welcome to Mistral AI's Trust Center!
 With this platform, we provide you with the latest updates related to our Trust Center. Starting today, you can subscribe to receive notifications by clicking the subscription button (bell icon at the top right) and registering your email address.
 We will only send you notifications about important updates, such as:

@@ -99,7 +99,7 @@ for this run.
 --model, -m
 string
 Override the model set in configuration (for example
-gpt-6.1-sol
+gpt-6.2-sol
 ).
 --no-alt-screen
 boolean
@@ -286,7 +286,7 @@ Type / Values
 string
 Details
 Override the model set in configuration (for example
-gpt-6.1-sol
+gpt-6.2-sol
 ).
 Key
 --no-alt-screen

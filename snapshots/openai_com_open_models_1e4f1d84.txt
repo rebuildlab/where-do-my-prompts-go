@@ -1,4 +1,4 @@
-OpenAI
+Open models by OpenAI | OpenAI
 Open models by OpenAI
 Advanced open-weight reasoning models to customize for any use case and run anywhere.
 Download on Hugging Face
@@ -7,19 +7,19 @@ View on GitHub
 (opens in a new window)
 Try our models
 (opens in a new window)
--0.50
-0.00
-0.00
-0.00
--0.50
+-0.51
+0.03
+0.02
+0.02
+-0.52
 gpt-oss
 Open reasoning models designed to run locally on desktops, laptops, and in data centers—available in 120B and 20B parameters.
 (opens in a new window)
--0.50
-0.00
-0.00
-0.00
--0.50
+-0.51
+0.03
+0.02
+0.02
+-0.52
 gpt-oss-safeguard
 Open safety reasoning models that support custom safety policies—available in 120B and 20B parameters.
 (opens in a new window)

@@ -83,7 +83,7 @@ Trust Center
 Did this answer your question?
 Related Articles
 How do I contact support?
-Where do you store my data or my Organization's data?
+Can other people view my conversations?
 Can I opt out of my input or output data being used for training?
 How can I control or delete data connected to third-party tools?
 Why am I hitting API rate limits, and how do I increase them?

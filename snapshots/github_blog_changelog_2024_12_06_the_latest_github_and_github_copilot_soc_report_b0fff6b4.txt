@@ -15,6 +15,11 @@ This represents a significant milestone for GitHub and our customers for multipl
 These efforts and the culminating SOC 2 Type II reports represent GitHub’s ongoing commitment to provide secure products to our customers, which continues to provide developers the assurance to build software better, together.
 Looking forward, bridge letters will be coming mid-January 2025 for the gap period representing October through December 2024. Additionally, the next round of SOC reports covering October 1, 2024 to March 31, 2025 will be available to customers in June 2025.
 Related Posts
+Nov.19
+Improvement
+S3 audit log streaming with OpenID Connect expands to GHE.com
+enterprise management tools
+platform governance
 Oct.20
 Improvement
 Bulk migrate branch protections to rulesets for a repository
@@ -53,10 +58,6 @@ Sep.09
 Improvement
 Block pull requests with exposed secrets from merging
 application security
-platform governance
-Aug.25
-Improvement
-Rule insights dashboard generally available
 platform governance
 Subscribe to our developer newsletter
 Discover tips, technical guides, and best practices in our biweekly newsletter just for devs.

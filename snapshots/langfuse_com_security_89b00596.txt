@@ -39,7 +39,7 @@ most widely adopted open-source LLM engineering platform
 50,000+
 companies
 , with
-37,597
+37,622
 GitHub stars
 ,
 65M+
@@ -80,13 +80,17 @@ Langfuse Cloud runs on AWS and ClickHouse Cloud in isolated regional environment
 self-hosted Langfuse
 or contact us about Enterprise options.
 Compliance
-We maintain internal policies in the
-ClickHouse Trust Center
-and adhere to several industry-standard compliance frameworks. Please check
-Security FAQs
+We adhere to several industry-standard compliance frameworks. See the
+Security FAQ
 for more details.
+ClickHouse, Inc. holds
+ISO/IEC 27701:2025 certification
+for its privacy information management system, which covers Langfuse Cloud. Visit the
+ClickHouse Trust Center
+to find our internal policies and request access to the certificate.
 SOC 2 Type II
 ISO 27001
+ISO/IEC 27701:2025
 HIPAA
 Hardening for Government
 Privacy

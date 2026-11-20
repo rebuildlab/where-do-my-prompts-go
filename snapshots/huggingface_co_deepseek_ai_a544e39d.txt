@@ -4,21 +4,21 @@ Recent Activity
 GeeeekExplorer
 new
 activity
-9 days ago
+10 days ago
 deepseek-ai/DeepSeek-V4.1-Flash
 :
 Sync the chat template with the 16 October encoding.py, make it load in llama.cpp and transformers.js, and add a response template
 GeeeekExplorer
 new
 activity
-9 days ago
+10 days ago
 deepseek-ai/DeepSeek-V4.1-Flash-1017
 :
 Add a response template
 GeeeekExplorer
 new
 activity
-9 days ago
+10 days ago
 deepseek-ai/DeepSeek-V4.1-Flash-1017
 :
 Add chat template
@@ -41,7 +41,7 @@ Updated
 Jun 28
 •
 •
-71
+72
 2B
 •
 Updated
@@ -103,7 +103,7 @@ Updated
 Jun 28
 •
 •
-71
+72
 2B
 •
 Updated
@@ -183,7 +183,7 @@ Image-Text-to-Text
 763B
 •
 Updated
-9 days ago
+10 days ago
 •
 •
 •
@@ -215,7 +215,7 @@ Aug 13
 •
 •
 •
-918
+921
 Text Generation
 •
 304B
@@ -248,7 +248,7 @@ Jul 4
 Updated
 Jun 28
 •
-537
+523
 •
 14
 2B
@@ -256,7 +256,7 @@ Jun 28
 Updated
 Jun 28
 •
-425
+421
 •
 4
 2B
@@ -264,7 +264,7 @@ Jun 28
 Updated
 Jun 28
 •
-763
+753
 •
 3
 View 106
