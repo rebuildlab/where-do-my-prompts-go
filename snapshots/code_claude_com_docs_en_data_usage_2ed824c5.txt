@@ -340,4 +340,3 @@ settings
 WebFetch
 permission rules
 if you need to restrict which domains Claude can reach.
-Was this page helpful?

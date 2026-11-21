@@ -266,7 +266,8 @@ The feature is not eligible. Under HIPAA readiness, the API blocks requests that
 400
 error, unless the feature’s Details column says otherwise. Under ZDR, the API does
 not
-block these features; using one is a choice to step outside your ZDR arrangement for that specific data, and the feature’s own documented retention policy applies. Features marked “No” for ZDR are typically stateful (they store jobs, files, or container state), which is why they cannot be zero-retention.
+block these features; using one is a choice to step outside your ZDR arrangement for that specific data, and the feature’s own documented retention policy applies.
+Features marked “No” for ZDR are typically stateful (they store jobs, files, or container state), which is why they cannot be zero-retention.
 Platform features
 This section lists features that relate to both the
 Messages API
@@ -592,7 +593,8 @@ feature eligibility table
 legend for what “Yes (qualified)” means and
 How Anthropic approaches data retention
 for the commitments that govern these features.
-Nothing blocks the request. Features marked “No” for ZDR are fundamentally stateful: the Batch API stores your jobs, the Files API stores your files, and code execution runs in persistent containers. Data for these features is retained according to the feature’s documented policy. Using them is a choice to step outside your ZDR arrangement for that specific data.
+Nothing blocks the request.
+Features marked “No” for ZDR are fundamentally stateful: the Batch API stores your jobs, the Files API stores your files, and code execution runs in persistent containers. Data for these features is retained according to the feature’s documented policy. Using them is a choice to step outside your ZDR arrangement for that specific data.
 Contact your Anthropic account representative to discuss deletion options for non-ZDR features.
 ZDR prevents customer data from being stored at rest after the API response is returned. HIPAA readiness involves a broader set of privacy and security safeguards that protect PHI throughout its lifecycle, including encryption, access controls, and audit logging. Under HIPAA readiness, data can be retained with these safeguards in place rather than requiring immediate deletion. The two arrangements cover different feature sets; see the
 feature eligibility table
