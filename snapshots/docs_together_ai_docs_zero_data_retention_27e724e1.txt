@@ -1,6 +1,6 @@
-Together AI supports zero data retention (ZDR) at the organization level. With ZDR enabled, the prompts you send and the outputs models return are not stored by Together, and are not used for any secondary purpose.
+Together AI enables zero data retention (ZDR) by default for new organizations. With ZDR enabled, the prompts you send and the outputs models return are not stored by Together, and are not used for any secondary purpose.
 Enable ZDR
-ZDR is not enabled by default. To enable it for your organization:
+If your organization has prompt storage turned on, turn it off to enable ZDR.
 Go to the
 Privacy
 section of
@@ -16,12 +16,11 @@ ZDR applies only to requests sent after you enable it. To delete data stored bef
 email the privacy team
 .
 Default behavior
-Unless your organization enables ZDR, Together stores the prompts you send and the responses models return, and may use them for product improvements. This data will never be shared with third parties, and you can delete it at any time.
-Two related settings are independent of ZDR:
-Training:
-Use of your data for training models is a separate opt-in and is off by default. Together does not train on your data without your explicit consent, whether or not ZDR is enabled.
-Passthrough models:
-Models that forward requests to a third-party provider are allowed by default. Data sent to them is handled under that provider’s own policy.
+New organizations start with ZDR enabled and
+Prompt storage
+turned off. Passthrough models are unavailable while prompt storage is off.
+When prompt storage is on, Together stores your prompts and model responses and may use them for product improvements. Together does not share this stored data with third parties, and you can delete it at any time.
+Model training is a separate opt-in and is off by default. Together uses your data for training only with your explicit consent.
 What ZDR covers
 With ZDR enabled, the content you submit to Together’s inference services, including text, images, and prompts, and any outputs returned to you are not stored, retained, or used for model training, product improvements, or any secondary purpose, except as needed to provide the service to you. Request content may pass through volatile memory and temporary caches while your request is served, but it is not persisted to non-volatile storage.
 What Together retains with ZDR enabled

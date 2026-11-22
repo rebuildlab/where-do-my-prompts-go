@@ -99,9 +99,7 @@ set to that region, or to a single region inside it. See
 Regions
 .
 Check what you already have before you save the setting:
-firectl
-deployment
-list
+firectl deployment list
 New deployments outside the region are rejected
 when you create them.
 Existing deployments are not checked, moved, or stopped
@@ -128,21 +126,11 @@ open in console
 Select the region and save. The console asks you to confirm that your clients already use the endpoint and models shown for that region.
 Configure with firectl
 Set the region:
-firectl
-policy
-residency
-set
-US
+firectl policy residency set US
 Inspect the current setting:
-firectl
-policy
-residency
-get
+firectl policy residency get
 Remove the restriction and return the account to unrestricted serving:
-firectl
-policy
-residency
-clear
+firectl policy residency clear
 Configure with the API
 Set the region with
 Update Policy Settings
@@ -152,17 +140,11 @@ in
 updateMask
 :
 curl
--X
-PATCH
-\
-"https://api.fireworks.ai/v1/accounts/${
-ACCOUNT_ID
-}/policySettings?updateMask=residency"
+-X PATCH \
+"https://api.fireworks.ai/v1/accounts/${ACCOUNT_ID}/policySettings?updateMask=residency"
 \
 -H
-"Authorization: Bearer ${
-FIREWORKS_API_KEY
-}"
+"Authorization: Bearer ${FIREWORKS_API_KEY}"
 \
 -H
 "Content-Type: application/json"

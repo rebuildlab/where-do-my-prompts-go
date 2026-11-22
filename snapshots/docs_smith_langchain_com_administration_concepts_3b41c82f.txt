@@ -9,9 +9,6 @@ Agents
 organize your traces by environment and group the
 resources
 you work with, such as datasets and prompts.
-Self-hosted LangSmith groups resources by application instead of agent. For details, see
-Self-hosted workspaces
-.
 The following diagram shows the relationship between organizations, workspaces, agents, environments, and resources:
 Organizations
 An organization is a logical grouping of users within LangSmith that defines shared settings applying across all of its workspaces. These settings govern organization-wide concerns rather than the agents and resources within a workspace. Common organization-level configurations include user management, single sign-on (SSO), OAuth provider configuration, custom role creation, billing, and usage tracking.
@@ -81,7 +78,7 @@ Where settings live
 See the table below for details on which features are available in which scope(s):
 Resource/Setting
 Scope
-Trace Projects
+Agent Environments
 Workspace or agent
 Annotation Queues
 Workspace or agent
@@ -137,60 +134,8 @@ agent
 divides its traces across them, so no tagging convention is required. For more information, see
 Agent environments
 .
-Self-hosted LangSmith separates environments with resource tags instead. For details, see
-Self-hosted workspaces
-.
-In either case, avoid using separate workspaces for environment separation, because resources cannot be shared across workspaces, which prevents you from promoting resources such as prompts between environments.
-Resource tags vs. commit tags for prompt management
-While both types of tags can use environment terminology like
-dev
-,
-staging
-, and
-prod
-, they serve different purposes:
-Resource tags
-(
-Environment: prod
-): Use these to
-organize
-resources across your workspace. Apply resource tags to tracing projects, datasets, and other resources (including prompts) to group them by environment.
-Commit tags
-(
-prod
-tag): Use these to manage which
-prompt version
-your code references. Commit tags are labels that point to specific commits in a prompt’s history. When your code pulls a prompt by tag name (e.g.,
-client.pull_prompt("prompt-name:prod")
-), it retrieves whichever commit that tag currently points to. To promote a prompt from
-staging
-to
-prod
-, move the commit tag to point to the desired version.
-Resource tags organize
-which resources
-belong to an environment. Commit tags let you control
-which version
-of a prompt your code references without changing the code itself.
-Self-hosted workspaces
-Self-hosted LangSmith uses project-based workspaces, which group resources by application rather than agent. An application can group any project within a team. Select one from the
-Application
-dropdown at the top of the sidebar, or select
-All applications
-to see every resource in the workspace.
-Project-based workspaces separate environments with
-resource tags
-: the default tag key
-Environment
-, with a different value per environment (for example,
-dev
-,
-staging
-,
-prod
-).
-To check which type of workspace you have, see
-How agent-based workspaces differ
+Avoid using separate workspaces for environment separation, because resources cannot be shared across workspaces, which prevents you from promoting resources such as prompts between environments. To promote a prompt between environments, use
+commit tags
 .
 Users and roles
 This section covers who can access LangSmith and what they can do: users, the three types of API keys, and the roles that grant permissions.
@@ -259,7 +204,7 @@ To create any type of API key, see
 Create an account and API key
 .
 Tracing keys
-Tracing keys are organization-owned credentials with fixed permissions to submit traces and create projects in selected workspaces. They do not grant access to stored traces, experiments, saved views, or administration.
+Tracing keys are organization-owned credentials with fixed permissions to submit traces in selected workspaces. They do not grant access to stored traces, experiments, saved views, or administration.
 Tracing keys use the
 lsv2_tr_
 prefix. Their scope is fixed at creation, and they remain valid when the creator leaves the organization. They follow service-key expiry limits. For creation permissions, scope limits, and deletion rules, refer to
