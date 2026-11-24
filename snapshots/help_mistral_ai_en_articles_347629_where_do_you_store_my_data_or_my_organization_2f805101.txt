@@ -28,7 +28,7 @@ data encryption
 🔑 If you use our Enterprise solutions, you can deactivate some of the features that involve data transfers outside of the EU at organization level. Please contact us for more info.
 Did this answer your question?
 Related Articles
-How do you ensure the security of user data?
+Do you use my user data to train your Artificial Intelligence models?
 How long do you store my data?
 How can I exercise my GDPR rights?
 Where can I find your DPA (Data Processing Agreement)?

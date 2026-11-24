@@ -116,8 +116,8 @@ Training restriction
 Customer data retention and achieving zero data retention
 What's next
 Press / to filter
-Enable applet notifications
-Disable applet notifications
+Enable Build notifications
+Disable Build notifications
 Enable autocomplete suggestions while typing
 Disable autocomplete suggestions
 Submit: Ctrl + Enter

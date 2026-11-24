@@ -417,8 +417,8 @@ Grounding with Google Maps
 Hardware Safety
 Disclaimers
 Press / to filter
-Enable applet notifications
-Disable applet notifications
+Enable Build notifications
+Disable Build notifications
 Enable autocomplete suggestions while typing
 Disable autocomplete suggestions
 Submit: Ctrl + Enter

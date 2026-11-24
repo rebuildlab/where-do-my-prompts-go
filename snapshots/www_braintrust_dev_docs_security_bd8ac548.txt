@@ -17,8 +17,6 @@ For clients connecting to the
 Braintrust MCP server
 , OAuth 2.0 uses PKCE (Proof Key for Code Exchange). MCP clients authenticate via standard OAuth flow and receive access tokens with refresh capabilities for secure, long-lived sessions. Tokens inherit your user account permissions, providing access only to resources you can normally access.
 External MCP connections in Loop
-External MCP connections
-are available in public preview.
 Project MCP credentials are encrypted and stored on your data plane. Loop and
 prompts using project MCP servers
 can use these credentials to authenticate requests. Calls using saved credentials have the shared account’s or API key’s permissions, rather than each project member’s individual permissions on the external service. Loop’s MCP calls run outside the sandbox.
@@ -27,9 +25,6 @@ Configure and manage shared OAuth connections or API keys in
 Loop’s project MCP settings
 .
 GitHub repositories in Loop
-The
-GitHub integration
-is available in public preview.
 Loop uses your connected GitHub account for reads and writes in conversations. Repository access must be allowed by all three:
 Your GitHub account
 The GitHub App installation
