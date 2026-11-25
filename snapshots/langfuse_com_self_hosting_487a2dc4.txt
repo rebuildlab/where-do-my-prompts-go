@@ -149,6 +149,7 @@ Organization Creators (EE)
 Instance Management API (EE)
 Health and Readiness Check
 Observability via OpenTelemetry
+Topics
 Transactional Emails
 UI Customization (EE)
 Subscribe to updates

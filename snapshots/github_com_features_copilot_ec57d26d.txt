@@ -1,12 +1,12 @@
 Ai coding agent
 GitHub Copilot
 Move from a single task to a project spanning repositories without losing context. Bring in the tools you use, automate recurring work, and decide what ships.
-Download for macOS (Silicon)
+Download for Linux
 GitHub Copilot App download options
 See plans & pricing
 GitHub Copilot
 GitHub Copilot Desktop App
-Download for macOS (Silicon)
+Download for Linux
 GitHub Copilot App download options
 GitHub Copilot CLI
 Install in CLI

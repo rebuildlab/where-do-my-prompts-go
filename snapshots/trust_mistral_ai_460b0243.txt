@@ -20,7 +20,7 @@ MAI-2026-002 - Mini Shai-Hulud security incident
 Opens in new tab
 Other resources
 Controls
-Updated 7 minutes ago
+Updated 1 minute ago
 View all
 Infrastructure security
 Access control procedures established

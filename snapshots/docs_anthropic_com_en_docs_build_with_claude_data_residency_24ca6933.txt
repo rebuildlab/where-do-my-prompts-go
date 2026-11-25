@@ -153,7 +153,7 @@ The
 inference_geo
 parameter is supported on Claude 4.6 and later models. Requests with
 inference_geo
-on Claude Opus 4.5, Claude Sonnet 4.5 (deprecated), Claude Haiku 4.5, or earlier models return a 400 error.
+on earlier models return a 400 error.
 
 The
 inference_geo

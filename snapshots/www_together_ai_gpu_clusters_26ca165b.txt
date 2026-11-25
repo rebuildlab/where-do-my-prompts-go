@@ -1,6 +1,6 @@
 Together GPU Clusters
-Reliable self-serve, AI-ready GPU clusters at scale
-Go from zero to production in minutes. Bare-metal performance, InfiniBand networking, and managed orchestration — with flexible pricing for both on-demand and reserved capacity.
+Reliable, self-serve, AI-ready GPU clusters at scale
+Go from zero to production in minutes. Bare-metal performance, InfiniBand networking, and managed orchestration — with flexible pricing across on-demand, reserved, and preemptible capacity.
 Create cluster
 Reserve capacity
 Why Together GPU Clusters
@@ -55,7 +55,7 @@ ThunderKittens vs cuBLAS
 ThunderKittens’ FP8 kernel for NVIDIA HGX B200 matches NVIDIA cuBLAS GEMM performance while delivering ~2× speedup over H100 FP8 GEMMs, leveraging Blackwell’s Tensor Core–accelerated matrix operations.
 learn more
 Flexible pricing models
-Both options are fully self-serve. Choose based on your capacity requirements and commitment level.
+All three options are fully self-serve. Choose based on your budget, capacity requirements and commitment level.
 On-Demand
 Standard hourly rate
 Commitment
@@ -78,6 +78,18 @@ Locked in for your duration
 Scale
 Up to 4,000+ GPUs
 Reserve capacity
+Preemptible
+Half the on-demand rate
+Commitment
+None. Billed sub-hourly; nodes can be reclaimed with 5 minutes’ notice
+Best for
+Work that can checkpoint or retry: training runs, evals, sweeps, batch inference
+Capacity
+Added to your cluster from spare capacity; refills toward your target
+Scale
+In multiples of 8 GPUs
+Add preemptible compute
+Learn more
 Browse other NVIDIA GPUs
 Self-serve GPUs with transparent billing.
 H100
@@ -89,6 +101,9 @@ NVIDIA H100
 On-demand
 $3.99
 /hr per GPU
+Preemptible
+$1.99
+/hr per GPU
 Reserved
 Starting at
 $3.45
@@ -96,6 +111,7 @@ $3.45
 Scale
 8 to 4,000 GPUs
 Create cluster
+More Info
 H200
 Hardware
 NVIDIA H200
@@ -105,6 +121,9 @@ NVIDIA H200
 On-demand
 $5.99
 /hr per GPU
+Preemptible
+$2.99
+/hr per GPU
 Reserved
 Starting at
 $4.15
@@ -112,6 +131,7 @@ $4.15
 Scale
 8 to 4,000 GPUs
 Create cluster
+More Info
 HGX B200
 Hardware
 NVIDIA HGX B200
@@ -121,6 +141,9 @@ NVIDIA HGX B200
 On-demand
 $9.29
 /hr per GPU
+Preemptible
+$4.65
+/hr per GPU
 Reserved
 Starting at
 $7.99
@@ -128,6 +151,7 @@ $7.99
 Scale
 8 to 4,000 GPUs
 Create cluster
+More Info
 HGX B300
 Hardware
 NVIDIA HGX B300
@@ -137,6 +161,9 @@ NVIDIA HGX B300
 On-demand
 $11.49
 /hr per GPU
+Preemptible
+$5.75
+/hr per GPU
 Reserved
 Starting at
 $9.89
@@ -144,6 +171,7 @@ $9.89
 Scale
 8 to 4,000 GPUs
 Create cluster
+More Info
 GB200 NVL72
 Hardware
 NVIDIA GB200 NVL72
@@ -155,6 +183,7 @@ Contact us for pricing
 Scale
 72 to 4,000 GPUs
 Contact sales
+More Info
 GB300 NVL72
 Hardware
 NVIDIA GB300 NVL72
@@ -166,6 +195,7 @@ Contact us for pricing
 Scale
 72 to 4,000 GPUs
 Contact sales
+More Info
 Orchestration flexibility for your AI workloads
 Self-serve
 GPU

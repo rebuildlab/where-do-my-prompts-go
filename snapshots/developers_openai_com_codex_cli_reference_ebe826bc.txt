@@ -2949,7 +2949,16 @@ Steer an active session with commands like
 /status
 Built-in slash commands
 Codex ships with the following commands. Open the slash popup and start typing
-the command name to filter the list.
+the command name to filter the list. When a command suggests an argument,
+press
+Tab
+to complete the highlighted argument. For example, type
+/mcp lo
+and press
+Tab
+to fill in
+/mcp login
+.
 When a chat is already running, you can type a slash command and press
 Tab
 to
@@ -3788,6 +3797,13 @@ searches across directories.
 Select the chat you want to resume.
 Expected: Codex reloads the selected chat’s transcript so you can pick
 up where you left off, keeping the original history intact.
+To preview the selected chat, press
+Ctrl
++
+T
+in the picker.
+Click a thread link in the preview to read the linked chat’s transcript.
+Clicking a thread link in an open chat switches to the linked chat.
 Fork the current chat with
 /fork
 Type
@@ -3919,6 +3935,15 @@ or
 /
 and type part of its name, prompt preview, or working directory. Search ignores case.
 Select a chat to open it.
+In the task list, press
+Shift
++
+↓
+or
+Shift
++
+↑
+to jump to the first task in the next or previous group.
 On macOS and Linux, eligible local sessions signed in with ChatGPT can use an
 experimental Cloud connection. Enable
 features.tui_multi_backend

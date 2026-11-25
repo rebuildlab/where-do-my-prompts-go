@@ -12,7 +12,7 @@ The US endpoint currently serves two models,
 grok-4.7
 and
 grok-4.6
-, and none of the image generation, video generation, or voice APIs. Token usage costs 10% more than on the global endpoint. The US guarantee covers API request handling, inference, moderation, and retained request data. It does not cover Files, Collections, server-side tools, or the network path from your systems to SpaceXSI. See
+, and none of the image generation or video generation APIs. Token usage costs 10% more than on the global endpoint. The US guarantee covers API request handling, inference, moderation, and retained request data. It does not cover Files, Collections, server-side tools, or the network path from your systems to SpaceXSI. See
 What the guarantee covers
 .
 Using the US endpoint
@@ -207,7 +207,7 @@ JSON
 :
 "The model grok-4-1-fast-reasoning does not exist or your team <team_id> does not have access to it. If you believe this is a mistake, please contact support and quote your team ID and the model name."
 }
-If a request for a globally available model returns this error, confirm that your client is calling the intended endpoint before troubleshooting model access. The image generation, video generation, and voice APIs are not served by the US endpoint; use the global endpoint for those.
+If a request for a globally available model returns this error, confirm that your client is calling the intended endpoint before troubleshooting model access. The image generation and video generation APIs are not served by the US endpoint; use the global endpoint for those.
 Pricing
 Token usage on the US endpoint costs 10% more than on the global endpoint. The premium applies to input, output, and cached input tokens, including long-context rates, and
 prompt caching
@@ -226,7 +226,7 @@ Safety moderation of the request and the response.
 Storage of the request metadata, prompt inputs, and model outputs that SpaceXSI retains. The
 Security FAQ
 describes what is retained and for how long.
-The image generation, video generation, and voice APIs are not served by the US endpoint.
+The image generation and video generation APIs are not served by the US endpoint.
 Files
 ,
 Collections
@@ -257,4 +257,4 @@ Yes.
 Zero Data Retention
 is a team-level setting, so it applies to every request your team makes regardless of the endpoint.
 Last updated:
-October 10, 2026
+November 23, 2026

@@ -24,21 +24,20 @@ request full ZDR through their AWS account team.
 For Anthropic Claude Fable 5, Claude Fable 5.1, and Claude Fable 5.2, Amazon Bedrock
 retains all traffic for up to 30 days for automated offline abuse detection.
 Classifier-flagged traffic will be subject to potential human review performed by
-AWS.
-If you're eligible for Enterprise Frontier Safeguards (EFS), you can
-use Claude Fable 5, Claude Fable 5.1, and Claude Fable 5.2 with zero data
-retention (ZDR) for internal use through at least June 30, 2027. After ZDR
-ends, all traffic will be retained for up to 30 days for automated offline
-abuse detection. The EFS program plans to enable customer-managed encryption
-and storage for automated offline abuse detection.
+AWS. For more information, see
+Automated review and human
+review
+.
+If your account is enrolled in Anthropic Enterprise
+Frontier Safeguards (EFS) or Anthropic Enterprise Data
+Controls (EDC), see the public preview of
+Enterprise Frontier Safeguards (EFS) and Enterprise Data Controls (EDC) for Anthropic models
+.
 Retained inputs and outputs are stored and processed by AWS and are not shared with
 third-party model providers. For more information on data retention and related
 controls, see
 Data retention
-. If
-cross-region inference is enabled for these models, retained inputs and outputs are
-stored in destination regions (i.e., the region where your inference request is
-processed).
+.
 Child sexual abuse material ("CSAM")
 To help stop the dissemination of child sexual abuse material
 ("CSAM"), Amazon Bedrock uses automated abuse detection mechanisms to detect
@@ -62,7 +61,7 @@ Contact your AWS account team or AWS Support if you have additional
 questions.
 Document Conventions
 Configuration and vulnerability analysis in Amazon Bedrock
-Enterprise Frontier Safeguards
+Automated review and human review
 Did this page help you? - Yes
 Thanks for letting us know we're doing a good job!
 If you've got a moment, please tell us what we did right so we can do more of it.

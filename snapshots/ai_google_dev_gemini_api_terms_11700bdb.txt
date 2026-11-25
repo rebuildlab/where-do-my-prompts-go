@@ -1,5 +1,3 @@
-info
-Welcome to the new home for Gemini API documentation in Google AI Studio.
 arrow_back
 Get API key
 Gemini API Additional Terms of Service

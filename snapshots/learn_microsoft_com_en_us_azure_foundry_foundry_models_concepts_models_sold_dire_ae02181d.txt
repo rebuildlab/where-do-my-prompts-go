@@ -2591,6 +2591,94 @@ No
 -
 Response formats:
 Markdown
+Cohere-rerank-v5-pro
+Preview
+text classification (rerank)
+-
+Input:
+text
+-
+Output:
+text
+-
+Languages:
+en
+,
+fr
+,
+es
+,
+it
+,
+de
+,
+pt-br
+,
+ja
+,
+zh-cn
+,
+ar
+,
+vi
+,
+hi
+,
+ru
+,
+id
+, and
+nl
+-
+Tool calling:
+No
+-
+Response formats:
+JSON
+Cohere-rerank-v5-fast
+Preview
+text classification (rerank)
+-
+Input:
+text
+-
+Output:
+text
+-
+Languages:
+en
+,
+fr
+,
+es
+,
+it
+,
+de
+,
+pt-br
+,
+ja
+,
+zh-cn
+,
+ar
+,
+vi
+,
+hi
+,
+ru
+,
+id
+, and
+nl
+-
+Tool calling:
+No
+-
+Response formats:
+JSON
 Cohere-rerank-v4.0-pro
 text classification (rerank)
 -
@@ -2749,6 +2837,66 @@ Yes
 -
 Response formats:
 Text, JSON
+Cohere-Embed-V5-Fast
+Preview
+embeddings
+-
+Input:
+text, images, fused text + image
+-
+Output:
+Vector (2048, 1536, 1024, 768, 512, 256 dim.)
+-
+Languages:
+en
+,
+fr
+,
+es
+,
+it
+,
+de
+,
+pt-br
+,
+ja
+,
+ko
+,
+zh-cn
+, and
+ar
+Cohere-Embed-V5-Pro
+Preview
+embeddings
+-
+Input:
+text, images, fused text + image
+-
+Output:
+Vector (2048, 1536, 1024, 768, 512, 256 dim.)
+-
+Languages:
+en
+,
+fr
+,
+es
+,
+it
+,
+de
+,
+pt-br
+,
+ja
+,
+ko
+,
+zh-cn
+, and
+ar
 embed-v-4-0
 embeddings
 -
@@ -2786,6 +2934,27 @@ Region availability for Foundry Models sold by Azure
 Model
 Type
 Capabilities
+DeepSeek-V4.1-Flash
+Preview
+chat-completion
+(with reasoning content)
+-
+Input:
+text (1,000,000 tokens)
+-
+Output:
+text (384,000 tokens)
+-
+Languages:
+en
+and
+zh
+-
+Tool calling:
+Yes
+-
+Response formats:
+Text, JSON
 DeepSeek-V4-Pro
 chat-completion
 (with reasoning content)
@@ -3384,13 +3553,33 @@ Several Mistral models are also available
 from partners and community
 .
 Moonshot AI models sold by Azure
-Moonshot AI models include Kimi K2.6 (Preview) and Kimi K2.5 (Preview), multimodal reasoning models that accept text and image input.
+Moonshot AI models include Kimi K3.1 Pro and the Kimi K2 series. These multimodal reasoning models accept text and image input.
 For model availability across all regions, grouped by deployment category, see
 Region availability for Foundry Models sold by Azure
 .
 Model
 Type
 Capabilities
+Kimi-K3.1-Pro
+chat-completion
+(with reasoning content)
+-
+Input:
+text and image (1,000,000 tokens)
+-
+Output:
+text (262,144 tokens)
+-
+Languages:
+en
+and
+zh
+-
+Tool calling:
+Yes
+-
+Response formats:
+Text
 Kimi-K2.7-Code
 Preview
 chat-completion
