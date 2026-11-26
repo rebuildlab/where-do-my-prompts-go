@@ -440,8 +440,8 @@ hooks.json
 Hooks that run alongside team and workspace hooks.
 Hooks
 system.json
-Pins Devin CLI sign-in to your enterprise host or account and forces an outbound proxy.
-Devin CLI system configuration
+Pins Devin Desktop and Devin CLI sign-in to your enterprise host or account, and forces an outbound proxy for Devin CLI.
+System configuration
 If your endpoint security or DLP tooling restricts file access, make sure these paths are permitted; see the
 directory reference in the FAQ
 .

@@ -18,8 +18,9 @@ DPA
 with Langfuse.
 How long is data retained?
 +
-Data retention
-can be defined via project‑level policies: ≥ 3 days up to unlimited. Data is purged nightly.
+Each project can set a
+data retention policy
+of at least 3 days or keep data indefinitely. Background jobs delete data that exceeds the configured retention period.
 How can we delete data?
 +
 Customers can delete single traces, batches, projects, organisations, or user accounts via the UI or the public API. See

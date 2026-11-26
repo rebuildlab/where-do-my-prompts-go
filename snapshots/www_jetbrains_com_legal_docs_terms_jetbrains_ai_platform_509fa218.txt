@@ -1,6 +1,9 @@
 Sales Support
 JetBrains AI Platform Terms of Service
 Version 3.0, effective as of July 7, 2026
+A
+new version
+of the JetBrains AI Platform Terms of Service is available and will take effect on 15 December 2026. Until then, the current version applies.
 Welcome to JetBrains AI Platform!
 These JetBrains AI Platform Terms of Service (“Terms”) apply to Your use of JetBrains AI, JetBrains Air, JetBrains Central, and any other JetBrains Services (“JetBrains Services”) that reference these Terms. The Terms constitute a legally binding agreement, and it is important that You read them carefully.
 1. Parties
