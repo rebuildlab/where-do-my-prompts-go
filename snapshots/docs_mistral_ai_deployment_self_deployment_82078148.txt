@@ -1,4 +1,131 @@
+Models & inference
+Overview
+Get started
+Overview
+Send your first API request
+Call your own functions
+Get structured output
+Analyze an image
+Find the closest text with embeddings
+Run a batch job
+Models
+Compare models
+Generate
+Conversations
+Overview
+Prompting
+Responses API
+Vision
+Reasoning
+Function Calling
+Overview
+Custom
+JSON Mode
+Citations & References
+Overview
+Text Embeddings
+Code Embeddings
+Prompting
+Sampling
+Optimize cost and latency
+Batch Processing
+Prompt caching
+Predicted outputs
+Priority Tier
+Platform
+Regional inference
+Pricing
+Model lifecycle policy
+Labs
+API reference
+All models
+Codestral
+Codestral 25.01
+Codestral Embed
+Codestral Mamba 7B
+DeepSeek V4.1 Flash 1017
+Devstral 2
+Devstral Medium 1.0
+Devstral Small 1.0
+Devstral Small 1.1
+Devstral Small 2
+GLM 5.2
+GLM 5.3
+GLM 5.3 Flash
+Leanstral
+Leanstral 1.5
+Magistral Medium
+Magistral Medium 1.0
+Magistral Medium 1.1
+Magistral Medium 1.2
+Magistral Small
+Magistral Small 1.0
+Magistral Small 1.1
+Magistral Small 1.2
+Mathstral 7B
+Ministral 3
+Ministral 3 (14B)
+Ministral 3 (3B)
+Ministral 3 (8B)
+Ministral 3B
+Ministral 8B
+Mistral 7B
+Mistral 7B 0.1
+Mistral 7B 0.2
+Mistral 7B 0.3
+Mistral Embed
+Mistral Large 1.0
+Mistral Large 2.0
+Mistral Large 2.1
+Mistral Large 3
+Mistral Large 4
+Mistral Medium 1.0
+Mistral Medium 3
+Mistral Medium 3.1
+Mistral Medium 3.5
+Mistral Moderation
+Mistral Moderation 2
+Mistral Multimodal Embed
+Mistral NeMo
+Mistral Next
+Mistral Saba
+Mistral Small 1.0
+Mistral Small 2.0
+Mistral Small 3.0
+Mistral Small 3.1
+Mistral Small 3.2
+Mistral Small 4
+Mistral Small Creative
+Mixtral 8x22B
+Mixtral 8x7B
+OCR
+OCR 2
+OCR 3
+OCR 4.0
+OCR 4.1
+Pixtral 12B
+Pixtral Large
+Shieldstral
+Timestral
+Timestral 1.0 123M
+Timestral 1.0 209M
+Timestral 1.0 28M
+Timestral 1.0 5M
+Voxtral Mini
+Voxtral Mini TTS 3
+Voxtral Mini Transcribe
+Voxtral Mini Transcribe 2
+Voxtral Mini Transcribe 3
+Voxtral Mini Transcribe Realtime
+Voxtral Mini Transcribe Realtime 3
+Voxtral Small
+Voxtral Small Transcribe 3
+Voxtral TTS
+Models and inference
+Deployment
 Self-Deployment
+Self-Deployment
+Choose an inference engine or infrastructure tool, such as vLLM, TensorRT-LLM, TGI or SkyPilot, to self-deploy Mistral models.
 Mistral AI models can be
 self-deployed on your own infrastructure
 through various
@@ -17,7 +144,26 @@ SkyPilot
 or
 Cerebrium
 .
-Tip
 For full-stack enterprise deployment, from efficient model inference to team management, we recommend
 reaching out to us
 .
+Deployment guides
+Pick an inference engine or an infrastructure tool to deploy Mistral models.
+vLLM
+vLLM
+Install vLLM and run Mistral models locally in offline or server mode, or deploy them with Docker using a Hugging Face token.
+TensorRT
+TensorRT
+Build a TensorRT-LLM engine for a Mistral model and deploy it with the Triton inference server and its TensorRT-LLM backend.
+Deploy with SkyPilot
+Deploy with SkyPilot
+Write a SkyPilot configuration to deploy a Mistral inference server on any cloud with the pre-built Docker container, then test it.
+Deploy with Cerebrium
+Deploy with Cerebrium
+Set up a Cerebrium project, configure its environment and GPU hardware, and run a Mistral model on serverless GPUs.
+Deploy with Cloudflare Workers AI
+Deploy with Cloudflare Workers AI
+Set up Cloudflare Workers AI to run Mistral models on serverless GPUs across the Cloudflare global network.
+Text Generation Inference
+Text Generation Inference
+Deploy Mistral models with the Text Generation Inference Docker container and query them through chat or generate endpoints.

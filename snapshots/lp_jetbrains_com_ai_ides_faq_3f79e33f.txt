@@ -1,141 +1,165 @@
-AI in IDEs
-FAQ
-Getting started and usage
-Which JetBrains IDEs offer AI features?
-AI features are available in all
-JetBrains IDEs
-, as well as in Android Studio. However, features may vary depending on the IDE.
-Refer to the documentation for details.
-What AI features are available in JetBrains IDEs?
-AI in JetBrains IDEs includes a range of capabilities that can be accessed through the AI Assistant plugin.
-Key capabilities include:
-In-editor code completion and next edit suggestions (NES)
-AI-powered assistance for writing and modifying code as you type.
-AI chat with a choice of coding agents
-Work with multiple agents, including Junie by JetBrains and third-party agents such as Claude Agent, OpenAI Codex, and Gemini CLI. Or connect and use any ACP-compatible agent with your own subscription.
-Context-aware AI actions
-Explain code, suggest refactoring, detect issues, and generate documentation directly in the editor.
-AI-enhanced workflows
-Get assistance in areas such as version control, runtime error analysis, and database-related tasks.
-How can I access AI features in my IDE?
-Find the AI Chat icon in the right sidebar of your IDE and click
-Install Plugin.
-Once installed, you can enable
-JetBrains AI
-, connect any
-ACP-compatible agent
-using your own subscription, or use AI models with your own API keys.
-Which large language models (LLMs) are supported in JetBrains IDEs?
-JetBrains IDEs can use a mix of third-party cloud models, JetBrains-trained models, and user-provided or local models.
-Third-party models via JetBrains AI
-JetBrains AI provides access to a curated set of cloud models from leading providers, including OpenAI, Google, Anthropic, and xAI. These models are automatically selected for specific features or can be chosen in AI chat.
-JetBrains proprietary models or fine-tuned models
-AI completion uses JetBrains-trained models like
-Mellum
-, optimized specifically for coding tasks.
-User-provided and local models
-You can also connect and use models outside of JetBrains AI via API key or OAuth where supported, or connect local models via tools like Ollama or LM Studio
-For the current list of supported options, see the
-Supported LLMs
-documentation.
-Can I use local models in JetBrains IDEs?
-You can connect your own local LLMs (via Ollama, LM Studio, and other OpenAI-compatible servers). You can configure them in AI Assistant settings in
-Can I connect my own AI providers to JetBrains IDEs?
-Yes. JetBrains IDEs support
-Bring Your Own Key (BYOK)
-, allowing you to connect your own API keys from Anthropic, OpenAI, and other OpenAI-compatible providers. You can also connect any
-ACP-compatible agent
-, such as Cursor or GitHub Copilot, using your own subscription.
-Are there any country restrictions for AI features?
-Access to AI features may be restricted in certain regions due to local regulations, export controls, or the availability of AI providers.
-You can check the full list of supported locations
-here
+Air in IDEs
+Air in IDEs
+is a
+plugin
+for agentic development. It gives you one place to start coding agents, follow what they are doing, and review the changes they make.
+Air in IDEs
+is not
+an AI service of its own: it is a workspace for running coding agents. Agents come either from your existing local installations or from the
+agent registry
+. Depending on the agent and your setup, you can use JetBrains AI, a third-party provider account, or the agent's own authorization flow.
+Watch a two-minute demo of Air in IDEs:
+Why use Air in IDEs
+Air in IDEs works with the agents, subscriptions, and IDE setup you already have:
+Agents you already have installed
+Air in IDEs detects the coding agents installed on your machine, such as Codex or Junie, the same way the IDE detects SDKs and build tools. A detected agent keeps the configuration it already uses.
+Your existing subscriptions
+Use the provider accounts and subscriptions you already have, or configure a provider in Air in IDEs. A JetBrains AI subscription is supported but not required.
+IDE tools for agent changes
+Agent sessions run in the same IDE as the rest of your work. Use code insight, refactorings, the debugger, and version control on the code an agent produces, and review, edit, or revert each change before you keep it.
+Presets for different tasks
+Save an agent, model, and operation mode as a named preset and reuse it instead of configuring each session. For example, keep one preset for small changes and another for larger, multi-step work.
+Comparison with AI Assistant
+JetBrains also ships
+AI Assistant
+â a collection of AI-powered features that includes coding agents, AI Chat, in-editor code completion, and code insights. Air in IDEs is a separate plugin and does not replace or disable AI Assistant.
+Air in IDEs and AI Assistant cover different parts of AI-powered development:
+Air in IDEs
+AI Assistant
+Primary focus
+Provides an agentic workspace for running external or self-hosted coding agents and reusing their existing configurations, provider accounts, and subscriptions.
+Provides JetBrains AI features, including AI Chat, in-editor code completion, next edit suggestions, code insights, and coding agents.
+Agents
+Detects coding agents already installed on your machine and makes them available in the IDE. You can also install ACP agents from the registry.
+Includes a set of bundled agents and lets you install additional ACP-compatible agents when needed.
+AI access
+Depending on the agent and your setup, uses JetBrains AI, a provider configured in Air in IDEs, or an existing agent authorization. Air in IDEs does not provide AI models of its own and does not require a JetBrains AI subscription.
+Connects to JetBrains AI models through a JetBrains AI subscription. Other supported activation options include your own API keys and provider accounts.
+Workspace
+Treats agents and their sessions as units of work. Sessions can use a structured chat or an agent's terminal interface and include presets, session diffs, parallel runs, and dedicated management views.
+Integrates AI Chat, agents, and inline assistance into the editor and existing IDE tool windows as companion features.
+How Air in IDEs works
+Air in IDEs runs agents on your machine and communicates with ACP-compatible agents through the
+Agent Client Protocol (ACP)
+. CLI agents run in their own terminal interface. Because ACP is a standard interface, compatible agents can work without a dedicated integration.
+Agents become available to Air in IDEs in two ways:
+Local installations
+â agents already installed on your machine. Air in IDEs detects them and makes them available in the IDE.
+The ACP agent registry
+â a catalog of ACP-compatible agents that you can browse and install with your consent. By default, Air in IDEs uses a JetBrains-provided registry.
+A typical session looks like this:
+You select an agent
+for the task.
+You authorize the agent
+if it has no available authorization source yet.
+You describe the task
+in natural language.
+The agent works in your project
+, reading and editing files and running commands.
+You review the result
+and keep, edit, or revert the changes.
+Data processing
+Agents may be provided by JetBrains or third-party vendors. The agent or provider you choose determines how your requests and data are processed. When you use a third-party subscription, your code goes directly to that provider, not through JetBrains. The applicable terms and privacy policies also depend on the selected agent or provider. If you use JetBrains AI, the
+JetBrains AI Platform Terms of Service
+apply.
+Air in IDEs does not enable AI features automatically and requires no login until you authorize an agent.
+Control over AI in the IDE
+Organizations can manage Air in IDEs centrally through
+JetBrains Console
+or
+JetBrains IDE Services
+and control which agents and providers are available to their users:
+An administrator controls which agents, providers, models, and MCP servers are available and can apply different policies to different users and groups.
+An allowlist of agents exposes only the agents that the organization approves. If an administrator turns off AI, the agent catalog is empty and the Air in IDEs user interface is hidden in the IDE, unless users have
+agents of their own
 .
-How can I report a problem or provide feedback?
-We encourage you to try JetBrains AI features and share your feedback to help us improve. To leave feedback about AI Assistant, you can:
+An administrator can make the policies of the organization mandatory on managed user machines, so that users cannot bypass them with a personal JetBrains AI subscription or the AI of another organization.
+For more information, refer to
+Manage Air in IDEs on user machines
+.
+Air in IDEs FAQ
+What will happen to the existing AI Assistant plugin?
+The existing
+AI Assistant
+plugin remains available and supported as a separate plugin. Air in IDEs is an experiment for evaluating a different approach to agentic development, and your feedback helps shape its direction.
+How do I return to AI Assistant?
+If you switched to Air in IDEs from AI Assistant, you can make AI Assistant available again without disabling Air in IDEs. For instructions, refer to
+Return to AI Assistant
+.
+Which AI subscriptions and providers does Air in IDEs currently support?
+Air in IDEs supports JetBrains AI for
+compatible agents
+, as well as a set of third-party providers configured with the credentials they require. You can also use an agentâs own authorization when supported.
+A Claude subscription cannot be used to authorize Claude Agent in the chat
+surface
+. To use Claude Agent, select JetBrains AI or configure Anthropic API-key authentication with API billing.
+To use your Claude subscription, run Claude Code in the terminal surface, which Air in IDEs opens as a full-screen editor tab. For more information, refer to
+Use Claude subscription
+.
+How can I access Air in IDEs?
+How you get Air in IDEs depends on the version of your IDE:
+In 2026.2 versions of JetBrains IDEs, you need to install the Air in IDEs plugin from JetBrains Marketplace.
+Starting from version 2026.3, the plugin is bundled with JetBrains IDEs, so you do not need to install it.
+The plugin does not require a separate license. Depending on the agent and your setup, you can use JetBrains AI, a third-party provider account, or the existing agent configuration.
+Can my organization turn off Air in IDEs?
+Yes. The result depends on how your organization manages AI access:
+If your organization manages AI access through IDE licenses and disables AI for the license assigned to you, Air in IDEs stays available only for agents of your own: custom ACP agents in
+acp.json
+and agents installed from the catalog, except Junie. These agents work only through their own authorization, and JetBrains AI and Junie are unavailable.
+If you have no such agents, Air in IDEs is turned off. To use Air in IDEs, add an agent to
+acp.json
+and restart the IDE. For more information, refer to
+Can I use custom ACP agents if AI is disabled in my license?
+If your organization manages AI access through
+JetBrains IDE Services
+and disables
+AI Enterprise
+in the profile assigned to you, Air in IDEs is disabled in the same way.
+If your organization manages AI access in JetBrains Console and turns it off for you, you lose access to the organization workspace: you can no longer spend its credits or start cloud runs. After you restart the IDE, the organization workspace no longer appears among the authorization sources. Air in IDEs does not switch to another authorization source automatically. Depending on the AI settings of your organization, other authorization methods, such as the own authorization of an agent or a third-party provider, can remain available.
+To request access, contact your organization administrator.
+For instructions on turning off Air in IDEs on specific machines or enforcing the policies of your organization, refer to
+Manage Air in IDEs on user machines
+.
+How do I turn off Air in IDEs?
+Disable the Air in IDEs plugin in the IDE settings. For instructions, refer to
+Disable Air in IDEs
+. If you are an organization administrator, you can also turn off Air in IDEs on specific machines or enforce the policies of your organization. For instructions, refer to
+Manage Air in IDEs on user machines
+.
+Which IDEs are supported?
+The plugin is available in JetBrains IDEs except for Android Studio.
+Does Air in IDEs work in China?
+Yes. The plugin is distributed without geographic restrictions. However, due to
+territorial restrictions
+, JetBrains AI cannot be used as an authorization source in China. The availability of other agents and models is regulated by their respective vendors.
+If the region of your IDE is set to
+China Mainland
+, the agent catalog lists only the agents that are available in China. Agents that are already installed on your machine stay available. To check the region, press
+Ctrl+Alt+S
+to open settings and select
+Appearance & Behavior | System Settings | Language and Region
+.
+Where can I send feedback or bug reports about Air in IDEs?
 Use the
-Share feedback
-link in your IDEâs
-AI Ð¡hat
-tool window.
-Report issues or request features in
-AI Assistantâs YouTrack project
-Contact support
-for further assistance.
-We also encourage you to leave a review on
-JetBrains Marketplace
+Report a Problem
+or
+Submit Feedback
+actions in the IDE, or create an issue in our
+YouTrack
 .
-Pricing and plans
-What plans are available with a JetBrains AI subscription?
-JetBrains AI offers AI Free*, AI Pro, AI Ultimate, and AI Enterprise. The main difference between the plans is the amount of AI Credits included for features powered by third-party AI providers.
-See the
-pricing page
-for plan details and usage quotas.
-* AI Free is not available in Android Studio, Intellij IDEA without Ultimate subscription and PyCharm without Pro subscription.
-Is there a free trial for JetBrains AI?
-Yes. A 30-day AI Pro trial is available when you first activate JetBrains AI. After the trial ends, you can either continue on the AI Free plan (if available in your IDE*) or upgrade to AI Pro or AI Ultimate for more usage.
-* AI Free is not available in Android Studio, Intellij IDEA without Ultimate subscription and PyCharm without Pro subscription.
-Who can access JetBrains AI Free and what is included?
-AI Free is available to all users with active
-JetBrains IDE
-licenses, including educational licenses, classroom licenses, open source licenses, IDE trial licenses, licenses for users in the Startup Program, and other complimentary licenses.
-As part of the AI Free plan, you get:
-Unlimited code completion (powered by JetBrainsâ Mellum model).
-Unlimited use of your own local models, connected via Ollama, LM Studio, or another OpenAI-compatible server.
-A limited cloud quota for third-party models.
-However, the AI Free plan is not available in IntelliJ IDEA without an Ultimate subscription, PyCharm without a Pro subscription, and Android Studio. To use AI in those products, you must have an AI Pro subscription.
-Who gets AI Pro for free?
-AI Pro is included at no additional cost for:
-All Products Pack
-and
-dotUltimate
-users.*
-Developer Recognition Program
-license holders (for example, MVPs or Java Champions).
-JetBrains
-Content Creators Program
-members.
-DataSpell users.**
-*Al Pro is not included in complimentary All Products Pack subscriptions for students, teachers, and classrooms, or for Open Source program participants.
-** If you get AI Pro with DataSpell, it is tied to that product only and cannot be used with other JetBrains products.
-What is the AI quota in JetBrains AI plans?
-JetBrains AI subscription tiers include a fixed monthly quota of AI Credits, which regulate access to AI agents and features powered by third-party AI models.
-Code completion and next edit suggestions are powered by JetBrainsâ tailored models, and therefore do not consume AI quota.
-What are the quota limits for different license tiers?
-The AI quota matches its price, meaning 1 AI Credit is equivalent to USD 1.00 (charged in your local currency). You get AI Credits equal to the value of
-your plan
-, plus a small bonus with AI Ultimate. For example, an individual AI Ultimate subscription costs USD 30.00 per month and now comes with USD 35.00 in AI Credits (USD 5 bonus credits).
-Can I see how much of my AI quota Iâve used?
-Yes. You can track your remaining AI quota and any top-up AI Credits in the JetBrains AI widget in the IDE.
-What happens if I run out of AI quota?
-When your monthly AI quota is exhausted, cloud-powered JetBrains AI features pause until your quota renews. ou can buy additional AI Credits to continue using AI features. Your included quota resets every 30 days from the date you first activated your JetBrains AI license, which may not match your billing cycle.
-What are top-up AI Credits?
-Top-up AI Credits are additional credits you can purchase to extend your cloud AI usage beyond the quota included with your JetBrains AI subscription. They require an active JetBrains AI license and:
-- remain valid for 12 months
-- for organizations they are shared across the teamâs JetBrains AI licenses.
-Does my unused quota roll over to the next month?
-No. Any unused included quota does not roll over. The AI quota resets every 30 days from the date you first activated your JetBrains AI license. However, if you purchased Top-up AI Credits, they remain valid for 12 months.
-Is AI quota shared across IDEs and tools?
-Yes. Once you purchase a JetBrains AI subscription, it is linked to your JetBrains Account and can be used across all supported IDEs.
-Privacy and security
-Does JetBrains collect my data?
-Data sharing is opt-in for all paid licenses, including individual and company licenses (this also includes EAP and free trials). For company licenses, this setting is centrally maintained by your admins and cannot be changed individually.
-For licenses that are for non-commercial use, this setting is enabled by default, but you can opt out at any time in the settings: Appearance & Behavior -> System Settings -> Data Sharing -> Allow detailed data collection by JetBrains AI.
-For detailed information about our approach to data collection, please refer to our
-Data Collection and Use Policy
-.
-What data can JetBrains collect?
-JetBrains can collect two categories of data: anonymous telemetry about feature usage, and â if detailed data collection is enabledâmore detailed code-related data such as prompts, responses, code snippets, edit history, terminal usage, and interactions with AI features. Detailed code-related data is used for product improvement and training JetBrains models, and it is not shared with third parties.
-For detailed information about our approach to data collection, please refer to our
-Data Collection and Use Policy
-.
-Does JetBrains use my code to train AI models?
-Only if you explicitly allow it. If you choose to share data with us, this data is used exclusively to improve JetBrains tools and train our own models, like Mellum, and it is never shared with third parties.
-Does JetBrains store user-submitted data?
-JetBrains does not persist any customer data unless a user opts-in to Detailed Data Collection. If you do, the shared data is retained for up to one year. Any data you share will be handled responsibly, in full compliance with all EU data protection laws.
-What data does JetBrains send from my IDE to LLM providers?
-When you use AI-powered features, the IDE sends your prompts to the LLM provider. In addition to your prompts, the IDE may add information about the context, such as pieces of code, file types, and frameworks used. This allows the LLM to provide the most relevant suggestions. JetBrains does not work with the large language model providers that use customer data for training models.
-Contact support
-Bug and issue tracker
-Blog
-Documentation
+Next steps
+Key concepts
+â learn the terms used across this documentation, such as agents, sessions, presets, and skills.
+Quickstart guide
+â select an agent and run your first task.
+Start or continue a session
+â start a session from the toolbar, the tool window, or the global prompt.
+Interact with the agent
+â describe a task, insert reusable prompts, and answer questions an agent asks during a session.
+Manage agent sessions
+â track running sessions and return to previous ones.
+Review and commit changes
+â review changes with code notes, generate commit messages, and resolve merge conflicts with an agent.
+18 November 2026
+Troubleshooting
+Quickstart guide
